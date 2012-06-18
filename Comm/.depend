@@ -1,0 +1,3 @@
+Communicator.o: Communicator.cpp Communicator.h ../Packets/Packet.h \
+ ../Packets/../Device/Device.h ../Packets/../Device/../Room.h \
+ ../Packets/../Device/../Server.h ../Packets/../Device/../Room.h
