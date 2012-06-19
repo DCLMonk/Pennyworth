@@ -22,6 +22,7 @@ void Communicator::sendPacket(Packet* packet) {
 
 Packet* Communicator::getPacket() {
 	printf("Warning: Unimplemented Communicator in Use\n");
+	return NULL;
 }
 
 } /* namespace dvs */

@@ -10,14 +10,15 @@ int main(int argc, char * argv[]) {
 	printf("Test\n");
 	printf("More Test\n");
 	SocketCreator s(5011);
-	set<SocketComm*> comms;
+	set<Communicator*> comms;
 
 	while (true) {
 		SocketComm* comm = s.checkConnections();
 		if (comm != NULL) {
 			comms.insert(comm);
 		}
-		for (set<SocketComm*>::iterator start = comms.begin(); start != comms.end(); start++) {
+		for (set<Communicator*>::iterator start = comms.begin(); start != comms.end(); start++) {
+			Packet::setCurrentComm(*start);
 			(*start)->getPacket();
 		}
 	}

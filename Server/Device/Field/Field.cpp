@@ -31,7 +31,7 @@ unsigned char* Field::getString() {
 
 unsigned int Field::getLength() {
 	printf("Warning: Unimplemented getLength Field Used\n");
-	return NULL;
+	return 0;
 }
 
 } /* namespace dvs */

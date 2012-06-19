@@ -1,5 +1,0 @@
-Device.o: Device.cpp Device.h ../Room.h ../Server.h ../Room.h \
- Field/Field.h Field/BooleanField.h Field/Field.h Field/IntegerField.h \
- Field/FloatField.h Field/FixedField.h Field/StringField.h \
- ../Comm/Communicator.h ../Comm/../Packets/Packet.h \
- ../Comm/../Packets/../Device/Device.h ../Packets/Packet.h
