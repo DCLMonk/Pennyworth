@@ -20,4 +20,8 @@ void Communicator::sendPacket(Packet* packet) {
 	printf("Warning: Unimplemented Communicator in Use\n");
 }
 
+Packet* Communicator::getPacket() {
+	printf("Warning: Unimplemented Communicator in Use\n");
+}
+
 } /* namespace dvs */

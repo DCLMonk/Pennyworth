@@ -65,4 +65,15 @@ enum PacketType {
 
 } /* namespace DVS */
 
+#include "StartPacket.h"
+#include "InitPacket.h"
+#include "InitCNamePacket.h"
+#include "InitLocationPacket.h"
+#include "InitFieldPacket.h"
+#include "GetFieldPacket.h"
+#include "FieldValuePacket.h"
+#include "SetFieldPacket.h"
+#include "SubscribePacket.h"
+#include "SetOnePacket.h"
+
 #endif /* PACKET_H_ */

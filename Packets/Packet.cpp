@@ -50,15 +50,15 @@ void Packet::send() {
 	getDevice()->send(this);
 }
 
-inline unsigned char Packet::getType() {
+unsigned char Packet::getType() {
 	return pid;
 }
 
-inline unsigned char *Packet::getData() {
+unsigned char *Packet::getData() {
 	return data;
 }
 
-inline unsigned int Packet::getLength() {
+unsigned int Packet::getLength() {
 	return length;
 }
 

@@ -18,6 +18,7 @@ public:
 	virtual ~Communicator();
 
 	virtual void sendPacket(Packet* packet);
+	virtual Packet* getPacket();
 };
 
 } /* namespace dvs */
