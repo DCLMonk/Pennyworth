@@ -25,10 +25,11 @@ SerialComm::SerialComm(char* device) {
     //todo serial port should not be hard coded
     fd = open(device, O_RDWR|O_NOCTTY);  // really ought to check for error
     tcgetattr(fd, &tc);
-    tc.c_iflag = IGNPAR;
-    tc.c_oflag = 0;
-    tc.c_cflag = CS8 | CREAD | CLOCAL; //8 bit chars enable receiver no modem status lines
-    tc.c_lflag =0 ;
+    cfmakeraw(&tc);
+//    tc.c_iflag = IGNPAR;
+//    tc.c_oflag = 0;
+//    tc.c_cflag = CS8 | CREAD | CLOCAL; //8 bit chars enable receiver no modem status lines
+//    tc.c_lflag =0 ;
 
     //todo baud rate should not be hard coded
     cfsetispeed(&tc, B9600);
@@ -47,6 +48,7 @@ SerialComm::~SerialComm() {
 
 void SerialComm::sendPacket(Packet* packet) {
 	write(fd, packet->getData(), packet->getLength());
+	printf("Send %d\n", packet->getLength());
 }
 
 Packet* SerialComm::getPacket() {

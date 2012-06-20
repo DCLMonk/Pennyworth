@@ -13,8 +13,8 @@ SocketComm.o: SocketComm.cpp SocketComm.h Communicator.h \
  ../Packets/GetFieldPacket.h ../Packets/FieldValuePacket.h \
  ../Packets/SetFieldPacket.h ../Packets/SubscribePacket.h \
  ../Packets/SetOnePacket.h
-SocketCreator.o: SocketCreator.cpp SocketCreator.h SocketComm.h \
- Communicator.h ../Packets/Packet.h ../Packets/../Device/Device.h \
+SerialComm.o: SerialComm.cpp SerialComm.h Communicator.h \
+ ../Packets/Packet.h ../Packets/../Device/Device.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/../Server.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/Field/Field.h \
  ../Packets/../Device/Field/BooleanField.h \
@@ -28,8 +28,8 @@ SocketCreator.o: SocketCreator.cpp SocketCreator.h SocketComm.h \
  ../Packets/GetFieldPacket.h ../Packets/FieldValuePacket.h \
  ../Packets/SetFieldPacket.h ../Packets/SubscribePacket.h \
  ../Packets/SetOnePacket.h
-SerialComm.o: SerialComm.cpp SerialComm.h Communicator.h \
- ../Packets/Packet.h ../Packets/../Device/Device.h \
+SocketCreator.o: SocketCreator.cpp SocketCreator.h SocketComm.h \
+ Communicator.h ../Packets/Packet.h ../Packets/../Device/Device.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/../Server.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/Field/Field.h \
  ../Packets/../Device/Field/BooleanField.h \
