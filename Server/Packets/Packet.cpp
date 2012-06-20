@@ -46,6 +46,7 @@ Packet::~Packet() {
 }
 
 inline Device* Packet::getDevice() {
+	printf("Device Id: %d\n", device);
 	return Device::getDevice(device);
 }
 

@@ -15,6 +15,7 @@ map<int, Device*> devicesById;
 map<string, Device*> devicesByString;
 
 Device::Device(Communicator* comm, string name) {
+	fields = new map<unsigned char, Field*>;
 	deviceId = Device::allocateDeviceId();
 	Device::setDevice(deviceId, name, this);
 	this->name = name;
@@ -77,18 +78,22 @@ void Device::setIcon(unsigned int icon) {
 }
 
 bool Device::hasField(unsigned char id) {
-	return fields.end() != fields.find(id);
+	return (*fields)[id] != NULL;
 }
 
 Field* Device::getField(unsigned char id) {
-	return fields[id];
+	return (*fields)[id];
 }
 
 void Device::setField(unsigned char id, Field* field) {
 	if (hasField(id)) {
-		delete fields[id];
+		delete ((*fields)[id]);
 	}
-	fields[id] = field;
+	(*fields)[id] = field;
+}
+
+void Device::setComm(Communicator* comm) {
+	this->comm = comm;
 }
 
 } /* namespace DVS */

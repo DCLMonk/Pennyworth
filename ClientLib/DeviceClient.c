@@ -8,6 +8,7 @@
 #include "DeviceClient.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 //#define NULL (0)
 
 void sendLoc(Device* device);
@@ -362,11 +363,13 @@ void parsePacket(Device* device) {
 void sendField(Device* device, FieldDef* field) {
 	CommManager* comm = &device->comm;
 	unsigned int length = strlen(field->name) + 9;
+	printf("Send Field %d\n", length);
 
 	comm->send((unsigned char)(length - 1));
 	comm->send((unsigned char)(device->deviceId & 0xff));
 	comm->send((unsigned char)((device->deviceId>>8) & 0xff));
 	comm->send((unsigned char)(4));
+	comm->send((unsigned char)(field->type));
 	comm->send((unsigned char)(field->writable));
 	comm->send((unsigned char)(field->vol));
 	comm->send((unsigned char)(field->id));
@@ -375,6 +378,7 @@ void sendField(Device* device, FieldDef* field) {
 	for (i = 0; i < length - 8; i++) {
 		comm->send(field->name[i]);
 	}
+	sendValue(field->id, device);
 }
 
 void sendInitPacket(Device* device) {
@@ -416,6 +420,7 @@ void sendLoc(Device* device) {
 	comm->send((unsigned char)(device->deviceId & 0xff));
 	comm->send((unsigned char)((device->deviceId>>8) & 0xff));
 	comm->send((unsigned char)(3));
+	printf("Room: %d\n", device->roomId);
 	comm->send((unsigned char)(device->roomId));
 	comm->send((unsigned char)(device->x & 0xff));
 	comm->send((unsigned char)((device->x>>8) & 0xff));

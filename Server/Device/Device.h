@@ -79,10 +79,12 @@ public:
 
 	void setField(unsigned char id, Field* field);
 
+	void setComm(Communicator* comm);
+
 protected:
-	map<unsigned char, Field*> fields;
+	map<unsigned char, Field*>* fields;
 	unsigned int deviceId;
-	unsigned int roomId;
+	int roomId;
 	string name;
 	string cname;
 	Communicator* comm;

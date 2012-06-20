@@ -6,6 +6,7 @@
  */
 
 #include "FieldValuePacket.h"
+#include "SetFieldPacket.h"
 
 namespace dvs {
 
@@ -15,6 +16,8 @@ FieldValuePacket::FieldValuePacket(unsigned char *data) : Packet(data) {
 	Field* field = device->getField(id);
 
 	field->setString(data + 5);
+	SetFieldPacket packet(device, id);
+	packet.send();
 }
 
 } /* namespace dvs */

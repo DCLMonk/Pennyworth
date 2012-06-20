@@ -15,18 +15,20 @@
 #include <fcntl.h>
 #include <netdb.h>
 #include "lib/DeviceClient.h"
+#define error perror
 
 int sockfd;
 
 void sendch(char c);
+void sendField(Device* device, FieldDef* field);
 
 int main(int argc, char * argv[]) {
-	int portno, n;
+	int portno;
 	struct sockaddr_in serv_addr;
 	struct hostent *server;
 	char buffer;
 
-	portno = 5014;
+	portno = 5010;
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	if (sockfd < 0)
 		error("ERROR opening socket");
@@ -48,7 +50,7 @@ int main(int argc, char * argv[]) {
 	setDeviceCName("Common Name", device);
 	setDeviceLocation(0, 0, 0, 0, device);
 
-	addField(type, "Test Bool", 0, 0, 0, device);
+	addField(BOOL, "Test Bool", 0, 0, 0, device);
 
 	while (1) {
 		if (read(sockfd, &buffer, 1) > 0) {
