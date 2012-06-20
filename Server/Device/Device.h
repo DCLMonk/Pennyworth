@@ -25,11 +25,11 @@ class Packet;
 
 extern map<int, Device*> devicesById;
 extern map<string, Device*> devicesByString;
+extern unsigned int maxDeviceId;
 
 class Device {
 public:
 	static int allocateDeviceId() {
-		static unsigned int maxDeviceId = 1;
 		return maxDeviceId++;
 	}
 
@@ -80,6 +80,8 @@ public:
 	void setField(unsigned char id, Field* field);
 
 	void setComm(Communicator* comm);
+
+	int getNFields();
 
 protected:
 	map<unsigned char, Field*>* fields;

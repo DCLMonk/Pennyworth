@@ -13,6 +13,7 @@ namespace dvs {
 
 map<int, Device*> devicesById;
 map<string, Device*> devicesByString;
+unsigned int maxDeviceId = 1;
 
 Device::Device(Communicator* comm, string name) {
 	fields = new map<unsigned char, Field*>;
@@ -94,6 +95,11 @@ void Device::setField(unsigned char id, Field* field) {
 
 void Device::setComm(Communicator* comm) {
 	this->comm = comm;
+}
+
+
+int Device::getNFields() {
+	return fields->size();
 }
 
 } /* namespace DVS */

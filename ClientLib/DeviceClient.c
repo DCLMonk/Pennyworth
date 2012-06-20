@@ -17,6 +17,7 @@ void sendCName(Device* device);
 void sendField(Device* device, FieldDef* field);
 void sendValue(unsigned char id, Device* device);
 void sendInitPackets(Device* device);
+#define printf(x,...)
 
 Device* createDevice(char* uname, int maxFields, SendRoutine send) {
 	Device* device = (Device*)malloc(sizeof(Device));
@@ -36,7 +37,7 @@ Device* createDevice(char* uname, int maxFields, SendRoutine send) {
 
 	device->name = uname;
 
-	sendInitPacket(device);
+	//sendInitPacket(device);
 
 	return device;
 }
@@ -450,6 +451,8 @@ void recvChar(char c, Device* device) {
 	CommManager* comm = &device->comm;
 	comm->buffer[comm->index++] = c;
 	unsigned int did;
+
+	printf("R\n");
 
 	switch (comm->state) {
 	case INIT:

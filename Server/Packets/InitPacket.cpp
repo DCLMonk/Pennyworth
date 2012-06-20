@@ -18,6 +18,7 @@ InitPacket::InitPacket(unsigned char *data) : Packet(data) {
 	InitPacket packet(Device::getDevice(Packet::getCurrentComm(), name));
 	packet.getDevice()->setComm(Packet::getCurrentComm());
 	packet.send();
+	printf("Init Device: %d\n", packet.getDevice()->getId());
 }
 
 InitPacket::InitPacket(Device *device) : Packet(device->getName().length() + 5, device->getId(), Init) {

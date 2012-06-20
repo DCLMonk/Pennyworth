@@ -20,7 +20,6 @@ class Server {
 public:
 	static Room* getRoom(unsigned int id) {
 		while (rooms.size() <= id) {
-			printf("Adding %d %d\n", rooms.size(), id);
 			rooms.push_back(new Room());
 		}
 		return rooms[id];

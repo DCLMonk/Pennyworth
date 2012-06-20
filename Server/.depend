@@ -15,6 +15,6 @@ Main.o: Main.cpp Comm/SocketCreator.h Comm/SocketComm.h \
  Comm/../Packets/InitLocationPacket.h Comm/../Packets/InitFieldPacket.h \
  Comm/../Packets/GetFieldPacket.h Comm/../Packets/FieldValuePacket.h \
  Comm/../Packets/SetFieldPacket.h Comm/../Packets/SubscribePacket.h \
- Comm/../Packets/SetOnePacket.h
+ Comm/../Packets/SetOnePacket.h Comm/SerialComm.h Comm/SocketComm.h
 Room.o: Room.cpp Room.h
 Server.o: Server.cpp Server.h Room.h
