@@ -15,7 +15,7 @@ namespace dvs {
 
 InitPacket::InitPacket(unsigned char *data) : Packet(data) {
 	string name((const char *)(data + 4));
-	InitPacket packet(new Device(Packet::getCurrentComm(), name));
+	InitPacket packet(Device::getDevice(Packet::getCurrentComm(), name));
 	packet.send();
 }
 

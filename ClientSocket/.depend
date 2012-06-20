@@ -1,0 +1,1 @@
+SocketTest.o: SocketTest.c lib/DeviceClient.h

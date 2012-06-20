@@ -37,6 +37,13 @@ public:
 		return devicesById[id];
 	}
 
+	static Device *getDevice(Communicator* comm, string name) {
+		if (devicesByString.find(name) != devicesByString.end()) {
+			return devicesByString[name];
+		}
+		return new Device(comm, name);
+	}
+
 	static void setDevice(int id, string name, Device* device) {
 		devicesById[id] = device;
 		devicesByString[name] = device;

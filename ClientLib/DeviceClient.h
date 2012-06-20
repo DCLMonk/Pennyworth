@@ -21,17 +21,22 @@ typedef enum {
 
 typedef struct {
 	FieldType type;
-	unsigned int id;
+	unsigned char id;
 	char *name;
 	unsigned char vol;
 	unsigned char writable;
 	unsigned char changed;
+	unsigned char subscribed;
 	FieldList listener;
 	void* field;
 } FieldDef;
 
+#ifndef BUFFER_LENGTH
+#define BUFFER_LENGTH 256
+#endif
+
 typedef struct {
-	char buffer[256];
+	char buffer[BUFFER_LENGTH];
 	unsigned int index;
 	unsigned int length;
 	unsigned int state;
@@ -42,12 +47,12 @@ typedef struct {
 typedef struct {
 	CommManager comm;
 	unsigned int deviceId;
-	unsigned int roomId;
+	unsigned char roomId;
 	char *name;
 	char *cname;
 	unsigned int x;
 	unsigned int y;
-	unsigned int icon;
+	unsigned char icon;
 	unsigned int nfields;
 	FieldDef *fields;
 } Device;
@@ -73,8 +78,8 @@ Device* createDevice(char* uname, int maxFields, SendRoutine send);
 
 void setDeviceCName(char* name, Device* device);
 
-void setDeviceLocation(unsigned int room, unsigned int x, unsigned int y,
-								unsigned int icon, Device* device);
+void setDeviceLocation(unsigned char room, unsigned int x, unsigned int y,
+								unsigned char icon, Device* device);
 
 int addField(FieldType type, char* name, unsigned int id,
 		unsigned char writable, unsigned char vol, Device* device);
