@@ -21,6 +21,7 @@ Device::Device(Communicator* comm, string name) {
 	this->comm = comm;
 	this->cname = "Unset";
 	roomId = -1;
+	printf("Device: %d\n", deviceId);
 }
 
 Device::~Device() {

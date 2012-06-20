@@ -18,12 +18,10 @@ extern vector<Room*> rooms;
 class Server {
 public:
 	static Room* getRoom(unsigned int id) {
-		if (rooms.size() > id) {
-			return rooms[id];
-		} else {
-			rooms[id] = new Room();
-			return rooms[id];
+		while (rooms.size() <= id) {
+			rooms.push_back(new Room());
 		}
+		return rooms[id];
 	}
 
 	Server();

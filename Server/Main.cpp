@@ -9,7 +9,7 @@ using namespace dvs;
 int main(int argc, char * argv[]) {
 	printf("Test\n");
 	printf("More Test\n");
-	SocketCreator s(5011);
+	SocketCreator s(5014);
 	set<Communicator*> comms;
 
 	while (true) {

@@ -42,6 +42,7 @@ SocketComm* SocketCreator::checkConnections() {
 	int fd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
 
 	if (fd >= 0) {
+		fcntl(sockfd, F_SETFL, O_NONBLOCK);
 		return new SocketComm(fd);
 	}
 	return NULL;

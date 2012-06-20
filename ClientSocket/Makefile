@@ -1,4 +1,4 @@
-TARGET=dev-server
+TARGET=socket-client
 SRCS=SocketTest.c
 
 BUILDDIR=objs

@@ -323,6 +323,7 @@ void readValue(unsigned char id, Device* device) {
 
 void parsePacket(Device* device) {
 	CommManager* comm = &device->comm;
+	printf("Parse Packet\n");
 	switch (comm->state) {
 	case INITCN:// What?
 		break;
@@ -347,9 +348,11 @@ void parsePacket(Device* device) {
 		break;
 	case INITP:// What?
 	case BURN:
+		printf("Init\n");
 		if (strcmp(device->name, comm->buffer + 4) == 0) {
 			device->deviceId = (((unsigned int) comm->buffer[2]) << 8)
 						| comm->buffer[1];
+			printf("Match %d\n", device->deviceId);
 			sendInitPackets(device);
 		}
 		break;
@@ -390,6 +393,7 @@ void sendInitPacket(Device* device) {
 }
 
 void sendInitPackets(Device* device) {
+	printf("Init Packets\n");
 	sendCName(device);
 
 	sendLoc(device);
@@ -404,6 +408,7 @@ void sendInitPackets(Device* device) {
 }
 
 void sendLoc(Device* device) {
+	printf("Loc\n");
 	CommManager* comm = &device->comm;
 
 	// Location
@@ -420,6 +425,7 @@ void sendLoc(Device* device) {
 }
 
 void sendCName(Device* device) {
+	printf("CName\n");
 	CommManager* comm = &device->comm;
 
 	// Common Name
@@ -439,12 +445,14 @@ void recvChar(char c, Device* device) {
 	CommManager* comm = &device->comm;
 	comm->buffer[comm->index++] = c;
 	unsigned int did;
+
 	switch (comm->state) {
 	case INIT:
 		if (c == 3) {
 			comm->index = 0;
 			comm->state = INIT1;
 		}
+		comm->index = 0;
 		break;
 	case INIT1:
 		if (c == 0) {
@@ -465,6 +473,7 @@ void recvChar(char c, Device* device) {
 			comm->initialized = 1;
 			sendInitPacket(device);
 			comm->state = START;
+			comm->index = 0;
 		} else {
 			comm->state = INIT;
 		}
@@ -472,7 +481,6 @@ void recvChar(char c, Device* device) {
 	case START:
 		comm->length = (unsigned) c;
 		comm->state = DEV1;
-		comm->index = 0;
 		break;
 	case DEV1:
 		comm->state = DEV2;
@@ -512,6 +520,7 @@ void recvChar(char c, Device* device) {
 		if (comm->index == comm->length + 1) {
 			parsePacket(device);
 			comm->state = START;
+			comm->index = 0;
 		}
 		break;
 	}

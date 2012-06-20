@@ -29,7 +29,7 @@ extern map<string, Device*> devicesByString;
 class Device {
 public:
 	static int allocateDeviceId() {
-		static unsigned int maxDeviceId = 0;
+		static unsigned int maxDeviceId = 1;
 		return maxDeviceId++;
 	}
 
