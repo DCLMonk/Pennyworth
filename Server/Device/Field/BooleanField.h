@@ -21,6 +21,9 @@ public:
 	unsigned char* getString();
 
 	unsigned int getLength();
+
+	void setBool(bool value);
+	bool getBool();
 private:
 	bool value;
 	unsigned char array[2];

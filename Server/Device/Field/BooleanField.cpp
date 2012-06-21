@@ -32,4 +32,11 @@ unsigned int BooleanField::getLength() {
 	return 2;
 }
 
+void BooleanField::setBool(bool value) {
+	this->value = value;
+}
+bool BooleanField::getBool() {
+	return value;
+}
+
 } /* namespace dvs */

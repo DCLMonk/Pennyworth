@@ -41,6 +41,8 @@ int main(int argc, char * argv[]) {
 	    	for (int id = 1; id < maxDeviceId; id++) {
 	    		Device* device = Device::getDevice(id);
 	    		for (int i = 0; i < device->getNFields(); i++) {
+	    			BooleanField* field = (BooleanField*)(device->getField(i));
+	    			field->setBool(!field->getBool());
 	    			SetFieldPacket packet(device, i);
 	    			packet.send();
 	    		}
