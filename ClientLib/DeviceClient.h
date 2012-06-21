@@ -76,6 +76,8 @@ typedef struct {
 
 Device* createDevice(char* uname, int maxFields, SendRoutine send);
 
+void sendInitPacket(Device* device);
+
 void setDeviceCName(char* name, Device* device);
 
 void setDeviceLocation(unsigned char room, unsigned int x, unsigned int y,
@@ -95,6 +97,8 @@ void setBoolVal(unsigned int id, unsigned char value, Device* device);
 void setIntVal(unsigned int id, unsigned int value, Device* device);
 void setFixedVal(unsigned int id, unsigned int value, unsigned int one, Device* device);
 void setStringVal(unsigned int id, char* value, Device* device);
+
+void setOneVal(unsigned int id, unsigned int one, Device* device);
 
 void setChangeListener(unsigned int id, FieldList listener, Device* device);
 
