@@ -293,6 +293,7 @@ void sendValue(unsigned char id, Device* device) {
 void readValue(unsigned char id, Device* device) {
 	CommManager* comm = &device->comm;
 	FieldDef* field = NULL;
+	unsigned char* buffer = comm->buffer + 5;
 	unsigned int i;
 	for (i = 0; i < device->nfields; i++) {
 		if (device->fields[i].id == id) {
@@ -304,14 +305,15 @@ void readValue(unsigned char id, Device* device) {
 	switch (field->type) {
 	case BOOL:
 		buf = ((unsigned char*)field->field);
-		buf[0] = comm->buffer[0];
+		buf[0] = buffer[0];
+		printf("Set Bool to: %d\n", buf[0]);
 		break;
 	case INT:
 	case FLOAT:
 	case FIXED:
 		buf = ((unsigned char*)field->field);
-		buf[0] = comm->buffer[1];
-		buf[1] = comm->buffer[0];
+		buf[0] = buffer[1];
+		buf[1] = buffer[0];
 		break;
 	case STRING:
 		field->field = comm->buffer + 5;
@@ -339,6 +341,7 @@ void parsePacket(Device* device) {
 	case FIELDVAL:// What?
 		break;
 	case SETFIELD:
+		readValue(comm->buffer[4], device);
 		break;
 	case SUBSCRIBE:
 		break;
