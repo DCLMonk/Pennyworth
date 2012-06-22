@@ -25,7 +25,6 @@ public:
 		currentCommunicator = comm;
 	}
 
-
 	Packet(unsigned char *data);
 	Packet(unsigned int length, unsigned int device, unsigned char pid);
 
@@ -51,7 +50,7 @@ private:
 };
 
 enum PacketType {
-	Start=0,
+	Start = 0,
 	Init,
 	Init_Common_Name,
 	Init_Location,

@@ -12,7 +12,7 @@
 
 namespace dvs {
 
-class GetFieldPacket : public dvs::Packet {
+class GetFieldPacket: public dvs::Packet {
 public:
 	GetFieldPacket(Device *device, unsigned char id);
 };

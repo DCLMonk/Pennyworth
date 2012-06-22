@@ -1,1 +1,1 @@
-SocketTest.o: SocketTest.c lib/DeviceClient.h
+SocketTest.o: SocketTest.cpp lib/DeviceClient.h lib/DeviceStructs.h

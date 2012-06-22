@@ -9,7 +9,8 @@
 
 namespace dvs {
 
-FixedField::FixedField(string name, unsigned char id, bool writable, bool vol) : Field(name, id, writable, vol) {
+FixedField::FixedField(string name, unsigned char id, bool writable, bool vol) :
+		Field(name, id, writable, vol) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -25,8 +26,8 @@ void FixedField::setString(unsigned char* value) {
 }
 
 unsigned char* FixedField::getString() {
-	array[0] = (char)(value & 0xff);
-	array[1] = (char)((value >> 8) & 0xff);
+	array[0] = (char) (value & 0xff);
+	array[1] = (char) ((value >> 8) & 0xff);
 	array[2] = '\0';
 	return array;
 }

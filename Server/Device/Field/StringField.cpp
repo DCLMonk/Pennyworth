@@ -9,7 +9,8 @@
 
 namespace dvs {
 
-StringField::StringField(string name, unsigned char id, bool writable, bool vol) : Field(name, id, writable, vol) {
+StringField::StringField(string name, unsigned char id, bool writable, bool vol) :
+		Field(name, id, writable, vol) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -19,12 +20,12 @@ StringField::~StringField() {
 }
 
 void StringField::setString(unsigned char* value) {
-	string n((const char *)value);
+	string n((const char *) value);
 	this->value = n;
 }
 
 unsigned char* StringField::getString() {
-	return (unsigned char *)value.c_str();
+	return (unsigned char *) value.c_str();
 }
 
 unsigned int StringField::getLength() {

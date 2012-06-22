@@ -9,7 +9,9 @@
 
 namespace dvs {
 
-IntegerField::IntegerField(string name, unsigned char id, bool writable, bool vol) : Field(name, id, writable, vol) {
+IntegerField::IntegerField(string name, unsigned char id, bool writable,
+		bool vol) :
+		Field(name, id, writable, vol) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -19,7 +21,7 @@ IntegerField::~IntegerField() {
 }
 
 void IntegerField::setString(unsigned char* value) {
-	unsigned char *l = (unsigned char *)&value;
+	unsigned char *l = (unsigned char *) &value;
 	l[0] = value[3];
 	l[1] = value[2];
 	l[2] = value[1];
@@ -27,7 +29,7 @@ void IntegerField::setString(unsigned char* value) {
 }
 
 unsigned char* IntegerField::getString() {
-	unsigned char *value = (unsigned char *)&this->value;
+	unsigned char *value = (unsigned char *) &this->value;
 	l[0] = value[3];
 	l[1] = value[2];
 	l[2] = value[1];

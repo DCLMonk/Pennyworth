@@ -1,8 +1,7 @@
-Main.o: Main.cpp Comm/SocketCreator.h Comm/SocketComm.h \
- Comm/Communicator.h Comm/../Packets/Packet.h \
+Server.o: Server.cpp Server.h Room.h Runnable.h Comm/SocketCreator.h \
+ Comm/SocketComm.h Comm/Communicator.h Comm/../Packets/Packet.h \
  Comm/../Packets/../Device/Device.h Comm/../Packets/../Device/../Room.h \
  Comm/../Packets/../Device/../Server.h \
- Comm/../Packets/../Device/../Room.h \
  Comm/../Packets/../Device/Field/Field.h \
  Comm/../Packets/../Device/Field/BooleanField.h \
  Comm/../Packets/../Device/Field/Field.h \
@@ -17,4 +16,34 @@ Main.o: Main.cpp Comm/SocketCreator.h Comm/SocketComm.h \
  Comm/../Packets/SetFieldPacket.h Comm/../Packets/SubscribePacket.h \
  Comm/../Packets/SetOnePacket.h Comm/SerialComm.h Comm/SocketComm.h
 Room.o: Room.cpp Room.h
-Server.o: Server.cpp Server.h Room.h
+Main.o: Main.cpp CommandInterface.h Runnable.h Server.h Room.h \
+ Comm/SocketCreator.h Comm/SocketComm.h Comm/Communicator.h \
+ Comm/../Packets/Packet.h Comm/../Packets/../Device/Device.h \
+ Comm/../Packets/../Device/../Room.h \
+ Comm/../Packets/../Device/../Server.h \
+ Comm/../Packets/../Device/Field/Field.h \
+ Comm/../Packets/../Device/Field/BooleanField.h \
+ Comm/../Packets/../Device/Field/Field.h \
+ Comm/../Packets/../Device/Field/IntegerField.h \
+ Comm/../Packets/../Device/Field/FloatField.h \
+ Comm/../Packets/../Device/Field/FixedField.h \
+ Comm/../Packets/../Device/Field/StringField.h \
+ Comm/../Packets/StartPacket.h Comm/../Packets/Packet.h \
+ Comm/../Packets/InitPacket.h Comm/../Packets/InitCNamePacket.h \
+ Comm/../Packets/InitLocationPacket.h Comm/../Packets/InitFieldPacket.h \
+ Comm/../Packets/GetFieldPacket.h Comm/../Packets/FieldValuePacket.h \
+ Comm/../Packets/SetFieldPacket.h Comm/../Packets/SubscribePacket.h \
+ Comm/../Packets/SetOnePacket.h Comm/SerialComm.h Comm/SocketComm.h
+CommandInterface.o: CommandInterface.cpp CommandInterface.h Runnable.h \
+ Server.h Room.h Device/Device.h Device/../Room.h Device/../Server.h \
+ Device/Field/Field.h Device/Field/BooleanField.h Device/Field/Field.h \
+ Device/Field/IntegerField.h Device/Field/FloatField.h \
+ Device/Field/FixedField.h Device/Field/StringField.h Util.h \
+ Comm/Communicator.h Comm/../Packets/Packet.h \
+ Comm/../Packets/../Device/Device.h Comm/../Packets/StartPacket.h \
+ Comm/../Packets/Packet.h Comm/../Packets/InitPacket.h \
+ Comm/../Packets/InitCNamePacket.h Comm/../Packets/InitLocationPacket.h \
+ Comm/../Packets/InitFieldPacket.h Comm/../Packets/GetFieldPacket.h \
+ Comm/../Packets/FieldValuePacket.h Comm/../Packets/SetFieldPacket.h \
+ Comm/../Packets/SubscribePacket.h Comm/../Packets/SetOnePacket.h \
+ Packets/StartPacket.h

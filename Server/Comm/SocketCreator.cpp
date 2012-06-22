@@ -48,4 +48,8 @@ SocketComm* SocketCreator::checkConnections() {
 	return NULL;
 }
 
+int SocketCreator::getFd() {
+	return sockfd;
+}
+
 }

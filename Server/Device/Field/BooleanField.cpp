@@ -9,7 +9,9 @@
 
 namespace dvs {
 
-BooleanField::BooleanField(string name, unsigned char id, bool writable, bool vol) : Field(name, id, writable, vol) {
+BooleanField::BooleanField(string name, unsigned char id, bool writable,
+		bool vol) :
+		Field(name, id, writable, vol) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -23,7 +25,7 @@ void BooleanField::setString(unsigned char* value) {
 }
 
 unsigned char* BooleanField::getString() {
-	array[0] = value?(char)1:(char)0;
+	array[0] = value ? (char) 1 : (char) 0;
 	array[1] = '\0';
 	return array;
 }

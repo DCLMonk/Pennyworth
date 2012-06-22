@@ -9,7 +9,8 @@
 
 namespace dvs {
 
-FloatField::FloatField(string name, unsigned char id, bool writable, bool vol) : Field(name, id, writable, vol) {
+FloatField::FloatField(string name, unsigned char id, bool writable, bool vol) :
+		Field(name, id, writable, vol) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -19,7 +20,7 @@ FloatField::~FloatField() {
 }
 
 void FloatField::setString(unsigned char* value) {
-	unsigned char *l = (unsigned char *)&value;
+	unsigned char *l = (unsigned char *) &value;
 	l[0] = value[3];
 	l[1] = value[2];
 	l[2] = value[1];
@@ -27,12 +28,13 @@ void FloatField::setString(unsigned char* value) {
 }
 
 unsigned char* FloatField::getString() {
-	unsigned char *value = (unsigned char *)&this->value;
+	unsigned char *value = (unsigned char *) &this->value;
 	l[0] = value[3];
 	l[1] = value[2];
 	l[2] = value[1];
 	l[3] = value[0];
-	l[4] = '\0';;
+	l[4] = '\0';
+	;
 	return l;
 }
 

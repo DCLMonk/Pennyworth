@@ -1,22 +1,22 @@
-GetFieldPacket.o: GetFieldPacket.cpp GetFieldPacket.h Packet.h \
- ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/Field/Field.h \
- ../Device/Field/BooleanField.h ../Device/Field/Field.h \
- ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
- ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
- InitPacket.h InitCNamePacket.h InitLocationPacket.h InitFieldPacket.h \
- FieldValuePacket.h SetFieldPacket.h SubscribePacket.h SetOnePacket.h
 SetFieldPacket.o: SetFieldPacket.cpp SetFieldPacket.h Packet.h \
  ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/Field/Field.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
  ../Device/Field/BooleanField.h ../Device/Field/Field.h \
  ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
  ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
  InitPacket.h InitCNamePacket.h InitLocationPacket.h InitFieldPacket.h \
  GetFieldPacket.h FieldValuePacket.h SubscribePacket.h SetOnePacket.h
+GetFieldPacket.o: GetFieldPacket.cpp GetFieldPacket.h Packet.h \
+ ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
+ ../Device/Field/BooleanField.h ../Device/Field/Field.h \
+ ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
+ ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
+ InitPacket.h InitCNamePacket.h InitLocationPacket.h InitFieldPacket.h \
+ FieldValuePacket.h SetFieldPacket.h SubscribePacket.h SetOnePacket.h
 SetOnePacket.o: SetOnePacket.cpp SetOnePacket.h Packet.h \
  ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/Field/Field.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
  ../Device/Field/BooleanField.h ../Device/Field/Field.h \
  ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
  ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
@@ -24,7 +24,7 @@ SetOnePacket.o: SetOnePacket.cpp SetOnePacket.h Packet.h \
  GetFieldPacket.h FieldValuePacket.h SetFieldPacket.h SubscribePacket.h
 InitFieldPacket.o: InitFieldPacket.cpp InitFieldPacket.h Packet.h \
  ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/Field/Field.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
  ../Device/Field/BooleanField.h ../Device/Field/Field.h \
  ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
  ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
@@ -32,7 +32,7 @@ InitFieldPacket.o: InitFieldPacket.cpp InitFieldPacket.h Packet.h \
  FieldValuePacket.h SetFieldPacket.h SubscribePacket.h SetOnePacket.h
 InitCNamePacket.o: InitCNamePacket.cpp InitCNamePacket.h Packet.h \
  ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/Field/Field.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
  ../Device/Field/BooleanField.h ../Device/Field/Field.h \
  ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
  ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
@@ -40,7 +40,7 @@ InitCNamePacket.o: InitCNamePacket.cpp InitCNamePacket.h Packet.h \
  FieldValuePacket.h SetFieldPacket.h SubscribePacket.h SetOnePacket.h
 InitLocationPacket.o: InitLocationPacket.cpp InitLocationPacket.h \
  Packet.h ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/Field/Field.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
  ../Device/Field/BooleanField.h ../Device/Field/Field.h \
  ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
  ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
@@ -48,7 +48,7 @@ InitLocationPacket.o: InitLocationPacket.cpp InitLocationPacket.h \
  FieldValuePacket.h SetFieldPacket.h SubscribePacket.h SetOnePacket.h
 SubscribePacket.o: SubscribePacket.cpp SubscribePacket.h Packet.h \
  ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/Field/Field.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
  ../Device/Field/BooleanField.h ../Device/Field/Field.h \
  ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
  ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
@@ -56,15 +56,16 @@ SubscribePacket.o: SubscribePacket.cpp SubscribePacket.h Packet.h \
  GetFieldPacket.h FieldValuePacket.h SetFieldPacket.h SetOnePacket.h
 StartPacket.o: StartPacket.cpp StartPacket.h Packet.h ../Device/Device.h \
  ../Device/../Room.h ../Device/../Server.h ../Device/../Room.h \
- ../Device/Field/Field.h ../Device/Field/BooleanField.h \
- ../Device/Field/Field.h ../Device/Field/IntegerField.h \
- ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
- ../Device/Field/StringField.h InitPacket.h InitCNamePacket.h \
- InitLocationPacket.h InitFieldPacket.h GetFieldPacket.h \
- FieldValuePacket.h SetFieldPacket.h SubscribePacket.h SetOnePacket.h
+ ../Device/../Runnable.h ../Device/Field/Field.h \
+ ../Device/Field/BooleanField.h ../Device/Field/Field.h \
+ ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
+ ../Device/Field/FixedField.h ../Device/Field/StringField.h InitPacket.h \
+ InitCNamePacket.h InitLocationPacket.h InitFieldPacket.h \
+ GetFieldPacket.h FieldValuePacket.h SetFieldPacket.h SubscribePacket.h \
+ SetOnePacket.h
 FieldValuePacket.o: FieldValuePacket.cpp FieldValuePacket.h Packet.h \
  ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/Field/Field.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
  ../Device/Field/BooleanField.h ../Device/Field/Field.h \
  ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
  ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
@@ -72,17 +73,19 @@ FieldValuePacket.o: FieldValuePacket.cpp FieldValuePacket.h Packet.h \
  GetFieldPacket.h SetFieldPacket.h SubscribePacket.h SetOnePacket.h
 InitPacket.o: InitPacket.cpp InitPacket.h Packet.h ../Device/Device.h \
  ../Device/../Room.h ../Device/../Server.h ../Device/../Room.h \
- ../Device/Field/Field.h ../Device/Field/BooleanField.h \
- ../Device/Field/Field.h ../Device/Field/IntegerField.h \
- ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
- ../Device/Field/StringField.h StartPacket.h InitCNamePacket.h \
- InitLocationPacket.h InitFieldPacket.h GetFieldPacket.h \
- FieldValuePacket.h SetFieldPacket.h SubscribePacket.h SetOnePacket.h
-Packet.o: Packet.cpp Packet.h ../Device/Device.h ../Device/../Room.h \
- ../Device/../Server.h ../Device/../Room.h ../Device/Field/Field.h \
+ ../Device/../Runnable.h ../Device/Field/Field.h \
  ../Device/Field/BooleanField.h ../Device/Field/Field.h \
  ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
  ../Device/Field/FixedField.h ../Device/Field/StringField.h StartPacket.h \
- InitPacket.h InitCNamePacket.h InitLocationPacket.h InitFieldPacket.h \
+ InitCNamePacket.h InitLocationPacket.h InitFieldPacket.h \
+ GetFieldPacket.h FieldValuePacket.h SetFieldPacket.h SubscribePacket.h \
+ SetOnePacket.h
+Packet.o: Packet.cpp Packet.h ../Device/Device.h ../Device/../Room.h \
+ ../Device/../Server.h ../Device/../Room.h ../Device/../Runnable.h \
+ ../Device/Field/Field.h ../Device/Field/BooleanField.h \
+ ../Device/Field/Field.h ../Device/Field/IntegerField.h \
+ ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
+ ../Device/Field/StringField.h StartPacket.h InitPacket.h \
+ InitCNamePacket.h InitLocationPacket.h InitFieldPacket.h \
  GetFieldPacket.h FieldValuePacket.h SetFieldPacket.h SubscribePacket.h \
  SetOnePacket.h

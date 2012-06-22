@@ -11,7 +11,7 @@
 
 namespace dvs {
 
-class BooleanField : public dvs::Field {
+class BooleanField: public dvs::Field {
 public:
 	BooleanField(string name, unsigned char id, bool writable, bool vol);
 	virtual ~BooleanField();

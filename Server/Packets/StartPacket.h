@@ -14,7 +14,8 @@ namespace dvs {
 
 class StartPacket: public dvs::Packet {
 public:
-	StartPacket() : Packet(4, 0, (unsigned char)Start) {
+	StartPacket() :
+			Packet(4, 0, (unsigned char) Start) {
 
 	}
 };

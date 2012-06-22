@@ -36,5 +36,23 @@ protected:
 	unsigned char buffer[256];
 };
 
+class CommHandler: public Runnable {
+public:
+	CommHandler(Communicator* comm) {
+		this->comm = comm;
+	}
+
+	~CommHandler() {
+		delete comm;
+	}
+
+	void run() {
+		Packet::setCurrentComm(comm);
+		(comm)->getPacket();
+	}
+private:
+	Communicator* comm;
+};
+
 } /* namespace dvs */
 #endif /* COMMUNICATOR_H_ */

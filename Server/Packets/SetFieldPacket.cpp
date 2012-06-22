@@ -11,9 +11,11 @@
 namespace dvs {
 
 SetFieldPacket::SetFieldPacket(Device *device, unsigned char id) :
-	Packet(device->getField(id)->getLength() + 5, device->getId(), Set_Field) {
+		Packet(device->getField(id)->getLength() + 5, device->getId(),
+				Set_Field) {
 	data[4] = id;
-	memcpy(data + 5, device->getField(id)->getString(), device->getField(id)->getLength());
+	memcpy(data + 5, device->getField(id)->getString(),
+			device->getField(id)->getLength());
 }
 
 } /* namespace dvs */

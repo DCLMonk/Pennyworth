@@ -1,9 +1,9 @@
 OBJDIR=$(PREFIX)/objs
 CFLAGS=-g -Wall
 LIBS=
-CC=gcc
+CC=g++
 
-OBJS=$(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
+OBJS=$(patsubst %.cpp,$(OBJDIR)/%.o,$(patsubst %.c,$(OBJDIR)/%.o,$(SRCS)))
 
 depend: .depend
 

@@ -1,6 +1,6 @@
 OBJDIR=$(PREFIX)/objs
 CFLAGS=-g -Wall
-LIBS=
+LIBS=-lreadline
 CC=g++
 
 OBJS=$(patsubst %.cpp,$(OBJDIR)/%.o,$(SRCS))

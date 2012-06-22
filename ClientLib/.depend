@@ -1,1 +1,3 @@
-DeviceClient.o: DeviceClient.c DeviceClient.h
+DeviceComm.o: DeviceComm.c DeviceClient.h DeviceStructs.h DeviceComm.h
+DeviceClient.o: DeviceClient.c DeviceClient.h DeviceStructs.h \
+ DeviceComm.h

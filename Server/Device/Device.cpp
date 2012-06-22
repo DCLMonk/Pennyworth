@@ -9,6 +9,8 @@
 #include "../Comm/Communicator.h"
 #include "../Packets/Packet.h"
 
+using namespace std;
+
 namespace dvs {
 
 map<int, Device*> devicesById;
@@ -23,7 +25,6 @@ Device::Device(Communicator* comm, string name) {
 	this->comm = comm;
 	this->cname = "Unset";
 	roomId = -1;
-	printf("Device: %d\n", deviceId);
 }
 
 Device::~Device() {
@@ -68,7 +69,6 @@ void Device::setRoom(unsigned int roomId) {
 	}
 }
 
-
 void Device::setLoc(float x, float y) {
 	this->x = x;
 	this->y = y;
@@ -97,9 +97,12 @@ void Device::setComm(Communicator* comm) {
 	this->comm = comm;
 }
 
-
 int Device::getNFields() {
 	return fields->size();
+}
+
+Communicator* Device::getComm() {
+	return comm;
 }
 
 } /* namespace DVS */

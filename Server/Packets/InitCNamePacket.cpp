@@ -11,8 +11,9 @@ using namespace std;
 
 namespace dvs {
 
-InitCNamePacket::InitCNamePacket(unsigned char* data) : Packet(data) {
-	string name((const char *)data + 4);
+InitCNamePacket::InitCNamePacket(unsigned char* data) :
+		Packet(data) {
+	string name((const char *) data + 4);
 
 	getDevice()->setCName(name);
 }

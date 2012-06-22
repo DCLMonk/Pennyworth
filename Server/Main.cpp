@@ -1,54 +1,91 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
+
+#include <getopt.h>
 #include <string.h>
+
+#include <set>
+
+#include "CommandInterface.h"
+#include "Server.h"
 #include "Comm/SocketCreator.h"
 #include "Comm/SerialComm.h"
 #include "Comm/SocketComm.h"
-#include <set>
-#include <sys/time.h>
+#include "Runnable.h"
 
 using namespace std;
 using namespace dvs;
+Server server;
+
+class CreateHandler: public Runnable {
+public:
+
+	CreateHandler(SocketCreator* creator) {
+		this->creator = creator;
+	}
+
+	void run() {
+		creator->checkConnections();
+//		if (comm != NULL) {
+//			comms.insert(comm);
+//		}
+	}
+private:
+	SocketCreator* creator;
+};
+
+#define DEFAULT_PORT 5010
+
+char* optString = "p:d:h";
+
+static const struct option longOpts[] = {
+	{ "device", required_argument, NULL, 'd' },
+	{ "port", required_argument, NULL, 'p' },
+
+};
 
 int main(int argc, char * argv[]) {
-	printf("Test\n");
-	printf("More Test\n");
-	SocketCreator s(5010);
-	set<Communicator*> comms;
-    struct timeval t;
-    double time1, time2;
+	SocketCreator* s = NULL;
 
-    gettimeofday(&t, NULL);
-    time1 = t.tv_sec + (t.tv_usec / 1000000.0);
+	signal(SIGPIPE, SIG_IGN);
 
 	if (argc > 1) {
-		comms.insert(new SerialComm(argv[1]));
 	}
-
-	while (true) {
-		SocketComm* comm = s.checkConnections();
-		if (comm != NULL) {
-			comms.insert(comm);
+	int longIndex;
+	int opt = getopt_long(argc, argv, optString, longOpts, &longIndex);
+	while (opt != -1) {
+		switch (opt) {
+		case 'd':
+			new SerialComm(optarg);
+			break;
+		case 'p':
+			printf("Port: %d\n", atoi(optarg));
+			s = new SocketCreator(atoi(optarg));
+			break;
+		default:
+			/* You won't actually get here. */
+			break;
 		}
-		for (set<Communicator*>::iterator start = comms.begin(); start != comms.end(); start++) {
-			Packet::setCurrentComm(*start);
-			(*start)->getPacket();
-		}
 
-	    gettimeofday(&t, NULL);
-	    time2 = t.tv_sec + (t.tv_usec / 1000000.0);
-	    if (time2 - time1 > 1) {
-	    	printf("Sending...\n");
-	    	for (int id = 1; id < maxDeviceId; id++) {
-	    		Device* device = Device::getDevice(id);
-	    		for (int i = 0; i < device->getNFields(); i++) {
-	    			BooleanField* field = (BooleanField*)(device->getField(i));
-	    			field->setBool(!field->getBool());
-	    			SetFieldPacket packet(device, i);
-	    			packet.send();
-	    		}
-	    	}
-	    	time1 = time2;
-	    }
+		opt = getopt_long(argc, argv, optString, longOpts, &longIndex);
 	}
+	if (s == NULL) {
+		printf("Port: %d\n", DEFAULT_PORT);
+		s = new SocketCreator(DEFAULT_PORT);
+	}
+	CommandInterface command("NONE->");
+
+	server.addListener(s->getFd(), new CreateHandler(s));
+
+	server.run();
+
+	delete s;
+//	while (true) {
+//		for (set<Communicator*>::iterator start = comms.begin(); start != comms.end(); start++) {
+//			Packet::setCurrentComm(*start);
+//			(*start)->getPacket();
+//		}
+//	}
 	return 0;
 }

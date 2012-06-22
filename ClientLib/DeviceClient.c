@@ -6,6 +6,7 @@
  */
 
 #include "DeviceClient.h"
+#include "DeviceComm.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -23,7 +24,7 @@ Device* createDevice(char* uname, int maxFields, SendRoutine send) {
 	CommManager* comm = &device->comm;
 	int i;
 
-	device->fields = malloc(maxFields * sizeof(FieldDef));
+	device->fields = (FieldDef*)malloc(maxFields * sizeof(FieldDef));
 	device->nfields = maxFields;
 	for (i = 0; i < maxFields; i++) {
 		device->fields[i].field = NULL;
@@ -63,7 +64,11 @@ void setDeviceLocation(unsigned char room, unsigned int x, unsigned int y,
 
 int addField(FieldType type, char* name, unsigned int id,
 		unsigned char writable, unsigned char vol, Device* device) {
-	int i;
+	unsigned int i;
+	BoolField* b;
+	IntField* ifd;
+	FixedField* f;
+	StringField* s;
 	for (i = 0; i < device->nfields; i++) {
 		if (device->fields[i].field == NULL) {
 			device->fields[i].type = type;
@@ -76,16 +81,25 @@ int addField(FieldType type, char* name, unsigned int id,
 			switch (type) {
 			case BOOL:
 				device->fields[i].field = malloc(sizeof(BoolField));
+				b = (BoolField*)device->fields[i].field;
+				b->value = 0;
 				break;
 			case INT:
 				device->fields[i].field = malloc(sizeof(IntField));
+				ifd = (IntField*)device->fields[i].field;
+				ifd->value = 0;
 				break;
 			case FLOAT:
 			case FIXED:
 				device->fields[i].field = malloc(sizeof(FixedField));
+				f = (FixedField*)device->fields[i].field;
+				f->value = 0;
+				f->one = 1;
 				break;
 			case STRING:
 				device->fields[i].field = malloc(sizeof(StringField));
+				s = (StringField*)device->fields[i].field;
+				s->value = NULL;
 				break;
 			}
 			if (device->comm.initialized) {
@@ -98,7 +112,7 @@ int addField(FieldType type, char* name, unsigned int id,
 }
 
 unsigned char hasChanged(unsigned int id, Device* device) {
-	int i;
+	unsigned int i;
 	for (i = 0; i < device->nfields; i++) {
 		if (device->fields[i].id == id) {
 			if (device->fields[i].changed) {
@@ -113,21 +127,21 @@ unsigned char hasChanged(unsigned int id, Device* device) {
 }
 
 unsigned char getBoolVal(unsigned int id, Device* device) {
-	int i;
+	unsigned int i;
 	for (i = 0; i < device->nfields; i++) {
 		if (device->fields[i].id == id) {
-			BoolField* bool = device->fields[i].field;
-			return bool->value;
+			BoolField* b = (BoolField*)device->fields[i].field;
+			return b->value;
 		}
 	}
 	return 0;
 }
 
 unsigned int getIntVal(unsigned int id, Device* device) {
-	int i;
+	unsigned int i;
 	for (i = 0; i < device->nfields; i++) {
 		if (device->fields[i].id == id) {
-			IntField* ival = device->fields[i].field;
+			IntField* ival = (IntField*)device->fields[i].field;
 			return ival->value;
 		}
 	}
@@ -135,10 +149,10 @@ unsigned int getIntVal(unsigned int id, Device* device) {
 }
 
 unsigned int getFixedVal(unsigned int id, Device* device) {
-	int i;
+	unsigned int i;
 	for (i = 0; i < device->nfields; i++) {
 		if (device->fields[i].id == id) {
-			FixedField* fval = device->fields[i].field;
+			FixedField* fval = (FixedField*)device->fields[i].field;
 			return fval->value;
 		}
 	}
@@ -146,10 +160,10 @@ unsigned int getFixedVal(unsigned int id, Device* device) {
 }
 
 char* getStringVal(unsigned int id, Device* device) {
-	int i;
+	unsigned int i;
 	for (i = 0; i < device->nfields; i++) {
 		if (device->fields[i].id == id) {
-			StringField* sval = device->fields[i].field;
+			StringField* sval = (StringField*)device->fields[i].field;
 			return sval->value;
 		}
 	}
@@ -157,51 +171,79 @@ char* getStringVal(unsigned int id, Device* device) {
 }
 
 void setBoolVal(unsigned int id, unsigned char value, Device* device) {
-	int i;
-	for (i = 0; i < device->nfields; i++) {
-		if (device->fields[i].id == id) {
-			BoolField* field = device->fields[i].field;
-			field->value = value;
+	FieldDef* fieldDef = getField(id, device);
+	BoolField* field;
+	if (fieldDef != NULL) {
+		field = (BoolField*)fieldDef->field;
+		field->value = value;
+		if (fieldDef->subscribed && device->comm.initialized) {
+			sendField(device, fieldDef);
 		}
 	}
 }
 
 void setIntVal(unsigned int id, unsigned int value, Device* device) {
-	int i;
-	for (i = 0; i < device->nfields; i++) {
-		if (device->fields[i].id == id) {
-			IntField* field = device->fields[i].field;
-			field->value = value;
+	FieldDef* fieldDef = getField(id, device);
+	IntField* field;
+	if (fieldDef != NULL) {
+		field = (IntField*)fieldDef->field;
+		field->value = value;
+		if (fieldDef->subscribed && device->comm.initialized) {
+			sendField(device, fieldDef);
 		}
 	}
 }
 
-void setFixedVal(unsigned int id, unsigned int value, unsigned int one,
+void setFixedVal(unsigned int id, unsigned int value,
 		Device* device) {
-	int i;
-	for (i = 0; i < device->nfields; i++) {
-		if (device->fields[i].id == id) {
-			FixedField* field = device->fields[i].field;
-			field->value = value;
+	FieldDef* fieldDef = getField(id, device);
+	FixedField* field;
+	if (fieldDef != NULL) {
+		field = (FixedField*)fieldDef->field;
+		field->value = value;
+		if (fieldDef->subscribed && device->comm.initialized) {
+			sendField(device, fieldDef);
 		}
 	}
 }
 
 void setStringVal(unsigned int id, char* value, Device* device) {
-	int i;
-	for (i = 0; i < device->nfields; i++) {
-		if (device->fields[i].id == id) {
-			StringField* field = device->fields[i].field;
-			field->value = value;
+	FieldDef* fieldDef = getField(id, device);
+	StringField* field;
+	unsigned int i;
+	if (fieldDef != NULL) {
+		field = (StringField*)fieldDef->field;
+		if (field->value != NULL) {
+			free(field->value);
+		}
+		if (value != NULL) {
+			field->value = (char*)malloc(sizeof(char) * (strlen(value) + 1));
+			for (i = 0; i < (strlen(value) + 1); i++) {
+				field->value[i] = value[i];
+			}
+		} else {
+			field->value = NULL;
+		}
+		if (fieldDef->subscribed && device->comm.initialized) {
+			sendField(device, fieldDef);
 		}
 	}
 }
 
 void setChangeListener(unsigned int id, FieldList listener, Device* device) {
-	int i;
+	unsigned int i;
 	for (i = 0; i < device->nfields; i++) {
 		if (device->fields[i].id == id) {
 			device->fields[i].listener = listener;
 		}
+	}
+}
+
+void setOneVal(unsigned int id, unsigned int one, Device* device) {
+	FixedField* fixed = (FixedField*)getField(id, device)->field;
+	fixed->one = one;
+
+	if (device->comm.initialized) {
+		sendOnePacket(id, device);
 	}
 }

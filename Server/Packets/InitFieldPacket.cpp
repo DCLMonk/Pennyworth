@@ -9,12 +9,13 @@
 
 namespace dvs {
 
-InitFieldPacket::InitFieldPacket(unsigned char* data) : Packet(data) {
+InitFieldPacket::InitFieldPacket(unsigned char* data) :
+		Packet(data) {
 	unsigned char type = data[4];
 	bool writable = data[5];
 	bool vol = data[6];
 	unsigned char id = data[7];
-	string name((const char *)(data + 8));
+	string name((const char *) (data + 8));
 	Device* device = getDevice();
 
 	switch (type) {

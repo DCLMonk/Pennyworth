@@ -26,7 +26,7 @@ Packet* Communicator::getPacket() {
 }
 
 void Communicator::makePacket() {
-	PacketType type = (PacketType)buffer[3];
+	PacketType type = (PacketType) buffer[3];
 
 	switch (type) {
 	case Start:

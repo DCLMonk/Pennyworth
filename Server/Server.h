@@ -12,8 +12,12 @@
 #include <vector>
 using namespace std;
 #include <stdio.h>
+#include <sys/select.h>
+
+#include "Runnable.h"
 
 namespace dvs {
+
 extern vector<Room*> rooms;
 
 class Server {
@@ -27,7 +31,20 @@ public:
 
 	Server();
 	virtual ~Server();
+
+	void addListener(int fd, Runnable* readListener);
+	void remListener(int fd);
+
+	void run();
+
+private:
+	vector<int> fds;
+	vector<Runnable*> readListeners;
+	fd_set fdSet;
 };
 
 } /* namespace dvs */
+
+extern dvs::Server server;
+
 #endif /* SERVER_H_ */

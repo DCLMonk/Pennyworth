@@ -10,7 +10,8 @@
 
 namespace dvs {
 
-FieldValuePacket::FieldValuePacket(unsigned char *data) : Packet(data) {
+FieldValuePacket::FieldValuePacket(unsigned char *data) :
+		Packet(data) {
 	unsigned char id = data[4];
 	Device* device = getDevice();
 	Field* field = device->getField(id);

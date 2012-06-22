@@ -1,5 +1,5 @@
 TARGET=socket-client
-SRCS=SocketTest.c
+SRCS=SocketTest.cpp
 
 BUILDDIR=objs
 PREFIX=.

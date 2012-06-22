@@ -10,12 +10,12 @@
 
 #include <stdio.h>
 #include <map>
-using namespace std;
 #include <string>
 
 #include "../Room.h"
 #include "../Server.h"
 #include "Field/Field.h"
+using namespace std;
 
 namespace dvs {
 
@@ -35,6 +35,20 @@ public:
 
 	static Device *getDevice(int id) {
 		return devicesById[id];
+	}
+
+	static void remDevice(int id) {
+		devicesByString[devicesById[id]->getName()] = NULL;
+		devicesById[id] = NULL;
+		unsigned int nmax;
+		for (unsigned int i = 0; i < maxDeviceId; i++) {
+			if (devicesById[i] != NULL) {
+				nmax = i + 1;
+			}
+		}
+		if (nmax < maxDeviceId) {
+			maxDeviceId = nmax;
+		}
 	}
 
 	static Device *getDevice(Communicator* comm, string name) {
@@ -82,6 +96,8 @@ public:
 	void setComm(Communicator* comm);
 
 	int getNFields();
+
+	Communicator* getComm();
 
 protected:
 	map<unsigned char, Field*>* fields;

@@ -21,6 +21,8 @@ public:
 
 	SocketComm* checkConnections();
 
+	int getFd();
+
 private:
 	int sockfd;
 	struct sockaddr_in cli_addr;

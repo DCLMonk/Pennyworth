@@ -5,7 +5,6 @@
  *      Author: jmonk
  */
 #include <stdio.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -15,20 +14,61 @@
 #include <fcntl.h>
 #include <netdb.h>
 #include "lib/DeviceClient.h"
+#include <getopt.h>
+#include <string.h>
 #define error perror
+
+using namespace std;
 
 int sockfd;
 
 void sendch(char c);
 void sendField(Device* device, FieldDef* field);
 
+#define DEFAULT_PORT 5010
+
+char* optString = "p:d:u:c:h";
+
+static const struct option longOpts[] = {
+	{ "port", required_argument, NULL, 'p' },
+	{ "uname", required_argument, NULL, 'u' },
+	{ "cname", required_argument, NULL, 'c' },
+};
+
 int main(int argc, char * argv[]) {
 	int portno;
 	struct sockaddr_in serv_addr;
 	struct hostent *server;
 	char buffer;
+	char *uname = "Test Device";
+	char *cname = "Common Name";
 
-	portno = 5010;
+	portno = DEFAULT_PORT;
+	int longIndex;
+	int opt = getopt_long(argc, argv, optString, longOpts, &longIndex);
+	while (opt != -1) {
+		switch (opt) {
+		case 'u':
+			uname = optarg;
+			break;
+		case 'c':
+			cname = optarg;
+			break;
+		case 'p':
+			if (optarg == NULL) {
+				printf("NULL\n");
+			} else {
+				printf("Port: %d\n", atoi(optarg));
+				portno = atoi(optarg);
+			}
+			break;
+		default:
+			/* You won't actually get here. */
+			break;
+		}
+
+		opt = getopt_long(argc, argv, optString, longOpts, &longIndex);
+	}
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	if (sockfd < 0)
 		error("ERROR opening socket");
@@ -45,9 +85,9 @@ int main(int argc, char * argv[]) {
 	if (connect(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0)
 		error("ERROR connecting");
 
-	Device* device = createDevice("Test Device", 5, sendch);
+	Device* device = createDevice(uname, 5, sendch);
 
-	setDeviceCName("Common Name", device);
+	setDeviceCName(cname, device);
 	setDeviceLocation(0, 0, 0, 0, device);
 
 	addField(BOOL, "Test Bool", 0, 0, 0, device);

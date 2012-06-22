@@ -29,7 +29,6 @@ private:
 	unsigned char id;
 };
 
-
 } /* namespace dvs */
 
 #include "BooleanField.h"

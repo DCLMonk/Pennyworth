@@ -12,7 +12,7 @@
 
 namespace dvs {
 
-class SerialComm : public Communicator{
+class SerialComm: public Communicator {
 public:
 	SerialComm(char* device);
 	virtual ~SerialComm();

@@ -9,5 +9,4 @@
 
 namespace dvs {
 
-
 } /* namespace dvs */

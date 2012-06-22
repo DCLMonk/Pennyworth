@@ -11,7 +11,7 @@
 
 namespace dvs {
 
-class IntegerField : public dvs::Field {
+class IntegerField: public dvs::Field {
 public:
 	IntegerField(string name, unsigned char id, bool writable, bool vol);
 	virtual ~IntegerField();

@@ -1,7 +1,5 @@
 TARGET=dev-server
-SRCS=Main.cpp \
-	Room.cpp \
-	Server.cpp \
+SRCS=$(wildcard *.cpp) 
 
 BUILDDIR=objs
 PREFIX=.

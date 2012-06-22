@@ -24,7 +24,7 @@ public:
 
 	void remDevice(Device* device);
 private:
-	set<Device*> devices;
+	std::set<Device*> devices;
 };
 
 } /* namespace dvs */

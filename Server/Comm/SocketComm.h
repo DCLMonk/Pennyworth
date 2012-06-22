@@ -11,7 +11,7 @@
 #include "Communicator.h"
 namespace dvs {
 
-class SocketComm : public Communicator {
+class SocketComm: public Communicator {
 public:
 	SocketComm(int fd);
 
