@@ -6,17 +6,16 @@
  */
 
 #include "FixedField.h"
+#include <stdlib.h>
 
 namespace dvs {
 
-FixedField::FixedField(string name, unsigned char id, bool writable, bool vol) :
-		Field(FIXED, name, id, writable, vol) {
-	// TODO Auto-generated constructor stub
-
+FixedField::FixedField(string name, unsigned char id, bool writable, bool vol, Device* device) :
+		Field(FIXED, name, id, writable, vol, device) {
 }
 
 FixedField::~FixedField() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void FixedField::setString(unsigned char* value) {
@@ -34,6 +33,23 @@ unsigned char* FixedField::getString() {
 
 unsigned int FixedField::getLength() {
 	return 3;
+}
+
+void FixedField::setRealString(string val) {
+	this->value = (unsigned int)(this->o * atof(val.c_str()));
+	this->sendPacket();
+}
+
+float FixedField::getFloat() {
+	return ((float)this->value) / this->o;
+}
+
+void FixedField::setOne(unsigned int newOne) {
+	this->o = newOne;
+}
+
+unsigned int FixedField::getOne() {
+	return this->o;
 }
 
 } /* namespace dvs */

@@ -9,8 +9,8 @@
 
 namespace dvs {
 
-StringField::StringField(string name, unsigned char id, bool writable, bool vol) :
-		Field(INTEGER, name, id, writable, vol) {
+StringField::StringField(string name, unsigned char id, bool writable, bool vol, Device* device) :
+		Field(STRING, name, id, writable, vol, device) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -29,7 +29,16 @@ unsigned char* StringField::getString() {
 }
 
 unsigned int StringField::getLength() {
-	return value.length();
+	return value.length() + 1;
+}
+
+void StringField::setRealString(string val) {
+	this->value = val;
+	this->sendPacket();
+}
+
+string StringField::getValue() {
+	return this->value;
 }
 
 } /* namespace dvs */

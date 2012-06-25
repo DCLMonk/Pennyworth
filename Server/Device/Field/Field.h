@@ -12,19 +12,21 @@ using namespace std;
 
 namespace dvs {
 
+class Device;
+
 typedef enum {
 	BOOL=0,
-	INTEGER,
-	FLOAT,
-	FIXED,
-	STRING
+	INTEGER=1,
+	FLOAT=2,
+	FIXED=3,
+	STRING=4
 } FieldType;
 
 extern string typeStrings[];
 
 class Field {
 public:
-	Field(FieldType type, string name, unsigned char id, bool writable, bool vol);
+	Field(FieldType type, string name, unsigned char id, bool writable, bool vol, Device* device);
 	virtual ~Field();
 
 	virtual void setRealString(string val);
@@ -41,15 +43,19 @@ public:
 	FieldType getType();
 	unsigned char getId();
 
+protected:
+	void sendPacket();
 private:
 	bool writable;
 	bool vol;
 	string name;
 	FieldType type;
 	unsigned char id;
+	Device* device;
 };
 
 } /* namespace dvs */
+#include "../Device.h"
 
 #include "BooleanField.h"
 #include "IntegerField.h"

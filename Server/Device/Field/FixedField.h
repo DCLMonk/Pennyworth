@@ -14,19 +14,25 @@ namespace dvs {
 
 class FixedField: public dvs::Field {
 public:
-	FixedField(string name, unsigned char id, bool writable, bool vol);
+	FixedField(string name, unsigned char id, bool writable, bool vol, Device* device);
 	virtual ~FixedField();
+
+	void setRealString(string val);
 
 	void setString(unsigned char* value);
 
 	unsigned char* getString();
 
 	unsigned int getLength();
+
+	float getFloat();
+	void setOne(unsigned int one);
+	unsigned int getOne();
 private:
 	unsigned int value;
-	unsigned int one;
 	float fvalue;
 	unsigned char array[3];
+	unsigned int o;
 };
 
 } /* namespace dvs */

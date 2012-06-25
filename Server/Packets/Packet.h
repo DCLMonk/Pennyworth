@@ -51,15 +51,15 @@ private:
 
 enum PacketType {
 	Start = 0,
-	Init,
-	Init_Common_Name,
-	Init_Location,
-	Init_Field,
-	Get_Field,
-	Field_Value,
-	Set_Field,
-	Subscribe,
-	Set_One
+	Init = 1,
+	Init_Common_Name = 2,
+	Init_Location = 3,
+	Init_Field = 4,
+	Get_Field = 5,
+	Field_Value = 6,
+	Set_Field = 7,
+	Subscribe = 8,
+	Set_One = 9
 };
 
 } /* namespace DVS */

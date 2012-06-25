@@ -99,7 +99,7 @@ void Communicator::makeSubscribe() {
 }
 
 void Communicator::makeSetOne() {
-//	SetOnePacket setOne(buffer);
+	SetOnePacket setOne(buffer);
 }
 
 } /* namespace dvs */

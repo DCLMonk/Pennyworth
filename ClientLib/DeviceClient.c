@@ -10,14 +10,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-//#define NULL (0)
 
 void sendLoc(Device* device);
 void sendCName(Device* device);
 void sendField(Device* device, FieldDef* field);
 void sendValue(unsigned char id, Device* device);
 void sendInitPackets(Device* device);
-#define printf(x,...)
 
 Device* createDevice(char* uname, int maxFields, SendRoutine send) {
 	Device* device = (Device*)malloc(sizeof(Device));
@@ -32,7 +30,7 @@ Device* createDevice(char* uname, int maxFields, SendRoutine send) {
 
 	comm->initialized = 0;
 	comm->index = 0;
-	comm->state = 0;
+	comm->state = 20;
 	comm->send = send;
 
 	device->name = uname;
@@ -99,7 +97,8 @@ int addField(FieldType type, char* name, unsigned int id,
 			case STRING:
 				device->fields[i].field = malloc(sizeof(StringField));
 				s = (StringField*)device->fields[i].field;
-				s->value = NULL;
+				s->value = (char*)malloc(1 * sizeof(char));
+				s->value[0] = '\0';
 				break;
 			}
 			if (device->comm.initialized) {

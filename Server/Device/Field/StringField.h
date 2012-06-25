@@ -14,14 +14,18 @@ namespace dvs {
 
 class StringField: public dvs::Field {
 public:
-	StringField(string name, unsigned char id, bool writable, bool vol);
+	StringField(string name, unsigned char id, bool writable, bool vol, Device* device);
 	virtual ~StringField();
+
+	void setRealString(string val);
 
 	void setString(unsigned char* value);
 
 	unsigned char* getString();
 
 	unsigned int getLength();
+
+	string getValue();
 private:
 	string value;
 };

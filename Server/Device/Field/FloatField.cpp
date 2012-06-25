@@ -6,11 +6,12 @@
  */
 
 #include "FloatField.h"
+#include <stdlib.h>
 
 namespace dvs {
 
-FloatField::FloatField(string name, unsigned char id, bool writable, bool vol) :
-		Field(FLOAT, name, id, writable, vol) {
+FloatField::FloatField(string name, unsigned char id, bool writable, bool vol, Device* device) :
+		Field(FLOAT, name, id, writable, vol, device) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -40,6 +41,15 @@ unsigned char* FloatField::getString() {
 
 unsigned int FloatField::getLength() {
 	return 5;
+}
+
+void FloatField::setRealString(string val) {
+	this->value = (float)atof(val.c_str());
+	this->sendPacket();
+}
+
+float FloatField::getFloat() {
+	return this->value;
 }
 
 } /* namespace dvs */

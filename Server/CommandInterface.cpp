@@ -17,6 +17,7 @@
 #include "Util.h"
 #include "Comm/Communicator.h"
 #include "Packets/StartPacket.h"
+#include "Device/Field/Field.h"
 
 using namespace std;
 
@@ -30,8 +31,10 @@ void quitFunc(vector<string>* args);
 void selFunc(vector<string>* args);
 void rcommFunc(vector<string>* args);
 void listFields(vector<string>* args);
+void setField(vector<string>* args);
+void printField(vector<string>* args);
 
-#define NFUNCS 5
+#define NFUNCS 8
 
 pair<string*, funcListener> *(functions[NFUNCS]) = {
 	new pair<string*, funcListener>(new string("list"), listDevices),
@@ -39,7 +42,9 @@ pair<string*, funcListener> *(functions[NFUNCS]) = {
 	new pair<string*, funcListener>(new string("exit"), quitFunc),
 	new pair<string*, funcListener>(new string("select"), selFunc),
 	new pair<string*, funcListener>(new string("rcomm"), rcommFunc),
-	new pair<string*, funcListener>(new string("fields"), listFields)
+	new pair<string*, funcListener>(new string("fields"), listFields),
+	new pair<string*, funcListener>(new string("set"), setField),
+	new pair<string*, funcListener>(new string("print"), printField)
 };
 
 CommandInterface* instance;
@@ -85,12 +90,18 @@ void CommandInterface::setPromptI(char* prompt) {
 	rl_set_prompt(prompt);
 }
 
+unsigned int selected = -1;
+
 void listDevices(vector<string>* args) {
 	printf("Devices: \n");
 
 	for (unsigned int i = 1; i < maxDeviceId; i++) {
 		if (Device::getDevice(i) != NULL) {
-			printf("\t%d\t%s\t\t%s\n", i, Device::getDevice(i)->getCName().c_str(), Device::getDevice(i)->getName().c_str());
+			if (i == selected) {
+				printf("-->\t%d\t%s\t\t%s\n", i, Device::getDevice(i)->getCName().c_str(), Device::getDevice(i)->getName().c_str());
+			} else {
+				printf("\t%d\t%s\t\t%s\n", i, Device::getDevice(i)->getCName().c_str(), Device::getDevice(i)->getName().c_str());
+			}
 		}
 	}
 }
@@ -100,7 +111,6 @@ void quitFunc(vector<string>* args) {
 }
 
 char buf[10];
-unsigned int selected = -1;
 
 void selFunc(vector<string>* args) {
 	if (args->size() > 1) {
@@ -116,6 +126,8 @@ void rcommFunc(vector<string>* args) {
 		Communicator* comm = device->getComm();
 		StartPacket start;
 		comm->sendPacket(&start);
+	} else {
+		printf("Error: No Device Selected\n");
 	}
 }
 
@@ -126,9 +138,71 @@ void listFields(vector<string>* args) {
 		for (unsigned int i = 0; i < device->getMaxField(); i++) {
 			if (device->hasField(i)) {
 				Field* field = device->getField(i);
-				printf("\t%s\n", field->getName().c_str());
+				printf("\t%d\t%s\t%s\n", i, field->getName().c_str(), typeStrings[(int)field->getType()].c_str());
 			}
 		}
+	} else {
+		printf("Error: No Device Selected\n");
+	}
+}
+
+void setField(vector<string>* args) {
+	Device* device = Device::getDevice(selected);
+	if (device != NULL) {
+		if (args->size() > 2) {
+			Field* field = device->getField(atoi((*args)[1].c_str()));
+			if (field != NULL) {
+				field->setRealString((*args)[2]);
+			} else {
+				printf("Error: Invalid Field %d\n", atoi((*args)[1].c_str()));
+			}
+		} else {
+			printf("Usage: set <field id> <value>\n");
+		}
+	} else {
+		printf("Error: No Device Selected\n");
+	}
+}
+
+void printField(vector<string>* args) {
+	Device* device = Device::getDevice(selected);
+	if (device != NULL) {
+		if (args->size() > 1) {
+			Field* field = device->getField(atoi((*args)[1].c_str()));
+
+			if (field != NULL) {
+				printf("Field: %d - %s:\t%s\n", field->getId(), typeStrings[(int)field->getType()].c_str(), field->getName().c_str());
+				printf("%s\t", field->isWritable()?"Writable":"Read-Only");
+				if (field->isVolatile()) {
+					printf("Volatile\t");
+				}
+				printf("\n");
+				switch (field->getType()) {
+				case BOOL:
+					printf("Value: %s\n", ((BooleanField*)field)->getBool()?"True":"False");
+					break;
+				case INTEGER:
+					printf("Value: %d\n", ((IntegerField*)field)->getInt());
+					break;
+				case FLOAT:
+					printf("Value: %lf\n", ((FloatField*)field)->getFloat());
+					break;
+				case FIXED:
+					printf("Value: %lf\n", ((FixedField*)field)->getFloat());
+					printf("One Reference: %d\n", ((FixedField*)field)->getOne());
+					break;
+				case STRING:
+					printf("Value: %s\n", ((StringField*)field)->getValue().c_str());
+					break;
+				}
+			} else {
+				printf("Error: Invalid Field %d\n", atoi((*args)[1].c_str()));
+			}
+		} else {
+			printf("Usage: print <field id>\n");
+		}
+	} else {
+		printf("Error: No Device Selected\n");
 	}
 }
 

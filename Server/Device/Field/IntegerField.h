@@ -13,14 +13,18 @@ namespace dvs {
 
 class IntegerField: public dvs::Field {
 public:
-	IntegerField(string name, unsigned char id, bool writable, bool vol);
+	IntegerField(string name, unsigned char id, bool writable, bool vol, Device* device);
 	virtual ~IntegerField();
+
+	void setRealString(string val);
 
 	void setString(unsigned char* value);
 
 	unsigned char* getString();
 
 	unsigned int getLength();
+
+	int getInt();
 private:
 	int value;
 	unsigned char l[5];

@@ -13,8 +13,10 @@ namespace dvs {
 
 class BooleanField: public dvs::Field {
 public:
-	BooleanField(string name, unsigned char id, bool writable, bool vol);
+	BooleanField(string name, unsigned char id, bool writable, bool vol, Device* device);
 	virtual ~BooleanField();
+
+	void setRealString(string val);
 
 	void setString(unsigned char* value);
 

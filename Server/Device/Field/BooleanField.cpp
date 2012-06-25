@@ -6,12 +6,13 @@
  */
 
 #include "BooleanField.h"
+#include <stdlib.h>
 
 namespace dvs {
 
 BooleanField::BooleanField(string name, unsigned char id, bool writable,
-		bool vol) :
-		Field(BOOL, name, id, writable, vol) {
+		bool vol, Device* device) :
+		Field(BOOL, name, id, writable, vol, device) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -39,6 +40,18 @@ void BooleanField::setBool(bool value) {
 }
 bool BooleanField::getBool() {
 	return value;
+}
+
+void BooleanField::setRealString(string val) {
+	if ((val.find('t') != string::npos) || (val.find('T') != string::npos)) {
+		this->value = true;
+	} else if ((val.find('f') != string::npos) || (val.find('F') != string::npos)) {
+		this->value = false;
+	} else {
+		int v = atoi(val.c_str());
+		this->value = v != 0;
+	}
+	this->sendPacket();
 }
 
 } /* namespace dvs */

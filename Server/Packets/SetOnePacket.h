@@ -15,6 +15,7 @@ namespace dvs {
 // WRITE Later
 class SetOnePacket: public dvs::Packet {
 public:
+	SetOnePacket(unsigned char *data);
 };
 
 } /* namespace dvs */

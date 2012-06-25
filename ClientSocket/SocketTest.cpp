@@ -90,7 +90,13 @@ int main(int argc, char * argv[]) {
 	setDeviceCName(cname, device);
 	setDeviceLocation(0, 0, 0, 0, device);
 
-	addField(BOOL, "Test Bool", 0, 0, 0, device);
+	addField(BOOL, "First Field", 0, 1, 0, device);
+	addField(INT, "Second Field", 1, 1, 0, device);
+	addField(FIXED, "Third Field", 2, 1, 0, device);
+
+	setOneVal(2, 0x0800, device);
+
+	addField(STRING, "Fourth Field", 3, 1, 0, device);
 
 	while (1) {
 		if (read(sockfd, &buffer, 1) > 0) {

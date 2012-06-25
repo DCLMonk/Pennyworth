@@ -14,14 +14,18 @@ namespace dvs {
 
 class FloatField: public dvs::Field {
 public:
-	FloatField(string name, unsigned char id, bool writable, bool vol);
+	FloatField(string name, unsigned char id, bool writable, bool vol, Device* device);
 	virtual ~FloatField();
+
+	void setRealString(string val);
 
 	void setString(unsigned char* value);
 
 	unsigned char* getString();
 
 	unsigned int getLength();
+
+	float getFloat();
 private:
 	float value;
 	unsigned char l[5];

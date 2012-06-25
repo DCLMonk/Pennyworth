@@ -12,25 +12,26 @@
 #include <string.h>
 
 enum RecvState {
-	INIT = 0,
-	INIT1,
-	INIT2,
-	INIT3,
-	START,
-	DEV1,
-	DEV2,
-	TYPE,
-	BURN,
+	INIT = 20,
+	INIT1 = 21,
+	INIT2 = 22,
+	INIT3 = 23,
+	START = 24,
+	DEV1 = 25,
+	DEV2 = 26,
+	TYPE = 27,
+	BURN = 28,
 
-	INITP,
-	INITCN,
-	INITLOC,
-	INITFIL,
-	GETFIELD,
-	FIELDVAL,
-	SETFIELD,
-	SUBSCRIBE,
-	SETONE,
+	STARTP = 0,
+	INITP = 1,
+	INITCN = 2,
+	INITLOC = 3,
+	INITFIL = 4,
+	GETFIELD = 5,
+	FIELDVAL = 6,
+	SETFIELD = 7,
+	SUBSCRIBE = 8,
+	SETONE = 9,
 	CUSTOM,
 	MAXLEN
 };
@@ -55,21 +56,18 @@ void sendOnePacket(unsigned int id, Device* device) {
 	comm->send((unsigned char) (length - 1));
 	comm->send((unsigned char) (device->deviceId & 0xff));
 	comm->send((unsigned char) ((device->deviceId >> 8) & 0xff));
-	comm->send((unsigned char) (5));
+	comm->send((unsigned char) (9));
+	comm->send((unsigned char) (id));
 	comm->send((unsigned char) (fixed->one & 0xff));
 	comm->send((unsigned char) ((fixed->one >> 8) & 0xff));
+	printf("Sending One Value %d %d\n", (fixed->one & 0xff), ((fixed->one >> 8) & 0xff));
 }
 
 void sendValue(unsigned char id, Device* device) {
 	CommManager* comm = &device->comm;
-	FieldDef* field = NULL;
+	FieldDef* field = getField(id, device);
 	unsigned int i;
-	for (i = 0; i < device->nfields; i++) {
-		if (device->fields[i].id == id) {
-			field = device->fields + i;
-			break;
-		}
-	}
+	printf("Sending Field %s Value\n", field->name);
 	unsigned int length = 0;
 	switch (field->type) {
 	case BOOL:
@@ -108,6 +106,7 @@ void sendValue(unsigned char id, Device* device) {
 	case FIXED:
 		comm->send((*((unsigned int*) field->field)));
 		comm->send((unsigned char) ((*((unsigned int*) field->field)) >> 8));
+		sendOnePacket(id, device);
 		break;
 	case STRING:
 		s = ((char*) (field->field));
@@ -120,18 +119,14 @@ void sendValue(unsigned char id, Device* device) {
 
 void readValue(unsigned char id, Device* device) {
 	CommManager* comm = &device->comm;
-	FieldDef* field = NULL;
+	FieldDef* field = getField(id, device);
+	printf("Reading Field %s Value\n", field->name);
 	char* buffer = comm->buffer + 5;
 	unsigned int i;
 	StringField* s;
 	FixedField* f;
 	IntField* ifd;
-	for (i = 0; i < device->nfields; i++) {
-		if (device->fields[i].id == id) {
-			field = device->fields + i;
-			break;
-		}
-	}
+
 	unsigned char* buf;
 	switch (field->type) {
 	case BOOL:
@@ -142,11 +137,13 @@ void readValue(unsigned char id, Device* device) {
 	case INT:
 		ifd = (IntField*)field->field;
 		ifd->value = (((unsigned int)buffer[1]) << 8) | buffer[0];
+		printf("Set Int to: %d\n", ifd->value);
 		break;
 	case FLOAT:
 	case FIXED:
 		f = (FixedField*)field->field;
 		f->value = (((unsigned int)buffer[1]) << 8) | buffer[0];
+		printf("Set Float to: %d\n", f->value);
 		break;
 	case STRING:
 		s = (StringField*)field->field;
@@ -157,6 +154,7 @@ void readValue(unsigned char id, Device* device) {
 		for (i = 0; i < (strlen(comm->buffer + 5) + 1); i++) {
 			s->value[i] = comm->buffer[i + 5];
 		}
+		printf("Set String to: %s\n", s->value);
 		break;
 	}
 	field->changed = 1;
@@ -169,6 +167,7 @@ void sendField(Device* device, FieldDef* field) {
 	CommManager* comm = &device->comm;
 	unsigned int length = strlen(field->name) + 9;
 	printf("Send Field %d\n", length);
+	printf("Defining Field %s Value\n", field->name);
 
 	comm->send((unsigned char) (length - 1));
 	comm->send((unsigned char) (device->deviceId & 0xff));
@@ -190,6 +189,7 @@ void sendInitPacket(Device* device) {
 	CommManager* comm = &device->comm;
 	unsigned int length = strlen(device->name) + 5;
 	unsigned int i;
+	printf("Sending Device Init\n");
 
 	// Main Init
 	comm->send((unsigned char) (length - 1));
@@ -202,7 +202,6 @@ void sendInitPacket(Device* device) {
 }
 
 void sendInitPackets(Device* device) {
-	printf("Init Packets\n");
 	sendCName(device);
 
 	sendLoc(device);
@@ -217,7 +216,7 @@ void sendInitPackets(Device* device) {
 }
 
 void sendLoc(Device* device) {
-	printf("Loc\n");
+	printf("Sending Location\n");
 	CommManager* comm = &device->comm;
 
 	// Location
@@ -235,7 +234,7 @@ void sendLoc(Device* device) {
 }
 
 void sendCName(Device* device) {
-	printf("CName\n");
+	printf("Sending CName\n");
 	CommManager* comm = &device->comm;
 
 	// Common Name
@@ -253,7 +252,7 @@ void sendCName(Device* device) {
 
 void parsePacket(Device* device) {
 	CommManager* comm = &device->comm;
-	printf("Parse Packet\n");
+	printf("Parse Packet %d\n", comm->buffer[4]);
 	switch (comm->state) {
 	case INITCN: // What?
 		break;
@@ -279,13 +278,22 @@ void parsePacket(Device* device) {
 	case CUSTOM: // Later
 		break;
 	case INITP: // What?
+		printf("Init Device\n");
 	case BURN:
-		printf("Init\n");
-		if (strcmp(device->name, comm->buffer + 4) == 0) {
-			device->deviceId = (((unsigned int) comm->buffer[2]) << 8)
-					| comm->buffer[1];
-			printf("Match %d\n", device->deviceId);
-			sendInitPackets(device);
+		if ((comm->buffer[3] == 0) && (comm->buffer[2] == 0) && (comm->buffer[1] == 0)) {
+			comm->initialized = 1;
+			sendInitPacket(device);
+			comm->state = START;
+			comm->index = 0;
+			printf("Comm Initialized\n");
+		}
+		if (comm->buffer[3] == 1) {
+			if (strcmp(device->name, comm->buffer + 4) == 0) {
+				device->deviceId = (((unsigned int) comm->buffer[2]) << 8)
+							| comm->buffer[1];
+				printf("New Device Id: %d\n", device->deviceId);
+				sendInitPackets(device);
+			}
 		}
 		break;
 	}
@@ -295,8 +303,6 @@ void recvChar(char c, Device* device) {
 	CommManager* comm = &device->comm;
 	comm->buffer[comm->index++] = c;
 	unsigned int did;
-
-	printf("R\n");
 
 	switch (comm->state) {
 	case INIT:
@@ -326,6 +332,7 @@ void recvChar(char c, Device* device) {
 			sendInitPacket(device);
 			comm->state = START;
 			comm->index = 0;
+			printf("Comm Initialized\n");
 		} else {
 			comm->state = INIT;
 		}
@@ -357,6 +364,7 @@ void recvChar(char c, Device* device) {
 			comm->index = 0;
 			comm->length -= BUFFER_LENGTH;
 		 }
+	case STARTP:
 	case INITP:
 	case INITCN:
 	case INITLOC:

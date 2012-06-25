@@ -20,19 +20,19 @@ InitFieldPacket::InitFieldPacket(unsigned char* data) :
 
 	switch (type) {
 	case 0:
-		device->setField(id, new BooleanField(name, id, writable, vol));
+		device->setField(id, new BooleanField(name, id, writable, vol, device));
 		break;
 	case 1:
-		device->setField(id, new IntegerField(name, id, writable, vol));
+		device->setField(id, new IntegerField(name, id, writable, vol, device));
 		break;
 	case 2:
-		device->setField(id, new FloatField(name, id, writable, vol));
+		device->setField(id, new FloatField(name, id, writable, vol, device));
 		break;
 	case 3:
-		device->setField(id, new FixedField(name, id, writable, vol));
+		device->setField(id, new FixedField(name, id, writable, vol, device));
 		break;
 	case 4:
-		device->setField(id, new StringField(name, id, writable, vol));
+		device->setField(id, new StringField(name, id, writable, vol, device));
 		break;
 	default:
 		printf("Invalid Field Type: %d\n", type);

@@ -17,8 +17,6 @@ FieldValuePacket::FieldValuePacket(unsigned char *data) :
 	Field* field = device->getField(id);
 
 	field->setString(data + 5);
-	SetFieldPacket packet(device, id);
-	packet.send();
 }
 
 } /* namespace dvs */

@@ -7,22 +7,21 @@
 
 #include "Field.h"
 #include <stdio.h>
+#include "../../Packets/SetFieldPacket.h"
 
 namespace dvs {
 
-string typeStrings[] = {
-		"Boolean",
-		"Integer",
-		"Floating Point",
-		"Fixed Point",
-		"String"
-};
+string typeStrings[] = { "Boolean", "Integer", "Floating Point", "Fixed Point",
+		"String" };
 
-Field::Field(FieldType type, string name, unsigned char id, bool writable, bool vol) {
+Field::Field(FieldType type, string name, unsigned char id, bool writable,
+		bool vol, Device* device) {
 	this->name = name;
 	this->id = id;
 	this->writable = writable;
 	this->vol = vol;
+	this->device = device;
+	this->type = type;
 }
 
 Field::~Field() {
@@ -45,20 +44,30 @@ unsigned int Field::getLength() {
 void Field::setRealString(string val) {
 	printf("Warning: Unimplemented setRealString Field Used\n");
 }
+
 bool Field::isWritable() {
 	return writable;
 }
+
 bool Field::isVolatile() {
 	return vol;
 }
+
 string Field::getName() {
 	return name;
 }
+
 FieldType Field::getType() {
 	return type;
 }
+
 unsigned char Field::getId() {
 	return id;
+}
+
+void Field::sendPacket() {
+	SetFieldPacket packet(device, id);
+	packet.send();
 }
 
 } /* namespace dvs */

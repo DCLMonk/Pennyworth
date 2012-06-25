@@ -1,7 +1,9 @@
-Communicator.o: Communicator.cpp Communicator.h ../Packets/Packet.h \
- ../Packets/../Device/Device.h ../Packets/../Device/../Room.h \
- ../Packets/../Device/../Server.h ../Packets/../Device/../Room.h \
- ../Packets/../Device/../Runnable.h ../Packets/../Device/Field/Field.h \
+SocketComm.o: SocketComm.cpp SocketComm.h Communicator.h \
+ ../Packets/Packet.h ../Packets/../Device/Device.h \
+ ../Packets/../Device/../Room.h ../Packets/../Device/../Server.h \
+ ../Packets/../Device/../Room.h ../Packets/../Device/../Runnable.h \
+ ../Packets/../Device/Field/Field.h \
+ ../Packets/../Device/Field/../Device.h \
  ../Packets/../Device/Field/BooleanField.h \
  ../Packets/../Device/Field/Field.h \
  ../Packets/../Device/Field/IntegerField.h \
@@ -12,12 +14,13 @@ Communicator.o: Communicator.cpp Communicator.h ../Packets/Packet.h \
  ../Packets/InitLocationPacket.h ../Packets/InitFieldPacket.h \
  ../Packets/GetFieldPacket.h ../Packets/FieldValuePacket.h \
  ../Packets/SetFieldPacket.h ../Packets/SubscribePacket.h \
- ../Packets/SetOnePacket.h
+ ../Packets/SetOnePacket.h ../Runnable.h
 SocketCreator.o: SocketCreator.cpp SocketCreator.h SocketComm.h \
  Communicator.h ../Packets/Packet.h ../Packets/../Device/Device.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/../Server.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/../Runnable.h \
  ../Packets/../Device/Field/Field.h \
+ ../Packets/../Device/Field/../Device.h \
  ../Packets/../Device/Field/BooleanField.h \
  ../Packets/../Device/Field/Field.h \
  ../Packets/../Device/Field/IntegerField.h \
@@ -34,6 +37,7 @@ SerialComm.o: SerialComm.cpp SerialComm.h Communicator.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/../Server.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/../Runnable.h \
  ../Packets/../Device/Field/Field.h \
+ ../Packets/../Device/Field/../Device.h \
  ../Packets/../Device/Field/BooleanField.h \
  ../Packets/../Device/Field/Field.h \
  ../Packets/../Device/Field/IntegerField.h \
@@ -45,11 +49,11 @@ SerialComm.o: SerialComm.cpp SerialComm.h Communicator.h \
  ../Packets/GetFieldPacket.h ../Packets/FieldValuePacket.h \
  ../Packets/SetFieldPacket.h ../Packets/SubscribePacket.h \
  ../Packets/SetOnePacket.h
-SocketComm.o: SocketComm.cpp SocketComm.h Communicator.h \
- ../Packets/Packet.h ../Packets/../Device/Device.h \
- ../Packets/../Device/../Room.h ../Packets/../Device/../Server.h \
- ../Packets/../Device/../Room.h ../Packets/../Device/../Runnable.h \
- ../Packets/../Device/Field/Field.h \
+Communicator.o: Communicator.cpp Communicator.h ../Packets/Packet.h \
+ ../Packets/../Device/Device.h ../Packets/../Device/../Room.h \
+ ../Packets/../Device/../Server.h ../Packets/../Device/../Room.h \
+ ../Packets/../Device/../Runnable.h ../Packets/../Device/Field/Field.h \
+ ../Packets/../Device/Field/../Device.h \
  ../Packets/../Device/Field/BooleanField.h \
  ../Packets/../Device/Field/Field.h \
  ../Packets/../Device/Field/IntegerField.h \
@@ -60,4 +64,4 @@ SocketComm.o: SocketComm.cpp SocketComm.h Communicator.h \
  ../Packets/InitLocationPacket.h ../Packets/InitFieldPacket.h \
  ../Packets/GetFieldPacket.h ../Packets/FieldValuePacket.h \
  ../Packets/SetFieldPacket.h ../Packets/SubscribePacket.h \
- ../Packets/SetOnePacket.h ../Runnable.h
+ ../Packets/SetOnePacket.h

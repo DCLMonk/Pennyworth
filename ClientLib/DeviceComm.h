@@ -8,6 +8,8 @@
 #ifndef DEVICECOMM_H_
 #define DEVICECOMM_H_
 
+//#define printf(x,...)
+
 FieldDef* getField(unsigned int id, Device* device);
 
 void sendLoc(Device* device);
