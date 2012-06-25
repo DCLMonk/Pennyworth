@@ -57,6 +57,7 @@ int main(int argc, char * argv[]) {
 	while (opt != -1) {
 		switch (opt) {
 		case 'd':
+			printf("Connecting to %s\n", optarg);
 			new SerialComm(optarg);
 			break;
 		case 'p':
