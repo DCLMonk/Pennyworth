@@ -29,6 +29,7 @@ void listDevices(vector<string>* args);
 void quitFunc(vector<string>* args);
 void selFunc(vector<string>* args);
 void rcommFunc(vector<string>* args);
+void listFields(vector<string>* args);
 
 #define NFUNCS 5
 
@@ -37,7 +38,8 @@ pair<string*, funcListener> *(functions[NFUNCS]) = {
 	new pair<string*, funcListener>(new string("quit"), quitFunc),
 	new pair<string*, funcListener>(new string("exit"), quitFunc),
 	new pair<string*, funcListener>(new string("select"), selFunc),
-	new pair<string*, funcListener>(new string("rcomm"), rcommFunc)
+	new pair<string*, funcListener>(new string("rcomm"), rcommFunc),
+	new pair<string*, funcListener>(new string("fields"), listFields)
 };
 
 CommandInterface* instance;
@@ -114,6 +116,19 @@ void rcommFunc(vector<string>* args) {
 		Communicator* comm = device->getComm();
 		StartPacket start;
 		comm->sendPacket(&start);
+	}
+}
+
+void listFields(vector<string>* args) {
+	Device* device = Device::getDevice(selected);
+	if (device != NULL) {
+		printf("Fields:\n");
+		for (unsigned int i = 0; i < device->getMaxField(); i++) {
+			if (device->hasField(i)) {
+				Field* field = device->getField(i);
+				printf("\t%s\n", field->getName().c_str());
+			}
+		}
 	}
 }
 

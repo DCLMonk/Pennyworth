@@ -93,6 +93,8 @@ public:
 
 	void setField(unsigned char id, Field* field);
 
+	unsigned int getMaxField();
+
 	void setComm(Communicator* comm);
 
 	int getNFields();
@@ -103,6 +105,7 @@ protected:
 	map<unsigned char, Field*>* fields;
 	unsigned int deviceId;
 	int roomId;
+	unsigned int maxField;
 	string name;
 	string cname;
 	Communicator* comm;

@@ -10,7 +10,7 @@
 namespace dvs {
 
 FloatField::FloatField(string name, unsigned char id, bool writable, bool vol) :
-		Field(name, id, writable, vol) {
+		Field(FLOAT, name, id, writable, vol) {
 	// TODO Auto-generated constructor stub
 
 }

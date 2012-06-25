@@ -10,7 +10,15 @@
 
 namespace dvs {
 
-Field::Field(string name, unsigned char id, bool writable, bool vol) {
+string typeStrings[] = {
+		"Boolean",
+		"Integer",
+		"Floating Point",
+		"Fixed Point",
+		"String"
+};
+
+Field::Field(FieldType type, string name, unsigned char id, bool writable, bool vol) {
 	this->name = name;
 	this->id = id;
 	this->writable = writable;
@@ -32,6 +40,25 @@ unsigned char* Field::getString() {
 unsigned int Field::getLength() {
 	printf("Warning: Unimplemented getLength Field Used\n");
 	return 0;
+}
+
+void Field::setRealString(string val) {
+	printf("Warning: Unimplemented setRealString Field Used\n");
+}
+bool Field::isWritable() {
+	return writable;
+}
+bool Field::isVolatile() {
+	return vol;
+}
+string Field::getName() {
+	return name;
+}
+FieldType Field::getType() {
+	return type;
+}
+unsigned char Field::getId() {
+	return id;
 }
 
 } /* namespace dvs */

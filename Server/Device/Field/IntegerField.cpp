@@ -11,7 +11,7 @@ namespace dvs {
 
 IntegerField::IntegerField(string name, unsigned char id, bool writable,
 		bool vol) :
-		Field(name, id, writable, vol) {
+		Field(INTEGER, name, id, writable, vol) {
 	// TODO Auto-generated constructor stub
 
 }

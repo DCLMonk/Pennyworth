@@ -25,6 +25,7 @@ Device::Device(Communicator* comm, string name) {
 	this->comm = comm;
 	this->cname = "Unset";
 	roomId = -1;
+	maxField = 0;
 }
 
 Device::~Device() {
@@ -90,6 +91,9 @@ void Device::setField(unsigned char id, Field* field) {
 	if (hasField(id)) {
 		delete ((*fields)[id]);
 	}
+	if (id + (unsigned int)1 > maxField) {
+		maxField = id + 1;
+	}
 	(*fields)[id] = field;
 }
 
@@ -103,6 +107,10 @@ int Device::getNFields() {
 
 Communicator* Device::getComm() {
 	return comm;
+}
+
+unsigned int Device::getMaxField() {
+	return maxField;
 }
 
 } /* namespace DVS */

@@ -11,7 +11,7 @@ namespace dvs {
 
 BooleanField::BooleanField(string name, unsigned char id, bool writable,
 		bool vol) :
-		Field(name, id, writable, vol) {
+		Field(BOOL, name, id, writable, vol) {
 	// TODO Auto-generated constructor stub
 
 }
