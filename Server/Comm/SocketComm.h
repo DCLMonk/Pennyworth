@@ -14,15 +14,15 @@ namespace dvs {
 class SocketComm: public Communicator {
 public:
 	SocketComm(int fd);
+	SocketComm();
 
 	~SocketComm();
 
-	virtual void sendPacket(Packet* packet);
-	virtual Packet* getPacket();
-private:
+	void writeBytes(unsigned char* data, unsigned int length);
+
+	int readBytes(unsigned char* data, unsigned int length);
+protected:
 	int fd;
-	unsigned int size;
-	unsigned int index;
 };
 
 } /* namespace dvs */

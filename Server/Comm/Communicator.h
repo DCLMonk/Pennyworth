@@ -17,10 +17,14 @@ public:
 	Communicator();
 	virtual ~Communicator();
 
-	virtual void sendPacket(Packet* packet);
-	virtual Packet* getPacket();
+	void sendPacket(Packet* packet);
+	void getPacket();
 
 	void makePacket();
+
+	virtual void writeBytes(unsigned char* data, unsigned int length);
+
+	virtual int readBytes(unsigned char* data, unsigned int length);
 protected:
 	void makeStart();
 	void makeInit();
@@ -32,8 +36,11 @@ protected:
 	void makeSetField();
 	void makeSubscribe();
 	void makeSetOne();
+	void makeMaxLength();
 
 	unsigned char buffer[256];
+	unsigned int size;
+	unsigned int index;
 };
 
 class CommHandler: public Runnable {

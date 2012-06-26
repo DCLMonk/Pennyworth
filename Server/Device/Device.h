@@ -101,6 +101,14 @@ public:
 
 	Communicator* getComm();
 
+	void setMaxLength(unsigned int length) {
+		this->maxLength = length;
+	}
+
+	unsigned int getMaxLength() {
+		return maxLength;
+	}
+
 protected:
 	map<unsigned char, Field*>* fields;
 	unsigned int deviceId;
@@ -111,6 +119,7 @@ protected:
 	Communicator* comm;
 	float x, y;
 	unsigned int icon;
+	unsigned int maxLength;
 };
 
 } /* namespace DVS */

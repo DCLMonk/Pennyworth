@@ -7,6 +7,16 @@ SetFieldPacket.o: SetFieldPacket.cpp SetFieldPacket.h Packet.h \
  ../Device/Field/StringField.h StartPacket.h InitPacket.h \
  InitCNamePacket.h InitLocationPacket.h InitFieldPacket.h \
  GetFieldPacket.h FieldValuePacket.h SubscribePacket.h SetOnePacket.h
+MaxLengthPacket.o: MaxLengthPacket.cpp MaxLengthPacket.h Packet.h \
+ ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
+ ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
+ ../Device/Field/Field.h ../Device/Field/IntegerField.h \
+ ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
+ ../Device/Field/StringField.h StartPacket.h InitPacket.h \
+ InitCNamePacket.h InitLocationPacket.h InitFieldPacket.h \
+ GetFieldPacket.h FieldValuePacket.h SetFieldPacket.h SubscribePacket.h \
+ SetOnePacket.h
 GetFieldPacket.o: GetFieldPacket.cpp GetFieldPacket.h Packet.h \
  ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
  ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \

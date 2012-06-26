@@ -59,7 +59,8 @@ enum PacketType {
 	Field_Value = 6,
 	Set_Field = 7,
 	Subscribe = 8,
-	Set_One = 9
+	Set_One = 9,
+	Max_Length = 10
 };
 
 } /* namespace DVS */
@@ -74,5 +75,6 @@ enum PacketType {
 #include "SetFieldPacket.h"
 #include "SubscribePacket.h"
 #include "SetOnePacket.h"
+#include "MaxLengthPacket.h"
 
 #endif /* PACKET_H_ */

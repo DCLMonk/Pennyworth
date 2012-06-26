@@ -23,6 +23,10 @@ SocketComm::SocketComm(int fd) {
 	server.addListener(fd, new CommHandler(this));
 }
 
+SocketComm::SocketComm() {
+
+}
+
 SocketComm::~SocketComm() {
 	close(fd);
 	for (unsigned int i = 1; i < maxDeviceId; i++) {
@@ -34,44 +38,24 @@ SocketComm::~SocketComm() {
 	}
 }
 
-void SocketComm::sendPacket(Packet* packet) {
-	if (write(fd, packet->getData(), packet->getLength()) < 0) {
+void SocketComm::writeBytes(unsigned char* data, unsigned int length) {
+	if (write(fd, (const void*)data, (size_t)length) < 0) {
 		if (errno == EPIPE) {
 			server.remListener(fd);
 		}
 	}
 }
 
-Packet* SocketComm::getPacket() {
-	if (index == 0) {
-		int rd = read(fd, buffer, 1);
-		if (rd > 0) {
-			size = buffer[0];
-			index = 1;
-		} else if (rd < 0) {
-			if (errno == EPIPE) {
-				server.remListener(fd);
-			} else {
-				printf("Other\n");
-			}
-		}
-	} else {
-		int rd = read(fd, buffer + index, 1 + size - index);
-		if (rd > 0) {
-			index += rd;
-			if (index == size + 1) {
-				makePacket();
-				index = 0;
-			}
-		} else if (rd < 0) {
-			if (errno == EPIPE) {
-				server.remListener(fd);
-			} else {
-				printf("Other\n");
-			}
+int SocketComm::readBytes(unsigned char* data, unsigned int length) {
+	int ret;
+	if ((ret = read(fd, data, length)) < 0) {
+		if (errno == EPIPE) {
+			server.remListener(fd);
+		} else {
+			printf("Other\n");
 		}
 	}
-	return NULL;
+	return ret;
 }
 
 } /* namespace dvs */

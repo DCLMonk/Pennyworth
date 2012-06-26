@@ -14,7 +14,7 @@ SocketComm.o: SocketComm.cpp SocketComm.h Communicator.h \
  ../Packets/InitLocationPacket.h ../Packets/InitFieldPacket.h \
  ../Packets/GetFieldPacket.h ../Packets/FieldValuePacket.h \
  ../Packets/SetFieldPacket.h ../Packets/SubscribePacket.h \
- ../Packets/SetOnePacket.h ../Runnable.h
+ ../Packets/SetOnePacket.h ../Packets/MaxLengthPacket.h ../Runnable.h
 SocketCreator.o: SocketCreator.cpp SocketCreator.h SocketComm.h \
  Communicator.h ../Packets/Packet.h ../Packets/../Device/Device.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/../Server.h \
@@ -31,7 +31,7 @@ SocketCreator.o: SocketCreator.cpp SocketCreator.h SocketComm.h \
  ../Packets/InitLocationPacket.h ../Packets/InitFieldPacket.h \
  ../Packets/GetFieldPacket.h ../Packets/FieldValuePacket.h \
  ../Packets/SetFieldPacket.h ../Packets/SubscribePacket.h \
- ../Packets/SetOnePacket.h
+ ../Packets/SetOnePacket.h ../Packets/MaxLengthPacket.h
 SerialComm.o: SerialComm.cpp SerialComm.h Communicator.h \
  ../Packets/Packet.h ../Packets/../Device/Device.h \
  ../Packets/../Device/../Room.h ../Packets/../Device/../Server.h \
@@ -48,7 +48,7 @@ SerialComm.o: SerialComm.cpp SerialComm.h Communicator.h \
  ../Packets/InitLocationPacket.h ../Packets/InitFieldPacket.h \
  ../Packets/GetFieldPacket.h ../Packets/FieldValuePacket.h \
  ../Packets/SetFieldPacket.h ../Packets/SubscribePacket.h \
- ../Packets/SetOnePacket.h
+ ../Packets/SetOnePacket.h ../Packets/MaxLengthPacket.h SocketComm.h
 Communicator.o: Communicator.cpp Communicator.h ../Packets/Packet.h \
  ../Packets/../Device/Device.h ../Packets/../Device/../Room.h \
  ../Packets/../Device/../Server.h ../Packets/../Device/../Room.h \
@@ -64,4 +64,4 @@ Communicator.o: Communicator.cpp Communicator.h ../Packets/Packet.h \
  ../Packets/InitLocationPacket.h ../Packets/InitFieldPacket.h \
  ../Packets/GetFieldPacket.h ../Packets/FieldValuePacket.h \
  ../Packets/SetFieldPacket.h ../Packets/SubscribePacket.h \
- ../Packets/SetOnePacket.h
+ ../Packets/SetOnePacket.h ../Packets/MaxLengthPacket.h

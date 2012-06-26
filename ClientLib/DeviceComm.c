@@ -212,7 +212,14 @@ void sendInitPackets(Device* device) {
 			sendField(device, device->fields + i);
 		}
 	}
-	// Max size here
+
+#if BUFFER_LENGTH != 256
+	comm->send((unsigned char) (4));
+	comm->send((unsigned char) (device->deviceId & 0xff));
+	comm->send((unsigned char) ((device->deviceId >> 8) & 0xff));
+	comm->send((unsigned char) (10));
+	comm->send((unsigned char) (BUFFER_LENGTH));
+#endif
 }
 
 void sendLoc(Device* device) {

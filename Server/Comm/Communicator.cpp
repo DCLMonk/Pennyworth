@@ -17,12 +17,41 @@ Communicator::~Communicator() {
 }
 
 void Communicator::sendPacket(Packet* packet) {
+	unsigned char* data = packet->getData();
+	unsigned int length = packet->getLength();
+	if (length > packet->getDevice()->getMaxLength()) {
+		length = packet->getDevice()->getMaxLength();
+		data[length - 1] = '\0';
+	}
+	this->writeBytes(data, length);
+}
+
+void Communicator::getPacket() {
+	if (index == 0) {
+		int rd = this->readBytes(buffer, 1);
+		if (rd > 0) {
+			size = buffer[0];
+			index = 1;
+		}
+	} else {
+		int rd = this->readBytes(buffer + index, 1 + size - index);
+		if (rd > 0) {
+			index += rd;
+			if (index == size + 1) {
+				makePacket();
+				index = 0;
+			}
+		}
+	}
+}
+
+void Communicator::writeBytes(unsigned char* data, unsigned int length) {
 	printf("Warning: Unimplemented Communicator in Use\n");
 }
 
-Packet* Communicator::getPacket() {
+int Communicator::readBytes(unsigned char* data, unsigned int length) {
 	printf("Warning: Unimplemented Communicator in Use\n");
-	return NULL;
+	return -1;
 }
 
 void Communicator::makePacket() {
@@ -58,6 +87,9 @@ void Communicator::makePacket() {
 		break;
 	case Set_One:
 		makeSetOne();
+		break;
+	case Max_Length:
+		makeMaxLength();
 		break;
 	}
 }
@@ -100,6 +132,10 @@ void Communicator::makeSubscribe() {
 
 void Communicator::makeSetOne() {
 	SetOnePacket setOne(buffer);
+}
+
+void Communicator::makeMaxLength() {
+	MaxLengthPacket maxLength(buffer);
 }
 
 } /* namespace dvs */

@@ -26,6 +26,7 @@ Device::Device(Communicator* comm, string name) {
 	this->cname = "Unset";
 	roomId = -1;
 	maxField = 0;
+	maxLength = 256;
 }
 
 Device::~Device() {

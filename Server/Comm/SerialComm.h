@@ -9,21 +9,13 @@
 #define SERIALCOMM_H_
 
 #include "Communicator.h"
+#include "SocketComm.h"
 
 namespace dvs {
 
-class SerialComm: public Communicator {
+class SerialComm: public SocketComm {
 public:
 	SerialComm(char* device);
-	virtual ~SerialComm();
-
-	virtual void sendPacket(Packet* packet);
-	virtual Packet* getPacket();
-private:
-
-	int fd;
-	unsigned int size;
-	unsigned int index;
 };
 
 } /* namespace dvs */
