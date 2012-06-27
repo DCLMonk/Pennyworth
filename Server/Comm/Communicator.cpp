@@ -19,9 +19,11 @@ Communicator::~Communicator() {
 void Communicator::sendPacket(Packet* packet) {
 	unsigned char* data = packet->getData();
 	unsigned int length = packet->getLength();
-	if (length > packet->getDevice()->getMaxLength()) {
-		length = packet->getDevice()->getMaxLength();
-		data[length - 1] = '\0';
+	if (packet->getDevice() != NULL) {
+		if (length > packet->getDevice()->getMaxLength()) {
+			length = packet->getDevice()->getMaxLength();
+			data[length - 1] = '\0';
+		}
 	}
 	this->writeBytes(data, length);
 }
