@@ -41,6 +41,9 @@ void Communicator::getPacket() {
 			index += rd;
 			if (index == size + 1) {
 				makePacket();
+				for (int i = 0; i < index; i++) {
+					buffer[i] = 0;
+				}
 				index = 0;
 			}
 		}
