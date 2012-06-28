@@ -24,11 +24,15 @@ User::~User() {
 }
 
 void User::send(CPacket* packet) {
-	comm->send(packet);
+	comm->sendPacket(packet);
 }
 
 unsigned int User::getId() {
 	return id;
+}
+
+CCommunicator* User::getComm() {
+	return comm;
 }
 
 }

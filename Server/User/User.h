@@ -8,20 +8,21 @@
 #ifndef USER_H_
 #define USER_H_
 
-#include "CCommunicator.h"
-
 namespace dvs {
 
 class CPacket;
+class CCommunicator;
 
 class User {
 public:
-	User(unsigned int id, CCommunicator* comm);
+	User(CCommunicator* comm);
 	virtual ~User();
 
 	void send(CPacket* packet);
 
 	unsigned int getId();
+
+	CCommunicator* getComm();
 private:
 	CCommunicator* comm;
 	unsigned int id;

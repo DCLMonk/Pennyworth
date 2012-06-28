@@ -12,6 +12,8 @@
 
 namespace dvs {
 
+CCommunicator* currentCCommunicator = NULL;
+
 CPacket::CPacket(string data) {
 	this->args = Util::split(data, ':');
 	this->id = atoi((*args)[0].c_str());

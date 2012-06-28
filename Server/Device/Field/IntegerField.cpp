@@ -30,7 +30,7 @@ void IntegerField::setString(unsigned char* value) {
 }
 
 unsigned char* IntegerField::getString() {
-	unsigned char *value = (unsigned char *) &this->value;
+//	unsigned char *value = (unsigned char *) &this->value;
 	for (unsigned int i = 0; i < 4; i++) {
 		l[i] = (this->value >> (i * 8)) & 0xff;
 	}

@@ -10,6 +10,7 @@
 #include "CommandInterface.h"
 #include "Server.h"
 #include "SocketCreator.h"
+#include "CSocketCreator.h"
 #include "SerialComm.h"
 #include "SocketComm.h"
 #include "Runnable.h"
@@ -36,17 +37,20 @@ private:
 };
 
 #define DEFAULT_PORT 5010
+#define DEFAULT_USER_PORT 8010
 
-const char* optString = "p:d:h";
+const char* optString = "p:d:u:h";
 
 static const struct option longOpts[] = {
 	{ "device", required_argument, NULL, 'd' },
 	{ "port", required_argument, NULL, 'p' },
+	{ "uport", required_argument, NULL, 'u' },
 
 };
 
 int main(int argc, char * argv[]) {
 	SocketCreator* s = NULL;
+	CSocketCreator* cs = NULL;
 
 	signal(SIGPIPE, SIG_IGN);
 
@@ -64,6 +68,10 @@ int main(int argc, char * argv[]) {
 			printf("Port: %d\n", atoi(optarg));
 			s = new SocketCreator(atoi(optarg));
 			break;
+		case 'u':
+			printf("User Port: %d\n", atoi(optarg));
+			cs = new CSocketCreator(atoi(optarg));
+			break;
 		default:
 			/* You won't actually get here. */
 			break;
@@ -74,6 +82,10 @@ int main(int argc, char * argv[]) {
 	if (s == NULL) {
 		printf("Port: %d\n", DEFAULT_PORT);
 		s = new SocketCreator(DEFAULT_PORT);
+	}
+	if (cs == NULL) {
+		printf("User Port: %d\n", DEFAULT_USER_PORT);
+		cs = new CSocketCreator(DEFAULT_USER_PORT);
 	}
 	CommandInterface command("NONE->");
 

@@ -1,2 +1,5 @@
-User.o: User.cpp User.h ../CComm/CCommunicator.h \
- ../ClientPackets/CPacket.h ../User/User.h
+User.o: User.cpp User.h ../ClientPackets/CPacket.h ../User/User.h \
+ ../ClientPackets/LoginPacket.h ../ClientPackets/CPacket.h \
+ ../ClientPackets/UIDPacket.h ../ClientPackets/LoginFailurePacket.h \
+ ../CComm/CCommunicator.h ../Runnable.h ../Server.h ../Room.h \
+ ../Runnable.h

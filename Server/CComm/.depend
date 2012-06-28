@@ -1,1 +1,13 @@
-CCommunicator.o: CCommunicator.cpp CCommunicator.h
+CSocketCreator.o: CSocketCreator.cpp CSocketCreator.h CSocketComm.h \
+ CCommunicator.h ../Runnable.h ../ClientPackets/CPacket.h ../User/User.h \
+ ../ClientPackets/LoginPacket.h ../ClientPackets/CPacket.h \
+ ../ClientPackets/UIDPacket.h ../ClientPackets/LoginFailurePacket.h
+CCommunicator.o: CCommunicator.cpp CCommunicator.h ../Runnable.h \
+ ../ClientPackets/CPacket.h ../User/User.h ../ClientPackets/LoginPacket.h \
+ ../ClientPackets/CPacket.h ../ClientPackets/UIDPacket.h \
+ ../ClientPackets/LoginFailurePacket.h
+CSocketComm.o: CSocketComm.cpp CSocketComm.h CCommunicator.h \
+ ../Runnable.h ../ClientPackets/CPacket.h ../User/User.h \
+ ../ClientPackets/LoginPacket.h ../ClientPackets/CPacket.h \
+ ../ClientPackets/UIDPacket.h ../ClientPackets/LoginFailurePacket.h \
+ ../Runnable.h ../Server.h ../Room.h ../Runnable.h

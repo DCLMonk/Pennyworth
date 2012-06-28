@@ -1,8 +1,7 @@
 Server.o: Server.cpp Server.h Room.h Runnable.h User/User.h \
- CComm/CCommunicator.h Comm/SocketCreator.h Comm/SocketComm.h \
- Comm/Communicator.h DevicePackets/Packet.h \
- DevicePackets/../Device/Device.h DevicePackets/../Device/../Room.h \
- DevicePackets/../Device/../Server.h \
+ Comm/SocketCreator.h Comm/SocketComm.h Comm/Communicator.h \
+ DevicePackets/Packet.h DevicePackets/../Device/Device.h \
+ DevicePackets/../Device/../Room.h DevicePackets/../Device/../Server.h \
  DevicePackets/../Device/Field/Field.h \
  DevicePackets/../Device/Field/../Device.h \
  DevicePackets/../Device/Field/BooleanField.h \
@@ -19,25 +18,24 @@ Server.o: Server.cpp Server.h Room.h Runnable.h User/User.h \
  DevicePackets/MaxLengthPacket.h Comm/SerialComm.h Comm/SocketComm.h
 Room.o: Room.cpp Room.h
 CommandInterface.o: CommandInterface.cpp CommandInterface.h Runnable.h \
- Server.h Room.h User/User.h CComm/CCommunicator.h Device/Device.h \
- Device/../Room.h Device/../Server.h Device/Field/Field.h \
- Device/Field/../Device.h Device/Field/BooleanField.h \
- Device/Field/Field.h Device/Field/IntegerField.h \
- Device/Field/FloatField.h Device/Field/FixedField.h \
- Device/Field/StringField.h Util.h Comm/Communicator.h \
- DevicePackets/Packet.h DevicePackets/../Device/Device.h \
- DevicePackets/StartPacket.h DevicePackets/Packet.h \
- DevicePackets/InitPacket.h DevicePackets/InitCNamePacket.h \
- DevicePackets/InitLocationPacket.h DevicePackets/InitFieldPacket.h \
- DevicePackets/GetFieldPacket.h DevicePackets/FieldValuePacket.h \
- DevicePackets/SetFieldPacket.h DevicePackets/SubscribePacket.h \
- DevicePackets/SetOnePacket.h DevicePackets/MaxLengthPacket.h \
- DevicePackets/StartPacket.h Device/Field/Field.h
-Main.o: Main.cpp CommandInterface.h Runnable.h Server.h Room.h \
- User/User.h CComm/CCommunicator.h Comm/SocketCreator.h Comm/SocketComm.h \
+ Server.h Room.h User/User.h Device/Device.h Device/../Room.h \
+ Device/../Server.h Device/Field/Field.h Device/Field/../Device.h \
+ Device/Field/BooleanField.h Device/Field/Field.h \
+ Device/Field/IntegerField.h Device/Field/FloatField.h \
+ Device/Field/FixedField.h Device/Field/StringField.h Util.h \
  Comm/Communicator.h DevicePackets/Packet.h \
- DevicePackets/../Device/Device.h DevicePackets/../Device/../Room.h \
- DevicePackets/../Device/../Server.h \
+ DevicePackets/../Device/Device.h DevicePackets/StartPacket.h \
+ DevicePackets/Packet.h DevicePackets/InitPacket.h \
+ DevicePackets/InitCNamePacket.h DevicePackets/InitLocationPacket.h \
+ DevicePackets/InitFieldPacket.h DevicePackets/GetFieldPacket.h \
+ DevicePackets/FieldValuePacket.h DevicePackets/SetFieldPacket.h \
+ DevicePackets/SubscribePacket.h DevicePackets/SetOnePacket.h \
+ DevicePackets/MaxLengthPacket.h DevicePackets/StartPacket.h \
+ Device/Field/Field.h
+Main.o: Main.cpp CommandInterface.h Runnable.h Server.h Room.h \
+ User/User.h Comm/SocketCreator.h Comm/SocketComm.h Comm/Communicator.h \
+ DevicePackets/Packet.h DevicePackets/../Device/Device.h \
+ DevicePackets/../Device/../Room.h DevicePackets/../Device/../Server.h \
  DevicePackets/../Device/Field/Field.h \
  DevicePackets/../Device/Field/../Device.h \
  DevicePackets/../Device/Field/BooleanField.h \
@@ -51,4 +49,5 @@ Main.o: Main.cpp CommandInterface.h Runnable.h Server.h Room.h \
  DevicePackets/InitFieldPacket.h DevicePackets/GetFieldPacket.h \
  DevicePackets/FieldValuePacket.h DevicePackets/SetFieldPacket.h \
  DevicePackets/SubscribePacket.h DevicePackets/SetOnePacket.h \
- DevicePackets/MaxLengthPacket.h Comm/SerialComm.h Comm/SocketComm.h
+ DevicePackets/MaxLengthPacket.h CComm/CSocketCreator.h Comm/SerialComm.h \
+ Comm/SocketComm.h

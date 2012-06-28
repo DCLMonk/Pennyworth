@@ -17,8 +17,20 @@ using namespace std;
 
 namespace dvs {
 
+class CCommunicator;
+
+extern CCommunicator* currentCCommunicator;
+
 class CPacket {
 public:
+	static CCommunicator* getCurrentComm() {
+		return currentCCommunicator;
+	}
+
+	static void setCurrentComm(CCommunicator* comm) {
+		currentCCommunicator = comm;
+	}
+
 	CPacket(string data);
 	CPacket(unsigned int id, User* user);
 	virtual ~CPacket();
@@ -41,5 +53,9 @@ typedef enum {
 } CPacketTypes;
 
 }
+
+#include "LoginPacket.h"
+#include "UIDPacket.h"
+#include "LoginFailurePacket.h"
 
 #endif /* CPACKET_H_ */

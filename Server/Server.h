@@ -12,6 +12,7 @@
 #include <vector>
 #include <queue>
 #include <map>
+#include <string>
 using namespace std;
 #include <stdio.h>
 #include <sys/select.h>
@@ -34,9 +35,11 @@ public:
 
 	static unsigned int allocateUID() {
 		if (availableIds.size()) {
-			return availableIds.pop();
+			int id = availableIds.front();
+			availableIds.pop();
+			return id;
 		}
-		return maxUserID++;
+		return maxUserId++;
 	}
 
 	static void freeUID(unsigned int id) {

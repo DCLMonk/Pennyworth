@@ -9,6 +9,8 @@
 #include "LoginFailurePacket.h"
 #include "Server.h"
 #include "User.h"
+#include "UIDPacket.h"
+#include "CCommunicator.h"
 
 namespace dvs {
 
@@ -22,7 +24,7 @@ LoginPacket::LoginPacket(string data) : CPacket(data) {
 			uidPacket.send();
 		} else {
 			LoginFailurePacket loginFailure("Invalid Username and/or Password");
-			CPacket::getCurrentComm()->send(&loginFailure);
+			CPacket::getCurrentComm()->sendPacket(&loginFailure);
 		}
 	} else {
 		// TODO: Start dealing with device and client errors
