@@ -12,7 +12,10 @@ include common.mk
 DIRS: 
 	+$(MAKE) -C Comm
 	+$(MAKE) -C Device
-	+$(MAKE) -C Packets
+	+$(MAKE) -C DevicePackets
+	+$(MAKE) -C ClientPackets
+	+$(MAKE) -C CComm
+	+$(MAKE) -C User
 
 $(TARGET): DIRS $(OBJS)
 	$(CC) -o $(TARGET) $(CFLAGS) $(OBJDIR)/*.o $(LIBS)

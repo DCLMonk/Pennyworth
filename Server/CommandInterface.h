@@ -22,7 +22,7 @@ public:
 		instance->setPromptI(prompt);
 	}
 
-	CommandInterface(char* prompt);
+	CommandInterface(const char* prompt);
 	virtual ~CommandInterface();
 
 	void run();

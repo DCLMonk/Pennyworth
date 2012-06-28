@@ -15,9 +15,9 @@
 #include "Server.h"
 #include "Device/Device.h"
 #include "Util.h"
-#include "Comm/Communicator.h"
-#include "Packets/StartPacket.h"
-#include "Device/Field/Field.h"
+#include "Communicator.h"
+#include "StartPacket.h"
+#include "Field.h"
 
 using namespace std;
 
@@ -53,7 +53,7 @@ void commandHandleGlobal(char* line) {
 	instance->commandHandle(line);
 }
 
-CommandInterface::CommandInterface(char* prompt) {
+CommandInterface::CommandInterface(const char* prompt) {
 	instance = this;
 	rl_callback_handler_install(prompt, (rl_vcpfunc_t*) commandHandleGlobal);
 	server.addListener(0, this);

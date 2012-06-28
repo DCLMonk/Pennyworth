@@ -7,7 +7,7 @@
 
 #include "Field.h"
 #include <stdio.h>
-#include "../../Packets/SetFieldPacket.h"
+#include "SetFieldPacket.h"
 
 namespace dvs {
 

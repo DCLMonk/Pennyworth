@@ -8,7 +8,7 @@
 #ifndef COMMUNICATOR_H_
 #define COMMUNICATOR_H_
 
-#include "../Packets/Packet.h"
+#include "Packet.h"
 
 namespace dvs {
 

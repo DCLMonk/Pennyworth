@@ -6,8 +6,8 @@
  */
 
 #include "Device.h"
-#include "../Comm/Communicator.h"
-#include "../Packets/Packet.h"
+#include "Communicator.h"
+#include "Packet.h"
 
 using namespace std;
 

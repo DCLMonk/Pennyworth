@@ -9,9 +9,9 @@
 
 #include "CommandInterface.h"
 #include "Server.h"
-#include "Comm/SocketCreator.h"
-#include "Comm/SerialComm.h"
-#include "Comm/SocketComm.h"
+#include "SocketCreator.h"
+#include "SerialComm.h"
+#include "SocketComm.h"
 #include "Runnable.h"
 
 using namespace std;
@@ -37,7 +37,7 @@ private:
 
 #define DEFAULT_PORT 5010
 
-char* optString = "p:d:h";
+const char* optString = "p:d:h";
 
 static const struct option longOpts[] = {
 	{ "device", required_argument, NULL, 'd' },
