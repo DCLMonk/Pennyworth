@@ -30,7 +30,7 @@ typedef struct {
 } FieldDef;
 
 #ifndef BUFFER_LENGTH
-#define BUFFER_LENGTH 256
+#define BUFFER_LENGTH 64
 #endif
 
 typedef struct {

@@ -212,6 +212,7 @@ void sendInitPackets(Device* device) {
 			sendField(device, device->fields + i);
 		}
 	}
+	CommManager* comm = &device->comm;
 
 #if BUFFER_LENGTH != 256
 	comm->send((unsigned char) (4));
