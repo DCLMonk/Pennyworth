@@ -1,0 +1,9 @@
+LoginFailurePacket.o: LoginFailurePacket.cpp LoginFailurePacket.h \
+ CPacket.h ../User/User.h ../CComm/CCommunicator.h
+CPacket.o: CPacket.cpp CPacket.h ../User/User.h ../CComm/CCommunicator.h \
+ ../Util.h ../Server.h ../Room.h ../Runnable.h
+UIDPacket.o: UIDPacket.cpp UIDPacket.h CPacket.h ../User/User.h \
+ ../CComm/CCommunicator.h
+LoginPacket.o: LoginPacket.cpp LoginPacket.h CPacket.h ../User/User.h \
+ ../CComm/CCommunicator.h LoginFailurePacket.h ../Server.h ../Room.h \
+ ../Runnable.h

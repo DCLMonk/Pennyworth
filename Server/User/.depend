@@ -1,0 +1,2 @@
+User.o: User.cpp User.h ../CComm/CCommunicator.h \
+ ../ClientPackets/CPacket.h ../User/User.h
