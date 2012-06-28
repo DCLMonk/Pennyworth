@@ -18,9 +18,9 @@ public:
 
 	~CSocketComm();
 
-	void writeBytes(unsigned char* data, unsigned int length);
+	void writeBytes(const char* data, unsigned int length);
 
-	int readBytes(unsigned char* data, unsigned int length);
+	int readBytes(char* data, unsigned int length);
 protected:
 	int fd;
 };

@@ -54,12 +54,24 @@ void CCommunicator::getPacket() {
 }
 
 void CCommunicator::writeBytes(const char* data, unsigned int length) {
-	printf("Warning: Unimplemented Communicator in Use\n");
+	printf("Warning: Unimplemented CCommunicator in Use\n");
 }
 
 int CCommunicator::readBytes(char* data, unsigned int length) {
-	printf("Warning: Unimplemented Communicator in Use\n");
+	printf("Warning: Unimplemented CCommunicator in Use\n");
 	return -1;
+}
+
+void makeLoginPacket(string packet) {
+	LoginPacket p(packet);
+}
+
+void makeUIDPacket(string packet) {
+//	UIDPacket p(packet);
+}
+
+void makeLoginFailedPacket(string packet) {
+	LoginFailurePacket p(packet);
 }
 
 void CCommunicator::makePacket(std::string packet) {
@@ -68,10 +80,13 @@ void CCommunicator::makePacket(std::string packet) {
 
 	switch (id) {
 	case LOGIN:
+		makeLoginPacket(packet);
 		break;
 	case UID:
+		makeUIDPacket(packet);
 		break;
 	case LOGIN_FAILED:
+		makeLoginFailedPacket(packet);
 		break;
 	}
 }

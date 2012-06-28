@@ -15,7 +15,7 @@
 namespace dvs {
 
 vector<Room*> rooms;
-unsigned int maxUserId = 0;
+unsigned int maxUserId = 1;
 queue<unsigned int> availableIds;
 map<unsigned int, User*> users;
 

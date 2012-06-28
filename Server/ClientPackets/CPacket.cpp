@@ -33,7 +33,7 @@ CPacket::~CPacket() {
 }
 
 string CPacket::toString() {
-	stringstream ss(stringstream::in);
+	stringstream ss(stringstream::out);
 
 	ss << id;
 	ss << ':';

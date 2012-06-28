@@ -32,15 +32,16 @@ CSocketComm::~CSocketComm() {
 	this->CCommunicator::~CCommunicator();
 }
 
-void CSocketComm::writeBytes(unsigned char* data, unsigned int length) {
+void CSocketComm::writeBytes(const char* data, unsigned int length) {
 	if (write(fd, (const void*)data, (size_t)length) < 0) {
 		if (errno == EPIPE) {
 			server.remListener(fd);
 		}
 	}
+	fsync(fd);
 }
 
-int CSocketComm::readBytes(unsigned char* data, unsigned int length) {
+int CSocketComm::readBytes(char* data, unsigned int length) {
 	int ret;
 	if ((ret = read(fd, data, length)) < 0) {
 		if (errno == EPIPE) {

@@ -28,6 +28,7 @@ LoginPacket::LoginPacket(string data) : CPacket(data) {
 		}
 	} else {
 		// TODO: Start dealing with device and client errors
+		printf("Client Error %d\n", args->size());
 	}
 }
 

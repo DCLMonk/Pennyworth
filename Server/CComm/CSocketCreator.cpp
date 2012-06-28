@@ -21,14 +21,14 @@ CSocketCreator::CSocketCreator(int port) {
 
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	if (sockfd < 0) {
-		perror("ERROR opening socket");
+		perror("ERROR copening socket");
 	}
 	bzero((char *) &serv_addr, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_addr.s_addr = INADDR_ANY;
 	serv_addr.sin_port = htons(port);
 	if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0)
-		perror("ERROR on binding");
+		perror("ERROR on cbinding");
 	fcntl(sockfd, F_SETFL, O_NONBLOCK);
 	listen(sockfd, 5);
 	clilen = sizeof(cli_addr);

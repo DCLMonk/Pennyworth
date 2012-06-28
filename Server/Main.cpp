@@ -36,6 +36,23 @@ private:
 	SocketCreator* creator;
 };
 
+class CCreateHandler: public Runnable {
+public:
+
+	CCreateHandler(CSocketCreator* creator) {
+		this->creator = creator;
+	}
+
+	void run() {
+		creator->checkConnections();
+//		if (comm != NULL) {
+//			comms.insert(comm);
+//		}
+	}
+private:
+	CSocketCreator* creator;
+};
+
 #define DEFAULT_PORT 5010
 #define DEFAULT_USER_PORT 8010
 
@@ -90,6 +107,7 @@ int main(int argc, char * argv[]) {
 	CommandInterface command("NONE->");
 
 	server.addListener(s->getFd(), new CreateHandler(s));
+	server.addListener(cs->getFd(), new CCreateHandler(cs));
 
 	server.run();
 

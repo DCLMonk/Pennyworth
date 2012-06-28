@@ -6,6 +6,7 @@
  */
 
 #include "UIDPacket.h"
+#include <stdio.h>
 
 namespace dvs {
 
