@@ -1,9 +1,36 @@
+LoginFailurePacket.o: LoginFailurePacket.cpp LoginFailurePacket.h \
+ CPacket.h ../User/User.h LoginPacket.h UIDPacket.h
+CPacket.o: CPacket.cpp CPacket.h ../User/User.h LoginPacket.h UIDPacket.h \
+ LoginFailurePacket.h ../Util.h ../Server.h ../Room.h ../Runnable.h
+GetFieldsPacket.o: GetFieldsPacket.cpp GetFieldsPacket.h \
+ ../ClientPackets/CPacket.h ../User/User.h ../ClientPackets/LoginPacket.h \
+ ../ClientPackets/CPacket.h ../ClientPackets/UIDPacket.h \
+ ../ClientPackets/LoginFailurePacket.h
+FieldInfoPacket.o: FieldInfoPacket.cpp FieldInfoPacket.h CPacket.h \
+ ../User/User.h LoginPacket.h UIDPacket.h LoginFailurePacket.h \
+ ../Device/Field/Field.h ../Device/Field/../Device.h \
+ ../Device/Field/../../Room.h ../Device/Field/../../Server.h \
+ ../Device/Field/../../Room.h ../Device/Field/../../Runnable.h \
+ ../Device/Field/../Field/Field.h ../Device/Field/BooleanField.h \
+ ../Device/Field/Field.h ../Device/Field/IntegerField.h \
+ ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
+ ../Device/Field/StringField.h
+UIDPacket.o: UIDPacket.cpp UIDPacket.h CPacket.h ../User/User.h \
+ LoginPacket.h LoginFailurePacket.h
+DeviceDefPacket.o: DeviceDefPacket.cpp DeviceDefPacket.h \
+ ../ClientPackets/CPacket.h ../User/User.h ../ClientPackets/LoginPacket.h \
+ ../ClientPackets/CPacket.h ../ClientPackets/UIDPacket.h \
+ ../ClientPackets/LoginFailurePacket.h ../Device/Device.h \
+ ../Device/../Room.h ../Device/../Server.h ../Device/../Room.h \
+ ../Device/../Runnable.h ../Device/Field/Field.h \
+ ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
+ ../Device/Field/Field.h ../Device/Field/IntegerField.h \
+ ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
+ ../Device/Field/StringField.h
 LoginPacket.o: LoginPacket.cpp LoginPacket.h CPacket.h ../User/User.h \
  UIDPacket.h LoginFailurePacket.h ../Server.h ../Room.h ../Runnable.h \
  ../CComm/CCommunicator.h ../Runnable.h ../ClientPackets/CPacket.h
-UIDPacket.o: UIDPacket.cpp UIDPacket.h CPacket.h ../User/User.h \
- LoginPacket.h LoginFailurePacket.h
-CPacket.o: CPacket.cpp CPacket.h ../User/User.h LoginPacket.h UIDPacket.h \
- LoginFailurePacket.h ../Util.h ../Server.h ../Room.h ../Runnable.h
-LoginFailurePacket.o: LoginFailurePacket.cpp LoginFailurePacket.h \
- CPacket.h ../User/User.h LoginPacket.h UIDPacket.h
+GetDevicesPacket.o: GetDevicesPacket.cpp GetDevicesPacket.h \
+ ../ClientPackets/CPacket.h ../User/User.h ../ClientPackets/LoginPacket.h \
+ ../ClientPackets/CPacket.h ../ClientPackets/UIDPacket.h \
+ ../ClientPackets/LoginFailurePacket.h

@@ -114,4 +114,16 @@ unsigned int Device::getMaxField() {
 	return maxField;
 }
 
+unsigned int Device::getIcon() {
+	return icon;
+}
+
+float Device::getX() {
+	return x;
+}
+
+float Device::getY() {
+	return y;
+}
+
 } /* namespace DVS */

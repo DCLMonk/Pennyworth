@@ -18,7 +18,7 @@ SetOnePacket::SetOnePacket(unsigned char *data) :
 	Field* field = device->getField(id);
 
 	if (field->getType() == FIXED) {
-		FixedField *ff = (FixedField*)ff;
+		FixedField *ff = (FixedField*)field;
 		ff->setOne((((unsigned int)data[6]) << 8) | data[5]);
 	}
 }

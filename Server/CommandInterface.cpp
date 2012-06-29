@@ -80,7 +80,7 @@ void CommandInterface::commandHandle(char* line) {
 		}
 		delete args;
 		if (i == NFUNCS) {
-			printf("Command: %s\n", line);
+			printf("Invalid Command: %s\n", line);
 		}
 		add_history(line);
 	}
@@ -152,7 +152,11 @@ void setField(vector<string>* args) {
 		if (args->size() > 2) {
 			Field* field = device->getField(atoi((*args)[1].c_str()));
 			if (field != NULL) {
-				field->setRealString((*args)[2]);
+				if (field->isWritable()) {
+					field->setRealString((*args)[2]);
+				} else {
+					printf("Error: Field is Read-only\n");
+				}
 			} else {
 				printf("Error: Invalid Field %d\n", atoi((*args)[1].c_str()));
 			}
