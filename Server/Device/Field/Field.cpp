@@ -70,4 +70,8 @@ void Field::sendPacket() {
 	packet.send();
 }
 
+Device* Field::getDevice() {
+	return device;
+}
+
 } /* namespace dvs */

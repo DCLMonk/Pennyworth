@@ -1,7 +1,19 @@
-FloatField.o: FloatField.cpp FloatField.h Field.h ../Device.h \
+IntegerField.o: IntegerField.cpp IntegerField.h Field.h ../Device.h \
+ ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
+ ../../User/User.h ../Field/Field.h BooleanField.h FloatField.h \
+ FixedField.h StringField.h
+FixedField.o: FixedField.cpp FixedField.h Field.h ../Device.h \
  ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
  ../../User/User.h ../Field/Field.h BooleanField.h IntegerField.h \
+ FloatField.h StringField.h
+BooleanField.o: BooleanField.cpp BooleanField.h Field.h ../Device.h \
+ ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
+ ../../User/User.h ../Field/Field.h IntegerField.h FloatField.h \
  FixedField.h StringField.h
+StringField.o: StringField.cpp StringField.h Field.h ../Device.h \
+ ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
+ ../../User/User.h ../Field/Field.h BooleanField.h IntegerField.h \
+ FloatField.h FixedField.h
 Field.o: Field.cpp Field.h ../Device.h ../../Room.h ../../Server.h \
  ../../Room.h ../../Runnable.h ../../User/User.h ../Field/Field.h \
  BooleanField.h IntegerField.h FloatField.h FixedField.h StringField.h \
@@ -15,19 +27,7 @@ Field.o: Field.cpp Field.h ../Device.h ../../Room.h ../../Server.h \
  ../../DevicePackets/SetFieldPacket.h \
  ../../DevicePackets/SubscribePacket.h ../../DevicePackets/SetOnePacket.h \
  ../../DevicePackets/MaxLengthPacket.h
-BooleanField.o: BooleanField.cpp BooleanField.h Field.h ../Device.h \
- ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
- ../../User/User.h ../Field/Field.h IntegerField.h FloatField.h \
- FixedField.h StringField.h
-StringField.o: StringField.cpp StringField.h Field.h ../Device.h \
+FloatField.o: FloatField.cpp FloatField.h Field.h ../Device.h \
  ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
  ../../User/User.h ../Field/Field.h BooleanField.h IntegerField.h \
- FloatField.h FixedField.h
-FixedField.o: FixedField.cpp FixedField.h Field.h ../Device.h \
- ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
- ../../User/User.h ../Field/Field.h BooleanField.h IntegerField.h \
- FloatField.h StringField.h
-IntegerField.o: IntegerField.cpp IntegerField.h Field.h ../Device.h \
- ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
- ../../User/User.h ../Field/Field.h BooleanField.h FloatField.h \
  FixedField.h StringField.h

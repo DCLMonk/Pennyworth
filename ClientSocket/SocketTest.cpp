@@ -27,7 +27,7 @@ void sendField(Device* device, FieldDef* field);
 
 #define DEFAULT_PORT 5010
 
-char* optString = "p:d:u:c:h";
+const char* optString = "p:d:u:c:h";
 
 static const struct option longOpts[] = {
 	{ "port", required_argument, NULL, 'p' },
@@ -90,8 +90,8 @@ int main(int argc, char * argv[]) {
 	setDeviceCName(cname, device);
 	setDeviceLocation(0, 0, 0, 0, device);
 
-	addField(BOOL, "First Field", 0, 1, 0, device);
-	addField(INT, "Second Field", 1, 1, 0, device);
+	addField(BOOL, "First Field", 0, 1, 1, device);
+	addField(INT, "Second Field", 1, 1, 1, device);
 	addField(FIXED, "Third Field", 2, 1, 0, device);
 
 	setOneVal(2, 0x0800, device);

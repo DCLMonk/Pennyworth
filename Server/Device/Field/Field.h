@@ -42,6 +42,7 @@ public:
 	string getName();
 	FieldType getType();
 	unsigned char getId();
+	Device* getDevice();
 
 protected:
 	void sendPacket();

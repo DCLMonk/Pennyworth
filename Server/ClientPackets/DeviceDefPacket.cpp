@@ -28,7 +28,7 @@ void DeviceDefPacket::streamData(stringstream& data) {
 	data << device->getCName();
 
 	data << ':';
-	data << device->getRoom();
+	data << device->getRoom()->getId();
 
 	data << ':';
 	data << device->getIcon();

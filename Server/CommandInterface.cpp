@@ -33,8 +33,9 @@ void rcommFunc(vector<string>* args);
 void listFields(vector<string>* args);
 void setField(vector<string>* args);
 void printField(vector<string>* args);
+void printDevice(vector<string>* args);
 
-#define NFUNCS 8
+#define NFUNCS 9
 
 pair<string*, funcListener> *(functions[NFUNCS]) = {
 	new pair<string*, funcListener>(new string("list"), listDevices),
@@ -44,7 +45,8 @@ pair<string*, funcListener> *(functions[NFUNCS]) = {
 	new pair<string*, funcListener>(new string("rcomm"), rcommFunc),
 	new pair<string*, funcListener>(new string("fields"), listFields),
 	new pair<string*, funcListener>(new string("set"), setField),
-	new pair<string*, funcListener>(new string("print"), printField)
+	new pair<string*, funcListener>(new string("print"), printField),
+	new pair<string*, funcListener>(new string("printd"), printDevice)
 };
 
 CommandInterface* instance;
@@ -166,6 +168,22 @@ void setField(vector<string>* args) {
 	} else {
 		printf("Error: No Device Selected\n");
 	}
+}
+
+void printDevice(vector<string>* args) {
+	Device* device = Device::getDevice(selected);
+	if (device == NULL) {
+		if (args->size() > 1) {
+			device = Device::getDevice(atoi((*args)[1].c_str()));
+		}
+		if (device == NULL) {
+			printf("Error: No Device Selected\n");
+			return;
+		}
+	}
+	printf("Device ID: %d\n", device->getId());
+	printf("Device: %s\t\tCommon Name: %s\n", device->getName().c_str(), device->getCName().c_str());
+	printf("Room: %d\t X: %lf\tY: %lf\n", device->getRoom()->getId(), device->getX(), device->getY());
 }
 
 void printField(vector<string>* args) {

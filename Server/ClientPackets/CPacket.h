@@ -61,5 +61,9 @@ typedef enum {
 #include "LoginPacket.h"
 #include "UIDPacket.h"
 #include "LoginFailurePacket.h"
+#include "GetDevicesPacket.h"
+#include "DeviceDefPacket.h"
+#include "GetFieldsPacket.h"
+#include "FieldInfoPacket.h"
 
 #endif /* CPACKET_H_ */

@@ -5,6 +5,7 @@
  *      Author: jmonk
  */
 #include <stdio.h>
+#include <stdlib.h>
 #include "GetFieldsPacket.h"
 #include "FieldInfoPacket.h"
 
@@ -14,7 +15,7 @@ GetFieldsPacket::GetFieldsPacket(string data) : CPacket(data) {
 	if (this->args->size() >= 3) {
 		int id = atoi((*args)[2].c_str());
 		Device* device = Device::getDevice(id);
-		if (device != null) {
+		if (device != NULL) {
 			if (args->size() >= 4) {
 				int fid = atoi((*args)[3].c_str());
 				if (device->hasField(fid)) {

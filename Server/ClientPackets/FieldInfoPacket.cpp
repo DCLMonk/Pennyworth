@@ -6,6 +6,7 @@
  */
 
 #include "FieldInfoPacket.h"
+#include <stdio.h>
 
 namespace dvs {
 
@@ -19,7 +20,10 @@ FieldInfoPacket::~FieldInfoPacket() {
 
 void FieldInfoPacket::streamData(stringstream& data) {
 	data << ':';
-	data << field->getId();
+	data << field->getDevice()->getId();
+
+	data << ':';
+	data << (unsigned int)field->getId();
 
 	data << ':';
 	data << field->getName();
