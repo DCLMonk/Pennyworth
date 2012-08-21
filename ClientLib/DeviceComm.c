@@ -260,7 +260,7 @@ void sendCName(Device* device) {
 
 void parsePacket(Device* device) {
 	CommManager* comm = &device->comm;
-	printf("Parse Packet %d\n", comm->buffer[4]);
+	printf("Parse Packet %d\n", comm->buffer[3]);
 	switch (comm->state) {
 	case INITCN: // What?
 		break;

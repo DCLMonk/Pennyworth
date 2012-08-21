@@ -8,7 +8,7 @@
 #ifndef DEVICECOMM_H_
 #define DEVICECOMM_H_
 
-//#define printf(x,...)
+#define printf(x,...)
 
 FieldDef* getField(unsigned int id, Device* device);
 
