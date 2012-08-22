@@ -17,14 +17,17 @@ class Device;
 
 class Room {
 public:
-	Room();
+	Room(int id);
 	virtual ~Room();
 
 	void addDevice(Device* device);
 
 	void remDevice(Device* device);
+
+	int getId();
 private:
 	std::set<Device*> devices;
+	int id;
 };
 
 } /* namespace dvs */

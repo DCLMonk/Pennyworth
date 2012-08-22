@@ -87,6 +87,10 @@ public:
 
 	void setIcon(unsigned int icon);
 
+	unsigned int getIcon();
+	float getX();
+	float getY();
+
 	bool hasField(unsigned char id);
 
 	Field* getField(unsigned char id);

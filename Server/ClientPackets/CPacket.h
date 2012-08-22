@@ -49,7 +49,11 @@ protected:
 typedef enum {
 	LOGIN=1,
 	UID=2,
-	LOGIN_FAILED=3
+	LOGIN_FAILED=3,
+	GET_DEVICES=4,
+	DEVICE_DEF=5,
+	GET_FIELDS=6,
+	FIELD_INFO=7
 } CPacketTypes;
 
 }
@@ -57,5 +61,9 @@ typedef enum {
 #include "LoginPacket.h"
 #include "UIDPacket.h"
 #include "LoginFailurePacket.h"
+#include "GetDevicesPacket.h"
+#include "DeviceDefPacket.h"
+#include "GetFieldsPacket.h"
+#include "FieldInfoPacket.h"
 
 #endif /* CPACKET_H_ */

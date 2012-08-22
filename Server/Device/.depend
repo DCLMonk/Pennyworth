@@ -1,7 +1,8 @@
 Device.o: Device.cpp Device.h ../Room.h ../Server.h ../Room.h \
- ../Runnable.h Field/Field.h Field/../Device.h Field/BooleanField.h \
- Field/Field.h Field/IntegerField.h Field/FloatField.h Field/FixedField.h \
- Field/StringField.h ../Comm/Communicator.h ../DevicePackets/Packet.h \
+ ../Runnable.h ../User/User.h Field/Field.h Field/../Device.h \
+ Field/BooleanField.h Field/Field.h Field/IntegerField.h \
+ Field/FloatField.h Field/FixedField.h Field/StringField.h \
+ ../Comm/Communicator.h ../DevicePackets/Packet.h \
  ../DevicePackets/../Device/Device.h ../DevicePackets/StartPacket.h \
  ../DevicePackets/Packet.h ../DevicePackets/InitPacket.h \
  ../DevicePackets/InitCNamePacket.h ../DevicePackets/InitLocationPacket.h \

@@ -74,6 +74,22 @@ void makeLoginFailedPacket(string packet) {
 	LoginFailurePacket p(packet);
 }
 
+void makeGetDevicesPacket(string packet) {
+	GetDevicesPacket p(packet);
+}
+
+void makeDeviceDefPacket(string packet) {
+//	DeviceDefPacket p(packet);
+}
+
+void makeGetFieldsPacket(string packet) {
+	GetFieldsPacket p(packet);
+}
+
+void makeFieldInfoPacket(string packet) {
+//	FieldInfoPacket p(packet);
+}
+
 void CCommunicator::makePacket(std::string packet) {
 	string ids = packet.substr(0, packet.find(':'));
 	int id = atoi(ids.c_str());
@@ -87,6 +103,18 @@ void CCommunicator::makePacket(std::string packet) {
 		break;
 	case LOGIN_FAILED:
 		makeLoginFailedPacket(packet);
+		break;
+	case GET_DEVICES:
+		makeGetDevicesPacket(packet);
+		break;
+	case DEVICE_DEF:
+		makeDeviceDefPacket(packet);
+		break;
+	case GET_FIELDS:
+		makeGetFieldsPacket(packet);
+		break;
+	case FIELD_INFO:
+		makeFieldInfoPacket(packet);
 		break;
 	}
 }

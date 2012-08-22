@@ -38,7 +38,10 @@ Main.o: Main.cpp CommandInterface.h Runnable.h Server.h Room.h \
  CComm/CSocketComm.h CComm/CCommunicator.h Runnable.h \
  ClientPackets/CPacket.h ClientPackets/LoginPacket.h \
  ClientPackets/CPacket.h ClientPackets/UIDPacket.h \
- ClientPackets/LoginFailurePacket.h Comm/SerialComm.h Comm/SocketComm.h
+ ClientPackets/LoginFailurePacket.h ClientPackets/GetDevicesPacket.h \
+ ClientPackets/DeviceDefPacket.h Device/Device.h \
+ ClientPackets/GetFieldsPacket.h ClientPackets/FieldInfoPacket.h \
+ Device/Field/Field.h Comm/SerialComm.h Comm/SocketComm.h
 CommandInterface.o: CommandInterface.cpp CommandInterface.h Runnable.h \
  Server.h Room.h User/User.h Device/Device.h Device/../Room.h \
  Device/../Server.h Device/Field/Field.h Device/Field/../Device.h \

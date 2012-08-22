@@ -61,7 +61,7 @@ public:
 
 	static Room* getRoom(unsigned int id) {
 		while (rooms.size() <= id) {
-			rooms.push_back(new Room());
+			rooms.push_back(new Room(rooms.size()));
 		}
 		return rooms[id];
 	}

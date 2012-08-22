@@ -9,6 +9,7 @@
 #include "CPacket.h"
 #include "CCommunicator.h"
 #include "Server.h"
+#include <stdio.h>
 
 namespace dvs {
 

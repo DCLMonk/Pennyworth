@@ -9,9 +9,8 @@
 
 namespace dvs {
 
-Room::Room() {
-	// TODO Auto-generated constructor stub
-
+Room::Room(int id) {
+	this->id = id;
 }
 
 Room::~Room() {
@@ -24,6 +23,10 @@ void Room::addDevice(Device* device) {
 
 void Room::remDevice(Device* device) {
 	devices.erase(device);
+}
+
+int Room::getId() {
+	return id;
 }
 
 } /* namespace dvs */
