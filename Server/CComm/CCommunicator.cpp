@@ -22,6 +22,7 @@ CCommunicator::CCommunicator() {
 }
 
 CCommunicator::~CCommunicator() {
+	printf("No More Comm :(\n");
 	if (user != NULL) {
 		delete user;
 		user = NULL;
@@ -40,7 +41,7 @@ void CCommunicator::getPacket() {
 		for (unsigned int i = 0; i < index; i++) {
 			pbuffer[i] = buffer[i];
 			if (buffer[i] == '\n') {
-				pbuffer[i+1] = '\0';
+				pbuffer[i] = '\0';
 				string packet(pbuffer);
 				makePacket(packet);
 				for (unsigned int j = i+1; j < index; j++) {
@@ -90,6 +91,10 @@ void makeFieldInfoPacket(string packet) {
 //	FieldInfoPacket p(packet);
 }
 
+void makeCommandPacket(string packet) {
+	CCommandPacket p(packet);
+}
+
 void CCommunicator::makePacket(std::string packet) {
 	string ids = packet.substr(0, packet.find(':'));
 	int id = atoi(ids.c_str());
@@ -115,6 +120,9 @@ void CCommunicator::makePacket(std::string packet) {
 		break;
 	case FIELD_INFO:
 		makeFieldInfoPacket(packet);
+		break;
+	case COMMAND:
+		makeCommandPacket(packet);
 		break;
 	}
 }

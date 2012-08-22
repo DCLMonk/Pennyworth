@@ -50,6 +50,34 @@ pair<string*, funcListener> *(functions[NFUNCS]) = {
 };
 
 CommandInterface* instance;
+char* print_buffer;
+int print_index;
+int buffer_length;
+
+#include <stdarg.h>
+
+void copy_to_buffer(char* string, int length) {
+	for (int i = 0; (i < length) && (print_index < buffer_length - 1); i++) {
+		print_buffer[print_index++] = string[i];
+	}
+	print_buffer[print_index++] = '\0';
+}
+
+int print(const char* format, ...) {
+	char buffer[512];
+	int ret = 0;
+	va_list args;
+	va_start(args, format);
+
+	if (print_buffer != NULL) {
+		ret = vsprintf(buffer, format, args);
+		copy_to_buffer(buffer, ret);
+	} else {
+		ret = vprintf(format, args);
+	}
+
+	return ret;
+}
 
 void commandHandleGlobal(char* line) {
 	instance->commandHandle(line);
@@ -69,6 +97,32 @@ void CommandInterface::run() {
 	rl_callback_read_char();
 }
 
+void CommandInterface::commandHandle(char* line, char* output, int out_len) {
+	print_buffer = output;
+	print_index = 0;
+	buffer_length = out_len;
+
+	string l(line);
+	if (l.size() > 0) {
+		vector<string>* args = Util::split(l, ' ');
+		int i;
+		for (i = 0; i < NFUNCS; i++) {
+			if (*(functions[i]->first) == (*args)[0]) {
+				functions[i]->second(args);
+				break;
+			}
+		}
+		delete args;
+		if (i == NFUNCS) {
+			print("Invalid Command: %s %d\n", line, strlen(line));
+			for (int i = 0; i < strlen(line); i++) {
+				printf("%c-", line[i]);
+			}
+		}
+	}
+	print_buffer = NULL;
+}
+
 void CommandInterface::commandHandle(char* line) {
 	string l(line);
 	if (l.size() > 0) {
@@ -82,7 +136,7 @@ void CommandInterface::commandHandle(char* line) {
 		}
 		delete args;
 		if (i == NFUNCS) {
-			printf("Invalid Command: %s\n", line);
+			print("Invalid Command: %s\n", line);
 		}
 		add_history(line);
 	}
@@ -95,14 +149,14 @@ void CommandInterface::setPromptI(char* prompt) {
 unsigned int selected = -1;
 
 void listDevices(vector<string>* args) {
-	printf("Devices: \n");
+	print("Devices: \n");
 
 	for (unsigned int i = 1; i < maxDeviceId; i++) {
 		if (Device::getDevice(i) != NULL) {
 			if (i == selected) {
-				printf("-->\t%d\t%s\t\t%s\n", i, Device::getDevice(i)->getCName().c_str(), Device::getDevice(i)->getName().c_str());
+				print("-->\t%d\t%s\t\t%s\n", i, Device::getDevice(i)->getCName().c_str(), Device::getDevice(i)->getName().c_str());
 			} else {
-				printf("\t%d\t%s\t\t%s\n", i, Device::getDevice(i)->getCName().c_str(), Device::getDevice(i)->getName().c_str());
+				print("\t%d\t%s\t\t%s\n", i, Device::getDevice(i)->getCName().c_str(), Device::getDevice(i)->getName().c_str());
 			}
 		}
 	}
@@ -129,22 +183,22 @@ void rcommFunc(vector<string>* args) {
 		StartPacket start;
 		comm->sendPacket(&start);
 	} else {
-		printf("Error: No Device Selected\n");
+		print("Error: No Device Selected\n");
 	}
 }
 
 void listFields(vector<string>* args) {
 	Device* device = Device::getDevice(selected);
 	if (device != NULL) {
-		printf("Fields:\n");
+		print("Fields:\n");
 		for (unsigned int i = 0; i < device->getMaxField(); i++) {
 			if (device->hasField(i)) {
 				Field* field = device->getField(i);
-				printf("\t%d\t%s\t%s\n", i, field->getName().c_str(), typeStrings[(int)field->getType()].c_str());
+				print("\t%d\t%s\t%s\n", i, field->getName().c_str(), typeStrings[(int)field->getType()].c_str());
 			}
 		}
 	} else {
-		printf("Error: No Device Selected\n");
+		print("Error: No Device Selected\n");
 	}
 }
 
@@ -157,16 +211,16 @@ void setField(vector<string>* args) {
 				if (field->isWritable()) {
 					field->setRealString((*args)[2]);
 				} else {
-					printf("Error: Field is Read-only\n");
+					print("Error: Field is Read-only\n");
 				}
 			} else {
-				printf("Error: Invalid Field %d\n", atoi((*args)[1].c_str()));
+				print("Error: Invalid Field %d\n", atoi((*args)[1].c_str()));
 			}
 		} else {
-			printf("Usage: set <field id> <value>\n");
+			print("Usage: set <field id> <value>\n");
 		}
 	} else {
-		printf("Error: No Device Selected\n");
+		print("Error: No Device Selected\n");
 	}
 }
 
@@ -177,13 +231,13 @@ void printDevice(vector<string>* args) {
 			device = Device::getDevice(atoi((*args)[1].c_str()));
 		}
 		if (device == NULL) {
-			printf("Error: No Device Selected\n");
+			print("Error: No Device Selected\n");
 			return;
 		}
 	}
-	printf("Device ID: %d\n", device->getId());
-	printf("Device: %s\t\tCommon Name: %s\n", device->getName().c_str(), device->getCName().c_str());
-	printf("Room: %d\t X: %lf\tY: %lf\n", device->getRoom()->getId(), device->getX(), device->getY());
+	print("Device ID: %d\n", device->getId());
+	print("Device: %s\t\tCommon Name: %s\n", device->getName().c_str(), device->getCName().c_str());
+	print("Room: %d\t X: %lf\tY: %lf\n", device->getRoom()->getId(), device->getX(), device->getY());
 }
 
 void printField(vector<string>* args) {
@@ -193,38 +247,38 @@ void printField(vector<string>* args) {
 			Field* field = device->getField(atoi((*args)[1].c_str()));
 
 			if (field != NULL) {
-				printf("Field: %d - %s:\t%s\n", field->getId(), typeStrings[(int)field->getType()].c_str(), field->getName().c_str());
-				printf("%s\t", field->isWritable()?"Writable":"Read-Only");
+				print("Field: %d - %s:\t%s\n", field->getId(), typeStrings[(int)field->getType()].c_str(), field->getName().c_str());
+				print("%s\t", field->isWritable()?"Writable":"Read-Only");
 				if (field->isVolatile()) {
-					printf("Volatile\t");
+					print("Volatile\t");
 				}
-				printf("\n");
+				print("\n");
 				switch (field->getType()) {
 				case BOOL:
-					printf("Value: %s\n", ((BooleanField*)field)->getBool()?"True":"False");
+					print("Value: %s\n", ((BooleanField*)field)->getBool()?"True":"False");
 					break;
 				case INTEGER:
-					printf("Value: %d\n", ((IntegerField*)field)->getInt());
+					print("Value: %d\n", ((IntegerField*)field)->getInt());
 					break;
 				case FLOAT:
-					printf("Value: %lf\n", ((FloatField*)field)->getFloat());
+					print("Value: %lf\n", ((FloatField*)field)->getFloat());
 					break;
 				case FIXED:
-					printf("Value: %lf\n", ((FixedField*)field)->getFloat());
-					printf("One Reference: %d\n", ((FixedField*)field)->getOne());
+					print("Value: %lf\n", ((FixedField*)field)->getFloat());
+					print("One Reference: %d\n", ((FixedField*)field)->getOne());
 					break;
 				case STRING:
-					printf("Value: %s\n", ((StringField*)field)->getValue().c_str());
+					print("Value: %s\n", ((StringField*)field)->getValue().c_str());
 					break;
 				}
 			} else {
-				printf("Error: Invalid Field %d\n", atoi((*args)[1].c_str()));
+				print("Error: Invalid Field %d\n", atoi((*args)[1].c_str()));
 			}
 		} else {
-			printf("Usage: print <field id>\n");
+			print("Usage: print <field id>\n");
 		}
 	} else {
-		printf("Error: No Device Selected\n");
+		print("Error: No Device Selected\n");
 	}
 }
 

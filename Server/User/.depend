@@ -9,4 +9,5 @@ User.o: User.cpp User.h ../ClientPackets/CPacket.h ../User/User.h \
  ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
  ../Device/Field/StringField.h ../ClientPackets/GetFieldsPacket.h \
  ../ClientPackets/FieldInfoPacket.h ../Device/Field/Field.h \
+ ../ClientPackets/CGetFieldPacket.h ../ClientPackets/SendFieldPacket.h \
  ../CComm/CCommunicator.h ../Runnable.h ../Server.h

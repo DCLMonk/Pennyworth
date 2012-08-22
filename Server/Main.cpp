@@ -62,6 +62,7 @@ static const struct option longOpts[] = {
 	{ "device", required_argument, NULL, 'd' },
 	{ "port", required_argument, NULL, 'p' },
 	{ "uport", required_argument, NULL, 'u' },
+	{ "help", optional_argument, NULL, 'h' },
 
 };
 
@@ -77,6 +78,9 @@ int main(int argc, char * argv[]) {
 	int opt = getopt_long(argc, argv, optString, longOpts, &longIndex);
 	while (opt != -1) {
 		switch (opt) {
+		case 'h':
+			printf("Usage: %s [OPTION]\n", argv[0]);
+			return 0;
 		case 'd':
 			printf("Connecting to %s\n", optarg);
 			new SerialComm(optarg);

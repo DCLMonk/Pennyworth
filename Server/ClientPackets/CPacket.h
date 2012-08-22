@@ -53,7 +53,11 @@ typedef enum {
 	GET_DEVICES=4,
 	DEVICE_DEF=5,
 	GET_FIELDS=6,
-	FIELD_INFO=7
+	FIELD_INFO=7,
+	GET_FIELD=8,
+	SEND_FIELD=9,
+	SET_FIELD=10,
+	COMMAND=11
 } CPacketTypes;
 
 }
@@ -65,5 +69,8 @@ typedef enum {
 #include "DeviceDefPacket.h"
 #include "GetFieldsPacket.h"
 #include "FieldInfoPacket.h"
+#include "CGetFieldPacket.h"
+#include "SendFieldPacket.h"
+#include "CCommandPacket.h"
 
 #endif /* CPACKET_H_ */

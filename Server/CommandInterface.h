@@ -28,6 +28,7 @@ public:
 	void run();
 
 	void commandHandle(char* line);
+	void commandHandle(char* line, char* output, int out_len);
 
 	void setPromptI(char* prompt);
 };
