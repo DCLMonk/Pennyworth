@@ -1,14 +1,15 @@
-CGetFieldPacket.o: CGetFieldPacket.cpp CGetFieldPacket.h CPacket.h \
- ../User/User.h LoginPacket.h UIDPacket.h LoginFailurePacket.h \
- GetDevicesPacket.h ../ClientPackets/CPacket.h DeviceDefPacket.h \
- ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
+LoginFailurePacket.o: LoginFailurePacket.cpp LoginFailurePacket.h \
+ CPacket.h ../User/User.h LoginPacket.h UIDPacket.h GetDevicesPacket.h \
+ ../ClientPackets/CPacket.h DeviceDefPacket.h ../Device/Device.h \
+ ../Device/../Room.h ../Device/../Server.h ../Device/../Room.h \
+ ../Device/../Runnable.h ../Device/Field/Field.h \
  ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
  ../Device/Field/Field.h ../Device/Field/IntegerField.h \
  ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
  ../Device/Field/StringField.h GetFieldsPacket.h FieldInfoPacket.h \
- ../Device/Field/Field.h SendFieldPacket.h CCommandPacket.h
-GetDevicesPacket.o: GetDevicesPacket.cpp GetDevicesPacket.h \
+ ../Device/Field/Field.h CGetFieldPacket.h SendFieldPacket.h \
+ CCommandPacket.h CSetFieldPacket.h
+CSetFieldPacket.o: CSetFieldPacket.cpp CSetFieldPacket.h \
  ../ClientPackets/CPacket.h ../User/User.h ../ClientPackets/LoginPacket.h \
  ../ClientPackets/CPacket.h ../ClientPackets/UIDPacket.h \
  ../ClientPackets/LoginFailurePacket.h \
@@ -21,9 +22,68 @@ GetDevicesPacket.o: GetDevicesPacket.cpp GetDevicesPacket.h \
  ../Device/Field/StringField.h ../ClientPackets/GetFieldsPacket.h \
  ../ClientPackets/FieldInfoPacket.h ../Device/Field/Field.h \
  ../ClientPackets/CGetFieldPacket.h ../ClientPackets/SendFieldPacket.h \
- ../ClientPackets/CCommandPacket.h DeviceDefPacket.h
-LoginPacket.o: LoginPacket.cpp LoginPacket.h CPacket.h ../User/User.h \
- UIDPacket.h LoginFailurePacket.h GetDevicesPacket.h \
+ ../ClientPackets/CCommandPacket.h ../ClientPackets/CSetFieldPacket.h
+CCommandPacket.o: CCommandPacket.cpp CCommandPacket.h CPacket.h \
+ ../User/User.h LoginPacket.h UIDPacket.h LoginFailurePacket.h \
+ GetDevicesPacket.h ../ClientPackets/CPacket.h DeviceDefPacket.h \
+ ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
+ ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
+ ../Device/Field/Field.h ../Device/Field/IntegerField.h \
+ ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
+ ../Device/Field/StringField.h GetFieldsPacket.h FieldInfoPacket.h \
+ ../Device/Field/Field.h CGetFieldPacket.h SendFieldPacket.h \
+ CSetFieldPacket.h ../CommandInterface.h ../Runnable.h
+CPacket.o: CPacket.cpp CPacket.h ../User/User.h LoginPacket.h UIDPacket.h \
+ LoginFailurePacket.h GetDevicesPacket.h ../ClientPackets/CPacket.h \
+ DeviceDefPacket.h ../Device/Device.h ../Device/../Room.h \
+ ../Device/../Server.h ../Device/../Room.h ../Device/../Runnable.h \
+ ../Device/Field/Field.h ../Device/Field/../Device.h \
+ ../Device/Field/BooleanField.h ../Device/Field/Field.h \
+ ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
+ ../Device/Field/FixedField.h ../Device/Field/StringField.h \
+ GetFieldsPacket.h FieldInfoPacket.h ../Device/Field/Field.h \
+ CGetFieldPacket.h SendFieldPacket.h CCommandPacket.h CSetFieldPacket.h \
+ ../Util.h ../Server.h
+GetFieldsPacket.o: GetFieldsPacket.cpp GetFieldsPacket.h \
+ ../ClientPackets/CPacket.h ../User/User.h ../ClientPackets/LoginPacket.h \
+ ../ClientPackets/CPacket.h ../ClientPackets/UIDPacket.h \
+ ../ClientPackets/LoginFailurePacket.h \
+ ../ClientPackets/GetDevicesPacket.h ../ClientPackets/DeviceDefPacket.h \
+ ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
+ ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
+ ../Device/Field/Field.h ../Device/Field/IntegerField.h \
+ ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
+ ../Device/Field/StringField.h ../ClientPackets/GetFieldsPacket.h \
+ ../ClientPackets/FieldInfoPacket.h ../Device/Field/Field.h \
+ ../ClientPackets/CGetFieldPacket.h ../ClientPackets/SendFieldPacket.h \
+ ../ClientPackets/CCommandPacket.h ../ClientPackets/CSetFieldPacket.h \
+ FieldInfoPacket.h
+SendFieldPacket.o: SendFieldPacket.cpp SendFieldPacket.h CPacket.h \
+ ../User/User.h LoginPacket.h UIDPacket.h LoginFailurePacket.h \
+ GetDevicesPacket.h ../ClientPackets/CPacket.h DeviceDefPacket.h \
+ ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
+ ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
+ ../Device/Field/Field.h ../Device/Field/IntegerField.h \
+ ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
+ ../Device/Field/StringField.h GetFieldsPacket.h FieldInfoPacket.h \
+ ../Device/Field/Field.h CGetFieldPacket.h CCommandPacket.h \
+ CSetFieldPacket.h
+FieldInfoPacket.o: FieldInfoPacket.cpp FieldInfoPacket.h CPacket.h \
+ ../User/User.h LoginPacket.h UIDPacket.h LoginFailurePacket.h \
+ GetDevicesPacket.h ../ClientPackets/CPacket.h DeviceDefPacket.h \
+ ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
+ ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
+ ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
+ ../Device/Field/Field.h ../Device/Field/IntegerField.h \
+ ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
+ ../Device/Field/StringField.h GetFieldsPacket.h CGetFieldPacket.h \
+ SendFieldPacket.h CCommandPacket.h CSetFieldPacket.h \
+ ../Device/Field/Field.h
+UIDPacket.o: UIDPacket.cpp UIDPacket.h CPacket.h ../User/User.h \
+ LoginPacket.h LoginFailurePacket.h GetDevicesPacket.h \
  ../ClientPackets/CPacket.h DeviceDefPacket.h ../Device/Device.h \
  ../Device/../Room.h ../Device/../Server.h ../Device/../Room.h \
  ../Device/../Runnable.h ../Device/Field/Field.h \
@@ -32,7 +92,7 @@ LoginPacket.o: LoginPacket.cpp LoginPacket.h CPacket.h ../User/User.h \
  ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
  ../Device/Field/StringField.h GetFieldsPacket.h FieldInfoPacket.h \
  ../Device/Field/Field.h CGetFieldPacket.h SendFieldPacket.h \
- CCommandPacket.h ../Server.h ../CComm/CCommunicator.h ../Runnable.h
+ CCommandPacket.h CSetFieldPacket.h
 DeviceDefPacket.o: DeviceDefPacket.cpp DeviceDefPacket.h \
  ../ClientPackets/CPacket.h ../User/User.h ../ClientPackets/LoginPacket.h \
  ../ClientPackets/CPacket.h ../ClientPackets/UIDPacket.h \
@@ -47,9 +107,9 @@ DeviceDefPacket.o: DeviceDefPacket.cpp DeviceDefPacket.h \
  ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
  ../Device/Field/StringField.h ../ClientPackets/CGetFieldPacket.h \
  ../ClientPackets/SendFieldPacket.h ../ClientPackets/CCommandPacket.h \
- ../Device/Device.h
-UIDPacket.o: UIDPacket.cpp UIDPacket.h CPacket.h ../User/User.h \
- LoginPacket.h LoginFailurePacket.h GetDevicesPacket.h \
+ ../ClientPackets/CSetFieldPacket.h ../Device/Device.h
+LoginPacket.o: LoginPacket.cpp LoginPacket.h CPacket.h ../User/User.h \
+ UIDPacket.h LoginFailurePacket.h GetDevicesPacket.h \
  ../ClientPackets/CPacket.h DeviceDefPacket.h ../Device/Device.h \
  ../Device/../Room.h ../Device/../Server.h ../Device/../Room.h \
  ../Device/../Runnable.h ../Device/Field/Field.h \
@@ -58,40 +118,9 @@ UIDPacket.o: UIDPacket.cpp UIDPacket.h CPacket.h ../User/User.h \
  ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
  ../Device/Field/StringField.h GetFieldsPacket.h FieldInfoPacket.h \
  ../Device/Field/Field.h CGetFieldPacket.h SendFieldPacket.h \
- CCommandPacket.h
-FieldInfoPacket.o: FieldInfoPacket.cpp FieldInfoPacket.h CPacket.h \
- ../User/User.h LoginPacket.h UIDPacket.h LoginFailurePacket.h \
- GetDevicesPacket.h ../ClientPackets/CPacket.h DeviceDefPacket.h \
- ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
- ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
- ../Device/Field/Field.h ../Device/Field/IntegerField.h \
- ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
- ../Device/Field/StringField.h GetFieldsPacket.h CGetFieldPacket.h \
- SendFieldPacket.h CCommandPacket.h ../Device/Field/Field.h
-CPacket.o: CPacket.cpp CPacket.h ../User/User.h LoginPacket.h UIDPacket.h \
- LoginFailurePacket.h GetDevicesPacket.h ../ClientPackets/CPacket.h \
- DeviceDefPacket.h ../Device/Device.h ../Device/../Room.h \
- ../Device/../Server.h ../Device/../Room.h ../Device/../Runnable.h \
- ../Device/Field/Field.h ../Device/Field/../Device.h \
- ../Device/Field/BooleanField.h ../Device/Field/Field.h \
- ../Device/Field/IntegerField.h ../Device/Field/FloatField.h \
- ../Device/Field/FixedField.h ../Device/Field/StringField.h \
- GetFieldsPacket.h FieldInfoPacket.h ../Device/Field/Field.h \
- CGetFieldPacket.h SendFieldPacket.h CCommandPacket.h ../Util.h \
- ../Server.h
-CCommandPacket.o: CCommandPacket.cpp CCommandPacket.h CPacket.h \
- ../User/User.h LoginPacket.h UIDPacket.h LoginFailurePacket.h \
- GetDevicesPacket.h ../ClientPackets/CPacket.h DeviceDefPacket.h \
- ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
- ../Device/../Room.h ../Device/../Runnable.h ../Device/Field/Field.h \
- ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
- ../Device/Field/Field.h ../Device/Field/IntegerField.h \
- ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
- ../Device/Field/StringField.h GetFieldsPacket.h FieldInfoPacket.h \
- ../Device/Field/Field.h CGetFieldPacket.h SendFieldPacket.h \
- ../CommandInterface.h ../Runnable.h
-GetFieldsPacket.o: GetFieldsPacket.cpp GetFieldsPacket.h \
+ CCommandPacket.h CSetFieldPacket.h ../Server.h ../CComm/CCommunicator.h \
+ ../Runnable.h
+GetDevicesPacket.o: GetDevicesPacket.cpp GetDevicesPacket.h \
  ../ClientPackets/CPacket.h ../User/User.h ../ClientPackets/LoginPacket.h \
  ../ClientPackets/CPacket.h ../ClientPackets/UIDPacket.h \
  ../ClientPackets/LoginFailurePacket.h \
@@ -104,19 +133,9 @@ GetFieldsPacket.o: GetFieldsPacket.cpp GetFieldsPacket.h \
  ../Device/Field/StringField.h ../ClientPackets/GetFieldsPacket.h \
  ../ClientPackets/FieldInfoPacket.h ../Device/Field/Field.h \
  ../ClientPackets/CGetFieldPacket.h ../ClientPackets/SendFieldPacket.h \
- ../ClientPackets/CCommandPacket.h FieldInfoPacket.h
-LoginFailurePacket.o: LoginFailurePacket.cpp LoginFailurePacket.h \
- CPacket.h ../User/User.h LoginPacket.h UIDPacket.h GetDevicesPacket.h \
- ../ClientPackets/CPacket.h DeviceDefPacket.h ../Device/Device.h \
- ../Device/../Room.h ../Device/../Server.h ../Device/../Room.h \
- ../Device/../Runnable.h ../Device/Field/Field.h \
- ../Device/Field/../Device.h ../Device/Field/BooleanField.h \
- ../Device/Field/Field.h ../Device/Field/IntegerField.h \
- ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
- ../Device/Field/StringField.h GetFieldsPacket.h FieldInfoPacket.h \
- ../Device/Field/Field.h CGetFieldPacket.h SendFieldPacket.h \
- CCommandPacket.h
-SendFieldPacket.o: SendFieldPacket.cpp SendFieldPacket.h CPacket.h \
+ ../ClientPackets/CCommandPacket.h ../ClientPackets/CSetFieldPacket.h \
+ DeviceDefPacket.h
+CGetFieldPacket.o: CGetFieldPacket.cpp CGetFieldPacket.h CPacket.h \
  ../User/User.h LoginPacket.h UIDPacket.h LoginFailurePacket.h \
  GetDevicesPacket.h ../ClientPackets/CPacket.h DeviceDefPacket.h \
  ../Device/Device.h ../Device/../Room.h ../Device/../Server.h \
@@ -125,4 +144,5 @@ SendFieldPacket.o: SendFieldPacket.cpp SendFieldPacket.h CPacket.h \
  ../Device/Field/Field.h ../Device/Field/IntegerField.h \
  ../Device/Field/FloatField.h ../Device/Field/FixedField.h \
  ../Device/Field/StringField.h GetFieldsPacket.h FieldInfoPacket.h \
- ../Device/Field/Field.h CGetFieldPacket.h CCommandPacket.h
+ ../Device/Field/Field.h SendFieldPacket.h CCommandPacket.h \
+ CSetFieldPacket.h

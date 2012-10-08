@@ -19,7 +19,7 @@ MaxLengthPacket::MaxLengthPacket(unsigned char* data) :
 }
 
 MaxLengthPacket::~MaxLengthPacket() {
-	// TODO Auto-generated destructor stub
+
 }
 
 } /* namespace dvs */

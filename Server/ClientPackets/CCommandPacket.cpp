@@ -24,8 +24,9 @@ CCommandPacket::CCommandPacket(std::string data) : CPacket(data) {
 }
 
 CCommandPacket::~CCommandPacket() {
-	// TODO Auto-generated destructor stub
+
 }
+
 void CCommandPacket::streamData(stringstream& data) {
 	for (int i = 0; i < 2048; i++) {
 		if (buffer[i] == ':') buffer[i] = ';';

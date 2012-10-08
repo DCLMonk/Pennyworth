@@ -26,7 +26,6 @@ SerialComm::SerialComm(char* device) {
 	name = "Serial ";
 	name.append(dev);
 
-	//todo serial port should not be hard coded
 	fd = open(device, O_RDWR | O_NOCTTY); // really ought to check for error
 	tcgetattr(fd, &tc);
 	cfmakeraw(&tc);

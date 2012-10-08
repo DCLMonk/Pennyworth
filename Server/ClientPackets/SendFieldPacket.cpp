@@ -19,6 +19,10 @@ SendFieldPacket::~SendFieldPacket() {
 
 void SendFieldPacket::streamData(stringstream& data) {
 	data << ':';
+	data << field->getDevice()->getId();
+	data << ':';
+	data << field->getId();
+	data << ':';
 	switch (field->getType()) {
 	case BOOL:
 		if (((BooleanField*)field)->getBool()) {

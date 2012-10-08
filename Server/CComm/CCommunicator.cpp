@@ -95,6 +95,10 @@ void makeCommandPacket(string packet) {
 	CCommandPacket p(packet);
 }
 
+void makeSetFieldPacket(string packet) {
+	CSetFieldPacket p(packet);
+}
+
 void CCommunicator::makePacket(std::string packet) {
 	string ids = packet.substr(0, packet.find(':'));
 	int id = atoi(ids.c_str());
@@ -123,6 +127,9 @@ void CCommunicator::makePacket(std::string packet) {
 		break;
 	case COMMAND:
 		makeCommandPacket(packet);
+		break;
+	case SET_FIELD:
+		makeSetFieldPacket(packet);
 		break;
 	}
 }

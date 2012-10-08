@@ -12,12 +12,11 @@ namespace dvs {
 
 FloatField::FloatField(string name, unsigned char id, bool writable, bool vol, Device* device) :
 		Field(FLOAT, name, id, writable, vol, device) {
-	// TODO Auto-generated constructor stub
 
 }
 
 FloatField::~FloatField() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void FloatField::setString(unsigned char* value) {

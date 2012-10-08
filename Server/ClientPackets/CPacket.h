@@ -72,5 +72,6 @@ typedef enum {
 #include "CGetFieldPacket.h"
 #include "SendFieldPacket.h"
 #include "CCommandPacket.h"
+#include "CSetFieldPacket.h"
 
 #endif /* CPACKET_H_ */

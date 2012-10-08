@@ -11,12 +11,11 @@ namespace dvs {
 
 StringField::StringField(string name, unsigned char id, bool writable, bool vol, Device* device) :
 		Field(STRING, name, id, writable, vol, device) {
-	// TODO Auto-generated constructor stub
 
 }
 
 StringField::~StringField() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void StringField::setString(unsigned char* value) {

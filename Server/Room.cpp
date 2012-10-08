@@ -14,7 +14,7 @@ Room::Room(int id) {
 }
 
 Room::~Room() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void Room::addDevice(Device* device) {

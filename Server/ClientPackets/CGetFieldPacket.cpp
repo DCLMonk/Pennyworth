@@ -33,7 +33,7 @@ CGetFieldPacket::CGetFieldPacket(string data) : CPacket(data) {
 }
 
 CGetFieldPacket::~CGetFieldPacket() {
-	// TODO Auto-generated destructor stub
+
 }
 
 } /* namespace dvs */
