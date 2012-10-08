@@ -58,4 +58,5 @@ CommandInterface.o: CommandInterface.cpp CommandInterface.h Runnable.h \
  DevicePackets/FieldValuePacket.h DevicePackets/SetFieldPacket.h \
  DevicePackets/SubscribePacket.h DevicePackets/SetOnePacket.h \
  DevicePackets/MaxLengthPacket.h DevicePackets/StartPacket.h \
- Device/Field/Field.h
+ Device/Field/Field.h Comm/SerialComm.h Comm/Communicator.h \
+ Comm/SocketComm.h
