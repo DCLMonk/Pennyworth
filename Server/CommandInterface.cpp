@@ -18,6 +18,7 @@
 #include "Communicator.h"
 #include "StartPacket.h"
 #include "Field.h"
+#include "SerialComm.h"
 
 using namespace std;
 
@@ -34,8 +35,11 @@ void listFields(vector<string>* args);
 void setField(vector<string>* args);
 void printField(vector<string>* args);
 void printDevice(vector<string>* args);
+void listComms(vector<string>* args);
+void delComm(vector<string>* args);
+void newComm(vector<string>* args);
 
-#define NFUNCS 9
+#define NFUNCS 12
 
 pair<string*, funcListener> *(functions[NFUNCS]) = {
 	new pair<string*, funcListener>(new string("list"), listDevices),
@@ -46,7 +50,10 @@ pair<string*, funcListener> *(functions[NFUNCS]) = {
 	new pair<string*, funcListener>(new string("fields"), listFields),
 	new pair<string*, funcListener>(new string("set"), setField),
 	new pair<string*, funcListener>(new string("print"), printField),
-	new pair<string*, funcListener>(new string("printd"), printDevice)
+	new pair<string*, funcListener>(new string("printd"), printDevice),
+	new pair<string*, funcListener>(new string("comms"), listComms),
+	new pair<string*, funcListener>(new string("close"), delComm),
+	new pair<string*, funcListener>(new string("open"), newComm)
 };
 
 CommandInterface* instance;
@@ -115,7 +122,7 @@ void CommandInterface::commandHandle(char* line, char* output, int out_len) {
 		delete args;
 		if (i == NFUNCS) {
 			print("Invalid Command: %s %d\n", line, strlen(line));
-			for (int i = 0; i < strlen(line); i++) {
+			for (unsigned int i = 0; i < strlen(line); i++) {
 				printf("%c-", line[i]);
 			}
 		}
@@ -279,6 +286,28 @@ void printField(vector<string>* args) {
 		}
 	} else {
 		print("Error: No Device Selected\n");
+	}
+}
+
+void listComms(vector<string>* args) {
+	print("Active Comms:\n");
+	for (unsigned int i = 0; i < comms.size(); i++) {
+		print("%d\t-\t%s\n", i + 1, comms[i]->toString().c_str());
+	}
+}
+
+void delComm(vector<string>* args) {
+	if (args->size() > 1) {
+		int id = atoi((*args)[1].c_str());
+		printf("Removing %d\n", id);
+		printf("Location %p\n", comms[id - 1]);
+		comms[id - 1]->remove();
+	}
+}
+
+void newComm(vector<string>* args) {
+	if (args->size() > 1) {
+		new SerialComm((char *)(*args)[1].c_str());
 	}
 }
 

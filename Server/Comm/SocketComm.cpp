@@ -12,6 +12,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include "../Runnable.h"
+#include <sstream>
 
 namespace dvs {
 
@@ -21,6 +22,11 @@ SocketComm::SocketComm(int fd) {
 	StartPacket p;
 	sendPacket(&p);
 	server.addListener(fd, new CommHandler(this));
+
+	stringstream s;
+	s << "Socket ";
+	s << fd;
+	name = s.str();
 }
 
 SocketComm::SocketComm() {
@@ -50,12 +56,20 @@ int SocketComm::readBytes(unsigned char* data, unsigned int length) {
 	int ret;
 	if ((ret = read(fd, data, length)) < 0) {
 		if (errno == EPIPE) {
-			server.remListener(fd);
+			this->remove();
 		} else {
 			printf("Other\n");
 		}
 	}
 	return ret;
+}
+
+
+
+void SocketComm::remove() {
+	printf("SocketComm::remove: Removing %d\n", commId);
+	server.remListener(fd);
+	this->Communicator::remove();
 }
 
 } /* namespace dvs */

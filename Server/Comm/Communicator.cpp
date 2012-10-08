@@ -7,13 +7,24 @@
 
 #include "Communicator.h"
 
+std::vector<dvs::Communicator*> comms;
+
 namespace dvs {
 
 Communicator::Communicator() {
-
+	commId = comms.size();
+	comms.push_back(this);
+	index = 0;
+	size = 0;
+	name = "Unset Name";
 }
 
 Communicator::~Communicator() {
+}
+
+void Communicator::remove() {
+	printf("remove: Removing %d\n", commId);
+	comms.erase(comms.begin() + commId);
 }
 
 void Communicator::sendPacket(Packet* packet) {
@@ -141,6 +152,10 @@ void Communicator::makeSetOne() {
 
 void Communicator::makeMaxLength() {
 	MaxLengthPacket maxLength(buffer);
+}
+
+string Communicator::toString() {
+	return name;
 }
 
 } /* namespace dvs */

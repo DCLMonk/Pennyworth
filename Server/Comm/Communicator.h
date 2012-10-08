@@ -9,6 +9,7 @@
 #define COMMUNICATOR_H_
 
 #include "Packet.h"
+#include <vector>
 
 namespace dvs {
 
@@ -25,6 +26,12 @@ public:
 	virtual void writeBytes(unsigned char* data, unsigned int length);
 
 	virtual int readBytes(unsigned char* data, unsigned int length);
+
+	virtual void remove();
+
+	string toString();
+
+	unsigned int commId;
 protected:
 	void makeStart();
 	void makeInit();
@@ -41,6 +48,7 @@ protected:
 	unsigned char buffer[256];
 	unsigned int size;
 	unsigned int index;
+	string name;
 };
 
 class CommHandler: public Runnable {
@@ -62,4 +70,6 @@ private:
 };
 
 } /* namespace dvs */
+
+extern std::vector<dvs::Communicator*> comms;
 #endif /* COMMUNICATOR_H_ */

@@ -36,7 +36,7 @@ void Server::addListener(int fd, Runnable* listener) {
 void Server::remListener(int fd) {
 	for (unsigned int i = 0; i < fds.size(); i++) {
 		if (fds[i] == fd) {
-			printf("Removing FD: %d\n", fds[i]);
+//			printf("Removing FD: %d\n", fds[i]);
 			fds.erase(fds.begin() + i);
 			delete readListeners[i];
 			readListeners.erase(readListeners.begin() + i);

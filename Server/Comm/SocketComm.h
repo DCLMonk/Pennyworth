@@ -21,6 +21,8 @@ public:
 	void writeBytes(unsigned char* data, unsigned int length);
 
 	int readBytes(unsigned char* data, unsigned int length);
+
+	void remove();
 protected:
 	int fd;
 };
