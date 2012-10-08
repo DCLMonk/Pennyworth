@@ -22,6 +22,9 @@ namespace dvs {
 
 SerialComm::SerialComm(char* device) {
 	struct termios tc; // terminal control structure
+	string dev(device);
+	name = "Serial ";
+	name.append(dev);
 
 	//todo serial port should not be hard coded
 	fd = open(device, O_RDWR | O_NOCTTY); // really ought to check for error
