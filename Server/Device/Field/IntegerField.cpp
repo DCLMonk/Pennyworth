@@ -13,12 +13,11 @@ namespace dvs {
 IntegerField::IntegerField(string name, unsigned char id, bool writable,
 		bool vol, Device* device) :
 		Field(INTEGER, name, id, writable, vol, device) {
-	// TODO Auto-generated constructor stub
 
 }
 
 IntegerField::~IntegerField() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void IntegerField::setString(unsigned char* value) {

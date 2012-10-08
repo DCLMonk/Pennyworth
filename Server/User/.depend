@@ -10,4 +10,5 @@ User.o: User.cpp User.h ../ClientPackets/CPacket.h ../User/User.h \
  ../Device/Field/StringField.h ../ClientPackets/GetFieldsPacket.h \
  ../ClientPackets/FieldInfoPacket.h ../Device/Field/Field.h \
  ../ClientPackets/CGetFieldPacket.h ../ClientPackets/SendFieldPacket.h \
+ ../ClientPackets/CCommandPacket.h ../ClientPackets/CSetFieldPacket.h \
  ../CComm/CCommunicator.h ../Runnable.h ../Server.h

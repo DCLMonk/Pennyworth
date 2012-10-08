@@ -13,12 +13,12 @@ namespace dvs {
 BooleanField::BooleanField(string name, unsigned char id, bool writable,
 		bool vol, Device* device) :
 		Field(BOOL, name, id, writable, vol, device) {
-	// TODO Auto-generated constructor stub
+
 
 }
 
 BooleanField::~BooleanField() {
-	// TODO Auto-generated destructor stub
+
 }
 
 void BooleanField::setString(unsigned char* value) {
