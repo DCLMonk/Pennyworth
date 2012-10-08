@@ -23,7 +23,7 @@ public class UIDPacket extends Packet {
 	@Override
 	public String packetString() {
 		// Incoming only...
-		return Util.concat(new String[] {PacketType.LOGIN.getType() + "", NetworkManager.getUserId() + ""}, ":");
+		return Util.concat(new String[] {PacketType.UID.getType() + "", NetworkManager.getUserId() + ""}, ":");
 	}
 
 }

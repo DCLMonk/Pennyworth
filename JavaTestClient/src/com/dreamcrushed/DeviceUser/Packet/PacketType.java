@@ -22,9 +22,9 @@ public enum PacketType {
 	DEVICE_DEF(5, DeviceDefPacket.class),
 	GET_FIELDS(6, GetFieldsPacket.class),
 	FIELD_INFO(7, FieldInfoPacket.class),
-	GET_FIELD(8, null),
-	SEND_FIELD(9, null),
-	SET_FIELD(10, null),
+	GET_FIELD(8, GetFieldPacket.class),
+	SEND_FIELD(9, SendFieldPacket.class),
+	SET_FIELD(10, SetFieldPacket.class),
 	COMMAND(11, CommandPacket.class),
 	;
 	
