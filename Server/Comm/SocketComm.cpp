@@ -27,6 +27,7 @@ SocketComm::SocketComm(int fd) {
 	s << "Socket ";
 	s << fd;
 	name = s.str();
+	printf("New Socket Port\n");
 }
 
 SocketComm::SocketComm() {

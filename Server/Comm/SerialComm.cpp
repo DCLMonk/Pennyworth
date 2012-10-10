@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
+#include <string>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -22,7 +23,7 @@ namespace dvs {
 
 SerialComm::SerialComm(char* device) {
 	struct termios tc; // terminal control structure
-	string dev(device);
+	std::string dev(device);
 	name = "Serial ";
 	name.append(dev);
 
@@ -44,6 +45,7 @@ SerialComm::SerialComm(char* device) {
 	StartPacket p;
 	sendPacket(&p);
 	server.addListener(fd, new CommHandler(this));
+	printf("New Serial Port\n");
 }
 
 } /* namespace dvs */

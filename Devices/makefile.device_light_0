@@ -88,13 +88,13 @@ PROJECTNAME=house_project
 # (list all files to compile, e.g. 'a.c b.cpp as.S'):
 # Use .cc, .cpp or .C suffix for C++ files, use .S 
 # (NOT .s !!!) for assembly source code files.
-PRJSRC=device_light_0.c DeviceServer/ClientLib/DeviceClient.c DeviceServer/ClientLib/DeviceComm.c
+PRJSRC=device_light_0.c ../ClientLib/DeviceClient.c ../ClientLib/DeviceComm.c
 #PRJSRC=atmega8_slave.c DeviceServer/ClientLib/DeviceClient.c DeviceServer/ClientLib/DeviceComm.c
 #PRJSRC=at90usb162_test.c DeviceServer/ClientLib/DeviceClient.c DeviceServer/ClientLib/DeviceComm.c
 
 # additional includes (e.g. -I/path/to/mydir)
 #INC=-I/path/to/include
-INC=-I/home/forrest/Documents/house_project
+#INC=-I/home/forrest/Documents/house_project
 
 # libraries to link in (e.g. -lmylib)
 LIBS=
@@ -247,6 +247,12 @@ fuses:
 	 -p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) \
 	 -U lfuse:w:0xe4:m -U hfuse:w:0xd9:m
 
+read-fuses:
+	$(AVRDUDE) -c $(AVRDUDE_PROGRAMMERID)   \
+	 -p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) \
+	 -U lfuse:r:low.hex:i -U hfuse:r:high.hex:i
+
+prog: clean all writeflash
 prog: clean all writeflash
 
 $(DUMPTRG): $(TRG) 

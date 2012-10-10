@@ -1,0 +1,1 @@
+SocketSerialConnector.d: ../SocketSerialConnector.c
