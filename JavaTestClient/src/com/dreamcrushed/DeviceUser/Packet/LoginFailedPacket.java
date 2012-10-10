@@ -10,7 +10,13 @@ public class LoginFailedPacket extends Packet {
 	public LoginFailedPacket(int id, String[] params) {
 		super(params);
 		this.error = params[0];
+	}
+	
+	@Override
+	public void handle(NetworkManager networkManager) {
+		super.handle(networkManager);
 		System.out.println("Error: " + this.error);
+		// TODO: Handle Error Here
 	}
 
 	@Override
