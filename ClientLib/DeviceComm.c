@@ -11,6 +11,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define printf(x, ...)
+
 enum RecvState {
 	INIT = 20,
 	INIT1 = 21,

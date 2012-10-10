@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 	struct hostent *server;
 	const char* host = "localhost";
 	int port = 5011;
-	int devices =2;
+	int devices = 3;
 	const char* serial = "/dev/ttyUSB0";
 	int i, d;
 	char buf[4];
@@ -47,10 +47,10 @@ int main(int argc, char **argv) {
 	fd = open(serial, O_RDWR | O_NOCTTY); // really ought to check for error
 	tcgetattr(fd, &tc);
 	cfmakeraw(&tc);
-    tc.c_iflag = IGNPAR;
-    tc.c_oflag = 0;
-    tc.c_cflag = CS8 | CREAD | CLOCAL; //8 bit chars enable receiver no modem status lines
-    tc.c_lflag =0 ;
+    tc.c_iflag |= IGNCR;
+//    tc.c_oflag = 0;
+//    tc.c_cflag = CS8 | CREAD | CLOCAL; //8 bit chars enable receiver no modem status lines
+//    tc.c_lflag =0 ;
 
 	//todo baud rate should not be hard coded
 	cfsetispeed(&tc, B9600);
@@ -70,7 +70,6 @@ int main(int argc, char **argv) {
 		if (read(sockfd, buf, 1) > 0) {
 			int l = buf[0];
 			write(fd, buf, 1);
-			printf("Server Sent %d!\n", l);
 			for (i = 0; i < l; i++) {
 				if (read(sockfd, buf, 1) > 0) {
 					write(fd, buf, 1);
@@ -79,14 +78,13 @@ int main(int argc, char **argv) {
 				}
 			}
 		}
-		for (d = 2; d <= devices; d++) {
+		for (d = 1; d <= devices; d++) {
 			buf[0] = '\0';
 			buf[1] = d;
 			write(fd, buf, 2);
 			read(fd, buf, 1);
 			if (buf[0] > 0) {
 				int l = buf[0];
-				printf("Device Sent %d!\n", l);
 				write(sockfd, buf, 1);
 				for (i = 0; i < l; i++) {
 					if (read(fd, buf, 1) > 0) {
@@ -95,8 +93,6 @@ int main(int argc, char **argv) {
 						i--;
 					}
 				}
-			} else {
-				printf("Device Sent %d!\n", buf[0]);
 			}
 		}
 	}

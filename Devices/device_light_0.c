@@ -30,7 +30,7 @@
 #define RELAY_ON()	RELAY_PORT |= (1<<RELAY)
 #define RELAY_OFF()	RELAY_PORT &= ~(1<<RELAY)
 
-#define MAX_LEN 64 
+#define MAX_LEN 128 
 
 enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};
 
@@ -49,16 +49,28 @@ int main(int argc, char* argv[]) {
 
 	unsigned char ret;
 	char c;
-	int len;
-	int i;
+	char len;
+	char i;
+	char name[8];
+	char* bname = "Light_0";
 
-	unsigned char did = 2;
+	for (c = 0; bname[c] != '\0'; c++) {
+		name[c] = bname[c];
+	}
+	name[c] = '\0';
+
+	unsigned char did = 1;
 
 	// define direction of inputs and outputs
 	// 1 for output, 0 for input
 	// | for output, & for input
 	DDRD = (1<<LIGHT);
 	DDRD |= (1<<RELAY);
+
+	DDRC = 0;
+
+	did = PINC & 0x7;
+	name[c - 1] += did;
 
 	LIGHT_OFF();
 
@@ -70,9 +82,9 @@ int main(int argc, char* argv[]) {
 //	FILE s=FDEV_SETUP_STREAM(send_char_serial,NULL,_FDEV_SETUP_WRITE);
 //	stdout=&s;
 
-	sei();
+//	sei();
 
-	Device* device = createDevice("test_device_1", 1, buffered_send_char);
+	Device* device = createDevice(name, 1, buffered_send_char);
 	
 	setDeviceCName("Light", device);
 	setDeviceLocation(0, 0, 0, 0, device);
@@ -102,8 +114,6 @@ int main(int argc, char* argv[]) {
 					send_char_serial('\0');
 				}
 				serial_tx_disable();
-			} else {
-				LIGHT_ON();
 			}
 		} else {
 			len = c;
