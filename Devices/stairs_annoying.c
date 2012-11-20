@@ -83,8 +83,6 @@ int main(int argc, char* argv[]) {
 
 	did = PINC & 0x7;
 
-	LIGHT_OFF();
-
 	serial_init();
 
 	buf_index = 0;	
