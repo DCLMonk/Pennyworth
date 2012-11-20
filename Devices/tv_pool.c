@@ -76,8 +76,8 @@ int main(int argc, char* argv[]) {
 	// define direction of inputs and outputs
 	// 1 for output, 0 for input
 	// | for output, & for input
-	DDRD = (1<<LIGHT);
-	DDRD |= (1<<RELAY);
+	DDRD = (1<<RELAY_P);
+	DDRD |= (1<<RELAY_TV);
 
 	DDRC = 0;
 
