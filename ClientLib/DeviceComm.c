@@ -332,6 +332,17 @@ void recvChar(char c, Device* device) {
 	comm->buffer[comm->index++] = c;
 	unsigned int did;
 
+	comm->startWatch[0] = comm->startWatch[1];
+	comm->startWatch[1] = comm->startWatch[2];
+	comm->startWatch[2] = comm->startWatch[3];
+	comm->startWatch[3] = c;
+	if ((comm->startWatch[0] == 3) && (comm->startWatch[1] == 0) && (comm->startWatch[2] == 0) && (comm->startWatch[3] == 0)) {
+		comm->state = INITP;
+		parsePacket(device);
+		comm->state = START;
+		comm->index = 0;
+	}
+
 	switch (comm->state) {
 	case INIT:
 		if (c == 3) {

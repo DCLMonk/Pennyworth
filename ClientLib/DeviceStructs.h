@@ -53,6 +53,7 @@ typedef struct {
 
 typedef struct {
 	char buffer[BUFFER_LENGTH];
+	char startWatch[4];
 	unsigned int index;
 	unsigned int length;
 	unsigned int state;
