@@ -136,6 +136,8 @@ int main(int argc, char* argv[]) {
 				c = receive_char_serial();
 				recvChar(c, pdevice);
 				recvChar(c, tvdevice);
+				if (shouldBreak(pdevice)) break;
+				if (shouldBreak(tvdevice)) break;
 			}
 		}
 /*

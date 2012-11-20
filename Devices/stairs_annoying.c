@@ -136,6 +136,8 @@ int main(int argc, char* argv[]) {
 				c = receive_char_serial();
 				recvChar(c, annoydevice);
 				recvChar(c, stairdevice);
+				if (shouldBreak(annoydevice)) break;
+				if (shouldBreak(stairdevice)) break;
 			}
 		}
 /*

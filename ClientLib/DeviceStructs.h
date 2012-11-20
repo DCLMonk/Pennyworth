@@ -26,6 +26,8 @@
 #ifndef DEVICESTRUCTS_H_
 #define DEVICESTRUCTS_H_
 
+#define true 1
+#define false 0
 
 typedef enum {
 	BOOL=0,
@@ -58,6 +60,7 @@ typedef struct {
 	unsigned int length;
 	unsigned int state;
 	unsigned char initialized;
+	unsigned char shouldBreak;
 	SendRoutine send;
 } CommManager;
 

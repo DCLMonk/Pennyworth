@@ -341,7 +341,10 @@ void recvChar(char c, Device* device) {
 		parsePacket(device);
 		comm->state = START;
 		comm->index = 0;
+		comm->shouldBreak = true;
+		return;
 	}
+	comm->shouldBreak = false;
 
 	switch (comm->state) {
 	case INIT:

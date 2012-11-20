@@ -264,3 +264,7 @@ void setOneVal(unsigned int id, unsigned int one, Device* device) {
 		sendOnePacket(id, device);
 	}
 }
+
+unsigned int shouldBreak(Device* device) {
+	return device->comm.shouldBreak;
+}

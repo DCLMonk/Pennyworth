@@ -66,4 +66,6 @@ void setChangeListener(unsigned int id, FieldList listener, Device* device);
 
 void recvChar(char c, Device* device);
 
+unsigned int shouldBreak(Device* device);
+
 #endif /* DEVICECLIENT_H_ */
