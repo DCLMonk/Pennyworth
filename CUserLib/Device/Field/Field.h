@@ -55,12 +55,16 @@ public:
 
 	virtual unsigned int getLength();
 
+	virtual void increment();
+
 	bool isWritable();
 	bool isVolatile();
 	string getName();
 	FieldType getType();
 	unsigned char getId();
 	Device* getDevice();
+
+	void sendToServer();
 
 protected:
 	void sendPacket();

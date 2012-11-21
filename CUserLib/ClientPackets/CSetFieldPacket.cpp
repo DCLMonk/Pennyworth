@@ -56,6 +56,7 @@ CSetFieldPacket::~CSetFieldPacket() {
 }
 
 void CSetFieldPacket::streamData(stringstream& data) {
+	data << ":";
 	data << device->getId();
 	data << ":";
 	data << field->getId();

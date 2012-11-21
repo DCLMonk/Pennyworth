@@ -1,0 +1,16 @@
+Room.o: Room.cpp Room.h
+Main.o: Main.cpp CComm/CSocketComm.h CComm/CCommunicator.h Runnable.h \
+ ClientPackets/CPacket.h User/User.h ClientPackets/LoginPacket.h \
+ ClientPackets/CPacket.h ClientPackets/UIDPacket.h \
+ ClientPackets/LoginFailurePacket.h ClientPackets/GetDevicesPacket.h \
+ ClientPackets/DeviceDefPacket.h Device/Device.h Device/../Room.h \
+ Device/Field/Field.h Device/Field/../Device.h \
+ Device/Field/BooleanField.h Device/Field/Field.h \
+ Device/Field/IntegerField.h Device/Field/FloatField.h \
+ Device/Field/FixedField.h Device/Field/StringField.h \
+ CComm/CCommunicator.h ClientPackets/GetFieldsPacket.h \
+ ClientPackets/FieldInfoPacket.h Device/Field/Field.h \
+ ClientPackets/CGetFieldPacket.h ClientPackets/SendFieldPacket.h \
+ ClientPackets/CCommandPacket.h ClientPackets/CSetFieldPacket.h \
+ CComm/PacketListener.h ClientPackets/LoginPacket.h \
+ ClientPackets/GetDevicesPacket.h ClientPackets/GetFieldsPacket.h

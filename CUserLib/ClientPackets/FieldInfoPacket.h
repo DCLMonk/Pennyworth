@@ -38,8 +38,7 @@ public:
 	FieldInfoPacket(string data, CCommunicator* user);
 	virtual ~FieldInfoPacket();
 
-	void streamData(stringstream& data);
-
+	Field* getField();
 private:
 	Field* field;
 };

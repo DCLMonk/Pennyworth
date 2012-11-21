@@ -33,6 +33,7 @@
 #include <iterator>
 #include <string>
 #include <vector>
+#include "stdlib.h"
 
 using namespace std;
 
@@ -48,6 +49,17 @@ public:
 			ret->push_back(item);
 		}
 		return ret;
+	}
+
+	static bool toBool(string val) {
+		if ((val.find('t') != string::npos) || (val.find('T') != string::npos)) {
+			return true;
+		} else if ((val.find('f') != string::npos) || (val.find('F') != string::npos)) {
+			return false;
+		} else {
+			int v = atoi(val.c_str());
+			return v != 0;
+		}
 	}
 };
 

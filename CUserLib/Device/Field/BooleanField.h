@@ -42,6 +42,8 @@ public:
 
 	unsigned int getLength();
 
+	void increment();
+
 	void setBool(bool value);
 	bool getBool();
 private:

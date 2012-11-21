@@ -25,11 +25,13 @@
 
 #include "UIDPacket.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 namespace dvs {
 
 UIDPacket::UIDPacket(string data, CCommunicator* comm) : CPacket(data, comm) {
-
+	int id = atoi((*this->args)[1].c_str());
+	comm->setId(id);
 }
 
 UIDPacket::~UIDPacket() {

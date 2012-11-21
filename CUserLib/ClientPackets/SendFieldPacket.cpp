@@ -24,44 +24,25 @@
  */
 
 #include "SendFieldPacket.h"
+#include "stdlib.h"
 
 namespace dvs {
 
 SendFieldPacket::SendFieldPacket(string data, CCommunicator* comm): CPacket(data, comm) {
 	this->field = field;
+	int id = atoi((*this->args)[2].c_str());
+	Device* device = Device::getDevice(id);
+	if (device != NULL) {
+		int fid = atoi((*this->args)[3].c_str());
+		Field* field = device->getField(fid);
+		if (field != NULL) {
+			field->setRealString((*this->args)[4]);
+		}
+	}
 }
 
 SendFieldPacket::~SendFieldPacket() {
 
-}
-
-void SendFieldPacket::streamData(stringstream& data) {
-//	data << ':';
-//	data << field->getDevice()->getId();
-//	data << ':';
-//	data << field->getId();
-//	data << ':';
-//	switch (field->getType()) {
-//	case BOOL:
-//		if (((BooleanField*)field)->getBool()) {
-//			data << "True";
-//		} else {
-//			data << "False";
-//		}
-//		break;
-//	case INTEGER:
-//		data << ((IntegerField*)field)->getInt();
-//		break;
-//	case FLOAT:
-//		data << ((FloatField*)field)->getFloat();
-//		break;
-//	case FIXED:
-//		data << ((FixedField*)field)->getFloat();
-//		break;
-//	case STRING:
-//		data << ((StringField*)field)->getValue();
-//		break;
-//	}
 }
 
 } /* namespace dvs */

@@ -35,7 +35,6 @@ public:
 	LoginFailurePacket(string error, CCommunicator* comm);
 	virtual ~LoginFailurePacket();
 
-	void streamData(stringstream& data);
 private:
 	string error;
 };

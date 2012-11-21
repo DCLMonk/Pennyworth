@@ -34,6 +34,12 @@ class LoginPacket: public dvs::CPacket {
 public:
 	LoginPacket(string user, string pass, CCommunicator* comm);
 	virtual ~LoginPacket();
+
+	void streamData(stringstream& data);
+
+private:
+	string user;
+	string pass;
 };
 
 } /* namespace dvs */

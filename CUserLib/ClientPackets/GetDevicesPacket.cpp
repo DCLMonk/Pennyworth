@@ -29,27 +29,23 @@
 
 namespace dvs {
 
+GetDevicesPacket::GetDevicesPacket(int id, CCommunicator* comm) : CPacket(GET_DEVICES, comm) {
+	this->id = id;
+}
+
 GetDevicesPacket::GetDevicesPacket(CCommunicator* comm) : CPacket(GET_DEVICES, comm) {
-//	if (this->args->size() >= 3) {
-//		int id = atoi((*args)[2].c_str());
-//		if (Device::getDevice(id) != NULL) {
-//			DeviceDefPacket packet(Device::getDevice(id), user);
-//
-//			packet.send();
-//		}
-//	} else {
-//		for (unsigned int i = 1; i < maxDeviceId; i++) {
-//			if (Device::getDevice(i) != NULL) {
-//				DeviceDefPacket packet(Device::getDevice(i), user);
-//
-//				packet.send();
-//			}
-//		}
-//	}
+	this->id = -1;
 }
 
 GetDevicesPacket::~GetDevicesPacket() {
 
+}
+
+void GetDevicesPacket::streamData(stringstream& data) {
+	if (this->id >= 0) {
+		data << ":";
+		data << id;
+	}
 }
 
 } /* namespace dvs */

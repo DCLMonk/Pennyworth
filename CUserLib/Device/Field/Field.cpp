@@ -82,6 +82,15 @@ unsigned char Field::getId() {
 	return id;
 }
 
+void Field::increment() {
+	printf("Warning: Unimplemented increment Field Used\n");
+}
+
+void Field::sendToServer() {
+	CSetFieldPacket p(getDevice(), this, getDevice()->getComm());
+	p.send();
+}
+
 void Field::sendPacket() {
 	CSetFieldPacket packet(device, this, device->getComm());
 	packet.send();

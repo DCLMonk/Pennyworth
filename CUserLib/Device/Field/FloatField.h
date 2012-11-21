@@ -43,6 +43,8 @@ public:
 
 	unsigned int getLength();
 
+	void increment();
+
 	float getFloat();
 private:
 	float value;

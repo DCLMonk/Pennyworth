@@ -35,8 +35,6 @@ public:
 	SendFieldPacket(string data, CCommunicator* user);
 	virtual ~SendFieldPacket();
 
-	void streamData(stringstream& data);
-
 private:
 	Field* field;
 };

@@ -66,6 +66,11 @@ void FixedField::setOne(unsigned int newOne) {
 	this->o = newOne;
 }
 
+void FixedField::increment() {
+	this->value += this->o;
+	sendToServer();
+}
+
 unsigned int FixedField::getOne() {
 	return this->o;
 }
