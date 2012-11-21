@@ -71,6 +71,8 @@ int main(int argc, char* argv[]) {
 	char* annoyname = "Annoy_Light";
 	char* stairname = "Stair_Light";
 
+	DDRC = 0;
+	PORTC = 0x7;
 	unsigned char did = 1;
 
 	// define direction of inputs and outputs
@@ -79,7 +81,6 @@ int main(int argc, char* argv[]) {
 	DDRD = (1<<RELAY_STAIRS);
 	DDRD |= (1<<RELAY_ANNOY);
 
-	DDRC = 0;
 
 	did = PINC & 0x7;
 
@@ -182,7 +183,6 @@ void buffered_send_char(char c) {
 		}
 	} else {
 		// TODO: figure out what to do
-		LIGHT_ON();
 	}
 }
 

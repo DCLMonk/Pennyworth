@@ -24,6 +24,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <sys/time.h>
 #include <fcntl.h>
 #include <netdb.h>
 #include <getopt.h>
@@ -41,10 +42,11 @@ int main(int argc, char **argv) {
 	struct hostent *server;
 	const char* host = "localhost";
 	int port = 5011;
-	int devices = 3;
-	const char* serial = "/dev/ttyUSB0";
+	int devices = 2;
+	const char* serial = "/dev/ttyACM0";
 	int i, d;
 	char buf[4];
+	fd_set fdSet;
 
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	if (sockfd < 0)
@@ -67,7 +69,7 @@ int main(int argc, char **argv) {
 	cfmakeraw(&tc);
     tc.c_iflag |= IGNCR;
 //    tc.c_oflag = 0;
-//    tc.c_cflag = CS8 | CREAD | CLOCAL; //8 bit chars enable receiver no modem status lines
+//    tc.c_cflag = CS8 | CREAD | CLOCAL; //8 bit chars enable receiver no modem status line s
 //    tc.c_lflag =0 ;
 
 	//todo baud rate should not be hard coded
@@ -84,10 +86,13 @@ int main(int argc, char **argv) {
 //	buf[3] = 0;
 //	write(fd, buf, 4);
 	printf("Connected!\n");
+	FD_ZERO(&fdSet);
+	FD_SET(fd, &fdSet);
 	while (1) {
 		if (read(sockfd, buf, 1) > 0) {
 			int l = buf[0];
 			write(fd, buf, 1);
+//			printf("Server: %d\n", l);
 			for (i = 0; i < l; i++) {
 				if (read(sockfd, buf, 1) > 0) {
 					write(fd, buf, 1);
@@ -100,15 +105,21 @@ int main(int argc, char **argv) {
 			buf[0] = '\0';
 			buf[1] = d;
 			write(fd, buf, 2);
-			read(fd, buf, 1);
-			if (buf[0] > 0) {
-				int l = buf[0];
-				write(sockfd, buf, 1);
-				for (i = 0; i < l; i++) {
-					if (read(fd, buf, 1) > 0) {
+			struct timeval tv = {0, 250000};
+			if (select(fd + 1, &fdSet, NULL, NULL, &tv)) {
+				if (FD_ISSET(fd, &fdSet)) {
+					read(fd, buf, 1);
+					if (buf[0] > 0) {
+						int l = buf[0];
+//						printf("Device: %d %d\n", d, l);
 						write(sockfd, buf, 1);
-					} else {
-						i--;
+						for (i = 0; i < l; i++) {
+							if (read(fd, buf, 1) > 0) {
+								write(sockfd, buf, 1);
+							} else {
+								i--;
+							}
+						}
 					}
 				}
 			}

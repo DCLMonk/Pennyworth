@@ -1,0 +1,11 @@
+Device.o: Device.cpp Device.h ../Room.h Field/Field.h Field/../Device.h \
+ Field/BooleanField.h Field/Field.h Field/IntegerField.h \
+ Field/FloatField.h Field/FixedField.h Field/StringField.h \
+ ../CComm/CCommunicator.h ../Runnable.h ../ClientPackets/CPacket.h \
+ ../User/User.h ../ClientPackets/LoginPacket.h ../ClientPackets/CPacket.h \
+ ../ClientPackets/UIDPacket.h ../ClientPackets/LoginFailurePacket.h \
+ ../ClientPackets/GetDevicesPacket.h ../ClientPackets/DeviceDefPacket.h \
+ ../Device/Device.h ../ClientPackets/GetFieldsPacket.h \
+ ../ClientPackets/FieldInfoPacket.h ../Device/Field/Field.h \
+ ../ClientPackets/CGetFieldPacket.h ../ClientPackets/SendFieldPacket.h \
+ ../ClientPackets/CCommandPacket.h ../ClientPackets/CSetFieldPacket.h

@@ -31,21 +31,21 @@
 
 #include "../ClientLib/DeviceClient.h"
 
-#define RELAY_P_PORT	PORTD
-#define RELAY_P			PD5
-#define RELAY_TV_PORT	PORTD
-#define RELAY_TV		PD7
+#define RELAY_ANNOY_PORT	PORTD
+#define RELAY_ANNOY			PD5
+#define RELAY_STAIRS_PORT	PORTD
+#define RELAY_STAIRS		PD7
 
 #define MISO		PB4
 #define MOSI		PB3
 #define SCK			PB5
 #define SS			PD6
 
-#define RELAY_TV_ON()	RELAY_TV_PORT |= (1<<RELAY_TV)
-#define RELAY_TV_OFF()	RELAY_TV_PORT &= ~(1<<RELAY_TV)
+#define RELAY_STAIRS_ON()	RELAY_STAIRS_PORT |= (1<<RELAY_STAIRS)
+#define RELAY_STAIRS_OFF()	RELAY_STAIRS_PORT &= ~(1<<RELAY_STAIRS)
 
-#define RELAY_P_ON()	RELAY_P_PORT |= (1<<RELAY_P)
-#define RELAY_P_OFF()	RELAY_P_PORT &= ~(1<<RELAY_P)
+#define RELAY_ANNOY_ON()	RELAY_ANNOY_PORT |= (1<<RELAY_ANNOY)
+#define RELAY_ANNOY_OFF()	RELAY_ANNOY_PORT &= ~(1<<RELAY_ANNOY)
 
 #define MAX_LEN 128 
 
@@ -68,18 +68,18 @@ int main(int argc, char* argv[]) {
 	char c;
 	char len;
 	char i;
-	char* pname = "Pool_Light";
-	char* tvname = "TV_Light";
+	char* annoyname = "Annoy_Light";
+	char* stairname = "Stair_Light";
 
-	DDRC = 0;
-	PORTC = 0x7;
 	unsigned char did = 1;
 
 	// define direction of inputs and outputs
 	// 1 for output, 0 for input
 	// | for output, & for input
-	DDRD = (1<<RELAY_P);
-	DDRD |= (1<<RELAY_TV);
+	DDRD = (1<<RELAY_STAIRS);
+	DDRD |= (1<<RELAY_ANNOY);
+
+	DDRC = 0;
 
 	did = PINC & 0x7;
 
@@ -93,16 +93,16 @@ int main(int argc, char* argv[]) {
 
 //	sei();
 
-	Device* pdevice = createDevice(pname, 1, buffered_send_char);
-	Device* tvdevice = createDevice(tvname, 1, buffered_send_char);
+	Device* annoydevice = createDevice(annoyname, 1, buffered_send_char);
+	Device* stairdevice = createDevice(stairname, 1, buffered_send_char);
 	
-	setDeviceCName("Pool Light", pdevice);
-	setDeviceCName("TV Light", tvdevice);
-	setDeviceLocation(0, 0, 0, 0, pdevice);
-	setDeviceLocation(0, 0, 0, 0, tvdevice);
+	setDeviceCName("Annoying Light", annoydevice);
+	setDeviceCName("Stairs Light", stairdevice);
+	setDeviceLocation(0, 0, 0, 0, annoydevice);
+	setDeviceLocation(0, 0, 0, 0, stairdevice);
 	
-	addField(BOOL, "Light Status", 0, 1, 0, pdevice);
-	addField(BOOL, "Light Status", 0, 1, 0, tvdevice);
+	addField(BOOL, "Light Status", 0, 1, 0, annoydevice);
+	addField(BOOL, "Light Status", 0, 1, 0, stairdevice);
 
 	while (1) {
 		c = receive_char_serial();
@@ -130,14 +130,14 @@ int main(int argc, char* argv[]) {
 			}
 		} else {
 			len = c;
-			recvChar(len, pdevice);
-			recvChar(len, tvdevice);
+			recvChar(len, annoydevice);
+			recvChar(len, stairdevice);
 			for (i = 0; i < len; i++) {
 				c = receive_char_serial();
-				recvChar(c, pdevice);
-				recvChar(c, tvdevice);
-				if (shouldBreak(pdevice)) break;
-				if (shouldBreak(tvdevice)) break;
+				recvChar(c, annoydevice);
+				recvChar(c, stairdevice);
+				if (shouldBreak(annoydevice)) break;
+				if (shouldBreak(stairdevice)) break;
 			}
 		}
 /*
@@ -150,20 +150,20 @@ int main(int argc, char* argv[]) {
 		}
 */
 
-		if (hasChanged(0, pdevice)) {
-			ret = getBoolVal(0, pdevice);
+		if (hasChanged(0, annoydevice)) {
+			ret = getBoolVal(0, annoydevice);
 			if (ret) {
-				RELAY_P_ON();
+				RELAY_ANNOY_ON();
 			} else {
-				RELAY_P_OFF();
+				RELAY_ANNOY_OFF();
 			}
 		}
-		if (hasChanged(0, tvdevice)) {
-			ret = getBoolVal(0, tvdevice);
+		if (hasChanged(0, stairdevice)) {
+			ret = getBoolVal(0, stairdevice);
 			if (ret) {
-				RELAY_TV_ON();
+				RELAY_STAIRS_ON();
 			} else {
-				RELAY_TV_OFF();
+				RELAY_STAIRS_OFF();
 			}
 		}
 	}
@@ -180,8 +180,6 @@ void buffered_send_char(char c) {
 		if (len == 0) {
 			transmit_flag = 1;
 		}
-	} else {
-		// TODO: figure out what to do
 	}
 }
 

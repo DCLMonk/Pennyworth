@@ -1,0 +1,479 @@
+Archive member included because of file (symbol)
+
+/home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_exit.o)
+                              /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o (exit)
+/home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_copy_data.o)
+                              stairs_annoying.o (__do_copy_data)
+/home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_clear_bss.o)
+                              stairs_annoying.o (__do_clear_bss)
+/home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+                              ../ClientLib/DeviceClient.o (malloc)
+/home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(strcmp.o)
+                              ../ClientLib/DeviceComm.o (strcmp)
+
+Allocating common symbols
+Common symbol       size              file
+
+__brkval            0x2               /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+transmit_flag       0x1               stairs_annoying.o
+buf                 0x80              stairs_annoying.o
+buf_index           0x1               stairs_annoying.o
+__flp               0x2               /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x0000000000000000 0x0000000000002000 xr
+data             0x0000000000800060 0x000000000000ffa0 rw !x
+eeprom           0x0000000000810000 0x0000000000010000 rw !x
+fuse             0x0000000000820000 0x0000000000000400 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+LOAD /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libm.a
+LOAD stairs_annoying.o
+LOAD ../ClientLib/DeviceClient.o
+LOAD ../ClientLib/DeviceComm.o
+LOAD /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a
+LOAD /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a
+LOAD /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000000000     0x1716
+ *(.vectors)
+ .vectors       0x0000000000000000       0x26 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+                0x0000000000000000                __vectors
+                0x0000000000000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ .progmem.gcc_sw_table
+                0x0000000000000026       0x3a ../ClientLib/DeviceComm.o
+ *(.progmem*)
+                0x0000000000000060                . = ALIGN (0x2)
+                0x0000000000000060                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000000000000060        0x0 linker stubs
+ *(.trampolines*)
+                0x0000000000000060                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000000000000060                __ctors_start = .
+ *(.ctors)
+                0x0000000000000060                __ctors_end = .
+                0x0000000000000060                __dtors_start = .
+ *(.dtors)
+                0x0000000000000060                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000000000000060        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+                0x0000000000000060                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000000000000060        0xc /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000000000000006c       0x16 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_copy_data.o)
+                0x000000000000006c                __do_copy_data
+ .init4         0x0000000000000082       0x10 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_clear_bss.o)
+                0x0000000000000082                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000000000000092        0x4 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+ *(.init9)
+ *(.text)
+ .text          0x0000000000000096        0x2 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+                0x0000000000000096                __vector_1
+                0x0000000000000096                __vector_12
+                0x0000000000000096                __bad_interrupt
+                0x0000000000000096                __vector_6
+                0x0000000000000096                __vector_3
+                0x0000000000000096                __vector_11
+                0x0000000000000096                __vector_13
+                0x0000000000000096                __vector_17
+                0x0000000000000096                __vector_7
+                0x0000000000000096                __vector_5
+                0x0000000000000096                __vector_4
+                0x0000000000000096                __vector_9
+                0x0000000000000096                __vector_2
+                0x0000000000000096                __vector_15
+                0x0000000000000096                __vector_8
+                0x0000000000000096                __vector_14
+                0x0000000000000096                __vector_10
+                0x0000000000000096                __vector_16
+                0x0000000000000096                __vector_18
+ .text          0x0000000000000098      0x27a stairs_annoying.o
+                0x0000000000000098                buffered_send_char
+                0x00000000000000dc                serial_tx_enable
+                0x00000000000000e0                serial_tx_disable
+                0x00000000000000e4                serial_init
+                0x00000000000000f8                send_char_serial
+                0x000000000000010c                receive_char_serial
+                0x0000000000000114                send_string_serial
+                0x0000000000000156                main
+ .text          0x0000000000000312      0x6a8 ../ClientLib/DeviceClient.o
+                0x0000000000000312                hasChanged
+                0x000000000000036a                getBoolVal
+                0x00000000000003bc                getIntVal
+                0x0000000000000416                getFixedVal
+                0x0000000000000470                getStringVal
+                0x00000000000004ca                setChangeListener
+                0x0000000000000526                shouldBreak
+                0x0000000000000532                setOneVal
+                0x0000000000000578                createDevice
+                0x0000000000000622                setStringVal
+                0x00000000000006de                setFixedVal
+                0x0000000000000728                setIntVal
+                0x0000000000000772                setBoolVal
+                0x00000000000007b6                addField
+                0x0000000000000970                setDeviceLocation
+                0x000000000000099e                setDeviceCName
+ .text          0x00000000000009ba      0xadc ../ClientLib/DeviceComm.o
+                0x00000000000009ba                getField
+                0x0000000000000a04                sendOnePacket
+                0x0000000000000a94                sendLoc
+                0x0000000000000b5c                sendCName
+                0x0000000000000c24                sendInitPacket
+                0x0000000000000cec                sendValue
+                0x0000000000000eae                sendField
+                0x0000000000000fb0                sendInitPackets
+                0x0000000000001076                readValue
+                0x0000000000001174                parsePacket
+                0x0000000000001272                recvChar
+ .text          0x0000000000001496        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_exit.o)
+ .text          0x0000000000001496        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_copy_data.o)
+ .text          0x0000000000001496        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_clear_bss.o)
+ .text          0x0000000000001496        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+ .text          0x0000000000001496        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(strcmp.o)
+                0x0000000000001496                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x0000000000001496        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_exit.o)
+ .text.libgcc   0x0000000000001496        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000000000001496        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x0000000000001496      0x26a /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+                0x0000000000001496                malloc
+                0x00000000000015d0                free
+ .text.avr-libc
+                0x0000000000001700       0x12 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(strcmp.o)
+                0x0000000000001700                strcmp
+                0x0000000000001712                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000000000001712        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_exit.o)
+                0x0000000000001712                exit
+                0x0000000000001712                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000000000001712        0x4 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_exit.o)
+ *(.fini0)
+                0x0000000000001716                _etext = .
+
+.data           0x0000000000800060       0x48 load address 0x0000000000001716
+                0x0000000000800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x0000000000800060        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+ .data          0x0000000000800060       0x41 stairs_annoying.o
+ .data          0x00000000008000a1        0x0 ../ClientLib/DeviceClient.o
+ .data          0x00000000008000a1        0x0 ../ClientLib/DeviceComm.o
+ .data          0x00000000008000a1        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_exit.o)
+ .data          0x00000000008000a1        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_copy_data.o)
+ .data          0x00000000008000a1        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_clear_bss.o)
+ .data          0x00000000008000a1        0x6 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+                0x00000000008000a1                __malloc_margin
+                0x00000000008000a3                __malloc_heap_start
+                0x00000000008000a5                __malloc_heap_end
+ .data          0x00000000008000a7        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(strcmp.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00000000008000a8                . = ALIGN (0x2)
+ *fill*         0x00000000008000a7        0x1 00
+                0x00000000008000a8                _edata = .
+                0x00000000008000a8                PROVIDE (__data_end, .)
+
+.bss            0x00000000008000a8       0x87
+                0x00000000008000a8                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00000000008000a8        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+ .bss           0x00000000008000a8        0x1 stairs_annoying.o
+ .bss           0x00000000008000a9        0x0 ../ClientLib/DeviceClient.o
+ .bss           0x00000000008000a9        0x0 ../ClientLib/DeviceComm.o
+ .bss           0x00000000008000a9        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_exit.o)
+ .bss           0x00000000008000a9        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_copy_data.o)
+ .bss           0x00000000008000a9        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/avr4/libgcc.a(_clear_bss.o)
+ .bss           0x00000000008000a9        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+ .bss           0x00000000008000a9        0x0 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(strcmp.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00000000008000a9       0x82 stairs_annoying.o
+                0x00000000008000a9                transmit_flag
+                0x00000000008000aa                buf
+                0x000000000080012a                buf_index
+ COMMON         0x000000000080012b        0x4 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+                0x000000000080012b                __brkval
+                0x000000000080012d                __flp
+                0x000000000080012f                PROVIDE (__bss_end, .)
+                0x0000000000001716                __data_load_start = LOADADDR (.data)
+                0x000000000000175e                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x000000000080012f        0x0
+                0x000000000080012f                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x000000000080012f                PROVIDE (__noinit_end, .)
+                0x000000000080012f                _end = .
+                0x000000000080012f                PROVIDE (__heap_start, .)
+
+.eeprom         0x0000000000810000        0x0
+ *(.eeprom*)
+                0x0000000000810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x0000000000000000      0x750
+ *(.stab)
+ .stab          0x0000000000000000      0x6cc /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+ .stab          0x00000000000006cc       0x84 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(strcmp.o)
+                                         0x90 (size before relaxing)
+
+.stabstr        0x0000000000000000       0xba
+ *(.stabstr)
+ .stabstr       0x0000000000000000       0xba /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/crtm8.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x88
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 stairs_annoying.o
+ .debug_aranges
+                0x0000000000000020       0x20 ../ClientLib/DeviceClient.o
+ .debug_aranges
+                0x0000000000000040       0x20 ../ClientLib/DeviceComm.o
+ .debug_aranges
+                0x0000000000000060       0x28 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+
+.debug_pubnames
+                0x0000000000000000      0x329
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000       0xd9 stairs_annoying.o
+ .debug_pubnames
+                0x00000000000000d9      0x118 ../ClientLib/DeviceClient.o
+ .debug_pubnames
+                0x00000000000001f1       0xb9 ../ClientLib/DeviceComm.o
+ .debug_pubnames
+                0x00000000000002aa       0x7f /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+
+.debug_info     0x0000000000000000     0x1806
+ *(.debug_info)
+ .debug_info    0x0000000000000000      0x516 stairs_annoying.o
+ .debug_info    0x0000000000000516      0x951 ../ClientLib/DeviceClient.o
+ .debug_info    0x0000000000000e67      0x772 ../ClientLib/DeviceComm.o
+ .debug_info    0x00000000000015d9      0x22d /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x0000000000000000      0x673
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x1b8 stairs_annoying.o
+ .debug_abbrev  0x00000000000001b8      0x1d9 ../ClientLib/DeviceClient.o
+ .debug_abbrev  0x0000000000000391      0x1d3 ../ClientLib/DeviceComm.o
+ .debug_abbrev  0x0000000000000564      0x10f /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+
+.debug_line     0x0000000000000000     0x10fa
+ *(.debug_line)
+ .debug_line    0x0000000000000000      0x37e stairs_annoying.o
+ .debug_line    0x000000000000037e      0x4c6 ../ClientLib/DeviceClient.o
+ .debug_line    0x0000000000000844      0x5f9 ../ClientLib/DeviceComm.o
+ .debug_line    0x0000000000000e3d      0x2bd /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+
+.debug_frame    0x0000000000000000      0x290
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x90 stairs_annoying.o
+ .debug_frame   0x0000000000000090      0x110 ../ClientLib/DeviceClient.o
+ .debug_frame   0x00000000000001a0       0xc0 ../ClientLib/DeviceComm.o
+ .debug_frame   0x0000000000000260       0x30 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+
+.debug_str      0x0000000000000000      0x595
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x22b stairs_annoying.o
+                                        0x27d (size before relaxing)
+ .debug_str     0x000000000000022b      0x139 ../ClientLib/DeviceClient.o
+                                        0x2d9 (size before relaxing)
+ .debug_str     0x0000000000000364      0x12e ../ClientLib/DeviceComm.o
+                                        0x2fa (size before relaxing)
+ .debug_str     0x0000000000000492      0x103 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+                                        0x17b (size before relaxing)
+
+.debug_loc      0x0000000000000000     0x12e5
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0x155 stairs_annoying.o
+ .debug_loc     0x0000000000000155      0x9ac ../ClientLib/DeviceClient.o
+ .debug_loc     0x0000000000000b01      0x48c ../ClientLib/DeviceComm.o
+ .debug_loc     0x0000000000000f8d      0x358 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(house_project.out elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x0000000000000000       0x20
+ .debug_ranges  0x0000000000000000       0x20 /home/jmonk/avr/lib/gcc/avr/4.3.4/../../../../avr/lib/avr4/libc.a(malloc.o)
