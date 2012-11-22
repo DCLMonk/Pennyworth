@@ -27,4 +27,8 @@
 
 namespace dvs {
 
-} /* namespace dvs */
+}
+
+dvs::SubscribePacket::SubscribePacket(Device* device) : Packet(6, device->getId(), Subscribe) {
+}
+/* namespace dvs */

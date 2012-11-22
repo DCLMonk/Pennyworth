@@ -47,6 +47,10 @@ extern vector<Room*> rooms;
 
 class Server {
 public:
+	static std::string getVersion() {
+		return "0.1 Alpha";
+	}
+
 	static bool isValid(string user, string pass) {
 		return true;
 	}

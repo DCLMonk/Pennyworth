@@ -16,6 +16,7 @@ DIRS:
 	+$(MAKE) -C ClientPackets
 	+$(MAKE) -C CComm
 	+$(MAKE) -C User
+	+$(MAKE) -C Config
 
 $(TARGET): DIRS $(OBJS)
 	$(CC) -o $(TARGET) $(CFLAGS) $(OBJDIR)/*.o $(LIBS)

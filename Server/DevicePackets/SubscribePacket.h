@@ -33,6 +33,7 @@ namespace dvs {
 // WRITE Later
 class SubscribePacket: public dvs::Packet {
 public:
+	SubscribePacket(Device* device);
 };
 
 } /* namespace dvs */
