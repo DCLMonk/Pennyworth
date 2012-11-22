@@ -42,6 +42,8 @@ public:
 
 	unsigned int getLength();
 
+	void increment();
+
 	int getInt();
 private:
 	int value;

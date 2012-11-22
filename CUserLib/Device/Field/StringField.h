@@ -44,6 +44,8 @@ public:
 	unsigned int getLength();
 
 	string getValue();
+
+	void increment();
 private:
 	string value;
 };

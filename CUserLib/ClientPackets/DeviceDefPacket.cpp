@@ -24,13 +24,14 @@
  */
 
 #include "DeviceDefPacket.h"
+#include "stdlib.h"
 
 namespace dvs {
 
 DeviceDefPacket::DeviceDefPacket(string data, CCommunicator* comm) : CPacket(data, comm) {
 //	this->device = device;
 	int id = atoi((*this->args)[2].c_str());
-	Device* device = Device::getDevice(comm, id, (*this->args)[3].c_str());
+	device = Device::getDevice(comm, id, (*this->args)[3].c_str());
 	device->setCName((*this->args)[4]);
 	int roomId = atoi((*this->args)[5].c_str());
 	device->setRoom(roomId);
@@ -45,27 +46,8 @@ DeviceDefPacket::~DeviceDefPacket() {
 
 }
 
-//void DeviceDefPacket::streamData(stringstream& data) {
-//	data << ':';
-//	data << device->getId();
-//
-//	data << ':';
-//	data << device->getName();
-//
-//	data << ':';
-//	data << device->getCName();
-//
-//	data << ':';
-//	data << device->getRoom()->getId();
-//
-//	data << ':';
-//	data << device->getIcon();
-//
-//	data << ':';
-//	data << device->getX();
-//
-//	data << ':';
-//	data << device->getY();
-//}
+Device* DeviceDefPacket::getDevice() {
+	return device;
+}
 
 } /* namespace dvs */

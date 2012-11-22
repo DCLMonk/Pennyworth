@@ -28,16 +28,11 @@
 namespace dvs {
 
 LoginFailurePacket::LoginFailurePacket(string data, CCommunicator* comm) : CPacket(data, comm) {
-	this->error = error;
+	this->error = (*args)[2];
 }
 
 LoginFailurePacket::~LoginFailurePacket() {
 
-}
-
-void LoginFailurePacket::streamData(stringstream& data) {
-	data << ':';
-	data << error;
 }
 
 } /* namespace dvs */

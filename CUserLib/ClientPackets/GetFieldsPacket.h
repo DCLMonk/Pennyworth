@@ -32,8 +32,15 @@ namespace dvs {
 
 class GetFieldsPacket: public dvs::CPacket {
 public:
-	GetFieldsPacket(string data, CCommunicator* comm);
+	GetFieldsPacket(int did, CCommunicator* comm);
+	GetFieldsPacket(int did, int fid, CCommunicator* comm);
 	virtual ~GetFieldsPacket();
+
+	void streamData(stringstream& data);
+
+private:
+	int did;
+	int fid;
 };
 
 } /* namespace dvs */

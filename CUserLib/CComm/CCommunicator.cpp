@@ -36,6 +36,7 @@ namespace dvs {
 
 CCommunicator::CCommunicator() {
 	index = 0;
+	id = 0;
 }
 
 CCommunicator::~CCommunicator() {
@@ -61,7 +62,7 @@ void CCommunicator::getPacket() {
 					buffer[j-(i+1)] = buffer[j];
 				}
 				index -= i + 1;
-				break;
+				i = 0;
 			}
 		}
 	}
@@ -76,88 +77,50 @@ int CCommunicator::readBytes(char* data, unsigned int length) {
 	return -1;
 }
 
-void makeLoginPacket(string packet, CCommunicator* comm) {
-//	LoginPacket p(packet, comm);
-}
-
-void makeUIDPacket(string packet, CCommunicator* comm) {
-	UIDPacket p(packet, comm);
-}
-
-void makeLoginFailedPacket(string packet, CCommunicator* comm) {
-	LoginFailurePacket p(packet, comm);
-}
-
-void makeGetDevicesPacket(string packet, CCommunicator* comm) {
-//	GetDevicesPacket p(packet, comm);
-}
-
-void makeDeviceDefPacket(string packet, CCommunicator* comm) {
-	DeviceDefPacket p(packet, comm);
-}
-
-void makeGetFieldsPacket(string packet, CCommunicator* comm) {
-//	GetFieldsPacket p(packet, comm);
-}
-
-void makeFieldInfoPacket(string packet, CCommunicator* comm) {
-	FieldInfoPacket p(packet, comm);
-}
-
-void makeGetFieldPacket(string packet, CCommunicator* comm) {
-//	GetFieldPacket p(packet, comm);
-}
-
-void makeSendFieldPacket(string packet, CCommunicator* comm) {
-	SendFieldPacket p(packet, comm);
-}
-
-void makeSetFieldPacket(string packet, CCommunicator* comm) {
-//	CSetFieldPacket p(packet, comm);
-}
-
-void makeCommandPacket(string packet, CCommunicator* comm) {
-//	CCommandPacket p(packet, comm);
-}
-
 void CCommunicator::makePacket(std::string packet) {
 	string ids = packet.substr(0, packet.find(':'));
 	int id = atoi(ids.c_str());
+	CPacket* p;
 
 	switch (id) {
 	case LOGIN:
-		makeLoginPacket(packet, this);
+		p = NULL;
 		break;
 	case UID:
-		makeUIDPacket(packet, this);
+		p = new UIDPacket(packet, this);
 		break;
 	case LOGIN_FAILED:
-		makeLoginFailedPacket(packet, this);
+		p = new LoginFailurePacket(packet, this);
 		break;
 	case GET_DEVICES:
-		makeGetDevicesPacket(packet, this);
+		p = NULL;
 		break;
 	case DEVICE_DEF:
-		makeDeviceDefPacket(packet, this);
+		p = new DeviceDefPacket(packet, this);
 		break;
 	case GET_FIELDS:
-		makeGetFieldsPacket(packet, this);
+		p = NULL;
 		break;
 	case FIELD_INFO:
-		makeFieldInfoPacket(packet, this);
+		p = new FieldInfoPacket(packet, this);
 		break;
 	case GET_FIELD:
-		makeGetFieldPacket(packet, this);
+		p = NULL;
 		break;
 	case SEND_FIELD:
-		makeSendFieldPacket(packet, this);
+		p = new SendFieldPacket(packet, this);
 		break;
 	case SET_FIELD:
-		makeSetFieldPacket(packet, this);
+		p = NULL;
 		break;
 	case COMMAND:
-		makeCommandPacket(packet, this);
+		p = NULL;
 		break;
+	}
+
+	if (p != NULL) {
+		this->callback(id, p);
+		delete p;
 	}
 }
 
@@ -167,6 +130,21 @@ unsigned int CCommunicator::getId() {
 
 void CCommunicator::setId(int id) {
 	this->id = id;
+}
+
+void CCommunicator::callback(int id, CPacket* packet) {
+	for (unsigned int i = 0; i < listeners.size(); i++) {
+		if (listeners[i]->packetType == id) {
+			if (listeners[i]->listener(packet, listeners[i]->data)) {
+				listeners.erase(listeners.begin() + i);
+				i--;
+			}
+		}
+	}
+}
+
+void CCommunicator::registerListener(CPacketTypes type, void* data, Listener listener) {
+	listeners.push_back(new PacketListener(type, data, listener));
 }
 
 }

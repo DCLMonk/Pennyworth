@@ -66,7 +66,7 @@ void CCommunicator::getPacket() {
 					buffer[j-(i+1)] = buffer[j];
 				}
 				index -= i + 1;
-				break;
+				i = 0;
 			}
 		}
 	}

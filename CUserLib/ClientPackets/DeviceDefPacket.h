@@ -37,6 +37,7 @@ public:
 	DeviceDefPacket(string data, CCommunicator* comm);
 	virtual ~DeviceDefPacket();
 
+	Device* getDevice();
 private:
 	Device* device;
 };

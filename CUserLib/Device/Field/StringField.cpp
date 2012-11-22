@@ -58,4 +58,8 @@ string StringField::getValue() {
 	return this->value;
 }
 
+void StringField::increment() {
+	//...
+}
+
 } /* namespace dvs */

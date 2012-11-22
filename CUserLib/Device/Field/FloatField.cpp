@@ -65,6 +65,11 @@ void FloatField::setRealString(string val) {
 	this->sendPacket();
 }
 
+void FloatField::increment() {
+	this->value++;
+	sendToServer();
+}
+
 float FloatField::getFloat() {
 	return this->value;
 }

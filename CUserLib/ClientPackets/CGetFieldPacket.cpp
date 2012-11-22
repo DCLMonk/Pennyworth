@@ -58,6 +58,7 @@ CGetFieldPacket::~CGetFieldPacket() {
 }
 
 void CGetFieldPacket::streamData(stringstream& data) {
+	data << ":";
 	data << device->getId();
 	data << ":";
 	data << field->getId();

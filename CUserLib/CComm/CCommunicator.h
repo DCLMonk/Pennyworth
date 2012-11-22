@@ -27,8 +27,10 @@
 #define CCOMMUNICATOR_H_
 
 #include <string>
+#include <vector>
 #include "Runnable.h"
 #include "CPacket.h"
+#include "PacketListener.h"
 
 namespace dvs {
 
@@ -55,7 +57,13 @@ public:
 	void setId(int id);
 
 	void send(CPacket* packet);
+
+	void callback(int id, CPacket* packet);
+
+	void registerListener(CPacketTypes type, void* data, Listener listener);
+
 protected:
+	std::vector<PacketListener*> listeners;
 	char buffer[BUF_LENGTH];
 	char pbuffer[BUF_LENGTH];
 	unsigned int index;

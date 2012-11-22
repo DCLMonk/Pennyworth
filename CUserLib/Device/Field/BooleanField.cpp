@@ -56,6 +56,12 @@ unsigned int BooleanField::getLength() {
 void BooleanField::setBool(bool value) {
 	this->value = value;
 }
+
+void BooleanField::increment() {
+	setBool(!getBool());
+	sendToServer();
+}
+
 bool BooleanField::getBool() {
 	return value;
 }

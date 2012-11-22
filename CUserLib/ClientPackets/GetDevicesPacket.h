@@ -32,8 +32,14 @@ namespace dvs {
 
 class GetDevicesPacket: public dvs::CPacket {
 public:
+	GetDevicesPacket(int id, CCommunicator* comm);
 	GetDevicesPacket(CCommunicator* comm);
 	virtual ~GetDevicesPacket();
+
+	void streamData(stringstream& data);
+
+private:
+	int id;
 };
 
 } /* namespace dvs */

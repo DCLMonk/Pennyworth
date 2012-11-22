@@ -32,25 +32,19 @@
 namespace dvs {
 
 LoginPacket::LoginPacket(string user, string pass, CCommunicator* comm) : CPacket(LOGIN, comm) {
-//	if (args->size() >= 4) {
-//		string user = (*args)[2];
-//		string pass = (*args)[3];
-//		if (Server::isValid(user, pass)) {
-//			User* user = Server::newUser(CPacket::getCurrentComm());
-//			UIDPacket uidPacket(user);
-//			uidPacket.send();
-//		} else {
-//			LoginFailurePacket loginFailure("Invalid Username and/or Password");
-//			CPacket::getCurrentComm()->sendPacket(&loginFailure);
-//		}
-//	} else {
-//		// TODO: Start dealing with device and client errors
-//		printf("Client Error %d\n", (int)args->size());
-//	}
+	this->user = user;
+	this->pass = pass;
 }
 
 LoginPacket::~LoginPacket() {
 
+}
+
+void LoginPacket::streamData(stringstream& data) {
+	data << ":";
+	data << user;
+	data << ":";
+	data << pass;
 }
 
 } /* namespace dvs */

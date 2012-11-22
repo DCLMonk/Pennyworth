@@ -24,36 +24,51 @@
  */
 
 #include "FieldInfoPacket.h"
+#include "Util.h"
 #include <stdio.h>
 
 namespace dvs {
 
 FieldInfoPacket::FieldInfoPacket(string data, CCommunicator* comm) : CPacket(data, comm) {
 	this->field = field;
+	int id = atoi((*this->args)[2].c_str());
+	Device* device = Device::getDevice(id);
+	if (device != NULL) {
+		int fid = atoi((*this->args)[3].c_str());
+		field = device->getField(fid);
+		FieldType type = (FieldType)(atoi((*this->args)[5].c_str()));
+		string name = (*this->args)[4];
+		bool writable = Util::toBool((*this->args)[6]);
+		bool vol = Util::toBool((*this->args)[7]);
+		if (field == NULL) {
+			switch (type) {
+			case BOOL:
+				field = new BooleanField(name, fid, writable, vol, device);
+				break;
+			case INTEGER:
+				field = new IntegerField(name, fid, writable, vol, device);
+				break;
+			case FLOAT:
+				field = new FloatField(name, fid, writable, vol, device);
+				break;
+			case FIXED:
+				field = new FixedField(name, fid, writable, vol, device);
+				break;
+			case STRING:
+				field = new StringField(name, fid, writable, vol, device);
+				break;
+			}
+			device->setField(id, field);
+		}
+	}
 }
 
 FieldInfoPacket::~FieldInfoPacket() {
 
 }
 
-void FieldInfoPacket::streamData(stringstream& data) {
-//	data << ':';
-//	data << field->getDevice()->getId();
-//
-//	data << ':';
-//	data << (unsigned int)field->getId();
-//
-//	data << ':';
-//	data << field->getName();
-//
-//	data << ':';
-//	data << field->getType();
-//
-//	data << ':';
-//	data << field->isWritable();
-//
-//	data << ':';
-//	data << field->isVolatile();
+Field* FieldInfoPacket::getField() {
+	return field;
 }
 
 } /* namespace dvs */

@@ -64,7 +64,7 @@ int CSocketComm::readBytes(char* data, unsigned int length) {
 		if (errno == EPIPE) {
 //			server.remListener(fd);
 		} else {
-			printf("Other\n");
+//			printf("Other\n");
 		}
 	}
 	return ret;

@@ -63,7 +63,6 @@ SerialComm::SerialComm(char* device) {
 	StartPacket p;
 	sendPacket(&p);
 	server.addListener(fd, new CommHandler(this));
-	printf("New Serial Port\n");
 }
 
 } /* namespace dvs */

@@ -29,37 +29,26 @@
 
 namespace dvs {
 
-GetFieldsPacket::GetFieldsPacket(string data, CCommunicator* comm) : CPacket(data, comm) {
-//	if (this->args->size() >= 3) {
-//		int id = atoi((*args)[2].c_str());
-//		Device* device = Device::getDevice(id);
-//		if (device != NULL) {
-//			if (args->size() >= 4) {
-//				int fid = atoi((*args)[3].c_str());
-//				if (device->hasField(fid)) {
-//					FieldInfoPacket packet(device->getField(fid), user);
-//					packet.send();
-//				} else {
-//					printf("Invalid Field Requested\n");
-//				}
-//			} else {
-//				for (unsigned int i = 0; i < device->getMaxField(); i++) {
-//					if (device->hasField(i)) {
-//						FieldInfoPacket packet(device->getField(i), user);
-//						packet.send();
-//					}
-//				}
-//			}
-//		} else {
-//			printf("Invalid Device Requested\n");
-//		}
-//	} else {
-//		printf("Warning: Invalid Get Fields Packet\n");
-//	}
+GetFieldsPacket::GetFieldsPacket(int did, CCommunicator* comm) : CPacket(GET_FIELDS, comm) {
+	this->did = did;
+	this->fid = -1;
+}
+
+GetFieldsPacket::GetFieldsPacket(int did, int fid, CCommunicator* comm) : CPacket(GET_FIELDS, comm) {
+	this->did = did;
+	this->fid = fid;
 }
 
 GetFieldsPacket::~GetFieldsPacket() {
+}
 
+void GetFieldsPacket::streamData(stringstream& data) {
+	data << ":";
+	data << did;
+	if (fid >= 0) {
+		data << ":";
+		data << fid;
+	}
 }
 
 } /* namespace dvs */

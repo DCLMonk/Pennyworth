@@ -68,6 +68,11 @@ void IntegerField::setRealString(string val) {
 	this->sendPacket();
 }
 
+void IntegerField::increment() {
+	this->value++;
+	sendToServer();
+}
+
 int IntegerField::getInt() {
 	return this->value;
 }
