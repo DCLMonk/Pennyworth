@@ -1,0 +1,51 @@
+Main.o: Main.cpp CommandInterface.h Runnable.h Server.h Room.h \
+  ./User/User.h ./Comm/SocketCreator.h ./Comm/SocketComm.h \
+  ./Comm/Communicator.h ./DevicePackets/Packet.h \
+  ./DevicePackets/../Device/Device.h ./DevicePackets/../Device/../Room.h \
+  ./DevicePackets/../Device/../Server.h \
+  ./DevicePackets/../Device/Field/Field.h \
+  ./DevicePackets/../Device/Field/../Device.h \
+  ./DevicePackets/../Device/Field/BooleanField.h \
+  ./DevicePackets/../Device/Field/Field.h \
+  ./DevicePackets/../Device/Field/IntegerField.h \
+  ./DevicePackets/../Device/Field/FloatField.h \
+  ./DevicePackets/../Device/Field/FixedField.h \
+  ./DevicePackets/../Device/Field/StringField.h \
+  ./DevicePackets/StartPacket.h ./DevicePackets/Packet.h \
+  ./DevicePackets/InitPacket.h ./DevicePackets/InitCNamePacket.h \
+  ./DevicePackets/InitLocationPacket.h ./DevicePackets/InitFieldPacket.h \
+  ./DevicePackets/GetFieldPacket.h ./DevicePackets/FieldValuePacket.h \
+  ./DevicePackets/SetFieldPacket.h ./DevicePackets/SubscribePacket.h \
+  ./DevicePackets/SetOnePacket.h ./DevicePackets/MaxLengthPacket.h \
+  ./CComm/CSocketCreator.h ./CComm/CSocketComm.h ./CComm/CCommunicator.h \
+  ./Runnable.h ./ClientPackets/CPacket.h ./User/User.h \
+  ./ClientPackets/LoginPacket.h ./ClientPackets/CPacket.h \
+  ./ClientPackets/UIDPacket.h ./ClientPackets/LoginFailurePacket.h \
+  ./ClientPackets/GetDevicesPacket.h ./ClientPackets/CPacket.h \
+  ./ClientPackets/DeviceDefPacket.h ./Device/Device.h \
+  ./ClientPackets/GetFieldsPacket.h ./ClientPackets/FieldInfoPacket.h \
+  ./Device/Field/Field.h ./ClientPackets/CGetFieldPacket.h \
+  ./ClientPackets/SendFieldPacket.h ./ClientPackets/CCommandPacket.h \
+  ./ClientPackets/CSetFieldPacket.h ./Comm/SerialComm.h \
+  ./Comm/SocketComm.h
+Room.o: Room.cpp Room.h
+Server.o: Server.cpp Server.h Room.h Runnable.h ./User/User.h \
+  Comm/SocketCreator.h Comm/SocketComm.h Comm/Communicator.h \
+  ./DevicePackets/Packet.h ./DevicePackets/../Device/Device.h \
+  ./DevicePackets/../Device/../Room.h \
+  ./DevicePackets/../Device/../Server.h \
+  ./DevicePackets/../Device/Field/Field.h \
+  ./DevicePackets/../Device/Field/../Device.h \
+  ./DevicePackets/../Device/Field/BooleanField.h \
+  ./DevicePackets/../Device/Field/Field.h \
+  ./DevicePackets/../Device/Field/IntegerField.h \
+  ./DevicePackets/../Device/Field/FloatField.h \
+  ./DevicePackets/../Device/Field/FixedField.h \
+  ./DevicePackets/../Device/Field/StringField.h \
+  ./DevicePackets/StartPacket.h ./DevicePackets/Packet.h \
+  ./DevicePackets/InitPacket.h ./DevicePackets/InitCNamePacket.h \
+  ./DevicePackets/InitLocationPacket.h ./DevicePackets/InitFieldPacket.h \
+  ./DevicePackets/GetFieldPacket.h ./DevicePackets/FieldValuePacket.h \
+  ./DevicePackets/SetFieldPacket.h ./DevicePackets/SubscribePacket.h \
+  ./DevicePackets/SetOnePacket.h ./DevicePackets/MaxLengthPacket.h \
+  Comm/SerialComm.h Comm/SocketComm.h
