@@ -19,10 +19,11 @@ namespace dvs {
 
 Config::Config(std::string fileName) {
 	this->fileName = fileName;
+	loadConfig();
 }
 
 Config::~Config() {
-
+	saveConfig();
 }
 
 string Config::getString(string skey) {
@@ -98,6 +99,9 @@ void Config::loadConfig() {
 	char line[256];
 
 	while (input.good()) {
+		for (int i = 0; (i < 256); i++) {
+			line[i] = '\0';
+		}
 		input.getline(line, 256);
 		if (line[0] != '#') {
 			for (int i = 0; (i < 256) && (line != '\0'); i++) {
@@ -106,6 +110,7 @@ void Config::loadConfig() {
 					string skey(line);
 					string val(line + i + 1);
 					data[skey] = val;
+					break;
 				}
 			}
 		}
