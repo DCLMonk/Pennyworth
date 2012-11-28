@@ -33,7 +33,14 @@
 #include <unistd.h>
 #define error perror
 
+const char* optString = "p:d:n:s:d:h";
 
+static const struct option longOpts[] = {
+	{ "port", required_argument, NULL, 'p' },
+	{ "host", required_argument, NULL, 'n' },
+	{ "numDevices", required_argument, NULL, 'd' },
+	{ "serialPort", required_argument, NULL, 's' },
+};
 
 int main(int argc, char **argv) {
 	struct termios tc; // terminal control structure
@@ -41,12 +48,41 @@ int main(int argc, char **argv) {
 	struct sockaddr_in serv_addr;
 	struct hostent *server;
 	const char* host = "localhost";
-	int port = 5011;
+	int port = 5010;
 	int devices = 2;
 	const char* serial = "/dev/ttyACM0";
 	int i, d;
 	char buf[4];
 	fd_set fdSet;
+
+	int longIndex;
+	int opt = getopt_long(argc, argv, optString, longOpts, &longIndex);
+	while (opt != -1) {
+		switch (opt) {
+		case 'n':
+			host = optarg;
+			break;
+		case 'p':
+			if (optarg == NULL) {
+				printf("NULL\n");
+			} else {
+				printf("Port: %d\n", atoi(optarg));
+				port = atoi(optarg);
+			}
+			break;
+		case 'd':
+			devices = atoi(optarg);
+			break;
+		case 's':
+			serial = optarg;
+			break;
+		default:
+			/* You won't actually get here. */
+			break;
+		}
+
+		opt = getopt_long(argc, argv, optString, longOpts, &longIndex);
+	}
 
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	if (sockfd < 0)
@@ -92,7 +128,7 @@ int main(int argc, char **argv) {
 		if (read(sockfd, buf, 1) > 0) {
 			int l = buf[0];
 			write(fd, buf, 1);
-//			printf("Server: %d\n", l);
+			printf("Server: %d\n", l);
 			for (i = 0; i < l; i++) {
 				if (read(sockfd, buf, 1) > 0) {
 					write(fd, buf, 1);
@@ -111,7 +147,7 @@ int main(int argc, char **argv) {
 					read(fd, buf, 1);
 					if (buf[0] > 0) {
 						int l = buf[0];
-//						printf("Device: %d %d\n", d, l);
+						printf("Device: %d %d\n", d, l);
 						write(sockfd, buf, 1);
 						for (i = 0; i < l; i++) {
 							if (read(fd, buf, 1) > 0) {
