@@ -1,35 +1,47 @@
-FloatField.o: FloatField.cpp FloatField.h Field.h ../Device.h \
-  ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
-  ../../User/User.h ../Field/Field.h BooleanField.h IntegerField.h \
-  FixedField.h StringField.h
-Field.o: Field.cpp Field.h ../Device.h ../../Room.h ../../Server.h \
-  ../../Room.h ../../Runnable.h ../../User/User.h ../Field/Field.h \
-  BooleanField.h IntegerField.h FloatField.h FixedField.h StringField.h \
-  ../../DevicePackets/SetFieldPacket.h ../../DevicePackets/Packet.h \
-  ../../DevicePackets/../Device/Device.h \
-  ../../DevicePackets/StartPacket.h ../../DevicePackets/InitPacket.h \
-  ../../DevicePackets/InitCNamePacket.h \
-  ../../DevicePackets/InitLocationPacket.h \
-  ../../DevicePackets/InitFieldPacket.h \
-  ../../DevicePackets/GetFieldPacket.h \
-  ../../DevicePackets/FieldValuePacket.h \
-  ../../DevicePackets/SetFieldPacket.h \
-  ../../DevicePackets/SubscribePacket.h \
-  ../../DevicePackets/SetOnePacket.h \
-  ../../DevicePackets/MaxLengthPacket.h
-BooleanField.o: BooleanField.cpp BooleanField.h Field.h ../Device.h \
-  ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
-  ../../User/User.h ../Field/Field.h IntegerField.h FloatField.h \
-  FixedField.h StringField.h
-StringField.o: StringField.cpp StringField.h Field.h ../Device.h \
-  ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
-  ../../User/User.h ../Field/Field.h BooleanField.h IntegerField.h \
-  FloatField.h FixedField.h
-FixedField.o: FixedField.cpp FixedField.h Field.h ../Device.h \
-  ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
-  ../../User/User.h ../Field/Field.h BooleanField.h IntegerField.h \
-  FloatField.h StringField.h
 IntegerField.o: IntegerField.cpp IntegerField.h Field.h ../Device.h \
-  ../../Room.h ../../Server.h ../../Room.h ../../Runnable.h \
-  ../../User/User.h ../Field/Field.h BooleanField.h FloatField.h \
-  FixedField.h StringField.h
+ ../../Room.h ../../Config/Config.h ../../Server.h ../../Room.h \
+ ../../Runnable.h ../../User/User.h ../../Event/EventManager.h \
+ ../../Event/Event.h ../../Runnable.h ../../Config/ConfigManager.h \
+ ../../Config/Config.h ../../RoomManager.h ../Field/Field.h \
+ BooleanField.h FloatField.h FixedField.h StringField.h
+FixedField.o: FixedField.cpp FixedField.h Field.h ../Device.h \
+ ../../Room.h ../../Config/Config.h ../../Server.h ../../Room.h \
+ ../../Runnable.h ../../User/User.h ../../Event/EventManager.h \
+ ../../Event/Event.h ../../Runnable.h ../../Config/ConfigManager.h \
+ ../../Config/Config.h ../../RoomManager.h ../Field/Field.h \
+ BooleanField.h IntegerField.h FloatField.h StringField.h
+BooleanField.o: BooleanField.cpp BooleanField.h Field.h ../Device.h \
+ ../../Room.h ../../Config/Config.h ../../Server.h ../../Room.h \
+ ../../Runnable.h ../../User/User.h ../../Event/EventManager.h \
+ ../../Event/Event.h ../../Runnable.h ../../Config/ConfigManager.h \
+ ../../Config/Config.h ../../RoomManager.h ../Field/Field.h \
+ IntegerField.h FloatField.h FixedField.h StringField.h
+StringField.o: StringField.cpp StringField.h Field.h ../Device.h \
+ ../../Room.h ../../Config/Config.h ../../Server.h ../../Room.h \
+ ../../Runnable.h ../../User/User.h ../../Event/EventManager.h \
+ ../../Event/Event.h ../../Runnable.h ../../Config/ConfigManager.h \
+ ../../Config/Config.h ../../RoomManager.h ../Field/Field.h \
+ BooleanField.h IntegerField.h FloatField.h FixedField.h
+Field.o: Field.cpp Field.h ../Device.h ../../Room.h ../../Config/Config.h \
+ ../../Server.h ../../Room.h ../../Runnable.h ../../User/User.h \
+ ../../Event/EventManager.h ../../Event/Event.h ../../Runnable.h \
+ ../../Config/ConfigManager.h ../../Config/Config.h ../../RoomManager.h \
+ ../Field/Field.h BooleanField.h IntegerField.h FloatField.h FixedField.h \
+ StringField.h ../../DevicePackets/SetFieldPacket.h \
+ ../../DevicePackets/Packet.h ../../DevicePackets/../Device/Device.h \
+ ../../DevicePackets/StartPacket.h ../../DevicePackets/InitPacket.h \
+ ../../DevicePackets/InitCNamePacket.h \
+ ../../DevicePackets/InitLocationPacket.h \
+ ../../DevicePackets/InitFieldPacket.h \
+ ../../DevicePackets/GetFieldPacket.h \
+ ../../DevicePackets/FieldValuePacket.h \
+ ../../DevicePackets/SetFieldPacket.h \
+ ../../DevicePackets/SubscribePacket.h ../../DevicePackets/SetOnePacket.h \
+ ../../DevicePackets/MaxLengthPacket.h ../../Event/FieldEvent.h \
+ ../../Device/Field/Field.h
+FloatField.o: FloatField.cpp FloatField.h Field.h ../Device.h \
+ ../../Room.h ../../Config/Config.h ../../Server.h ../../Room.h \
+ ../../Runnable.h ../../User/User.h ../../Event/EventManager.h \
+ ../../Event/Event.h ../../Runnable.h ../../Config/ConfigManager.h \
+ ../../Config/Config.h ../../RoomManager.h ../Field/Field.h \
+ BooleanField.h IntegerField.h FixedField.h StringField.h

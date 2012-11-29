@@ -16,31 +16,32 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-/*
- * PacketListener.h
- *
- *  Created on: Nov 21, 2012
- *      Author: jmonk
- */
+#ifndef __GROUPMANAGER_H__
+#define __GROUPMANAGER_H__
 
-#ifndef PACKETLISTENER_H_
-#define PACKETLISTENER_H_
+#include "Group.h"
+#include "ConfigManager.h"
+#include <string>
 
 namespace dvs {
 
-class CPacket;
-
-typedef bool(*Listener)(CPacket*, void*);
-
-class PacketListener {
+class GroupManager {
 public:
-	PacketListener(int packetType, void* data, Listener listener);
-	virtual ~PacketListener();
 
-	int packetType;
-	Listener listener;
-	void* data;
+    GroupManager();
+
+    void readConfigs();
+
+    Group* getGroup(std::string name);
+
+protected:
+
+private:
+    ConfigManager* groupConfigs;
+    std::map<std::string, Group*> groups; 
+
 };
 
-} /* namespace dvs */
-#endif /* PACKETLISTENER_H_ */
+}
+
+#endif //__GROUPMANAGER_H__

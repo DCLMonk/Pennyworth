@@ -25,14 +25,46 @@
 
 #include "Room.h"
 
+using namespace std;
+
 namespace dvs {
 
-Room::Room(int id) {
+Room::Room(int id, Config config) : config(config){
 	this->id = id;
+    xl = config.getFloat("x_length", 1);
+    yl = config.getFloat("y_length", 1);
+    name = config.getString("name", "Room");
 }
 
 Room::~Room() {
 
+}
+
+void Room::setXL(float xl) {
+    this->xl = xl;
+    config.setFloat("x_length", xl);
+}
+
+float Room::getXL() {
+    return xl;
+}
+
+void Room::setYL(float yl) {
+    this->yl = yl;
+    config.setFloat("y_length", yl);
+}
+
+float Room::getYL() {
+    return yl;
+}
+
+std::string Room::getName() {
+    return name;
+}
+
+void Room::setName(std::string name) {
+    this->name = name;
+    config.setString("name", name);
 }
 
 void Room::addDevice(Device* device) {

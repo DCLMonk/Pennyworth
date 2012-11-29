@@ -24,6 +24,7 @@
 #include <string.h>
 
 #include <set>
+#include <iostream>
 
 #include "CommandInterface.h"
 #include "Server.h"
@@ -32,10 +33,17 @@
 #include "SerialComm.h"
 #include "SocketComm.h"
 #include "Runnable.h"
+#include "DeviceEvent.h"
 
 using namespace std;
 using namespace dvs;
-Server server;
+
+class DeviceHandler : public Runnable {
+    void run() {
+        DeviceEvent* event = (DeviceEvent*)EventManager::getCurrentEvent();
+        cout << "Device Connected: " << event->getDevice()->getName() << endl;
+    }
+};
 
 class CreateHandler: public Runnable {
 public:
@@ -74,12 +82,13 @@ private:
 #define DEFAULT_PORT 5010
 #define DEFAULT_USER_PORT 8010
 
-const char* optString = "p:d:u:h";
+const char* optString = "p:d:u:c:h";
 
 static const struct option longOpts[] = {
 	{ "device", required_argument, NULL, 'd' },
 	{ "port", required_argument, NULL, 'p' },
 	{ "uport", required_argument, NULL, 'u' },
+	{ "configdir", required_argument, NULL, 'c' },
 	{ "help", optional_argument, NULL, 'h' },
 
 };
@@ -87,11 +96,13 @@ static const struct option longOpts[] = {
 int main(int argc, char * argv[]) {
 	SocketCreator* s = NULL;
 	CSocketCreator* cs = NULL;
+    char baseLocBuffer[256];
+
+    sprintf(baseLocBuffer, "%s/.Pennyworth", getenv("HOME"));
+    char* cconfigLoc = baseLocBuffer;
 
 	signal(SIGPIPE, SIG_IGN);
 
-	if (argc > 1) {
-	}
 	int longIndex;
 	int opt = getopt_long(argc, argv, optString, longOpts, &longIndex);
 	while (opt != -1) {
@@ -111,6 +122,9 @@ int main(int argc, char * argv[]) {
 			printf("User Port: %d\n", atoi(optarg));
 			cs = new CSocketCreator(atoi(optarg));
 			break;
+		case 'c':
+            cconfigLoc = optarg;
+			break;
 		default:
 			/* You won't actually get here. */
 			break;
@@ -118,6 +132,8 @@ int main(int argc, char * argv[]) {
 
 		opt = getopt_long(argc, argv, optString, longOpts, &longIndex);
 	}
+    std::string configLoc(cconfigLoc);
+    Server server(configLoc);
 	if (s == NULL) {
 		printf("Port: %d\n", DEFAULT_PORT);
 		s = new SocketCreator(DEFAULT_PORT);

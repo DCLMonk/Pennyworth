@@ -36,8 +36,8 @@ LoginPacket::LoginPacket(string data) : CPacket(data) {
 	if (args->size() >= 4) {
 		string user = (*args)[2];
 		string pass = (*args)[3];
-		if (Server::isValid(user, pass)) {
-			User* user = Server::newUser(CPacket::getCurrentComm());
+		if (Server::getServer()->isValid(user, pass)) {
+			User* user = Server::getServer()->newUser(CPacket::getCurrentComm());
 			UIDPacket uidPacket(user);
 			uidPacket.send();
 		} else {

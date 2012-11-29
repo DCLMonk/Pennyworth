@@ -37,73 +37,67 @@ using namespace std;
 
 #include "Runnable.h"
 #include "User.h"
+#include "EventManager.h"
+#include "ConfigManager.h"
+#include "RoomManager.h"
+
+#include <string>
 
 namespace dvs {
 
-extern unsigned int maxUserId;
-extern queue<unsigned int> availableIds;
-extern map<unsigned int, User*> users;
-extern vector<Room*> rooms;
+class Server;
+
+extern Server* mainServer;
 
 class Server {
 public:
-	static std::string getVersion() {
-		return "0.1 Alpha";
-	}
+    static Server* getServer() {
+        return mainServer;
+    }
 
-	static bool isValid(string user, string pass) {
-		return true;
-	}
-
-	static unsigned int allocateUID() {
-		if (availableIds.size()) {
-			int id = availableIds.front();
-			availableIds.pop();
-			return id;
-		}
-		return maxUserId++;
-	}
-
-	static void freeUID(unsigned int id) {
-		availableIds.push(id);
-		users[id] = NULL;
-	}
-
-	static User* getUser(unsigned int id) {
-		return users[id];
-	}
-
-	static User* newUser(CCommunicator* comm) {
-		return new User(comm);
-	}
-
-	static void setUser(unsigned int id, User* user) {
-		users[id] = user;
-	}
-
-	static Room* getRoom(unsigned int id) {
-		while (rooms.size() <= id) {
-			rooms.push_back(new Room(rooms.size()));
-		}
-		return rooms[id];
-	}
-
-	Server();
+	Server(std::string configLoc);
 	virtual ~Server();
+
+    EventManager& getEventManager();
+    ConfigManager& getConfigManager();
+    RoomManager& getRoomManager();
 
 	void addListener(int fd, Runnable* readListener);
 	void remListener(int fd);
 
 	void run();
 
+	bool isValid(string user, string pass);
+
+	unsigned int allocateUID();
+
+	void freeUID(unsigned int id);
+
+	User* getUser(unsigned int id);
+
+	User* newUser(CCommunicator* comm);
+
+	void setUser(unsigned int id, User* user);
+
+	Room* getRoom(unsigned int id);
+
+	std::string getVersion() {
+		return "0.1 Alpha";
+	}
+
 private:
 	vector<int> fds;
 	vector<Runnable*> readListeners;
 	fd_set fdSet;
+	unsigned int maxUserId;
+	queue<unsigned int> availableIds;
+	map<unsigned int, User*> users;
+    EventManager eventManager;
+    ConfigManager configManager;
+    RoomManager roomManager;
+
 };
 
 } /* namespace dvs */
-
-extern dvs::Server server;
 
 #endif /* SERVER_H_ */

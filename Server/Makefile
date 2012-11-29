@@ -1,7 +1,7 @@
 TARGET=dev-server
 SRCS=$(wildcard *.cpp) 
 
-BUILDDIR=objs
+BUILDDIR=.objs
 PREFIX=.
 
 .PHONY:all clean
@@ -17,6 +17,8 @@ DIRS:
 	+$(MAKE) -C CComm
 	+$(MAKE) -C User
 	+$(MAKE) -C Config
+	+$(MAKE) -C Event
+	+$(MAKE) -C Group
 
 $(TARGET): DIRS $(OBJS)
 	$(CC) -o $(TARGET) $(CFLAGS) $(OBJDIR)/*.o $(LIBS)

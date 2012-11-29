@@ -1,13 +1,15 @@
-Device.o: Device.cpp Device.h ../Room.h ../Server.h ../Room.h \
-  ../Runnable.h ../User/User.h Field/Field.h Field/../Device.h \
-  Field/BooleanField.h Field/Field.h Field/IntegerField.h \
-  Field/FloatField.h Field/FixedField.h Field/StringField.h \
-  ../Comm/Communicator.h ../DevicePackets/Packet.h \
-  ../DevicePackets/../Device/Device.h ../DevicePackets/StartPacket.h \
-  ../DevicePackets/Packet.h ../DevicePackets/InitPacket.h \
-  ../DevicePackets/InitCNamePacket.h \
-  ../DevicePackets/InitLocationPacket.h \
-  ../DevicePackets/InitFieldPacket.h ../DevicePackets/GetFieldPacket.h \
-  ../DevicePackets/FieldValuePacket.h ../DevicePackets/SetFieldPacket.h \
-  ../DevicePackets/SubscribePacket.h ../DevicePackets/SetOnePacket.h \
-  ../DevicePackets/MaxLengthPacket.h ../DevicePackets/Packet.h
+Device.o: Device.cpp Device.h ../Room.h ../Config/Config.h ../Server.h \
+ ../Room.h ../Runnable.h ../User/User.h ../Event/EventManager.h \
+ ../Event/Event.h ../Runnable.h ../Config/ConfigManager.h \
+ ../Config/Config.h ../RoomManager.h Field/Field.h Field/../Device.h \
+ Field/BooleanField.h Field/Field.h Field/IntegerField.h \
+ Field/FloatField.h Field/FixedField.h Field/StringField.h \
+ ../Comm/Communicator.h ../DevicePackets/Packet.h \
+ ../DevicePackets/../Device/Device.h ../DevicePackets/StartPacket.h \
+ ../DevicePackets/Packet.h ../DevicePackets/InitPacket.h \
+ ../DevicePackets/InitCNamePacket.h ../DevicePackets/InitLocationPacket.h \
+ ../DevicePackets/InitFieldPacket.h ../DevicePackets/GetFieldPacket.h \
+ ../DevicePackets/FieldValuePacket.h ../DevicePackets/SetFieldPacket.h \
+ ../DevicePackets/SubscribePacket.h ../DevicePackets/SetOnePacket.h \
+ ../DevicePackets/MaxLengthPacket.h ../Server.h ../Event/DeviceEvent.h \
+ ../Device/Device.h

@@ -62,6 +62,8 @@ public:
 	unsigned char getId();
 	Device* getDevice();
 
+    // TODO Subscription should be handled on a per field basis
+
 protected:
 	void sendPacket();
 private:

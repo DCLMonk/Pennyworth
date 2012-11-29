@@ -16,31 +16,29 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-/*
- * PacketListener.h
- *
- *  Created on: Nov 21, 2012
- *      Author: jmonk
- */
+#ifndef __ROOM_EVENT_H__
+#define __ROOM_EVENT_H__
 
-#ifndef PACKETLISTENER_H_
-#define PACKETLISTENER_H_
+#include "Event.h"
+#include "Room.h"
 
 namespace dvs {
 
-class CPacket;
-
-typedef bool(*Listener)(CPacket*, void*);
-
-class PacketListener {
+class RoomEvent : public Event {
 public:
-	PacketListener(int packetType, void* data, Listener listener);
-	virtual ~PacketListener();
 
-	int packetType;
-	Listener listener;
-	void* data;
+    RoomEvent(Room* room) {
+        this->room = rom;
+    }
+    
+    Room* getRoom() {
+        return room;
+    }
+
+protected:
+    Room* room;
 };
 
-} /* namespace dvs */
-#endif /* PACKETLISTENER_H_ */
+}
+
+#endif //__ROOM_EVENT_H__

@@ -32,17 +32,23 @@
 
 namespace dvs {
 
-vector<Room*> rooms;
-unsigned int maxUserId = 1;
-queue<unsigned int> availableIds;
-map<unsigned int, User*> users;
+Server* mainServer;
 
-Server::Server() {
-
+Server::Server(std::string configLoc) : configManager(configLoc) {
+    mainServer = this;
+    roomManager.readConfigs();
 }
 
 Server::~Server() {
+    mainServer = NULL;
+}
 
+EventManager& Server::getEventManager() {
+    return eventManager;
+}
+
+ConfigManager& Server::getConfigManager() {
+    return configManager;
 }
 
 void Server::addListener(int fd, Runnable* listener) {
@@ -101,6 +107,40 @@ void Server::run() {
 			}
 		}
 	}
+}
+
+bool Server::isValid(string user, string pass) {
+    return true;
+}
+
+unsigned int Server::allocateUID() {
+    if (availableIds.size()) {
+        int id = availableIds.front();
+        availableIds.pop();
+        return id;
+    }
+    return maxUserId++;
+}
+
+void Server::freeUID(unsigned int id) {
+    availableIds.push(id);
+    users[id] = NULL;
+}
+
+User* Server::getUser(unsigned int id) {
+    return users[id];
+}
+
+User* Server::newUser(CCommunicator* comm) {
+    return new User(comm);
+}
+
+void Server::setUser(unsigned int id, User* user) {
+    users[id] = user;
+}
+
+Room* Server::getRoom(unsigned int id) {
+    return roomManager.getRoom(id);
 }
 
 } /* namespace dvs */

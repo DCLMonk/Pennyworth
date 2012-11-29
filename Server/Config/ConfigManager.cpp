@@ -24,12 +24,18 @@
  */
 
 #include "ConfigManager.h"
+#include <errno.h>
+#include <dirent.h>
+#include <iostream>
+#include <unistd.h>
+#include <sys/stat.h>
 using namespace std;
 
 namespace dvs {
 
 ConfigManager::ConfigManager(string baseFolder) {
 	this->baseFolder = baseFolder;
+    mkdir(baseFolder.c_str(), 0755);
 }
 
 ConfigManager::~ConfigManager() {
@@ -42,10 +48,29 @@ ConfigManager* ConfigManager::getSubConfig(string subFolder) {
 	return new ConfigManager(newFolder);
 }
 
-Config* ConfigManager::getConfig(string configName) {
+Config ConfigManager::getConfig(string configName) {
 	string newFolder = baseFolder;
 	newFolder.append("/").append(configName);
-	return new Config(newFolder);
+	Config ret = Config(newFolder);
+    return ret;
+}
+
+vector<Config> ConfigManager::getAllConfigs() {
+    vector<Config> ret;
+
+    DIR *dp;
+    struct dirent *dirp;
+    if((dp = opendir(baseFolder.c_str())) == NULL) {
+        cout << "Error(" << errno << ") opening " << baseFolder << endl;
+        return ret;
+    }
+
+    while ((dirp = readdir(dp)) != NULL) {
+        ret.push_back(getConfig(string(dirp->d_name)));
+    }
+    closedir(dp);
+
+    return ret;
 }
 
 }

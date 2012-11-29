@@ -26,8 +26,9 @@
 #ifndef ROOM_H_
 #define ROOM_H_
 
+#include "Config.h"
 #include <set>
-using namespace std;
+#include <string>
 
 namespace dvs {
 
@@ -35,17 +36,32 @@ class Device;
 
 class Room {
 public:
-	Room(int id);
+	Room(int id, Config config);
 	virtual ~Room();
 
 	void addDevice(Device* device);
 
 	void remDevice(Device* device);
 
+    void setXL(float xl);
+    float getXL();
+
+    void setYL(float yl);
+    float getYL();
+
+    std::string getName();
+    void setName(std::string name);
+
+    std::set<Device*> getDevices();
+
 	int getId();
 private:
 	std::set<Device*> devices;
+    float xl;
+    float yl;
+    std::string name;
 	int id;
+    Config config;
 };
 
 } /* namespace dvs */

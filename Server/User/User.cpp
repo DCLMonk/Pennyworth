@@ -34,12 +34,12 @@ namespace dvs {
 User::User(CCommunicator* comm) {
 	this->comm = comm;
 	this->comm->user = this;
-	this->id = Server::allocateUID();
-	Server::setUser(this->id, this);
+	this->id = Server::getServer()->allocateUID();
+	Server::getServer()->setUser(this->id, this);
 }
 
 User::~User() {
-	Server::freeUID(id);
+	Server::getServer()->freeUID(id);
 }
 
 void User::send(CPacket* packet) {

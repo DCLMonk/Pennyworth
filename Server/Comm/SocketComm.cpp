@@ -39,7 +39,7 @@ SocketComm::SocketComm(int fd) {
 	fcntl(fd, F_SETFL, O_NONBLOCK);
 	StartPacket p;
 	sendPacket(&p);
-	server.addListener(fd, new CommHandler(this));
+    Server::getServer()->addListener(fd, new CommHandler(this));
 
 	stringstream s;
 	s << "Socket ";
@@ -65,7 +65,7 @@ SocketComm::~SocketComm() {
 void SocketComm::writeBytes(unsigned char* data, unsigned int length) {
 	if (write(fd, (const void*)data, (size_t)length) < 0) {
 		if (errno == EPIPE) {
-			server.remListener(fd);
+            Server::getServer()->remListener(fd);
 		}
 	}
 }
@@ -86,7 +86,7 @@ int SocketComm::readBytes(unsigned char* data, unsigned int length) {
 
 void SocketComm::remove() {
 	printf("SocketComm::remove: Removing %d\n", commId);
-	server.remListener(fd);
+    Server::getServer()->remListener(fd);
 	this->Communicator::remove();
 }
 

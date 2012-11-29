@@ -26,6 +26,7 @@
 #include "Field.h"
 #include <stdio.h>
 #include "SetFieldPacket.h"
+#include "FieldEvent.h"
 
 namespace dvs {
 
@@ -40,6 +41,9 @@ Field::Field(FieldType type, string name, unsigned char id, bool writable,
 	this->vol = vol;
 	this->device = device;
 	this->type = type;
+
+    FieldEvent event(this);
+    Server::getServer()->getEventManager().callEvent(FIELD_CREATED, &event);
 }
 
 Field::~Field() {
@@ -86,6 +90,8 @@ unsigned char Field::getId() {
 void Field::sendPacket() {
 	SetFieldPacket packet(device, id);
 	packet.send();
+    FieldEvent event(this);
+    Server::getServer()->getEventManager().callEvent(FIELD_SET, &event);
 }
 
 Device* Field::getDevice() {

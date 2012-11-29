@@ -16,31 +16,32 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-/*
- * PacketListener.h
- *
- *  Created on: Nov 21, 2012
- *      Author: jmonk
- */
+#ifndef __ROOMMANAGER_H__
+#define __ROOMMANAGER_H__
 
-#ifndef PACKETLISTENER_H_
-#define PACKETLISTENER_H_
+#include "Room.h"
+#include "ConfigManager.h"
+#include <vector>
 
 namespace dvs {
 
-class CPacket;
-
-typedef bool(*Listener)(CPacket*, void*);
-
-class PacketListener {
+class RoomManager {
 public:
-	PacketListener(int packetType, void* data, Listener listener);
-	virtual ~PacketListener();
 
-	int packetType;
-	Listener listener;
-	void* data;
+    RoomManager();
+
+    void readConfigs();
+
+    Room* getRoom(unsigned int id);
+
+protected:
+
+private:
+    ConfigManager* roomConfigs;
+    std::vector<Room*> rooms; 
+
 };
 
-} /* namespace dvs */
-#endif /* PACKETLISTENER_H_ */
+}
+
+#endif //__ROOMMONOGER_H__

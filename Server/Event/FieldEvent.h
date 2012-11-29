@@ -16,31 +16,29 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-/*
- * PacketListener.h
- *
- *  Created on: Nov 21, 2012
- *      Author: jmonk
- */
+#ifndef __FIELD_EVENT_H__
+#define __FIELD_EVENT_H__
 
-#ifndef PACKETLISTENER_H_
-#define PACKETLISTENER_H_
+#include "Event.h"
+#include "Field.h"
 
 namespace dvs {
 
-class CPacket;
-
-typedef bool(*Listener)(CPacket*, void*);
-
-class PacketListener {
+class FieldEvent : public Event {
 public:
-	PacketListener(int packetType, void* data, Listener listener);
-	virtual ~PacketListener();
 
-	int packetType;
-	Listener listener;
-	void* data;
+    FieldEvent(Field* field) {
+        this->field = field;
+    }
+    
+    Field* getField() {
+        return field;
+    }
+
+protected:
+    Field* field;
 };
 
-} /* namespace dvs */
-#endif /* PACKETLISTENER_H_ */
+}
+
+#endif //__FIELD_EVENT_H__

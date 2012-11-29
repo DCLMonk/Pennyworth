@@ -1,5 +1,15 @@
-OBJDIR=$(PREFIX)/objs
-INCLUDES=-I $(PREFIX)/Comm -I $(PREFIX)/DevicePackets -I $(PREFIX)/ClientPackets -I $(PREFIX)/Device -I $(PREFIX)/User -I $(PREFIX)/CComm -I $(PREFIX)/Device/Field -I $(PREFIX)/
+OBJDIR=$(PREFIX)/.objs
+INCLUDES=-I $(PREFIX)/Event\
+		 -I $(PREFIX)/Group \
+		 -I $(PREFIX)/Comm \
+		 -I $(PREFIX)/DevicePackets \
+		 -I $(PREFIX)/ClientPackets \
+		 -I $(PREFIX)/Device \
+		 -I $(PREFIX)/User \
+		 -I $(PREFIX)/CComm \
+		 -I $(PREFIX)/Device/Field \
+		 -I $(PREFIX)/Config \
+		 -I $(PREFIX)/
 CFLAGS=-g -Wall $(INCLUDES)
 LIBS=-lreadline
 CC=g++

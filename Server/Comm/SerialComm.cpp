@@ -62,7 +62,7 @@ SerialComm::SerialComm(char* device) {
 	fcntl(fd, F_SETFL, O_NONBLOCK);
 	StartPacket p;
 	sendPacket(&p);
-	server.addListener(fd, new CommHandler(this));
+    Server::getServer()->addListener(fd, new CommHandler(this));
 }
 
 } /* namespace dvs */

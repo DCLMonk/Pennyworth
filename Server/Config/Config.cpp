@@ -1,3 +1,21 @@
+/**
+ * Pennyworth - A new smarthome protocol.
+ * Copyright (C) 2012  Dream-Crusher Labs LLC
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
 /*
  * Config.cpp
  *
@@ -22,6 +40,10 @@ Config::Config(std::string fileName) {
 	loadConfig();
 }
 
+Config::Config(const Config& orig) : data(orig.data), fileName(orig.fileName) {
+    
+}
+
 Config::~Config() {
 	saveConfig();
 }
@@ -35,6 +57,10 @@ string Config::getString(string skey, string def) {
 		data[skey] = def;
 	}
 	return data[skey];
+}
+
+void Config::setString(string skey, string def) {
+	data[skey] = def;
 }
 
 int Config::getInt(string skey) {
@@ -51,6 +77,13 @@ int Config::getInt(string skey, int def) {
 	return atoi(data[skey].c_str());
 }
 
+void Config::setInt(string skey, int def) {
+    char buf[20];
+    sprintf(buf, "%d", def);
+    string val(buf);
+    data[skey] = val;
+}
+
 float Config::getFloat(string skey) {
 	return getFloat(skey, 0);
 }
@@ -65,6 +98,13 @@ float Config::getFloat(string skey, float def) {
 	return atof(data[skey].c_str());
 }
 
+void Config::setFloat(string skey, float def) {
+    char buf[20];
+    sprintf(buf, "%lf", def);
+    string val(buf);
+    data[skey] = val;
+}
+
 bool Config::getBool(string skey) {
 	return getBool(skey, false);
 }
@@ -76,13 +116,17 @@ bool Config::getBool(string skey, bool def) {
 	return Util::toBool(data[skey].c_str());
 }
 
+void Config::setBool(string skey, bool def) {
+    data[skey] = def?"true":"false";
+}
+
 void Config::saveConfig() {
 	ofstream output(fileName.c_str());
 
 	output << "# Config file: " << fileName << endl;
 	output << "#" << endl;
 	output << "# This file contains part of the config for a " << endl;
-	output << "# Pennyworth Server v" << Server::getVersion() << endl << endl;
+	output << "# Pennyworth Server v" << Server::getServer()->getVersion() << endl << endl;
 	for (map<string, string>::iterator it = data.begin(); it != data.end(); it++) {
 		output << (*it).first;
 		output << "=";

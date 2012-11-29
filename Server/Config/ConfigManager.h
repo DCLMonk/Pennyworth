@@ -28,6 +28,7 @@
 
 #include <string>
 #include "Config.h"
+#include <vector>
 
 namespace dvs {
 
@@ -36,9 +37,23 @@ public:
 	ConfigManager(std::string baseFolder);
 	virtual ~ConfigManager();
 
+    /**
+     * Get a manager for a subfolder in the config.
+     *
+     * This gets a config manager to manage a subfolder of
+     * the current manager.  Presumably the subfolder will
+     * contain configs to be read.
+     *
+     * Alloc Notice: The return value of this function is
+     * allocated using new and should be de-alloced using
+     * delete when the caller is done with it.
+     *
+     * @param subFolder The child folder to be opened
+     */
 	ConfigManager* getSubConfig(std::string subFolder);
 
-	Config* getConfig(std::string configName);
+	Config getConfig(std::string configName);
+    vector<Config> getAllConfigs();
 
 private:
 	std::string baseFolder;

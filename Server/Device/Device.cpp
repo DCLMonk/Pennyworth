@@ -26,6 +26,8 @@
 #include "Device.h"
 #include "Communicator.h"
 #include "Packet.h"
+#include "Server.h"
+#include "DeviceEvent.h"
 
 using namespace std;
 
@@ -45,6 +47,10 @@ Device::Device(Communicator* comm, string name) {
 	roomId = -1;
 	maxField = 0;
 	maxLength = 256;
+
+    DeviceEvent event(this);
+    Server::getServer()->getEventManager().callEvent(DEVICE_CREATED, &event);
+
 }
 
 Device::~Device() {
@@ -73,7 +79,7 @@ void Device::send(Packet* packet) {
 
 Room* Device::getRoom() {
 	if (roomId >= 0) {
-		return Server::getRoom(roomId);
+		return Server::getServer()->getRoom(roomId);
 	} else {
 		return NULL;
 	}
@@ -81,11 +87,11 @@ Room* Device::getRoom() {
 
 void Device::setRoom(unsigned int roomId) {
 	if (this->roomId >= 0) {
-		Server::getRoom(this->roomId)->remDevice(this);
+		Server::getServer()->getRoom(this->roomId)->remDevice(this);
 	}
 	this->roomId = roomId;
 	if (this->roomId >= 0) {
-		Server::getRoom(this->roomId)->addDevice(this);
+		Server::getServer()->getRoom(this->roomId)->addDevice(this);
 	}
 }
 

@@ -1,0 +1,1639 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ASM_SRCS	SocketSerialConnector/Debug/sources.mk	/^ASM_SRCS := $/;"	m
+ASM_SRCS	SocketSerialConnector/Release/sources.mk	/^ASM_SRCS := $/;"	m
+BOOL	CUserLib/Device/Field/Field.h	/^	BOOL=0,$/;"	e	enum:dvs::__anon17
+BOOL	ClientLib/DeviceStructs.h	/^	BOOL=0,$/;"	e	enum:__anon1
+BOOL	ClientSocket/lib/DeviceStructs.h	/^	BOOL=0,$/;"	e	enum:__anon9
+BOOL	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^	BOOL(0),$/;"	e	enum:FieldType	file:
+BOOL	Server/Device/Field/Field.h	/^	BOOL=0,$/;"	e	enum:dvs::__anon20
+BOOLEANFIELD_H_	CUserLib/Device/Field/BooleanField.h	27;"	d
+BOOLEANFIELD_H_	Server/Device/Field/BooleanField.h	27;"	d
+BUFFER_LENGTH	ClientLib/DeviceStructs.h	53;"	d
+BUFFER_LENGTH	ClientSocket/lib/DeviceStructs.h	53;"	d
+BUFFER_LENGTH	Devices/device_light_0.c	30;"	d	file:
+BUFFER_LENGTH	Devices/device_light_1.c	30;"	d	file:
+BUFFER_LENGTH	Devices/stairs_annoying.c	30;"	d	file:
+BUFFER_LENGTH	Devices/tv_pool.c	30;"	d	file:
+BUF_LENGTH	CUserLib/CComm/CCommunicator.h	37;"	d
+BUF_LENGTH	Server/CComm/CCommunicator.h	35;"	d
+BUILDDIR	CUserLib/Makefile	/^BUILDDIR=objs$/;"	m
+BUILDDIR	ClientSocket/Makefile	/^BUILDDIR=objs$/;"	m
+BUILDDIR	Server/Makefile	/^BUILDDIR=objs$/;"	m
+BURN	ClientLib/DeviceComm.c	/^	BURN = 28,$/;"	e	enum:RecvState	file:
+BURN	ClientSocket/lib/DeviceComm.c	/^	BURN = 28,$/;"	e	enum:RecvState	file:
+BURN	Devices/device_light_0.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon22	file:
+BURN	Devices/device_light_1.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon23	file:
+BURN	Devices/stairs_annoying.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon24	file:
+BURN	Devices/tv_pool.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon25	file:
+BoolField	ClientLib/DeviceStructs.h	/^} BoolField;$/;"	t	typeref:struct:__anon5
+BoolField	ClientSocket/lib/DeviceStructs.h	/^} BoolField;$/;"	t	typeref:struct:__anon13
+BooleanField	CUserLib/Device/Field/BooleanField.cpp	/^BooleanField::BooleanField(string name, unsigned char id, bool writable,$/;"	f	class:dvs::BooleanField
+BooleanField	CUserLib/Device/Field/BooleanField.h	/^class BooleanField: public dvs::Field {$/;"	c	namespace:dvs
+BooleanField	Server/Device/Field/BooleanField.cpp	/^BooleanField::BooleanField(string name, unsigned char id, bool writable,$/;"	f	class:dvs::BooleanField
+BooleanField	Server/Device/Field/BooleanField.h	/^class BooleanField: public dvs::Field {$/;"	c	namespace:dvs
+CC	CUserLib/common.mk	/^CC=g++$/;"	m
+CC	ClientSocket/common.mk	/^CC=g++$/;"	m
+CC	Server/common.mk	/^CC=g++$/;"	m
+CCOMMANDPACKET_H_	CUserLib/ClientPackets/CCommandPacket.h	27;"	d
+CCOMMANDPACKET_H_	Server/ClientPackets/CCommandPacket.h	27;"	d
+CCOMMUNICATOR_H_	CUserLib/CComm/CCommunicator.h	27;"	d
+CCOMMUNICATOR_H_	Server/CComm/CCommunicator.h	27;"	d
+CCommHandler	CUserLib/CComm/CCommunicator.h	/^	CCommHandler(CCommunicator* comm) {$/;"	f	class:dvs::CCommHandler
+CCommHandler	CUserLib/CComm/CCommunicator.h	/^class CCommHandler: public Runnable {$/;"	c	namespace:dvs
+CCommHandler	Server/CComm/CCommunicator.h	/^	CCommHandler(CCommunicator* comm) {$/;"	f	class:dvs::CCommHandler
+CCommHandler	Server/CComm/CCommunicator.h	/^class CCommHandler: public Runnable {$/;"	c	namespace:dvs
+CCommandPacket	CUserLib/ClientPackets/CCommandPacket.cpp	/^CCommandPacket::CCommandPacket(std::string data, CCommunicator* comm) : CPacket(data, comm) {$/;"	f	class:dvs::CCommandPacket
+CCommandPacket	CUserLib/ClientPackets/CCommandPacket.h	/^class CCommandPacket : public CPacket {$/;"	c	namespace:dvs
+CCommandPacket	Server/ClientPackets/CCommandPacket.cpp	/^CCommandPacket::CCommandPacket(std::string data) : CPacket(data) {$/;"	f	class:dvs::CCommandPacket
+CCommandPacket	Server/ClientPackets/CCommandPacket.h	/^class CCommandPacket : public CPacket {$/;"	c	namespace:dvs
+CCommunicator	CUserLib/CComm/CCommunicator.cpp	/^CCommunicator::CCommunicator() {$/;"	f	class:dvs::CCommunicator
+CCommunicator	CUserLib/CComm/CCommunicator.h	/^class CCommunicator {$/;"	c	namespace:dvs
+CCommunicator	Server/CComm/CCommunicator.cpp	/^CCommunicator::CCommunicator() {$/;"	f	class:dvs::CCommunicator
+CCommunicator	Server/CComm/CCommunicator.h	/^class CCommunicator {$/;"	c	namespace:dvs
+CCreateHandler	Server/Main.cpp	/^	CCreateHandler(CSocketCreator* creator) {$/;"	f	class:CCreateHandler
+CCreateHandler	Server/Main.cpp	/^class CCreateHandler: public Runnable {$/;"	c	file:
+CFLAGS	CUserLib/common.mk	/^CFLAGS=-g -Wall $(INCLUDES)$/;"	m
+CFLAGS	ClientSocket/common.mk	/^CFLAGS=-g -Wall$/;"	m
+CFLAGS	Server/common.mk	/^CFLAGS=-g -Wall $(INCLUDES)$/;"	m
+CGETFIELDPACKET_H_	CUserLib/ClientPackets/CGetFieldPacket.h	27;"	d
+CGETFIELDPACKET_H_	Server/ClientPackets/CGetFieldPacket.h	27;"	d
+CGetFieldPacket	CUserLib/ClientPackets/CGetFieldPacket.cpp	/^CGetFieldPacket::CGetFieldPacket(Field* field, Device* device, CCommunicator* comm) : CPacket(GET_FIELD, comm) {$/;"	f	class:dvs::CGetFieldPacket
+CGetFieldPacket	CUserLib/ClientPackets/CGetFieldPacket.h	/^class CGetFieldPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+CGetFieldPacket	Server/ClientPackets/CGetFieldPacket.cpp	/^CGetFieldPacket::CGetFieldPacket(string data) : CPacket(data) {$/;"	f	class:dvs::CGetFieldPacket
+CGetFieldPacket	Server/ClientPackets/CGetFieldPacket.h	/^class CGetFieldPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+COMMAND	CUserLib/ClientPackets/CPacket.h	/^	COMMAND=11$/;"	e	enum:dvs::__anon19
+COMMAND	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	COMMAND(11, CommandPacket.class),$/;"	e	enum:PacketType	file:
+COMMAND	Server/ClientPackets/CPacket.h	/^	COMMAND=11$/;"	e	enum:dvs::__anon21
+COMMANDINTERFACE_H_	Server/CommandInterface.h	27;"	d
+COMMUNICATOR_H_	Server/Comm/Communicator.h	27;"	d
+CPACKET_H_	CUserLib/ClientPackets/CPacket.h	27;"	d
+CPACKET_H_	Server/ClientPackets/CPacket.h	27;"	d
+CPacket	CUserLib/ClientPackets/CPacket.cpp	/^CPacket::CPacket(string data, CCommunicator* comm) {$/;"	f	class:dvs::CPacket
+CPacket	CUserLib/ClientPackets/CPacket.cpp	/^CPacket::CPacket(unsigned int id, CCommunicator* comm) {$/;"	f	class:dvs::CPacket
+CPacket	CUserLib/ClientPackets/CPacket.h	/^class CPacket {$/;"	c	namespace:dvs
+CPacket	Server/ClientPackets/CPacket.cpp	/^CPacket::CPacket(string data) {$/;"	f	class:dvs::CPacket
+CPacket	Server/ClientPackets/CPacket.cpp	/^CPacket::CPacket(unsigned int id, User* user) {$/;"	f	class:dvs::CPacket
+CPacket	Server/ClientPackets/CPacket.h	/^class CPacket {$/;"	c	namespace:dvs
+CPacketTypes	CUserLib/ClientPackets/CPacket.h	/^} CPacketTypes;$/;"	t	namespace:dvs	typeref:enum:dvs::__anon19
+CPacketTypes	Server/ClientPackets/CPacket.h	/^} CPacketTypes;$/;"	t	namespace:dvs	typeref:enum:dvs::__anon21
+CSETFIELDPACKET_H_	CUserLib/ClientPackets/CSetFieldPacket.h	27;"	d
+CSETFIELDPACKET_H_	Server/ClientPackets/CSetFieldPacket.h	27;"	d
+CSOCKETCOMM_H_	CUserLib/CComm/CSocketComm.h	27;"	d
+CSOCKETCOMM_H_	Server/CComm/CSocketComm.h	27;"	d
+CSOCKETCREATOR_H_	Server/CComm/CSocketCreator.h	27;"	d
+CSetFieldPacket	CUserLib/ClientPackets/CSetFieldPacket.cpp	/^CSetFieldPacket::CSetFieldPacket(Device* device, Field* field, CCommunicator* comm) : CPacket(GET_FIELD, comm) {$/;"	f	class:dvs::CSetFieldPacket
+CSetFieldPacket	CUserLib/ClientPackets/CSetFieldPacket.h	/^class CSetFieldPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+CSetFieldPacket	Server/ClientPackets/CSetFieldPacket.cpp	/^CSetFieldPacket::CSetFieldPacket(string data) : CPacket(data) {$/;"	f	class:dvs::CSetFieldPacket
+CSetFieldPacket	Server/ClientPackets/CSetFieldPacket.h	/^class CSetFieldPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+CSocketComm	CUserLib/CComm/CSocketComm.cpp	/^CSocketComm::CSocketComm() {$/;"	f	class:dvs::CSocketComm
+CSocketComm	CUserLib/CComm/CSocketComm.cpp	/^CSocketComm::CSocketComm(int fd) {$/;"	f	class:dvs::CSocketComm
+CSocketComm	CUserLib/CComm/CSocketComm.h	/^class CSocketComm: public CCommunicator {$/;"	c	namespace:dvs
+CSocketComm	Server/CComm/CSocketComm.cpp	/^CSocketComm::CSocketComm() {$/;"	f	class:dvs::CSocketComm
+CSocketComm	Server/CComm/CSocketComm.cpp	/^CSocketComm::CSocketComm(int fd) {$/;"	f	class:dvs::CSocketComm
+CSocketComm	Server/CComm/CSocketComm.h	/^class CSocketComm: public CCommunicator {$/;"	c	namespace:dvs
+CSocketCreator	Server/CComm/CSocketCreator.cpp	/^CSocketCreator::CSocketCreator(int port) {$/;"	f	class:dvs::CSocketCreator
+CSocketCreator	Server/CComm/CSocketCreator.h	/^class CSocketCreator {$/;"	c	namespace:dvs
+CUSTOM	ClientLib/DeviceComm.c	/^	CUSTOM,$/;"	e	enum:RecvState	file:
+CUSTOM	ClientSocket/lib/DeviceComm.c	/^	CUSTOM,$/;"	e	enum:RecvState	file:
+C_DEPS	SocketSerialConnector/Debug/sources.mk	/^C_DEPS := $/;"	m
+C_DEPS	SocketSerialConnector/Release/sources.mk	/^C_DEPS := $/;"	m
+C_SRCS	SocketSerialConnector/Debug/sources.mk	/^C_SRCS := $/;"	m
+C_SRCS	SocketSerialConnector/Release/sources.mk	/^C_SRCS := $/;"	m
+ChangeListener	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/ChangeListener.java	/^public interface ChangeListener {$/;"	i
+CommHandler	Server/Comm/Communicator.h	/^	CommHandler(Communicator* comm) {$/;"	f	class:dvs::CommHandler
+CommHandler	Server/Comm/Communicator.h	/^class CommHandler: public Runnable {$/;"	c	namespace:dvs
+CommManager	ClientLib/DeviceStructs.h	/^} CommManager;$/;"	t	typeref:struct:__anon3
+CommManager	ClientSocket/lib/DeviceStructs.h	/^} CommManager;$/;"	t	typeref:struct:__anon11
+CommandInterface	Server/CommandInterface.cpp	/^CommandInterface::CommandInterface(const char* prompt) {$/;"	f	class:dvs::CommandInterface
+CommandInterface	Server/CommandInterface.h	/^class CommandInterface: public Runnable {$/;"	c	namespace:dvs
+CommandPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/CommandPacket.java	/^	public CommandPacket(String command) {$/;"	m	class:CommandPacket
+CommandPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/CommandPacket.java	/^	public CommandPacket(int id, String[] params) {$/;"	m	class:CommandPacket
+CommandPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/CommandPacket.java	/^public class CommandPacket extends Packet {$/;"	c
+Communicator	Server/Comm/Communicator.cpp	/^Communicator::Communicator() {$/;"	f	class:dvs::Communicator
+Communicator	Server/Comm/Communicator.h	/^class Communicator {$/;"	c	namespace:dvs
+CreateHandler	Server/Main.cpp	/^	CreateHandler(SocketCreator* creator) {$/;"	f	class:CreateHandler
+CreateHandler	Server/Main.cpp	/^class CreateHandler: public Runnable {$/;"	c	file:
+DEFAULT_PORT	CUserLib/Main.cpp	49;"	d	file:
+DEFAULT_PORT	ClientSocket/SocketTest.cpp	46;"	d	file:
+DEFAULT_PORT	Server/Main.cpp	74;"	d	file:
+DEFAULT_USER_PORT	Server/Main.cpp	75;"	d	file:
+DEV1	ClientLib/DeviceComm.c	/^	DEV1 = 25,$/;"	e	enum:RecvState	file:
+DEV1	ClientSocket/lib/DeviceComm.c	/^	DEV1 = 25,$/;"	e	enum:RecvState	file:
+DEV2	ClientLib/DeviceComm.c	/^	DEV2 = 26,$/;"	e	enum:RecvState	file:
+DEV2	ClientSocket/lib/DeviceComm.c	/^	DEV2 = 26,$/;"	e	enum:RecvState	file:
+DEVICE	CUserLib/Main.cpp	/^	DEVICE=1,$/;"	e	enum:__anon18	file:
+DEVICECLIENT_H_	ClientLib/DeviceClient.h	27;"	d
+DEVICECLIENT_H_	ClientSocket/lib/DeviceClient.h	27;"	d
+DEVICECOMM_H_	ClientLib/DeviceComm.h	27;"	d
+DEVICECOMM_H_	ClientSocket/lib/DeviceComm.h	27;"	d
+DEVICEDEFPACKET_H_	CUserLib/ClientPackets/DeviceDefPacket.h	27;"	d
+DEVICEDEFPACKET_H_	Server/ClientPackets/DeviceDefPacket.h	27;"	d
+DEVICESTRUCTS_H_	ClientLib/DeviceStructs.h	27;"	d
+DEVICESTRUCTS_H_	ClientSocket/lib/DeviceStructs.h	27;"	d
+DEVICE_DEF	CUserLib/ClientPackets/CPacket.h	/^	DEVICE_DEF=5,$/;"	e	enum:dvs::__anon19
+DEVICE_DEF	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	DEVICE_DEF(5, DeviceDefPacket.class),$/;"	e	enum:PacketType	file:
+DEVICE_DEF	Server/ClientPackets/CPacket.h	/^	DEVICE_DEF=5,$/;"	e	enum:dvs::__anon21
+DEVICE_H_	CUserLib/Device/Device.h	27;"	d
+DEVICE_H_	Server/Device/Device.h	27;"	d
+Device	CUserLib/Device/Device.cpp	/^Device::Device(CCommunicator* comm, int id, string name) {$/;"	f	class:dvs::Device
+Device	CUserLib/Device/Device.h	/^class Device {$/;"	c	namespace:dvs
+Device	ClientLib/DeviceStructs.h	/^} Device;$/;"	t	typeref:struct:__anon4
+Device	ClientSocket/lib/DeviceStructs.h	/^} Device;$/;"	t	typeref:struct:__anon12
+Device	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public Device(int id, String name, String cname, int room, int icon,$/;"	m	class:Device
+Device	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^public class Device {$/;"	c
+Device	Server/Device/Device.cpp	/^Device::Device(Communicator* comm, string name) {$/;"	f	class:dvs::Device
+Device	Server/Device/Device.h	/^class Device {$/;"	c	namespace:dvs
+DeviceDefPacket	CUserLib/ClientPackets/DeviceDefPacket.cpp	/^DeviceDefPacket::DeviceDefPacket(string data, CCommunicator* comm) : CPacket(data, comm) {$/;"	f	class:dvs::DeviceDefPacket
+DeviceDefPacket	CUserLib/ClientPackets/DeviceDefPacket.h	/^class DeviceDefPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+DeviceDefPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	public DeviceDefPacket(int id, String[] params) {$/;"	m	class:DeviceDefPacket
+DeviceDefPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^public class DeviceDefPacket extends Packet {$/;"	c
+DeviceDefPacket	Server/ClientPackets/DeviceDefPacket.cpp	/^DeviceDefPacket::DeviceDefPacket(Device* device, User* user) : CPacket(DEVICE_DEF, user) {$/;"	f	class:dvs::DeviceDefPacket
+DeviceDefPacket	Server/ClientPackets/DeviceDefPacket.h	/^class DeviceDefPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+DeviceManager	JavaTestClient/src/com/dreamcrushed/DeviceUser/DeviceManager.java	/^	public DeviceManager() {$/;"	m	class:DeviceManager
+DeviceManager	JavaTestClient/src/com/dreamcrushed/DeviceUser/DeviceManager.java	/^public class DeviceManager {$/;"	c
+EXECUTABLES	SocketSerialConnector/Debug/sources.mk	/^EXECUTABLES := $/;"	m
+EXECUTABLES	SocketSerialConnector/Release/sources.mk	/^EXECUTABLES := $/;"	m
+FIELD	CUserLib/Main.cpp	/^	FIELD$/;"	e	enum:__anon18	file:
+FIELDINFOPACKET_H_	CUserLib/ClientPackets/FieldInfoPacket.h	27;"	d
+FIELDINFOPACKET_H_	Server/ClientPackets/FieldInfoPacket.h	27;"	d
+FIELDVAL	ClientLib/DeviceComm.c	/^	FIELDVAL = 6,$/;"	e	enum:RecvState	file:
+FIELDVAL	ClientSocket/lib/DeviceComm.c	/^	FIELDVAL = 6,$/;"	e	enum:RecvState	file:
+FIELDVALUEPACKET_H_	Server/DevicePackets/FieldValuePacket.h	27;"	d
+FIELD_H_	CUserLib/Device/Field/Field.h	27;"	d
+FIELD_H_	Server/Device/Field/Field.h	27;"	d
+FIELD_INFO	CUserLib/ClientPackets/CPacket.h	/^	FIELD_INFO=7,$/;"	e	enum:dvs::__anon19
+FIELD_INFO	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	FIELD_INFO(7, FieldInfoPacket.class),$/;"	e	enum:PacketType	file:
+FIELD_INFO	Server/ClientPackets/CPacket.h	/^	FIELD_INFO=7,$/;"	e	enum:dvs::__anon21
+FIXED	CUserLib/Device/Field/Field.h	/^	FIXED=3,$/;"	e	enum:dvs::__anon17
+FIXED	ClientLib/DeviceStructs.h	/^	FIXED,$/;"	e	enum:__anon1
+FIXED	ClientSocket/lib/DeviceStructs.h	/^	FIXED,$/;"	e	enum:__anon9
+FIXED	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^	FIXED(3),$/;"	e	enum:FieldType	file:
+FIXED	Server/Device/Field/Field.h	/^	FIXED=3,$/;"	e	enum:dvs::__anon20
+FIXEDFIELD_H_	CUserLib/Device/Field/FixedField.h	27;"	d
+FIXEDFIELD_H_	Server/Device/Field/FixedField.h	27;"	d
+FLOAT	CUserLib/Device/Field/Field.h	/^	FLOAT=2,$/;"	e	enum:dvs::__anon17
+FLOAT	ClientLib/DeviceStructs.h	/^	FLOAT,$/;"	e	enum:__anon1
+FLOAT	ClientSocket/lib/DeviceStructs.h	/^	FLOAT,$/;"	e	enum:__anon9
+FLOAT	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^	FLOAT(2),$/;"	e	enum:FieldType	file:
+FLOAT	Server/Device/Field/Field.h	/^	FLOAT=2,$/;"	e	enum:dvs::__anon20
+FLOATFIELD_H_	CUserLib/Device/Field/FloatField.h	27;"	d
+FLOATFIELD_H_	Server/Device/Field/FloatField.h	27;"	d
+F_CPU	Devices/device_light_0.c	25;"	d	file:
+F_CPU	Devices/device_light_1.c	25;"	d	file:
+F_CPU	Devices/stairs_annoying.c	25;"	d	file:
+F_CPU	Devices/tv_pool.c	25;"	d	file:
+F_CPU	Devices/uart.c	25;"	d	file:
+F_CPU	Devices/uart_spi_converter.c	25;"	d	file:
+Field	CUserLib/Device/Field/Field.cpp	/^Field::Field(FieldType type, string name, unsigned char id, bool writable,$/;"	f	class:dvs::Field
+Field	CUserLib/Device/Field/Field.h	/^class Field {$/;"	c	namespace:dvs
+Field	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	public Field(Device owner, String name, FieldType type, boolean writable, boolean vol,$/;"	m	class:Field
+Field	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^public class Field {$/;"	c
+Field	Server/Device/Field/Field.cpp	/^Field::Field(FieldType type, string name, unsigned char id, bool writable,$/;"	f	class:dvs::Field
+Field	Server/Device/Field/Field.h	/^class Field {$/;"	c	namespace:dvs
+FieldDef	ClientLib/DeviceStructs.h	/^} FieldDef;$/;"	t	typeref:struct:__anon2
+FieldDef	ClientSocket/lib/DeviceStructs.h	/^} FieldDef;$/;"	t	typeref:struct:__anon10
+FieldInfoPacket	CUserLib/ClientPackets/FieldInfoPacket.cpp	/^FieldInfoPacket::FieldInfoPacket(string data, CCommunicator* comm) : CPacket(data, comm) {$/;"	f	class:dvs::FieldInfoPacket
+FieldInfoPacket	CUserLib/ClientPackets/FieldInfoPacket.h	/^class FieldInfoPacket : public CPacket{$/;"	c	namespace:dvs
+FieldInfoPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^	public FieldInfoPacket(int id, String[] params) {$/;"	m	class:FieldInfoPacket
+FieldInfoPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^public class FieldInfoPacket extends Packet {$/;"	c
+FieldInfoPacket	Server/ClientPackets/FieldInfoPacket.cpp	/^FieldInfoPacket::FieldInfoPacket(Field* field, User* user) : CPacket(FIELD_INFO, user) {$/;"	f	class:dvs::FieldInfoPacket
+FieldInfoPacket	Server/ClientPackets/FieldInfoPacket.h	/^class FieldInfoPacket : public CPacket{$/;"	c	namespace:dvs
+FieldList	ClientLib/DeviceClient.h	/^typedef void(*FieldList)(void*);$/;"	t
+FieldList	ClientSocket/lib/DeviceClient.h	/^typedef void(*FieldList)(void*);$/;"	t
+FieldType	CUserLib/Device/Field/Field.h	/^} FieldType;$/;"	t	namespace:dvs	typeref:enum:dvs::__anon17
+FieldType	ClientLib/DeviceStructs.h	/^} FieldType;$/;"	t	typeref:enum:__anon1
+FieldType	ClientSocket/lib/DeviceStructs.h	/^} FieldType;$/;"	t	typeref:enum:__anon9
+FieldType	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^	private FieldType(int id) {$/;"	m	class:FieldType	file:
+FieldType	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^public enum FieldType {$/;"	g
+FieldType	Server/Device/Field/Field.h	/^} FieldType;$/;"	t	namespace:dvs	typeref:enum:dvs::__anon20
+FieldValuePacket	Server/DevicePackets/FieldValuePacket.cpp	/^FieldValuePacket::FieldValuePacket(unsigned char *data) :$/;"	f	class:dvs::FieldValuePacket
+FieldValuePacket	Server/DevicePackets/FieldValuePacket.h	/^class FieldValuePacket: public dvs::Packet {$/;"	c	namespace:dvs
+Field_Value	Server/DevicePackets/Packet.h	/^	Field_Value = 6,$/;"	e	enum:dvs::PacketType
+FixedField	CUserLib/Device/Field/FixedField.cpp	/^FixedField::FixedField(string name, unsigned char id, bool writable, bool vol, Device* device) :$/;"	f	class:dvs::FixedField
+FixedField	CUserLib/Device/Field/FixedField.h	/^class FixedField: public dvs::Field {$/;"	c	namespace:dvs
+FixedField	ClientLib/DeviceStructs.h	/^} FixedField;$/;"	t	typeref:struct:__anon7
+FixedField	ClientSocket/lib/DeviceStructs.h	/^} FixedField;$/;"	t	typeref:struct:__anon15
+FixedField	Server/Device/Field/FixedField.cpp	/^FixedField::FixedField(string name, unsigned char id, bool writable, bool vol, Device* device) :$/;"	f	class:dvs::FixedField
+FixedField	Server/Device/Field/FixedField.h	/^class FixedField: public dvs::Field {$/;"	c	namespace:dvs
+FloatField	CUserLib/Device/Field/FloatField.cpp	/^FloatField::FloatField(string name, unsigned char id, bool writable, bool vol, Device* device) :$/;"	f	class:dvs::FloatField
+FloatField	CUserLib/Device/Field/FloatField.h	/^class FloatField: public dvs::Field {$/;"	c	namespace:dvs
+FloatField	Server/Device/Field/FloatField.cpp	/^FloatField::FloatField(string name, unsigned char id, bool writable, bool vol, Device* device) :$/;"	f	class:dvs::FloatField
+FloatField	Server/Device/Field/FloatField.h	/^class FloatField: public dvs::Field {$/;"	c	namespace:dvs
+GETDEVICESPACKET_H_	CUserLib/ClientPackets/GetDevicesPacket.h	27;"	d
+GETDEVICESPACKET_H_	Server/ClientPackets/GetDevicesPacket.h	27;"	d
+GETFIELD	ClientLib/DeviceComm.c	/^	GETFIELD = 5,$/;"	e	enum:RecvState	file:
+GETFIELD	ClientSocket/lib/DeviceComm.c	/^	GETFIELD = 5,$/;"	e	enum:RecvState	file:
+GETFIELDPACKET_H_	Server/DevicePackets/GetFieldPacket.h	27;"	d
+GETFIELDSPACKET_H_	CUserLib/ClientPackets/GetFieldsPacket.h	27;"	d
+GETFIELDSPACKET_H_	Server/ClientPackets/GetFieldsPacket.h	27;"	d
+GET_DEVICES	CUserLib/ClientPackets/CPacket.h	/^	GET_DEVICES=4,$/;"	e	enum:dvs::__anon19
+GET_DEVICES	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	GET_DEVICES(4, GetDevicesPacket.class),$/;"	e	enum:PacketType	file:
+GET_DEVICES	Server/ClientPackets/CPacket.h	/^	GET_DEVICES=4,$/;"	e	enum:dvs::__anon21
+GET_FIELD	CUserLib/ClientPackets/CPacket.h	/^	GET_FIELD=8,$/;"	e	enum:dvs::__anon19
+GET_FIELD	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	GET_FIELD(8, GetFieldPacket.class),$/;"	e	enum:PacketType	file:
+GET_FIELD	Server/ClientPackets/CPacket.h	/^	GET_FIELD=8,$/;"	e	enum:dvs::__anon21
+GET_FIELDS	CUserLib/ClientPackets/CPacket.h	/^	GET_FIELDS=6,$/;"	e	enum:dvs::__anon19
+GET_FIELDS	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	GET_FIELDS(6, GetFieldsPacket.class),$/;"	e	enum:PacketType	file:
+GET_FIELDS	Server/ClientPackets/CPacket.h	/^	GET_FIELDS=6,$/;"	e	enum:dvs::__anon21
+GetDevicesPacket	CUserLib/ClientPackets/GetDevicesPacket.cpp	/^GetDevicesPacket::GetDevicesPacket(CCommunicator* comm) : CPacket(GET_DEVICES, comm) {$/;"	f	class:dvs::GetDevicesPacket
+GetDevicesPacket	CUserLib/ClientPackets/GetDevicesPacket.cpp	/^GetDevicesPacket::GetDevicesPacket(int id, CCommunicator* comm) : CPacket(GET_DEVICES, comm) {$/;"	f	class:dvs::GetDevicesPacket
+GetDevicesPacket	CUserLib/ClientPackets/GetDevicesPacket.h	/^class GetDevicesPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+GetDevicesPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetDevicesPacket.java	/^	public GetDevicesPacket() {$/;"	m	class:GetDevicesPacket
+GetDevicesPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetDevicesPacket.java	/^	public GetDevicesPacket(int device) {$/;"	m	class:GetDevicesPacket
+GetDevicesPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetDevicesPacket.java	/^public class GetDevicesPacket extends Packet {$/;"	c
+GetDevicesPacket	Server/ClientPackets/GetDevicesPacket.cpp	/^GetDevicesPacket::GetDevicesPacket(string data) : CPacket(data) {$/;"	f	class:dvs::GetDevicesPacket
+GetDevicesPacket	Server/ClientPackets/GetDevicesPacket.h	/^class GetDevicesPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+GetFieldPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldPacket.java	/^	public GetFieldPacket(int device, int field) {$/;"	m	class:GetFieldPacket
+GetFieldPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldPacket.java	/^public class GetFieldPacket extends Packet {$/;"	c
+GetFieldPacket	Server/DevicePackets/GetFieldPacket.cpp	/^GetFieldPacket::GetFieldPacket(Device *device, unsigned char id) :$/;"	f	class:dvs::GetFieldPacket
+GetFieldPacket	Server/DevicePackets/GetFieldPacket.h	/^class GetFieldPacket: public dvs::Packet {$/;"	c	namespace:dvs
+GetFieldsPacket	CUserLib/ClientPackets/GetFieldsPacket.cpp	/^GetFieldsPacket::GetFieldsPacket(int did, CCommunicator* comm) : CPacket(GET_FIELDS, comm) {$/;"	f	class:dvs::GetFieldsPacket
+GetFieldsPacket	CUserLib/ClientPackets/GetFieldsPacket.cpp	/^GetFieldsPacket::GetFieldsPacket(int did, int fid, CCommunicator* comm) : CPacket(GET_FIELDS, comm) {$/;"	f	class:dvs::GetFieldsPacket
+GetFieldsPacket	CUserLib/ClientPackets/GetFieldsPacket.h	/^class GetFieldsPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+GetFieldsPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldsPacket.java	/^	public GetFieldsPacket(int device) {$/;"	m	class:GetFieldsPacket
+GetFieldsPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldsPacket.java	/^	public GetFieldsPacket(int device, int field) {$/;"	m	class:GetFieldsPacket
+GetFieldsPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldsPacket.java	/^public class GetFieldsPacket extends Packet {$/;"	c
+GetFieldsPacket	Server/ClientPackets/GetFieldsPacket.cpp	/^GetFieldsPacket::GetFieldsPacket(string data) : CPacket(data) {$/;"	f	class:dvs::GetFieldsPacket
+GetFieldsPacket	Server/ClientPackets/GetFieldsPacket.h	/^class GetFieldsPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+Get_Field	Server/DevicePackets/Packet.h	/^	Get_Field = 5,$/;"	e	enum:dvs::PacketType
+IDLE	Devices/device_light_0.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon22	file:
+IDLE	Devices/device_light_1.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon23	file:
+IDLE	Devices/stairs_annoying.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon24	file:
+IDLE	Devices/tv_pool.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon25	file:
+INCLUDES	CUserLib/common.mk	/^INCLUDES=-I $(PREFIX)\/ClientPackets -I $(PREFIX)\/Device -I $(PREFIX)\/User -I $(PREFIX)\/CComm -I $(PREFIX)\/Device\/Field -I $(PREFIX)\/$/;"	m
+INCLUDES	Server/common.mk	/^INCLUDES=-I $(PREFIX)\/Comm -I $(PREFIX)\/DevicePackets -I $(PREFIX)\/ClientPackets -I $(PREFIX)\/Device -I $(PREFIX)\/User -I $(PREFIX)\/CComm -I $(PREFIX)\/Device\/Field -I $(PREFIX)\/$/;"	m
+INIT	ClientLib/DeviceComm.c	/^	INIT = 20,$/;"	e	enum:RecvState	file:
+INIT	ClientSocket/lib/DeviceComm.c	/^	INIT = 20,$/;"	e	enum:RecvState	file:
+INIT1	ClientLib/DeviceComm.c	/^	INIT1 = 21,$/;"	e	enum:RecvState	file:
+INIT1	ClientSocket/lib/DeviceComm.c	/^	INIT1 = 21,$/;"	e	enum:RecvState	file:
+INIT2	ClientLib/DeviceComm.c	/^	INIT2 = 22,$/;"	e	enum:RecvState	file:
+INIT2	ClientSocket/lib/DeviceComm.c	/^	INIT2 = 22,$/;"	e	enum:RecvState	file:
+INIT3	ClientLib/DeviceComm.c	/^	INIT3 = 23,$/;"	e	enum:RecvState	file:
+INIT3	ClientSocket/lib/DeviceComm.c	/^	INIT3 = 23,$/;"	e	enum:RecvState	file:
+INITCN	ClientLib/DeviceComm.c	/^	INITCN = 2,$/;"	e	enum:RecvState	file:
+INITCN	ClientSocket/lib/DeviceComm.c	/^	INITCN = 2,$/;"	e	enum:RecvState	file:
+INITCNAMEPACKET_H_	Server/DevicePackets/InitCNamePacket.h	27;"	d
+INITFIELDPACKET_H_	Server/DevicePackets/InitFieldPacket.h	27;"	d
+INITFIL	ClientLib/DeviceComm.c	/^	INITFIL = 4,$/;"	e	enum:RecvState	file:
+INITFIL	ClientSocket/lib/DeviceComm.c	/^	INITFIL = 4,$/;"	e	enum:RecvState	file:
+INITLOC	ClientLib/DeviceComm.c	/^	INITLOC = 3,$/;"	e	enum:RecvState	file:
+INITLOC	ClientSocket/lib/DeviceComm.c	/^	INITLOC = 3,$/;"	e	enum:RecvState	file:
+INITLOCATIONPACKET_H_	Server/DevicePackets/InitLocationPacket.h	27;"	d
+INITP	ClientLib/DeviceComm.c	/^	INITP = 1,$/;"	e	enum:RecvState	file:
+INITP	ClientSocket/lib/DeviceComm.c	/^	INITP = 1,$/;"	e	enum:RecvState	file:
+INITPACKET_H_	Server/DevicePackets/InitPacket.h	27;"	d
+INT	ClientLib/DeviceStructs.h	/^	INT,$/;"	e	enum:__anon1
+INT	ClientSocket/lib/DeviceStructs.h	/^	INT,$/;"	e	enum:__anon9
+INTEGER	CUserLib/Device/Field/Field.h	/^	INTEGER=1,$/;"	e	enum:dvs::__anon17
+INTEGER	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^	INTEGER(1),$/;"	e	enum:FieldType	file:
+INTEGER	Server/Device/Field/Field.h	/^	INTEGER=1,$/;"	e	enum:dvs::__anon20
+INTEGERFIELD_H_	CUserLib/Device/Field/IntegerField.h	27;"	d
+INTEGERFIELD_H_	Server/Device/Field/IntegerField.h	27;"	d
+ISR	Devices/device_light_1.c	/^ISR(SPI_STC_vect) {$/;"	f
+ISR	Devices/uart_spi_converter.c	/^ISR(USART_RXC_vect) {$/;"	f
+Init	Server/DevicePackets/Packet.h	/^	Init = 1,$/;"	e	enum:dvs::PacketType
+InitCNamePacket	Server/DevicePackets/InitCNamePacket.cpp	/^InitCNamePacket::InitCNamePacket(unsigned char* data) :$/;"	f	class:dvs::InitCNamePacket
+InitCNamePacket	Server/DevicePackets/InitCNamePacket.h	/^class InitCNamePacket: public dvs::Packet {$/;"	c	namespace:dvs
+InitFieldPacket	Server/DevicePackets/InitFieldPacket.cpp	/^InitFieldPacket::InitFieldPacket(unsigned char* data) :$/;"	f	class:dvs::InitFieldPacket
+InitFieldPacket	Server/DevicePackets/InitFieldPacket.h	/^class InitFieldPacket: public dvs::Packet {$/;"	c	namespace:dvs
+InitLocationPacket	Server/DevicePackets/InitLocationPacket.cpp	/^InitLocationPacket::InitLocationPacket(unsigned char* data) :$/;"	f	class:dvs::InitLocationPacket
+InitLocationPacket	Server/DevicePackets/InitLocationPacket.h	/^class InitLocationPacket: public dvs::Packet {$/;"	c	namespace:dvs
+InitPacket	Server/DevicePackets/InitPacket.cpp	/^InitPacket::InitPacket(Device *device) :$/;"	f	class:dvs::InitPacket
+InitPacket	Server/DevicePackets/InitPacket.cpp	/^InitPacket::InitPacket(unsigned char *data) :$/;"	f	class:dvs::InitPacket
+InitPacket	Server/DevicePackets/InitPacket.h	/^class InitPacket: public dvs::Packet {$/;"	c	namespace:dvs
+Init_Common_Name	Server/DevicePackets/Packet.h	/^	Init_Common_Name = 2,$/;"	e	enum:dvs::PacketType
+Init_Field	Server/DevicePackets/Packet.h	/^	Init_Field = 4,$/;"	e	enum:dvs::PacketType
+Init_Location	Server/DevicePackets/Packet.h	/^	Init_Location = 3,$/;"	e	enum:dvs::PacketType
+IntField	ClientLib/DeviceStructs.h	/^} IntField;$/;"	t	typeref:struct:__anon6
+IntField	ClientSocket/lib/DeviceStructs.h	/^} IntField;$/;"	t	typeref:struct:__anon14
+IntegerField	CUserLib/Device/Field/IntegerField.cpp	/^IntegerField::IntegerField(string name, unsigned char id, bool writable,$/;"	f	class:dvs::IntegerField
+IntegerField	CUserLib/Device/Field/IntegerField.h	/^class IntegerField: public dvs::Field {$/;"	c	namespace:dvs
+IntegerField	Server/Device/Field/IntegerField.cpp	/^IntegerField::IntegerField(string name, unsigned char id, bool writable,$/;"	f	class:dvs::IntegerField
+IntegerField	Server/Device/Field/IntegerField.h	/^class IntegerField: public dvs::Field {$/;"	c	namespace:dvs
+InvalidLoginException	JavaTestClient/src/com/dreamcrushed/DeviceUser/InvalidLoginException.java	/^public class InvalidLoginException extends LoginException {$/;"	c
+InvalidPacketException	JavaTestClient/src/com/dreamcrushed/DeviceUser/InvalidPacketException.java	/^public class InvalidPacketException extends Exception {$/;"	c
+LIBS	CUserLib/common.mk	/^LIBS=-lreadline$/;"	m
+LIBS	ClientSocket/common.mk	/^LIBS=$/;"	m
+LIBS	Server/common.mk	/^LIBS=-lreadline$/;"	m
+LIBS	SocketSerialConnector/Debug/objects.mk	/^LIBS :=$/;"	m
+LIBS	SocketSerialConnector/Release/objects.mk	/^LIBS :=$/;"	m
+LIGHT	Devices/device_light_0.c	35;"	d	file:
+LIGHT	Devices/device_light_1.c	35;"	d	file:
+LIGHT	Devices/uart.c	31;"	d	file:
+LIGHT	Devices/uart_spi_converter.c	31;"	d	file:
+LIGHT_OFF	Devices/device_light_0.c	45;"	d	file:
+LIGHT_OFF	Devices/device_light_1.c	45;"	d	file:
+LIGHT_OFF	Devices/uart.c	41;"	d	file:
+LIGHT_OFF	Devices/uart_spi_converter.c	41;"	d	file:
+LIGHT_ON	Devices/device_light_0.c	46;"	d	file:
+LIGHT_ON	Devices/device_light_1.c	46;"	d	file:
+LIGHT_ON	Devices/uart.c	42;"	d	file:
+LIGHT_ON	Devices/uart_spi_converter.c	42;"	d	file:
+LIGHT_PORT	Devices/device_light_0.c	34;"	d	file:
+LIGHT_PORT	Devices/device_light_1.c	34;"	d	file:
+LIGHT_PORT	Devices/uart.c	30;"	d	file:
+LIGHT_PORT	Devices/uart_spi_converter.c	30;"	d	file:
+LOGIN	CUserLib/ClientPackets/CPacket.h	/^	LOGIN=1,$/;"	e	enum:dvs::__anon19
+LOGIN	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	LOGIN(1, LoginPacket.class),$/;"	e	enum:PacketType	file:
+LOGIN	Server/ClientPackets/CPacket.h	/^	LOGIN=1,$/;"	e	enum:dvs::__anon21
+LOGINFAILUREPACKET_H_	CUserLib/ClientPackets/LoginFailurePacket.h	27;"	d
+LOGINFAILUREPACKET_H_	Server/ClientPackets/LoginFailurePacket.h	27;"	d
+LOGINPACKET_H_	CUserLib/ClientPackets/LoginPacket.h	27;"	d
+LOGINPACKET_H_	Server/ClientPackets/LoginPacket.h	27;"	d
+LOGIN_FAILED	CUserLib/ClientPackets/CPacket.h	/^	LOGIN_FAILED=3,$/;"	e	enum:dvs::__anon19
+LOGIN_FAILED	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	LOGIN_FAILED(3, LoginFailedPacket.class),$/;"	e	enum:PacketType	file:
+LOGIN_FAILED	Server/ClientPackets/CPacket.h	/^	LOGIN_FAILED=3,$/;"	e	enum:dvs::__anon21
+Listener	CUserLib/CComm/PacketListener.h	/^typedef bool(*Listener)(CPacket*, void*);$/;"	t	namespace:dvs
+LoginException	JavaTestClient/src/com/dreamcrushed/DeviceUser/LoginException.java	/^public class LoginException extends Exception {$/;"	c
+LoginFailedPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginFailedPacket.java	/^	public LoginFailedPacket(int id, String[] params) {$/;"	m	class:LoginFailedPacket
+LoginFailedPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginFailedPacket.java	/^public class LoginFailedPacket extends Packet {$/;"	c
+LoginFailurePacket	CUserLib/ClientPackets/LoginFailurePacket.cpp	/^LoginFailurePacket::LoginFailurePacket(string data, CCommunicator* comm) : CPacket(data, comm) {$/;"	f	class:dvs::LoginFailurePacket
+LoginFailurePacket	CUserLib/ClientPackets/LoginFailurePacket.h	/^class LoginFailurePacket: public dvs::CPacket {$/;"	c	namespace:dvs
+LoginFailurePacket	Server/ClientPackets/LoginFailurePacket.cpp	/^LoginFailurePacket::LoginFailurePacket(string error) : CPacket(LOGIN_FAILED, NULL) {$/;"	f	class:dvs::LoginFailurePacket
+LoginFailurePacket	Server/ClientPackets/LoginFailurePacket.h	/^class LoginFailurePacket: public dvs::CPacket {$/;"	c	namespace:dvs
+LoginPacket	CUserLib/ClientPackets/LoginPacket.cpp	/^LoginPacket::LoginPacket(string user, string pass, CCommunicator* comm) : CPacket(LOGIN, comm) {$/;"	f	class:dvs::LoginPacket
+LoginPacket	CUserLib/ClientPackets/LoginPacket.h	/^class LoginPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+LoginPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginPacket.java	/^	public LoginPacket(String user, String pass) {$/;"	m	class:LoginPacket
+LoginPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginPacket.java	/^public class LoginPacket extends Packet{$/;"	c
+LoginPacket	Server/ClientPackets/LoginPacket.cpp	/^LoginPacket::LoginPacket(string data) : CPacket(data) {$/;"	f	class:dvs::LoginPacket
+LoginPacket	Server/ClientPackets/LoginPacket.h	/^class LoginPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+MAXLEN	ClientLib/DeviceComm.c	/^	MAXLEN$/;"	e	enum:RecvState	file:
+MAXLEN	ClientSocket/lib/DeviceComm.c	/^	MAXLEN$/;"	e	enum:RecvState	file:
+MAXLENGTHPACKET_H_	Server/DevicePackets/MaxLengthPacket.h	27;"	d
+MAX_BUFF_LEN	Devices/uart.c	55;"	d	file:
+MAX_BUFF_LEN	Devices/uart_spi_converter.c	55;"	d	file:
+MAX_LEN	Devices/device_light_0.c	51;"	d	file:
+MAX_LEN	Devices/device_light_1.c	51;"	d	file:
+MAX_LEN	Devices/stairs_annoying.c	50;"	d	file:
+MAX_LEN	Devices/tv_pool.c	50;"	d	file:
+MISO	Devices/device_light_0.c	40;"	d	file:
+MISO	Devices/device_light_1.c	40;"	d	file:
+MISO	Devices/stairs_annoying.c	39;"	d	file:
+MISO	Devices/tv_pool.c	39;"	d	file:
+MISO	Devices/uart.c	33;"	d	file:
+MISO	Devices/uart_spi_converter.c	33;"	d	file:
+MOSI	Devices/device_light_0.c	41;"	d	file:
+MOSI	Devices/device_light_1.c	41;"	d	file:
+MOSI	Devices/stairs_annoying.c	40;"	d	file:
+MOSI	Devices/tv_pool.c	40;"	d	file:
+MOSI	Devices/uart.c	34;"	d	file:
+MOSI	Devices/uart_spi_converter.c	34;"	d	file:
+Main	JavaTestClient/src/com/dreamcrushed/DeviceUser/Main.java	/^public class Main {$/;"	c
+MaxLengthPacket	Server/DevicePackets/MaxLengthPacket.cpp	/^MaxLengthPacket::MaxLengthPacket(unsigned char* data) :$/;"	f	class:dvs::MaxLengthPacket
+MaxLengthPacket	Server/DevicePackets/MaxLengthPacket.h	/^class MaxLengthPacket: public dvs::Packet {$/;"	c	namespace:dvs
+Max_Length	Server/DevicePackets/Packet.h	/^	Max_Length = 10$/;"	e	enum:dvs::PacketType
+NFUNCS	Server/CommandInterface.cpp	60;"	d	file:
+NULL	ClientLib/DeviceClient.h	31;"	d
+NULL	ClientSocket/lib/DeviceClient.h	31;"	d
+NetworkManager	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public NetworkManager(String host, int port) throws UnknownHostException, IOException {$/;"	m	class:NetworkManager
+NetworkManager	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^public class NetworkManager {$/;"	c
+OBJDIR	CUserLib/common.mk	/^OBJDIR=$(PREFIX)\/objs$/;"	m
+OBJDIR	ClientSocket/common.mk	/^OBJDIR=$(PREFIX)\/objs$/;"	m
+OBJDIR	Server/common.mk	/^OBJDIR=$(PREFIX)\/objs$/;"	m
+OBJS	CUserLib/common.mk	/^OBJS=$(patsubst %.cpp,$(OBJDIR)\/%.o,$(SRCS))$/;"	m
+OBJS	ClientSocket/common.mk	/^OBJS=$(patsubst %.cpp,$(OBJDIR)\/%.o,$(patsubst %.c,$(OBJDIR)\/%.o,$(SRCS)))$/;"	m
+OBJS	Server/common.mk	/^OBJS=$(patsubst %.cpp,$(OBJDIR)\/%.o,$(SRCS))$/;"	m
+OBJS	SocketSerialConnector/Debug/sources.mk	/^OBJS := $/;"	m
+OBJS	SocketSerialConnector/Release/sources.mk	/^OBJS := $/;"	m
+OBJ_SRCS	SocketSerialConnector/Debug/sources.mk	/^OBJ_SRCS := $/;"	m
+OBJ_SRCS	SocketSerialConnector/Release/sources.mk	/^OBJ_SRCS := $/;"	m
+O_SRCS	SocketSerialConnector/Debug/sources.mk	/^O_SRCS := $/;"	m
+O_SRCS	SocketSerialConnector/Release/sources.mk	/^O_SRCS := $/;"	m
+PACKETLISTENER_H_	CUserLib/CComm/PacketListener.h	9;"	d
+PACKET_H_	Server/DevicePackets/Packet.h	27;"	d
+PREFIX	CUserLib/CComm/Makefile	/^PREFIX=..$/;"	m
+PREFIX	CUserLib/ClientPackets/Makefile	/^PREFIX=..$/;"	m
+PREFIX	CUserLib/Device/Field/Makefile	/^PREFIX=..\/..$/;"	m
+PREFIX	CUserLib/Device/Makefile	/^PREFIX=..$/;"	m
+PREFIX	CUserLib/Makefile	/^PREFIX=.$/;"	m
+PREFIX	CUserLib/User/Makefile	/^PREFIX=..$/;"	m
+PREFIX	ClientLib/Makefile	/^PREFIX=..\/ClientSocket$/;"	m
+PREFIX	ClientSocket/Makefile	/^PREFIX=.$/;"	m
+PREFIX	ClientSocket/lib/Makefile	/^PREFIX=..\/ClientSocket$/;"	m
+PREFIX	Server/CComm/Makefile	/^PREFIX=..$/;"	m
+PREFIX	Server/ClientPackets/Makefile	/^PREFIX=..$/;"	m
+PREFIX	Server/Comm/Makefile	/^PREFIX=..$/;"	m
+PREFIX	Server/Device/Field/Makefile	/^PREFIX=..\/..$/;"	m
+PREFIX	Server/Device/Makefile	/^PREFIX=..$/;"	m
+PREFIX	Server/DevicePackets/Makefile	/^PREFIX=..$/;"	m
+PREFIX	Server/Makefile	/^PREFIX=.$/;"	m
+PREFIX	Server/User/Makefile	/^PREFIX=..$/;"	m
+Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/Packet.java	/^	public Packet(String[] params) {$/;"	m	class:Packet
+Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/Packet.java	/^public abstract class Packet {$/;"	c
+Packet	Server/DevicePackets/Packet.cpp	/^Packet::Packet(unsigned char *data) {$/;"	f	class:dvs::Packet
+Packet	Server/DevicePackets/Packet.cpp	/^Packet::Packet(unsigned int length, unsigned int device, unsigned char pid) {$/;"	f	class:dvs::Packet
+Packet	Server/DevicePackets/Packet.h	/^class Packet {$/;"	c	namespace:dvs
+PacketListener	CUserLib/CComm/PacketListener.cpp	/^PacketListener::PacketListener(int packetType, void* data, Listener listener) {$/;"	f	class:dvs::PacketListener
+PacketListener	CUserLib/CComm/PacketListener.h	/^class PacketListener {$/;"	c	namespace:dvs
+PacketType	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	private PacketType(int type, Class<? extends Packet> cl) {$/;"	m	class:PacketType	file:
+PacketType	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^public enum PacketType {$/;"	g
+PacketType	Server/DevicePackets/Packet.h	/^enum PacketType {$/;"	g	namespace:dvs
+RECEIVE	Devices/device_light_0.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon22	file:
+RECEIVE	Devices/device_light_1.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon23	file:
+RECEIVE	Devices/stairs_annoying.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon24	file:
+RECEIVE	Devices/tv_pool.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon25	file:
+RELAY	Devices/device_light_0.c	38;"	d	file:
+RELAY	Devices/device_light_1.c	38;"	d	file:
+RELAY_ANNOY	Devices/stairs_annoying.c	35;"	d	file:
+RELAY_ANNOY_OFF	Devices/stairs_annoying.c	48;"	d	file:
+RELAY_ANNOY_ON	Devices/stairs_annoying.c	47;"	d	file:
+RELAY_ANNOY_PORT	Devices/stairs_annoying.c	34;"	d	file:
+RELAY_OFF	Devices/device_light_0.c	49;"	d	file:
+RELAY_OFF	Devices/device_light_1.c	49;"	d	file:
+RELAY_OFF	Devices/uart.c	45;"	d	file:
+RELAY_OFF	Devices/uart_spi_converter.c	45;"	d	file:
+RELAY_ON	Devices/device_light_0.c	48;"	d	file:
+RELAY_ON	Devices/device_light_1.c	48;"	d	file:
+RELAY_ON	Devices/uart.c	44;"	d	file:
+RELAY_ON	Devices/uart_spi_converter.c	44;"	d	file:
+RELAY_P	Devices/tv_pool.c	35;"	d	file:
+RELAY_PORT	Devices/device_light_0.c	37;"	d	file:
+RELAY_PORT	Devices/device_light_1.c	37;"	d	file:
+RELAY_P_OFF	Devices/tv_pool.c	48;"	d	file:
+RELAY_P_ON	Devices/tv_pool.c	47;"	d	file:
+RELAY_P_PORT	Devices/tv_pool.c	34;"	d	file:
+RELAY_STAIRS	Devices/stairs_annoying.c	37;"	d	file:
+RELAY_STAIRS_OFF	Devices/stairs_annoying.c	45;"	d	file:
+RELAY_STAIRS_ON	Devices/stairs_annoying.c	44;"	d	file:
+RELAY_STAIRS_PORT	Devices/stairs_annoying.c	36;"	d	file:
+RELAY_TV	Devices/tv_pool.c	37;"	d	file:
+RELAY_TV_OFF	Devices/tv_pool.c	45;"	d	file:
+RELAY_TV_ON	Devices/tv_pool.c	44;"	d	file:
+RELAY_TV_PORT	Devices/tv_pool.c	36;"	d	file:
+RM	SocketSerialConnector/Debug/makefile	/^RM := rm -rf$/;"	m
+RM	SocketSerialConnector/Release/makefile	/^RM := rm -rf$/;"	m
+ROOM_H_	CUserLib/Room.h	27;"	d
+ROOM_H_	Server/Room.h	27;"	d
+RUNNABLE_H_	CUserLib/Runnable.h	27;"	d
+RUNNABLE_H_	Server/Runnable.h	27;"	d
+ReaderThread	JavaTestClient/src/com/dreamcrushed/DeviceUser/ReaderThread.java	/^	public ReaderThread(InputStream inputStream, NetworkManager networkManager) {$/;"	m	class:ReaderThread
+ReaderThread	JavaTestClient/src/com/dreamcrushed/DeviceUser/ReaderThread.java	/^public class ReaderThread extends Thread {$/;"	c
+RecvState	ClientLib/DeviceComm.c	/^enum RecvState {$/;"	g	file:
+RecvState	ClientSocket/lib/DeviceComm.c	/^enum RecvState {$/;"	g	file:
+Room	CUserLib/Room.cpp	/^Room::Room(int id) {$/;"	f	class:dvs::Room
+Room	CUserLib/Room.h	/^class Room {$/;"	c	namespace:dvs
+Room	Server/Room.cpp	/^Room::Room(int id) {$/;"	f	class:dvs::Room
+Room	Server/Room.h	/^class Room {$/;"	c	namespace:dvs
+Runnable	CUserLib/Runnable.h	/^class Runnable {$/;"	c
+Runnable	Server/Runnable.h	/^class Runnable {$/;"	c
+SCK	Devices/device_light_0.c	42;"	d	file:
+SCK	Devices/device_light_1.c	42;"	d	file:
+SCK	Devices/stairs_annoying.c	41;"	d	file:
+SCK	Devices/tv_pool.c	41;"	d	file:
+SCK	Devices/uart.c	35;"	d	file:
+SCK	Devices/uart_spi_converter.c	35;"	d	file:
+SENDFIELDPACKET_H_	CUserLib/ClientPackets/SendFieldPacket.h	27;"	d
+SENDFIELDPACKET_H_	Server/ClientPackets/SendFieldPacket.h	27;"	d
+SEND_FIELD	CUserLib/ClientPackets/CPacket.h	/^	SEND_FIELD=9,$/;"	e	enum:dvs::__anon19
+SEND_FIELD	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	SEND_FIELD(9, SendFieldPacket.class),$/;"	e	enum:PacketType	file:
+SEND_FIELD	Server/ClientPackets/CPacket.h	/^	SEND_FIELD=9,$/;"	e	enum:dvs::__anon21
+SERIALCOMM_H_	Server/Comm/SerialComm.h	27;"	d
+SERVER_H_	Server/Server.h	27;"	d
+SETFIELD	ClientLib/DeviceComm.c	/^	SETFIELD = 7,$/;"	e	enum:RecvState	file:
+SETFIELD	ClientSocket/lib/DeviceComm.c	/^	SETFIELD = 7,$/;"	e	enum:RecvState	file:
+SETFIELDPACKET_H_	Server/DevicePackets/SetFieldPacket.h	27;"	d
+SETONE	ClientLib/DeviceComm.c	/^	SETONE = 9,$/;"	e	enum:RecvState	file:
+SETONE	ClientSocket/lib/DeviceComm.c	/^	SETONE = 9,$/;"	e	enum:RecvState	file:
+SETONEPACKET_H_	Server/DevicePackets/SetOnePacket.h	27;"	d
+SET_FIELD	CUserLib/ClientPackets/CPacket.h	/^	SET_FIELD=10,$/;"	e	enum:dvs::__anon19
+SET_FIELD	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	SET_FIELD(10, SetFieldPacket.class),$/;"	e	enum:PacketType	file:
+SET_FIELD	Server/ClientPackets/CPacket.h	/^	SET_FIELD=10,$/;"	e	enum:dvs::__anon21
+SOCKETCOMM_H_	Server/Comm/SocketComm.h	27;"	d
+SOCKETCREATOR_H_	Server/Comm/SocketCreator.h	27;"	d
+SRCS	CUserLib/CComm/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	CUserLib/ClientPackets/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	CUserLib/Device/Field/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	CUserLib/Device/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	CUserLib/Makefile	/^SRCS=$(wildcard *.cpp) $/;"	m
+SRCS	CUserLib/User/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	ClientLib/Makefile	/^SRCS=$(wildcard *.c)$/;"	m
+SRCS	ClientSocket/Makefile	/^SRCS=SocketTest.cpp$/;"	m
+SRCS	ClientSocket/lib/Makefile	/^SRCS=$(wildcard *.c)$/;"	m
+SRCS	Server/CComm/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	Server/ClientPackets/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	Server/Comm/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	Server/Device/Field/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	Server/Device/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	Server/DevicePackets/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SRCS	Server/Makefile	/^SRCS=$(wildcard *.cpp) $/;"	m
+SRCS	Server/User/Makefile	/^SRCS=$(wildcard *.cpp) $(wildcard *.c)$/;"	m
+SS	Devices/device_light_0.c	43;"	d	file:
+SS	Devices/device_light_1.c	43;"	d	file:
+SS	Devices/stairs_annoying.c	42;"	d	file:
+SS	Devices/tv_pool.c	42;"	d	file:
+SS0	Devices/uart.c	36;"	d	file:
+SS0	Devices/uart_spi_converter.c	36;"	d	file:
+SS0_HIGH	Devices/uart.c	47;"	d	file:
+SS0_HIGH	Devices/uart_spi_converter.c	47;"	d	file:
+SS0_LOW	Devices/uart.c	48;"	d	file:
+SS0_LOW	Devices/uart_spi_converter.c	48;"	d	file:
+SS1	Devices/uart.c	37;"	d	file:
+SS1	Devices/uart_spi_converter.c	37;"	d	file:
+SS1_HIGH	Devices/uart.c	50;"	d	file:
+SS1_HIGH	Devices/uart_spi_converter.c	50;"	d	file:
+SS1_LOW	Devices/uart.c	51;"	d	file:
+SS1_LOW	Devices/uart_spi_converter.c	51;"	d	file:
+SS_DELAY	Devices/uart.c	53;"	d	file:
+SS_DELAY	Devices/uart_spi_converter.c	53;"	d	file:
+SS_DELAY_COUNT	Devices/uart.c	39;"	d	file:
+SS_DELAY_COUNT	Devices/uart_spi_converter.c	39;"	d	file:
+START	ClientLib/DeviceComm.c	/^	START = 24,$/;"	e	enum:RecvState	file:
+START	ClientSocket/lib/DeviceComm.c	/^	START = 24,$/;"	e	enum:RecvState	file:
+STARTP	ClientLib/DeviceComm.c	/^	STARTP = 0,$/;"	e	enum:RecvState	file:
+STARTP	ClientSocket/lib/DeviceComm.c	/^	STARTP = 0,$/;"	e	enum:RecvState	file:
+STARTPACKET_H_	Server/DevicePackets/StartPacket.h	27;"	d
+STRING	CUserLib/Device/Field/Field.h	/^	STRING=4$/;"	e	enum:dvs::__anon17
+STRING	ClientLib/DeviceStructs.h	/^	STRING$/;"	e	enum:__anon1
+STRING	ClientSocket/lib/DeviceStructs.h	/^	STRING$/;"	e	enum:__anon9
+STRING	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^	STRING(4);$/;"	e	enum:FieldType	file:
+STRING	Server/Device/Field/Field.h	/^	STRING=4$/;"	e	enum:dvs::__anon20
+STRINGFIELD_H_	CUserLib/Device/Field/StringField.h	27;"	d
+STRINGFIELD_H_	Server/Device/Field/StringField.h	27;"	d
+SUBDIRS	SocketSerialConnector/Debug/sources.mk	/^SUBDIRS := \\$/;"	m
+SUBDIRS	SocketSerialConnector/Release/sources.mk	/^SUBDIRS := \\$/;"	m
+SUBSCRIBE	ClientLib/DeviceComm.c	/^	SUBSCRIBE = 8,$/;"	e	enum:RecvState	file:
+SUBSCRIBE	ClientSocket/lib/DeviceComm.c	/^	SUBSCRIBE = 8,$/;"	e	enum:RecvState	file:
+SUBSCRIBEPACKET_H_	Server/DevicePackets/SubscribePacket.h	27;"	d
+S_UPPER_SRCS	SocketSerialConnector/Debug/sources.mk	/^S_UPPER_SRCS := $/;"	m
+S_UPPER_SRCS	SocketSerialConnector/Release/sources.mk	/^S_UPPER_SRCS := $/;"	m
+SendFieldPacket	CUserLib/ClientPackets/SendFieldPacket.cpp	/^SendFieldPacket::SendFieldPacket(string data, CCommunicator* comm): CPacket(data, comm) {$/;"	f	class:dvs::SendFieldPacket
+SendFieldPacket	CUserLib/ClientPackets/SendFieldPacket.h	/^class SendFieldPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+SendFieldPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SendFieldPacket.java	/^	public SendFieldPacket(int id, String[] params) {$/;"	m	class:SendFieldPacket
+SendFieldPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SendFieldPacket.java	/^public class SendFieldPacket extends Packet {$/;"	c
+SendFieldPacket	Server/ClientPackets/SendFieldPacket.cpp	/^SendFieldPacket::SendFieldPacket(Field* field, User* user) : CPacket(SEND_FIELD, user) {$/;"	f	class:dvs::SendFieldPacket
+SendFieldPacket	Server/ClientPackets/SendFieldPacket.h	/^class SendFieldPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+SendRoutine	ClientLib/DeviceClient.h	/^typedef void(*SendRoutine)(char c);$/;"	t
+SendRoutine	ClientSocket/lib/DeviceClient.h	/^typedef void(*SendRoutine)(char c);$/;"	t
+SerialComm	Server/Comm/SerialComm.cpp	/^SerialComm::SerialComm(char* device) {$/;"	f	class:dvs::SerialComm
+SerialComm	Server/Comm/SerialComm.h	/^class SerialComm: public SocketComm {$/;"	c	namespace:dvs
+Server	Server/Server.cpp	/^Server::Server() {$/;"	f	class:dvs::Server
+Server	Server/Server.h	/^class Server {$/;"	c	namespace:dvs
+SetFieldPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SetFieldPacket.java	/^	public SetFieldPacket(int device, int field, String value) {$/;"	m	class:SetFieldPacket
+SetFieldPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SetFieldPacket.java	/^public class SetFieldPacket extends Packet {$/;"	c
+SetFieldPacket	Server/DevicePackets/SetFieldPacket.cpp	/^SetFieldPacket::SetFieldPacket(Device *device, unsigned char id) :$/;"	f	class:dvs::SetFieldPacket
+SetFieldPacket	Server/DevicePackets/SetFieldPacket.h	/^class SetFieldPacket: public dvs::Packet {$/;"	c	namespace:dvs
+SetOnePacket	Server/DevicePackets/SetOnePacket.cpp	/^SetOnePacket::SetOnePacket(unsigned char *data) :$/;"	f	class:dvs::SetOnePacket
+SetOnePacket	Server/DevicePackets/SetOnePacket.h	/^class SetOnePacket: public dvs::Packet {$/;"	c	namespace:dvs
+Set_Field	Server/DevicePackets/Packet.h	/^	Set_Field = 7,$/;"	e	enum:dvs::PacketType
+Set_One	Server/DevicePackets/Packet.h	/^	Set_One = 9,$/;"	e	enum:dvs::PacketType
+SocketComm	Server/Comm/SocketComm.cpp	/^SocketComm::SocketComm() {$/;"	f	class:dvs::SocketComm
+SocketComm	Server/Comm/SocketComm.cpp	/^SocketComm::SocketComm(int fd) {$/;"	f	class:dvs::SocketComm
+SocketComm	Server/Comm/SocketComm.h	/^class SocketComm: public Communicator {$/;"	c	namespace:dvs
+SocketCreator	Server/Comm/SocketCreator.cpp	/^SocketCreator::SocketCreator(int port) {$/;"	f	class:dvs::SocketCreator
+SocketCreator	Server/Comm/SocketCreator.h	/^class SocketCreator {$/;"	c	namespace:dvs
+Start	Server/DevicePackets/Packet.h	/^	Start = 0,$/;"	e	enum:dvs::PacketType
+StartPacket	Server/DevicePackets/StartPacket.h	/^	StartPacket() :$/;"	f	class:dvs::StartPacket
+StartPacket	Server/DevicePackets/StartPacket.h	/^class StartPacket: public dvs::Packet {$/;"	c	namespace:dvs
+StringField	CUserLib/Device/Field/StringField.cpp	/^StringField::StringField(string name, unsigned char id, bool writable, bool vol, Device* device) :$/;"	f	class:dvs::StringField
+StringField	CUserLib/Device/Field/StringField.h	/^class StringField: public dvs::Field {$/;"	c	namespace:dvs
+StringField	ClientLib/DeviceStructs.h	/^} StringField;$/;"	t	typeref:struct:__anon8
+StringField	ClientSocket/lib/DeviceStructs.h	/^} StringField;$/;"	t	typeref:struct:__anon16
+StringField	Server/Device/Field/StringField.cpp	/^StringField::StringField(string name, unsigned char id, bool writable, bool vol, Device* device) :$/;"	f	class:dvs::StringField
+StringField	Server/Device/Field/StringField.h	/^class StringField: public dvs::Field {$/;"	c	namespace:dvs
+Subscribe	Server/DevicePackets/Packet.h	/^	Subscribe = 8,$/;"	e	enum:dvs::PacketType
+SubscribePacket	Server/DevicePackets/SubscribePacket.h	/^class SubscribePacket: public dvs::Packet {$/;"	c	namespace:dvs
+TARGET	CUserLib/CComm/Makefile	/^TARGET=$/;"	m
+TARGET	CUserLib/ClientPackets/Makefile	/^TARGET=$/;"	m
+TARGET	CUserLib/Device/Field/Makefile	/^TARGET=$/;"	m
+TARGET	CUserLib/Device/Makefile	/^TARGET=$/;"	m
+TARGET	CUserLib/Makefile	/^TARGET=cuser-lib$/;"	m
+TARGET	CUserLib/User/Makefile	/^TARGET=$/;"	m
+TARGET	ClientLib/Makefile	/^TARGET=$/;"	m
+TARGET	ClientSocket/Makefile	/^TARGET=socket-client$/;"	m
+TARGET	ClientSocket/lib/Makefile	/^TARGET=$/;"	m
+TARGET	Server/CComm/Makefile	/^TARGET=$/;"	m
+TARGET	Server/ClientPackets/Makefile	/^TARGET=$/;"	m
+TARGET	Server/Comm/Makefile	/^TARGET=$/;"	m
+TARGET	Server/Device/Field/Makefile	/^TARGET=$/;"	m
+TARGET	Server/Device/Makefile	/^TARGET=$/;"	m
+TARGET	Server/DevicePackets/Makefile	/^TARGET=$/;"	m
+TARGET	Server/Makefile	/^TARGET=dev-server$/;"	m
+TARGET	Server/User/Makefile	/^TARGET=$/;"	m
+TRANSMIT	Devices/device_light_0.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon22	file:
+TRANSMIT	Devices/device_light_1.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon23	file:
+TRANSMIT	Devices/stairs_annoying.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon24	file:
+TRANSMIT	Devices/tv_pool.c	/^enum {IDLE = 0, RECEIVE, TRANSMIT, BURN};$/;"	e	enum:__anon25	file:
+TYPE	ClientLib/DeviceComm.c	/^	TYPE = 27,$/;"	e	enum:RecvState	file:
+TYPE	ClientSocket/lib/DeviceComm.c	/^	TYPE = 27,$/;"	e	enum:RecvState	file:
+UID	CUserLib/ClientPackets/CPacket.h	/^	UID=2,$/;"	e	enum:dvs::__anon19
+UID	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	UID(2, UIDPacket.class),$/;"	e	enum:PacketType	file:
+UID	Server/ClientPackets/CPacket.h	/^	UID=2,$/;"	e	enum:dvs::__anon21
+UIDPACKET_H_	CUserLib/ClientPackets/UIDPacket.h	27;"	d
+UIDPACKET_H_	Server/ClientPackets/UIDPacket.h	27;"	d
+UIDPacket	CUserLib/ClientPackets/UIDPacket.cpp	/^UIDPacket::UIDPacket(string data, CCommunicator* comm) : CPacket(data, comm) {$/;"	f	class:dvs::UIDPacket
+UIDPacket	CUserLib/ClientPackets/UIDPacket.h	/^class UIDPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+UIDPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/UIDPacket.java	/^	public UIDPacket(int id, String[] params) {$/;"	m	class:UIDPacket
+UIDPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/UIDPacket.java	/^public class UIDPacket extends Packet {$/;"	c
+UIDPacket	Server/ClientPackets/UIDPacket.cpp	/^UIDPacket::UIDPacket(User* user) : CPacket(UID, user) {$/;"	f	class:dvs::UIDPacket
+UIDPacket	Server/ClientPackets/UIDPacket.h	/^class UIDPacket: public dvs::CPacket {$/;"	c	namespace:dvs
+USER_H_	Server/User/User.h	27;"	d
+USER_OBJS	SocketSerialConnector/Debug/objects.mk	/^USER_OBJS :=$/;"	m
+USER_OBJS	SocketSerialConnector/Release/objects.mk	/^USER_OBJS :=$/;"	m
+UTIL_H_	CUserLib/Util.h	27;"	d
+UTIL_H_	Server/Util.h	27;"	d
+User	Server/User/User.cpp	/^User::User(CCommunicator* comm) {$/;"	f	class:dvs::User
+User	Server/User/User.h	/^class User {$/;"	c	namespace:dvs
+Util	CUserLib/Util.h	/^class Util {$/;"	c	namespace:dvs
+Util	JavaTestClient/src/com/dreamcrushed/DeviceUser/Util.java	/^public class Util {$/;"	c
+Util	Server/Util.h	/^class Util {$/;"	c	namespace:dvs
+WriterThread	JavaTestClient/src/com/dreamcrushed/DeviceUser/WriterThread.java	/^	public WriterThread(OutputStream outputStream) {$/;"	m	class:WriterThread
+WriterThread	JavaTestClient/src/com/dreamcrushed/DeviceUser/WriterThread.java	/^public class WriterThread extends Thread {$/;"	c
+addDevice	CUserLib/Room.cpp	/^void Room::addDevice(Device* device) {$/;"	f	class:dvs::Room
+addDevice	Server/Room.cpp	/^void Room::addDevice(Device* device) {$/;"	f	class:dvs::Room
+addField	ClientLib/DeviceClient.c	/^int addField(FieldType type, char* name, unsigned int id,$/;"	f
+addField	ClientSocket/lib/DeviceClient.c	/^int addField(FieldType type, char* name, unsigned int id,$/;"	f
+addListener	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public void addListener(ChangeListener listener) {$/;"	m	class:Device
+addListener	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	public void addListener(ChangeListener listener) {$/;"	m	class:Field
+addListener	Server/Server.cpp	/^void Server::addListener(int fd, Runnable* listener) {$/;"	f	class:dvs::Server
+allocateDeviceId	CUserLib/Device/Device.h	/^	static int allocateDeviceId() {$/;"	f	class:dvs::Device
+allocateDeviceId	Server/Device/Device.h	/^	static int allocateDeviceId() {$/;"	f	class:dvs::Device
+allocateUID	Server/Server.h	/^	static unsigned int allocateUID() {$/;"	f	class:dvs::Server
+allocated	Server/DevicePackets/Packet.h	/^	bool allocated;$/;"	m	class:dvs::Packet
+args	CUserLib/ClientPackets/CPacket.h	/^	vector<string>* args;$/;"	m	class:dvs::CPacket
+args	Server/ClientPackets/CPacket.h	/^	vector<string>* args;$/;"	m	class:dvs::CPacket
+array	CUserLib/Device/Field/BooleanField.h	/^	unsigned char array[2];$/;"	m	class:dvs::BooleanField
+array	CUserLib/Device/Field/FixedField.h	/^	unsigned char array[3];$/;"	m	class:dvs::FixedField
+array	Server/Device/Field/BooleanField.h	/^	unsigned char array[2];$/;"	m	class:dvs::BooleanField
+array	Server/Device/Field/FixedField.h	/^	unsigned char array[3];$/;"	m	class:dvs::FixedField
+availableIds	Server/Server.cpp	/^queue<unsigned int> availableIds;$/;"	m	namespace:dvs	file:
+buf	Devices/device_light_0.c	/^volatile char buf[MAX_LEN];$/;"	v
+buf	Devices/device_light_1.c	/^volatile char buf[MAX_LEN];$/;"	v
+buf	Devices/stairs_annoying.c	/^volatile char buf[MAX_LEN];$/;"	v
+buf	Devices/tv_pool.c	/^volatile char buf[MAX_LEN];$/;"	v
+buf	Server/CommandInterface.cpp	/^char buf[10];$/;"	m	namespace:dvs	file:
+buf_index	Devices/device_light_0.c	/^volatile char buf_index;$/;"	v
+buf_index	Devices/device_light_1.c	/^volatile char buf_index;$/;"	v
+buf_index	Devices/stairs_annoying.c	/^volatile char buf_index;$/;"	v
+buf_index	Devices/tv_pool.c	/^volatile char buf_index;$/;"	v
+buf_putch	CUserLib/ClientPackets/CCommandPacket.cpp	/^void buf_putch(char c) {$/;"	f
+buf_putch	Server/ClientPackets/CCommandPacket.cpp	/^void buf_putch(char c) {$/;"	f
+buffer	CUserLib/CComm/CCommunicator.h	/^	char buffer[BUF_LENGTH];$/;"	m	class:dvs::CCommunicator
+buffer	CUserLib/ClientPackets/CCommandPacket.h	/^	char buffer[2048];$/;"	m	class:dvs::CCommandPacket
+buffer	ClientLib/DeviceStructs.h	/^	char buffer[BUFFER_LENGTH];$/;"	m	struct:__anon3
+buffer	ClientSocket/lib/DeviceStructs.h	/^	char buffer[BUFFER_LENGTH];$/;"	m	struct:__anon11
+buffer	Server/CComm/CCommunicator.h	/^	char buffer[BUF_LENGTH];$/;"	m	class:dvs::CCommunicator
+buffer	Server/ClientPackets/CCommandPacket.h	/^	char buffer[2048];$/;"	m	class:dvs::CCommandPacket
+buffer	Server/Comm/Communicator.h	/^	unsigned char buffer[256];$/;"	m	class:dvs::Communicator
+buffer_length	Server/CommandInterface.cpp	/^int buffer_length;$/;"	m	namespace:dvs	file:
+bufferedReader	JavaTestClient/src/com/dreamcrushed/DeviceUser/ReaderThread.java	/^	private BufferedReader bufferedReader;$/;"	f	class:ReaderThread	file:
+buffered_send_char	Devices/device_light_0.c	/^void buffered_send_char(char c) {$/;"	f
+buffered_send_char	Devices/stairs_annoying.c	/^void buffered_send_char(char c) {$/;"	f
+buffered_send_char	Devices/tv_pool.c	/^void buffered_send_char(char c) {$/;"	f
+buffered_spi_send_char	Devices/device_light_1.c	/^void buffered_spi_send_char(char c) {$/;"	f
+callback	CUserLib/CComm/CCommunicator.cpp	/^void CCommunicator::callback(int id, CPacket* packet) {$/;"	f	class:dvs::CCommunicator
+change	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public void change() {$/;"	m	class:Device
+change	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	public void change() {$/;"	m	class:Field
+changeListeners	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	protected List<ChangeListener> changeListeners;$/;"	f	class:Device
+changeListeners	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	protected List<ChangeListener> changeListeners;$/;"	f	class:Field
+changeOccured	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/ChangeListener.java	/^	public void changeOccured(Device device);$/;"	m	interface:ChangeListener
+changeOccured	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/ChangeListener.java	/^	public void changeOccured(Device device, Field field);$/;"	m	interface:ChangeListener
+changed	ClientLib/DeviceStructs.h	/^	unsigned char changed;$/;"	m	struct:__anon2
+changed	ClientSocket/lib/DeviceStructs.h	/^	unsigned char changed;$/;"	m	struct:__anon10
+checkConnections	Server/CComm/CSocketCreator.cpp	/^CSocketComm* CSocketCreator::checkConnections() {$/;"	f	class:dvs::CSocketCreator
+checkConnections	Server/Comm/SocketCreator.cpp	/^SocketComm* SocketCreator::checkConnections() {$/;"	f	class:dvs::SocketCreator
+cl	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	private Class<? extends Packet> cl;$/;"	f	class:PacketType	file:
+cli_addr	Server/CComm/CSocketCreator.h	/^	struct sockaddr_in cli_addr;$/;"	m	class:dvs::CSocketCreator	typeref:struct:dvs::CSocketCreator::sockaddr_in
+cli_addr	Server/Comm/SocketCreator.h	/^	struct sockaddr_in cli_addr;$/;"	m	class:dvs::SocketCreator	typeref:struct:dvs::SocketCreator::sockaddr_in
+clilen	Server/CComm/CSocketCreator.h	/^	socklen_t clilen;$/;"	m	class:dvs::CSocketCreator
+clilen	Server/Comm/SocketCreator.h	/^	socklen_t clilen;$/;"	m	class:dvs::SocketCreator
+cname	CUserLib/Device/Device.h	/^	string cname;$/;"	m	class:dvs::Device
+cname	ClientLib/DeviceStructs.h	/^	char *cname;$/;"	m	struct:__anon4
+cname	ClientSocket/lib/DeviceStructs.h	/^	char *cname;$/;"	m	struct:__anon12
+cname	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	private String cname;$/;"	f	class:Device	file:
+cname	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	private String cname;$/;"	f	class:DeviceDefPacket	file:
+cname	Server/Device/Device.h	/^	string cname;$/;"	m	class:dvs::Device
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/DeviceManager.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/InvalidLoginException.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/InvalidPacketException.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/LoginException.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/Main.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/ReaderThread.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/Util.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/WriterThread.java	/^package com.dreamcrushed.DeviceUser;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/ChangeListener.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/CommandPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetDevicesPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldsPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginFailedPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/Packet.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SendFieldPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SetFieldPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+com.dreamcrushed.DeviceUser.Packet	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/UIDPacket.java	/^package com.dreamcrushed.DeviceUser.Packet;$/;"	p
+comm	CUserLib/CComm/CCommunicator.h	/^	CCommunicator* comm;$/;"	m	class:dvs::CCommHandler
+comm	CUserLib/ClientPackets/CPacket.h	/^	CCommunicator* comm;$/;"	m	class:dvs::CPacket
+comm	CUserLib/Device/Device.h	/^	CCommunicator* comm;$/;"	m	class:dvs::Device
+comm	ClientLib/DeviceStructs.h	/^	CommManager comm;$/;"	m	struct:__anon4
+comm	ClientSocket/lib/DeviceStructs.h	/^	CommManager comm;$/;"	m	struct:__anon12
+comm	Server/CComm/CCommunicator.h	/^	CCommunicator* comm;$/;"	m	class:dvs::CCommHandler
+comm	Server/Comm/Communicator.h	/^	Communicator* comm;$/;"	m	class:dvs::CommHandler
+comm	Server/Device/Device.h	/^	Communicator* comm;$/;"	m	class:dvs::Device
+comm	Server/User/User.h	/^	CCommunicator* comm;$/;"	m	class:dvs::User
+commId	Server/Comm/Communicator.h	/^	unsigned int commId;$/;"	m	class:dvs::Communicator
+command	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/CommandPacket.java	/^	private String command;$/;"	f	class:CommandPacket	file:
+commandHandle	Server/CommandInterface.cpp	/^void CommandInterface::commandHandle(char* line) {$/;"	f	class:dvs::CommandInterface
+commandHandle	Server/CommandInterface.cpp	/^void CommandInterface::commandHandle(char* line, char* output, int out_len) {$/;"	f	class:dvs::CommandInterface
+commandHandleGlobal	Server/CommandInterface.cpp	/^void commandHandleGlobal(char* line) {$/;"	f	namespace:dvs
+comms	Server/Comm/Communicator.cpp	/^std::vector<dvs::Communicator*> comms;$/;"	v
+concat	JavaTestClient/src/com/dreamcrushed/DeviceUser/Util.java	/^	public static String concat(List<?> list, String delim) {$/;"	m	class:Util
+concat	JavaTestClient/src/com/dreamcrushed/DeviceUser/Util.java	/^	public static String concat(Object[] list, String delim) {$/;"	m	class:Util
+copy_to_buffer	Server/CommandInterface.cpp	/^void copy_to_buffer(char* string, int length) {$/;"	f	namespace:dvs
+createDevice	ClientLib/DeviceClient.c	/^Device* createDevice(char* uname, int maxFields, SendRoutine send) {$/;"	f
+createDevice	ClientSocket/lib/DeviceClient.c	/^Device* createDevice(char* uname, int maxFields, SendRoutine send) {$/;"	f
+creator	Server/Main.cpp	/^	CSocketCreator* creator;$/;"	m	class:CCreateHandler	file:
+creator	Server/Main.cpp	/^	SocketCreator* creator;$/;"	m	class:CreateHandler	file:
+currentCCommunicator	CUserLib/ClientPackets/CPacket.cpp	/^CCommunicator* currentCCommunicator = NULL;$/;"	m	namespace:dvs	file:
+currentCCommunicator	Server/ClientPackets/CPacket.cpp	/^CCommunicator* currentCCommunicator = NULL;$/;"	m	namespace:dvs	file:
+currentCommunicator	Server/DevicePackets/Packet.cpp	/^Communicator* currentCommunicator = NULL;$/;"	m	namespace:dvs	file:
+data	CUserLib/CComm/PacketListener.h	/^	void* data;$/;"	m	class:dvs::PacketListener
+data	Server/DevicePackets/Packet.h	/^	unsigned char* data;$/;"	m	class:dvs::Packet
+delComm	Server/CommandInterface.cpp	/^void delComm(vector<string>* args) {$/;"	f	namespace:dvs
+device	CUserLib/ClientPackets/CGetFieldPacket.h	/^	Device* device;$/;"	m	class:dvs::CGetFieldPacket
+device	CUserLib/ClientPackets/CSetFieldPacket.h	/^	Device* device;$/;"	m	class:dvs::CSetFieldPacket
+device	CUserLib/ClientPackets/DeviceDefPacket.h	/^	Device* device;$/;"	m	class:dvs::DeviceDefPacket
+device	CUserLib/Device/Field/Field.h	/^	Device* device;$/;"	m	class:dvs::Field
+device	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetDevicesPacket.java	/^	private int device = -1;$/;"	f	class:GetDevicesPacket	file:
+device	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldPacket.java	/^	private int device;$/;"	f	class:GetFieldPacket	file:
+device	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldsPacket.java	/^	private int device;$/;"	f	class:GetFieldsPacket	file:
+device	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SendFieldPacket.java	/^	private int device;$/;"	f	class:SendFieldPacket	file:
+device	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SetFieldPacket.java	/^	private int device;$/;"	f	class:SetFieldPacket	file:
+device	Server/ClientPackets/DeviceDefPacket.h	/^	Device* device;$/;"	m	class:dvs::DeviceDefPacket
+device	Server/Device/Field/Field.h	/^	Device* device;$/;"	m	class:dvs::Field
+device	Server/DevicePackets/Packet.h	/^	unsigned int device;$/;"	m	class:dvs::Packet
+deviceId	CUserLib/Device/Device.h	/^	unsigned int deviceId;$/;"	m	class:dvs::Device
+deviceId	ClientLib/DeviceStructs.h	/^	unsigned int deviceId;$/;"	m	struct:__anon4
+deviceId	ClientSocket/lib/DeviceStructs.h	/^	unsigned int deviceId;$/;"	m	struct:__anon12
+deviceId	Server/Device/Device.h	/^	unsigned int deviceId;$/;"	m	class:dvs::Device
+devices	CUserLib/Main.cpp	/^vector<Device*> devices;$/;"	v
+devices	CUserLib/Room.h	/^	std::set<Device*> devices;$/;"	m	class:dvs::Room
+devices	JavaTestClient/src/com/dreamcrushed/DeviceUser/DeviceManager.java	/^	private Map<Integer, Device> devices;$/;"	f	class:DeviceManager	file:
+devices	Server/Room.h	/^	std::set<Device*> devices;$/;"	m	class:dvs::Room
+devicesById	CUserLib/Device/Device.cpp	/^map<int, Device*> devicesById;$/;"	m	namespace:dvs	file:
+devicesById	Server/Device/Device.cpp	/^map<int, Device*> devicesById;$/;"	m	namespace:dvs	file:
+devicesByString	CUserLib/Device/Device.cpp	/^map<string, Device*> devicesByString;$/;"	m	namespace:dvs	file:
+devicesByString	Server/Device/Device.cpp	/^map<string, Device*> devicesByString;$/;"	m	namespace:dvs	file:
+did	CUserLib/ClientPackets/GetFieldsPacket.h	/^	int did;$/;"	m	class:dvs::GetFieldsPacket
+did	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^	private int did;$/;"	f	class:FieldInfoPacket	file:
+dvs	CUserLib/CComm/CCommunicator.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/CComm/CCommunicator.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/CComm/CSocketComm.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/CComm/CSocketComm.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/CComm/PacketListener.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/CComm/PacketListener.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/CCommandPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/CCommandPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/CGetFieldPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/CGetFieldPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/CPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/CPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/CSetFieldPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/CSetFieldPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/DeviceDefPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/DeviceDefPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/FieldInfoPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/FieldInfoPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/GetDevicesPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/GetDevicesPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/GetFieldsPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/GetFieldsPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/LoginFailurePacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/LoginFailurePacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/LoginPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/LoginPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/SendFieldPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/SendFieldPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/ClientPackets/UIDPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/ClientPackets/UIDPacket.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/Device/Device.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/Device/Device.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/Device/Field/BooleanField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/Device/Field/BooleanField.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/Device/Field/Field.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/Device/Field/Field.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/Device/Field/FixedField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/Device/Field/FixedField.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/Device/Field/FloatField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/Device/Field/FloatField.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/Device/Field/IntegerField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/Device/Field/IntegerField.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/Device/Field/StringField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/Device/Field/StringField.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/Room.cpp	/^namespace dvs {$/;"	n	file:
+dvs	CUserLib/Room.h	/^namespace dvs {$/;"	n
+dvs	CUserLib/Util.h	/^namespace dvs {$/;"	n
+dvs	Server/CComm/CCommunicator.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/CComm/CCommunicator.h	/^namespace dvs {$/;"	n
+dvs	Server/CComm/CSocketComm.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/CComm/CSocketComm.h	/^namespace dvs {$/;"	n
+dvs	Server/CComm/CSocketCreator.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/CComm/CSocketCreator.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/CCommandPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/CCommandPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/CGetFieldPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/CGetFieldPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/CPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/CPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/CSetFieldPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/CSetFieldPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/DeviceDefPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/DeviceDefPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/FieldInfoPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/FieldInfoPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/GetDevicesPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/GetDevicesPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/GetFieldsPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/GetFieldsPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/LoginFailurePacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/LoginFailurePacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/LoginPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/LoginPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/SendFieldPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/SendFieldPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/ClientPackets/UIDPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/ClientPackets/UIDPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/Comm/Communicator.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Comm/Communicator.h	/^namespace dvs {$/;"	n
+dvs	Server/Comm/SerialComm.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Comm/SerialComm.h	/^namespace dvs {$/;"	n
+dvs	Server/Comm/SocketComm.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Comm/SocketComm.h	/^namespace dvs {$/;"	n
+dvs	Server/Comm/SocketCreator.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Comm/SocketCreator.h	/^namespace dvs {$/;"	n
+dvs	Server/CommandInterface.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/CommandInterface.h	/^namespace dvs {$/;"	n
+dvs	Server/Device/Device.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Device/Device.h	/^namespace dvs {$/;"	n
+dvs	Server/Device/Field/BooleanField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Device/Field/BooleanField.h	/^namespace dvs {$/;"	n
+dvs	Server/Device/Field/Field.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Device/Field/Field.h	/^namespace dvs {$/;"	n
+dvs	Server/Device/Field/FixedField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Device/Field/FixedField.h	/^namespace dvs {$/;"	n
+dvs	Server/Device/Field/FloatField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Device/Field/FloatField.h	/^namespace dvs {$/;"	n
+dvs	Server/Device/Field/IntegerField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Device/Field/IntegerField.h	/^namespace dvs {$/;"	n
+dvs	Server/Device/Field/StringField.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Device/Field/StringField.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/FieldValuePacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/FieldValuePacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/GetFieldPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/GetFieldPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/InitCNamePacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/InitCNamePacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/InitFieldPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/InitFieldPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/InitLocationPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/InitLocationPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/InitPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/InitPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/MaxLengthPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/MaxLengthPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/Packet.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/Packet.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/SetFieldPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/SetFieldPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/SetOnePacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/SetOnePacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/StartPacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/StartPacket.h	/^namespace dvs {$/;"	n
+dvs	Server/DevicePackets/SubscribePacket.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/DevicePackets/SubscribePacket.h	/^namespace dvs {$/;"	n
+dvs	Server/Room.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Room.h	/^namespace dvs {$/;"	n
+dvs	Server/Server.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/Server.h	/^namespace dvs {$/;"	n
+dvs	Server/User/User.cpp	/^namespace dvs {$/;"	n	file:
+dvs	Server/User/User.h	/^namespace dvs {$/;"	n
+dvs	Server/Util.h	/^namespace dvs {$/;"	n
+error	CUserLib/ClientPackets/LoginFailurePacket.h	/^	string error;$/;"	m	class:dvs::LoginFailurePacket
+error	CUserLib/Main.cpp	47;"	d	file:
+error	ClientSocket/SocketTest.cpp	37;"	d	file:
+error	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginFailedPacket.java	/^	private String error;$/;"	f	class:LoginFailedPacket	file:
+error	Server/ClientPackets/LoginFailurePacket.h	/^	string error;$/;"	m	class:dvs::LoginFailurePacket
+error	SocketSerialConnector/SocketSerialConnector.c	34;"	d	file:
+false	ClientLib/DeviceStructs.h	30;"	d
+false	ClientSocket/lib/DeviceStructs.h	30;"	d
+fd	CUserLib/CComm/CSocketComm.h	/^	int fd;$/;"	m	class:dvs::CSocketComm
+fd	CUserLib/Main.cpp	/^int fd;$/;"	v
+fd	Server/CComm/CSocketComm.h	/^	int fd;$/;"	m	class:dvs::CSocketComm
+fd	Server/Comm/SocketComm.h	/^	int fd;$/;"	m	class:dvs::SocketComm
+fdSet	Server/Server.h	/^	fd_set fdSet;$/;"	m	class:dvs::Server
+fds	Server/Server.h	/^	vector<int> fds;$/;"	m	class:dvs::Server
+fid	CUserLib/ClientPackets/GetFieldsPacket.h	/^	int fid;$/;"	m	class:dvs::GetFieldsPacket
+field	CUserLib/ClientPackets/CGetFieldPacket.h	/^	Field* field;$/;"	m	class:dvs::CGetFieldPacket
+field	CUserLib/ClientPackets/CSetFieldPacket.h	/^	Field* field;$/;"	m	class:dvs::CSetFieldPacket
+field	CUserLib/ClientPackets/FieldInfoPacket.h	/^	Field* field;$/;"	m	class:dvs::FieldInfoPacket
+field	CUserLib/ClientPackets/SendFieldPacket.h	/^	Field* field;$/;"	m	class:dvs::SendFieldPacket
+field	ClientLib/DeviceStructs.h	/^	void* field;$/;"	m	struct:__anon2
+field	ClientSocket/lib/DeviceStructs.h	/^	void* field;$/;"	m	struct:__anon10
+field	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldPacket.java	/^	private int field;$/;"	f	class:GetFieldPacket	file:
+field	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldsPacket.java	/^	private int field;$/;"	f	class:GetFieldsPacket	file:
+field	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SendFieldPacket.java	/^	private int field;$/;"	f	class:SendFieldPacket	file:
+field	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SetFieldPacket.java	/^	private int field;$/;"	f	class:SetFieldPacket	file:
+field	Server/ClientPackets/FieldInfoPacket.h	/^	Field* field;$/;"	m	class:dvs::FieldInfoPacket
+field	Server/ClientPackets/SendFieldPacket.h	/^	Field* field;$/;"	m	class:dvs::SendFieldPacket
+fields	CUserLib/Device/Device.h	/^	map<unsigned char, Field*>* fields;$/;"	m	class:dvs::Device
+fields	CUserLib/Main.cpp	/^vector<Field*> fields;$/;"	v
+fields	ClientLib/DeviceStructs.h	/^	FieldDef *fields;$/;"	m	struct:__anon4
+fields	ClientSocket/lib/DeviceStructs.h	/^	FieldDef *fields;$/;"	m	struct:__anon12
+fields	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	private Map<Integer, Field> fields;$/;"	f	class:Device	file:
+fields	Server/Device/Device.h	/^	map<unsigned char, Field*>* fields;$/;"	m	class:dvs::Device
+freeUID	Server/Server.h	/^	static void freeUID(unsigned int id) {$/;"	f	class:dvs::Server
+fromInt	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	public static PacketType fromInt(int type) {$/;"	m	class:PacketType
+funcListener	Server/CommandInterface.cpp	/^typedef void(*funcListener)(vector<string>* args);$/;"	t	namespace:dvs	file:
+functions	Server/CommandInterface.cpp	/^pair<string*, funcListener> *(functions[NFUNCS]) = {$/;"	m	namespace:dvs	file:
+fvalue	CUserLib/Device/Field/FixedField.h	/^	float fvalue;$/;"	m	class:dvs::FixedField
+fvalue	Server/Device/Field/FixedField.h	/^	float fvalue;$/;"	m	class:dvs::FixedField
+getBool	CUserLib/Device/Field/BooleanField.cpp	/^bool BooleanField::getBool() {$/;"	f	class:dvs::BooleanField
+getBool	Server/Device/Field/BooleanField.cpp	/^bool BooleanField::getBool() {$/;"	f	class:dvs::BooleanField
+getBoolVal	ClientLib/DeviceClient.c	/^unsigned char getBoolVal(unsigned int id, Device* device) {$/;"	f
+getBoolVal	ClientSocket/lib/DeviceClient.c	/^unsigned char getBoolVal(unsigned int id, Device* device) {$/;"	f
+getCName	CUserLib/Device/Device.cpp	/^string Device::getCName() {$/;"	f	class:dvs::Device
+getCName	Server/Device/Device.cpp	/^string Device::getCName() {$/;"	f	class:dvs::Device
+getCname	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public String getCname() {$/;"	m	class:Device
+getComm	CUserLib/Device/Device.cpp	/^CCommunicator* Device::getComm() {$/;"	f	class:dvs::Device
+getComm	Server/Device/Device.cpp	/^Communicator* Device::getComm() {$/;"	f	class:dvs::Device
+getComm	Server/User/User.cpp	/^CCommunicator* User::getComm() {$/;"	f	class:dvs::User
+getCurrentComm	Server/ClientPackets/CPacket.h	/^	static CCommunicator* getCurrentComm() {$/;"	f	class:dvs::CPacket
+getCurrentComm	Server/DevicePackets/Packet.h	/^	static Communicator* getCurrentComm() {$/;"	f	class:dvs::Packet
+getData	Server/DevicePackets/Packet.cpp	/^unsigned char *Packet::getData() {$/;"	f	class:dvs::Packet
+getDevice	CUserLib/ClientPackets/DeviceDefPacket.cpp	/^Device* DeviceDefPacket::getDevice() {$/;"	f	class:dvs::DeviceDefPacket
+getDevice	CUserLib/Device/Device.h	/^	static Device *getDevice(CCommunicator* comm, int id, string name) {$/;"	f	class:dvs::Device
+getDevice	CUserLib/Device/Device.h	/^	static Device *getDevice(int id) {$/;"	f	class:dvs::Device
+getDevice	CUserLib/Device/Field/Field.cpp	/^Device* Field::getDevice() {$/;"	f	class:dvs::Field
+getDevice	JavaTestClient/src/com/dreamcrushed/DeviceUser/DeviceManager.java	/^	public Device getDevice(int id) {$/;"	m	class:DeviceManager
+getDevice	Server/Device/Device.h	/^	static Device *getDevice(Communicator* comm, string name) {$/;"	f	class:dvs::Device
+getDevice	Server/Device/Device.h	/^	static Device *getDevice(int id) {$/;"	f	class:dvs::Device
+getDevice	Server/Device/Field/Field.cpp	/^Device* Field::getDevice() {$/;"	f	class:dvs::Field
+getDevice	Server/DevicePackets/Packet.cpp	/^inline Device* Packet::getDevice() {$/;"	f	class:dvs::Packet
+getDeviceManager	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public DeviceManager getDeviceManager() {$/;"	m	class:NetworkManager
+getDevices	CUserLib/Main.cpp	/^bool getDevices(CPacket* packet, void* data) {$/;"	f
+getDoubles	JavaTestClient/src/com/dreamcrushed/DeviceUser/Util.java	/^	public static List<Double> getDoubles(String list, String delim) {$/;"	m	class:Util
+getFd	Server/CComm/CSocketCreator.cpp	/^int CSocketCreator::getFd() {$/;"	f	class:dvs::CSocketCreator
+getFd	Server/Comm/SocketCreator.cpp	/^int SocketCreator::getFd() {$/;"	f	class:dvs::SocketCreator
+getField	CUserLib/ClientPackets/FieldInfoPacket.cpp	/^Field* FieldInfoPacket::getField() {$/;"	f	class:dvs::FieldInfoPacket
+getField	CUserLib/Device/Device.cpp	/^Field* Device::getField(unsigned char id) {$/;"	f	class:dvs::Device
+getField	ClientLib/DeviceComm.c	/^FieldDef* getField(unsigned int id, Device* device) {$/;"	f
+getField	ClientSocket/lib/DeviceComm.c	/^FieldDef* getField(unsigned int id, Device* device) {$/;"	f
+getField	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public Field getField(int fid) {$/;"	m	class:Device
+getField	Server/Device/Device.cpp	/^Field* Device::getField(unsigned char id) {$/;"	f	class:dvs::Device
+getFixedVal	ClientLib/DeviceClient.c	/^unsigned int getFixedVal(unsigned int id, Device* device) {$/;"	f
+getFixedVal	ClientSocket/lib/DeviceClient.c	/^unsigned int getFixedVal(unsigned int id, Device* device) {$/;"	f
+getFloat	CUserLib/Device/Field/FixedField.cpp	/^float FixedField::getFloat() {$/;"	f	class:dvs::FixedField
+getFloat	CUserLib/Device/Field/FloatField.cpp	/^float FloatField::getFloat() {$/;"	f	class:dvs::FloatField
+getFloat	Server/Device/Field/FixedField.cpp	/^float FixedField::getFloat() {$/;"	f	class:dvs::FixedField
+getFloat	Server/Device/Field/FloatField.cpp	/^float FloatField::getFloat() {$/;"	f	class:dvs::FloatField
+getIcon	CUserLib/Device/Device.cpp	/^unsigned int Device::getIcon() {$/;"	f	class:dvs::Device
+getIcon	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public int getIcon() {$/;"	m	class:Device
+getIcon	Server/Device/Device.cpp	/^unsigned int Device::getIcon() {$/;"	f	class:dvs::Device
+getId	CUserLib/CComm/CCommunicator.cpp	/^unsigned int CCommunicator::getId() {$/;"	f	class:dvs::CCommunicator
+getId	CUserLib/Device/Device.cpp	/^unsigned int Device::getId() {$/;"	f	class:dvs::Device
+getId	CUserLib/Device/Field/Field.cpp	/^unsigned char Field::getId() {$/;"	f	class:dvs::Field
+getId	CUserLib/Room.cpp	/^int Room::getId() {$/;"	f	class:dvs::Room
+getId	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public int getId() {$/;"	m	class:Device
+getId	Server/Device/Device.cpp	/^unsigned int Device::getId() {$/;"	f	class:dvs::Device
+getId	Server/Device/Field/Field.cpp	/^unsigned char Field::getId() {$/;"	f	class:dvs::Field
+getId	Server/Room.cpp	/^int Room::getId() {$/;"	f	class:dvs::Room
+getId	Server/User/User.cpp	/^unsigned int User::getId() {$/;"	f	class:dvs::User
+getInt	CUserLib/Device/Field/IntegerField.cpp	/^int IntegerField::getInt() {$/;"	f	class:dvs::IntegerField
+getInt	Server/Device/Field/IntegerField.cpp	/^int IntegerField::getInt() {$/;"	f	class:dvs::IntegerField
+getIntVal	ClientLib/DeviceClient.c	/^unsigned int getIntVal(unsigned int id, Device* device) {$/;"	f
+getIntVal	ClientSocket/lib/DeviceClient.c	/^unsigned int getIntVal(unsigned int id, Device* device) {$/;"	f
+getInts	JavaTestClient/src/com/dreamcrushed/DeviceUser/Util.java	/^	public static List<Integer> getInts(String list, String delim) {$/;"	m	class:Util
+getLength	CUserLib/Device/Field/BooleanField.cpp	/^unsigned int BooleanField::getLength() {$/;"	f	class:dvs::BooleanField
+getLength	CUserLib/Device/Field/Field.cpp	/^unsigned int Field::getLength() {$/;"	f	class:dvs::Field
+getLength	CUserLib/Device/Field/FixedField.cpp	/^unsigned int FixedField::getLength() {$/;"	f	class:dvs::FixedField
+getLength	CUserLib/Device/Field/FloatField.cpp	/^unsigned int FloatField::getLength() {$/;"	f	class:dvs::FloatField
+getLength	CUserLib/Device/Field/IntegerField.cpp	/^unsigned int IntegerField::getLength() {$/;"	f	class:dvs::IntegerField
+getLength	CUserLib/Device/Field/StringField.cpp	/^unsigned int StringField::getLength() {$/;"	f	class:dvs::StringField
+getLength	Server/Device/Field/BooleanField.cpp	/^unsigned int BooleanField::getLength() {$/;"	f	class:dvs::BooleanField
+getLength	Server/Device/Field/Field.cpp	/^unsigned int Field::getLength() {$/;"	f	class:dvs::Field
+getLength	Server/Device/Field/FixedField.cpp	/^unsigned int FixedField::getLength() {$/;"	f	class:dvs::FixedField
+getLength	Server/Device/Field/FloatField.cpp	/^unsigned int FloatField::getLength() {$/;"	f	class:dvs::FloatField
+getLength	Server/Device/Field/IntegerField.cpp	/^unsigned int IntegerField::getLength() {$/;"	f	class:dvs::IntegerField
+getLength	Server/Device/Field/StringField.cpp	/^unsigned int StringField::getLength() {$/;"	f	class:dvs::StringField
+getLength	Server/DevicePackets/Packet.cpp	/^unsigned int Packet::getLength() {$/;"	f	class:dvs::Packet
+getMaxField	CUserLib/Device/Device.cpp	/^unsigned int Device::getMaxField() {$/;"	f	class:dvs::Device
+getMaxField	Server/Device/Device.cpp	/^unsigned int Device::getMaxField() {$/;"	f	class:dvs::Device
+getMaxLength	CUserLib/Device/Device.h	/^	unsigned int getMaxLength() {$/;"	f	class:dvs::Device
+getMaxLength	Server/Device/Device.h	/^	unsigned int getMaxLength() {$/;"	f	class:dvs::Device
+getNFields	CUserLib/Device/Device.cpp	/^int Device::getNFields() {$/;"	f	class:dvs::Device
+getNFields	Server/Device/Device.cpp	/^int Device::getNFields() {$/;"	f	class:dvs::Device
+getName	CUserLib/Device/Device.cpp	/^string Device::getName() {$/;"	f	class:dvs::Device
+getName	CUserLib/Device/Field/Field.cpp	/^string Field::getName() {$/;"	f	class:dvs::Field
+getName	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public String getName() {$/;"	m	class:Device
+getName	Server/Device/Device.cpp	/^string Device::getName() {$/;"	f	class:dvs::Device
+getName	Server/Device/Field/Field.cpp	/^string Field::getName() {$/;"	f	class:dvs::Field
+getOne	CUserLib/Device/Field/FixedField.cpp	/^unsigned int FixedField::getOne() {$/;"	f	class:dvs::FixedField
+getOne	Server/Device/Field/FixedField.cpp	/^unsigned int FixedField::getOne() {$/;"	f	class:dvs::FixedField
+getPacket	CUserLib/CComm/CCommunicator.cpp	/^void CCommunicator::getPacket() {$/;"	f	class:dvs::CCommunicator
+getPacket	Server/CComm/CCommunicator.cpp	/^void CCommunicator::getPacket() {$/;"	f	class:dvs::CCommunicator
+getPacket	Server/Comm/Communicator.cpp	/^void Communicator::getPacket() {$/;"	f	class:dvs::Communicator
+getPassword	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public String getPassword() {$/;"	m	class:NetworkManager
+getRoom	CUserLib/Device/Device.cpp	/^Room* Device::getRoom() {$/;"	f	class:dvs::Device
+getRoom	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public int getRoom() {$/;"	m	class:Device
+getRoom	Server/Device/Device.cpp	/^Room* Device::getRoom() {$/;"	f	class:dvs::Device
+getRoom	Server/Server.h	/^	static Room* getRoom(unsigned int id) {$/;"	f	class:dvs::Server
+getSession	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public String getSession() {$/;"	m	class:NetworkManager
+getString	CUserLib/Device/Field/BooleanField.cpp	/^unsigned char* BooleanField::getString() {$/;"	f	class:dvs::BooleanField
+getString	CUserLib/Device/Field/Field.cpp	/^unsigned char* Field::getString() {$/;"	f	class:dvs::Field
+getString	CUserLib/Device/Field/FixedField.cpp	/^unsigned char* FixedField::getString() {$/;"	f	class:dvs::FixedField
+getString	CUserLib/Device/Field/FloatField.cpp	/^unsigned char* FloatField::getString() {$/;"	f	class:dvs::FloatField
+getString	CUserLib/Device/Field/IntegerField.cpp	/^unsigned char* IntegerField::getString() {$/;"	f	class:dvs::IntegerField
+getString	CUserLib/Device/Field/StringField.cpp	/^unsigned char* StringField::getString() {$/;"	f	class:dvs::StringField
+getString	Server/Device/Field/BooleanField.cpp	/^unsigned char* BooleanField::getString() {$/;"	f	class:dvs::BooleanField
+getString	Server/Device/Field/Field.cpp	/^unsigned char* Field::getString() {$/;"	f	class:dvs::Field
+getString	Server/Device/Field/FixedField.cpp	/^unsigned char* FixedField::getString() {$/;"	f	class:dvs::FixedField
+getString	Server/Device/Field/FloatField.cpp	/^unsigned char* FloatField::getString() {$/;"	f	class:dvs::FloatField
+getString	Server/Device/Field/IntegerField.cpp	/^unsigned char* IntegerField::getString() {$/;"	f	class:dvs::IntegerField
+getString	Server/Device/Field/StringField.cpp	/^unsigned char* StringField::getString() {$/;"	f	class:dvs::StringField
+getStringVal	ClientLib/DeviceClient.c	/^char* getStringVal(unsigned int id, Device* device) {$/;"	f
+getStringVal	ClientSocket/lib/DeviceClient.c	/^char* getStringVal(unsigned int id, Device* device) {$/;"	f
+getStrings	JavaTestClient/src/com/dreamcrushed/DeviceUser/Util.java	/^	public static List<String> getStrings(String list, String delim) {$/;"	m	class:Util
+getType	CUserLib/Device/Field/Field.cpp	/^FieldType Field::getType() {$/;"	f	class:dvs::Field
+getType	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^	public static FieldType getType(int id) {$/;"	m	class:FieldType
+getType	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	public int getType() {$/;"	m	class:PacketType
+getType	Server/Device/Field/Field.cpp	/^FieldType Field::getType() {$/;"	f	class:dvs::Field
+getType	Server/DevicePackets/Packet.cpp	/^unsigned char Packet::getType() {$/;"	f	class:dvs::Packet
+getUser	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public String getUser() {$/;"	m	class:NetworkManager
+getUser	Server/Server.h	/^	static User* getUser(unsigned int id) {$/;"	f	class:dvs::Server
+getUserId	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	static public int getUserId() {$/;"	m	class:NetworkManager
+getValue	CUserLib/Device/Field/StringField.cpp	/^string StringField::getValue() {$/;"	f	class:dvs::StringField
+getValue	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	public String getValue() {$/;"	m	class:Field
+getValue	Server/Device/Field/StringField.cpp	/^string StringField::getValue() {$/;"	f	class:dvs::StringField
+getX	CUserLib/Device/Device.cpp	/^float Device::getX() {$/;"	f	class:dvs::Device
+getX	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public float getX() {$/;"	m	class:Device
+getX	Server/Device/Device.cpp	/^float Device::getX() {$/;"	f	class:dvs::Device
+getY	CUserLib/Device/Device.cpp	/^float Device::getY() {$/;"	f	class:dvs::Device
+getY	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public float getY() {$/;"	m	class:Device
+getY	Server/Device/Device.cpp	/^float Device::getY() {$/;"	f	class:dvs::Device
+gotDevice	CUserLib/Main.cpp	/^bool gotDevice(CPacket* packet, void* data) {$/;"	f
+gotField	CUserLib/Main.cpp	/^bool gotField(CPacket* packet, void* data) {$/;"	f
+handle	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/CommandPacket.java	/^	public void handle(NetworkManager networkManager) {$/;"	m	class:CommandPacket
+handle	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	public void handle(NetworkManager networkManager) {$/;"	m	class:DeviceDefPacket
+handle	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^	public void handle(NetworkManager networkManager) {$/;"	m	class:FieldInfoPacket
+handle	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginFailedPacket.java	/^	public void handle(NetworkManager networkManager) {$/;"	m	class:LoginFailedPacket
+handle	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/Packet.java	/^	public void handle(NetworkManager networkManager) {$/;"	m	class:Packet
+handle	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SendFieldPacket.java	/^	public void handle(NetworkManager networkManager) {$/;"	m	class:SendFieldPacket
+handle	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/UIDPacket.java	/^	public void handle(NetworkManager networkManager) {$/;"	m	class:UIDPacket
+hasChanged	ClientLib/DeviceClient.c	/^unsigned char hasChanged(unsigned int id, Device* device) {$/;"	f
+hasChanged	ClientSocket/lib/DeviceClient.c	/^unsigned char hasChanged(unsigned int id, Device* device) {$/;"	f
+hasField	CUserLib/Device/Device.cpp	/^bool Device::hasField(unsigned char id) {$/;"	f	class:dvs::Device
+hasField	Server/Device/Device.cpp	/^bool Device::hasField(unsigned char id) {$/;"	f	class:dvs::Device
+icon	CUserLib/Device/Device.h	/^	unsigned int icon;$/;"	m	class:dvs::Device
+icon	ClientLib/DeviceStructs.h	/^	unsigned char icon;$/;"	m	struct:__anon4
+icon	ClientSocket/lib/DeviceStructs.h	/^	unsigned char icon;$/;"	m	struct:__anon12
+icon	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	private int icon;$/;"	f	class:Device	file:
+icon	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	private int icon;$/;"	f	class:DeviceDefPacket	file:
+icon	Server/Device/Device.h	/^	unsigned int icon;$/;"	m	class:dvs::Device
+id	CUserLib/CComm/CCommunicator.h	/^	int id;$/;"	m	class:dvs::CCommunicator
+id	CUserLib/ClientPackets/CPacket.h	/^	unsigned int id;$/;"	m	class:dvs::CPacket
+id	CUserLib/ClientPackets/GetDevicesPacket.h	/^	int id;$/;"	m	class:dvs::GetDevicesPacket
+id	CUserLib/Device/Field/Field.h	/^	unsigned char id;$/;"	m	class:dvs::Field
+id	CUserLib/Room.h	/^	int id;$/;"	m	class:dvs::Room
+id	ClientLib/DeviceStructs.h	/^	unsigned char id;$/;"	m	struct:__anon2
+id	ClientSocket/lib/DeviceStructs.h	/^	unsigned char id;$/;"	m	struct:__anon10
+id	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	private int id;$/;"	f	class:Device	file:
+id	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	protected int id;$/;"	f	class:Field
+id	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^	private int id;$/;"	f	class:FieldType	file:
+id	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	private int id;$/;"	f	class:NetworkManager	file:
+id	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	private int id;$/;"	f	class:DeviceDefPacket	file:
+id	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^	private int id;$/;"	f	class:FieldInfoPacket	file:
+id	Server/ClientPackets/CPacket.h	/^	unsigned int id;$/;"	m	class:dvs::CPacket
+id	Server/Device/Field/Field.h	/^	unsigned char id;$/;"	m	class:dvs::Field
+id	Server/Room.h	/^	int id;$/;"	m	class:dvs::Room
+id	Server/User/User.h	/^	unsigned int id;$/;"	m	class:dvs::User
+increment	CUserLib/Device/Field/BooleanField.cpp	/^void BooleanField::increment() {$/;"	f	class:dvs::BooleanField
+increment	CUserLib/Device/Field/Field.cpp	/^void Field::increment() {$/;"	f	class:dvs::Field
+increment	CUserLib/Device/Field/FixedField.cpp	/^void FixedField::increment() {$/;"	f	class:dvs::FixedField
+increment	CUserLib/Device/Field/FloatField.cpp	/^void FloatField::increment() {$/;"	f	class:dvs::FloatField
+increment	CUserLib/Device/Field/IntegerField.cpp	/^void IntegerField::increment() {$/;"	f	class:dvs::IntegerField
+increment	CUserLib/Device/Field/StringField.cpp	/^void StringField::increment() {$/;"	f	class:dvs::StringField
+index	CUserLib/CComm/CCommunicator.h	/^	unsigned int index;$/;"	m	class:dvs::CCommunicator
+index	ClientLib/DeviceStructs.h	/^	unsigned int index;$/;"	m	struct:__anon3
+index	ClientSocket/lib/DeviceStructs.h	/^	unsigned int index;$/;"	m	struct:__anon11
+index	Server/CComm/CCommunicator.h	/^	unsigned int index;$/;"	m	class:dvs::CCommunicator
+index	Server/Comm/Communicator.h	/^	unsigned int index;$/;"	m	class:dvs::Communicator
+initialized	ClientLib/DeviceStructs.h	/^	unsigned char initialized;$/;"	m	struct:__anon3
+initialized	ClientSocket/lib/DeviceStructs.h	/^	unsigned char initialized;$/;"	m	struct:__anon11
+inputStream	JavaTestClient/src/com/dreamcrushed/DeviceUser/ReaderThread.java	/^	private InputStream inputStream;$/;"	f	class:ReaderThread	file:
+instance	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public static NetworkManager instance;$/;"	f	class:NetworkManager
+instance	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	public Packet instance(int id, String[] params) throws SecurityException, NoSuchMethodException, IllegalArgumentException, InstantiationException, IllegalAccessException, InvocationTargetException {$/;"	m	class:PacketType
+instance	Server/CommandInterface.cpp	/^CommandInterface* instance;$/;"	m	namespace:dvs	file:
+invalidateLogin	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public void invalidateLogin() {$/;"	m	class:NetworkManager
+isLoggedIn	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public boolean isLoggedIn() {$/;"	m	class:NetworkManager
+isValid	Server/Server.h	/^	static bool isValid(string user, string pass) {$/;"	f	class:dvs::Server
+isVolatile	CUserLib/Device/Field/Field.cpp	/^bool Field::isVolatile() {$/;"	f	class:dvs::Field
+isVolatile	Server/Device/Field/Field.cpp	/^bool Field::isVolatile() {$/;"	f	class:dvs::Field
+isWritable	CUserLib/Device/Field/Field.cpp	/^bool Field::isWritable() {$/;"	f	class:dvs::Field
+isWritable	Server/Device/Field/Field.cpp	/^bool Field::isWritable() {$/;"	f	class:dvs::Field
+is_valid_fd	Server/Server.cpp	/^int is_valid_fd(int fd) {$/;"	f	namespace:dvs
+l	CUserLib/Device/Field/FloatField.h	/^	unsigned char l[5];$/;"	m	class:dvs::FloatField
+l	CUserLib/Device/Field/IntegerField.h	/^	unsigned char l[5];$/;"	m	class:dvs::IntegerField
+l	Server/Device/Field/FloatField.h	/^	unsigned char l[5];$/;"	m	class:dvs::FloatField
+l	Server/Device/Field/IntegerField.h	/^	unsigned char l[5];$/;"	m	class:dvs::IntegerField
+length	ClientLib/DeviceStructs.h	/^	unsigned int length;$/;"	m	struct:__anon3
+length	ClientSocket/lib/DeviceStructs.h	/^	unsigned int length;$/;"	m	struct:__anon11
+length	Server/DevicePackets/Packet.h	/^	unsigned int length;$/;"	m	class:dvs::Packet
+listComms	Server/CommandInterface.cpp	/^void listComms(vector<string>* args) {$/;"	f	namespace:dvs
+listDevices	Server/CommandInterface.cpp	/^void listDevices(vector<string>* args) {$/;"	f	namespace:dvs
+listFields	Server/CommandInterface.cpp	/^void listFields(vector<string>* args) {$/;"	f	namespace:dvs
+listener	CUserLib/CComm/PacketListener.h	/^	Listener listener;$/;"	m	class:dvs::PacketListener
+listener	ClientLib/DeviceStructs.h	/^	FieldList listener;$/;"	m	struct:__anon2
+listener	ClientSocket/lib/DeviceStructs.h	/^	FieldList listener;$/;"	m	struct:__anon10
+listeners	CUserLib/CComm/CCommunicator.h	/^	std::vector<PacketListener*> listeners;$/;"	m	class:dvs::CCommunicator
+loggedIn	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	private boolean loggedIn;$/;"	f	class:NetworkManager	file:
+login	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public void login(String user, String pass) {$/;"	m	class:NetworkManager
+longOpts	ClientSocket/SocketTest.cpp	/^static const struct option longOpts[] = {$/;"	v	typeref:struct:option	file:
+longOpts	Server/Main.cpp	/^static const struct option longOpts[] = {$/;"	v	typeref:struct:option	file:
+longOpts	SocketSerialConnector/SocketSerialConnector.c	/^static const struct option longOpts[] = {$/;"	v	typeref:struct:option	file:
+mRun	JavaTestClient/src/com/dreamcrushed/DeviceUser/ReaderThread.java	/^	public boolean mRun;$/;"	f	class:ReaderThread
+mRun	JavaTestClient/src/com/dreamcrushed/DeviceUser/WriterThread.java	/^	public boolean mRun;$/;"	f	class:WriterThread
+main	CUserLib/Main.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+main	ClientSocket/SocketTest.cpp	/^int main(int argc, char * argv[]) {$/;"	f
+main	Devices/device_light_0.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	Devices/device_light_1.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	Devices/stairs_annoying.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	Devices/tv_pool.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	Devices/uart.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	Devices/uart_spi_converter.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	JavaTestClient/src/com/dreamcrushed/DeviceUser/Main.java	/^	public static void main(String[] args) {$/;"	m	class:Main
+main	Server/Main.cpp	/^int main(int argc, char * argv[]) {$/;"	f
+main	SocketSerialConnector/SocketSerialConnector.c	/^int main(int argc, char **argv) {$/;"	f
+makeCommandPacket	Server/CComm/CCommunicator.cpp	/^void makeCommandPacket(string packet) {$/;"	f	namespace:dvs
+makeDeviceDefPacket	Server/CComm/CCommunicator.cpp	/^void makeDeviceDefPacket(string packet) {$/;"	f	namespace:dvs
+makeFieldInfoPacket	Server/CComm/CCommunicator.cpp	/^void makeFieldInfoPacket(string packet) {$/;"	f	namespace:dvs
+makeFieldValue	Server/Comm/Communicator.cpp	/^void Communicator::makeFieldValue() {$/;"	f	class:dvs::Communicator
+makeGetDevicesPacket	Server/CComm/CCommunicator.cpp	/^void makeGetDevicesPacket(string packet) {$/;"	f	namespace:dvs
+makeGetField	Server/Comm/Communicator.cpp	/^void Communicator::makeGetField() {$/;"	f	class:dvs::Communicator
+makeGetFieldsPacket	Server/CComm/CCommunicator.cpp	/^void makeGetFieldsPacket(string packet) {$/;"	f	namespace:dvs
+makeInit	Server/Comm/Communicator.cpp	/^void Communicator::makeInit() {$/;"	f	class:dvs::Communicator
+makeInitCName	Server/Comm/Communicator.cpp	/^void Communicator::makeInitCName() {$/;"	f	class:dvs::Communicator
+makeInitField	Server/Comm/Communicator.cpp	/^void Communicator::makeInitField() {$/;"	f	class:dvs::Communicator
+makeInitLoc	Server/Comm/Communicator.cpp	/^void Communicator::makeInitLoc() {$/;"	f	class:dvs::Communicator
+makeLoginFailedPacket	Server/CComm/CCommunicator.cpp	/^void makeLoginFailedPacket(string packet) {$/;"	f	namespace:dvs
+makeLoginPacket	Server/CComm/CCommunicator.cpp	/^void makeLoginPacket(string packet) {$/;"	f	namespace:dvs
+makeMaxLength	Server/Comm/Communicator.cpp	/^void Communicator::makeMaxLength() {$/;"	f	class:dvs::Communicator
+makePacket	CUserLib/CComm/CCommunicator.cpp	/^void CCommunicator::makePacket(std::string packet) {$/;"	f	class:dvs::CCommunicator
+makePacket	Server/CComm/CCommunicator.cpp	/^void CCommunicator::makePacket(std::string packet) {$/;"	f	class:dvs::CCommunicator
+makePacket	Server/Comm/Communicator.cpp	/^void Communicator::makePacket() {$/;"	f	class:dvs::Communicator
+makeSetField	Server/Comm/Communicator.cpp	/^void Communicator::makeSetField() {$/;"	f	class:dvs::Communicator
+makeSetFieldPacket	Server/CComm/CCommunicator.cpp	/^void makeSetFieldPacket(string packet) {$/;"	f	namespace:dvs
+makeSetOne	Server/Comm/Communicator.cpp	/^void Communicator::makeSetOne() {$/;"	f	class:dvs::Communicator
+makeStart	Server/Comm/Communicator.cpp	/^void Communicator::makeStart() {$/;"	f	class:dvs::Communicator
+makeSubscribe	Server/Comm/Communicator.cpp	/^void Communicator::makeSubscribe() {$/;"	f	class:dvs::Communicator
+makeUIDPacket	Server/CComm/CCommunicator.cpp	/^void makeUIDPacket(string packet) {$/;"	f	namespace:dvs
+manager	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	private DeviceManager manager;$/;"	f	class:NetworkManager	file:
+maxDeviceId	CUserLib/Device/Device.cpp	/^unsigned int maxDeviceId = 1;$/;"	m	namespace:dvs	file:
+maxDeviceId	Server/Device/Device.cpp	/^unsigned int maxDeviceId = 1;$/;"	m	namespace:dvs	file:
+maxField	CUserLib/Device/Device.h	/^	unsigned int maxField;$/;"	m	class:dvs::Device
+maxField	Server/Device/Device.h	/^	unsigned int maxField;$/;"	m	class:dvs::Device
+maxLength	CUserLib/Device/Device.h	/^	unsigned int maxLength;$/;"	m	class:dvs::Device
+maxLength	Server/Device/Device.h	/^	unsigned int maxLength;$/;"	m	class:dvs::Device
+maxUserId	Server/Server.cpp	/^unsigned int maxUserId = 1;$/;"	m	namespace:dvs	file:
+mode	CUserLib/Main.cpp	/^int mode = DEVICE;$/;"	v
+name	CUserLib/Device/Device.h	/^	string name;$/;"	m	class:dvs::Device
+name	CUserLib/Device/Field/Field.h	/^	string name;$/;"	m	class:dvs::Field
+name	ClientLib/DeviceStructs.h	/^	char *name;$/;"	m	struct:__anon2
+name	ClientLib/DeviceStructs.h	/^	char *name;$/;"	m	struct:__anon4
+name	ClientSocket/lib/DeviceStructs.h	/^	char *name;$/;"	m	struct:__anon10
+name	ClientSocket/lib/DeviceStructs.h	/^	char *name;$/;"	m	struct:__anon12
+name	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	private String name;$/;"	f	class:Device	file:
+name	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	protected String name;$/;"	f	class:Field
+name	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	private String name;$/;"	f	class:DeviceDefPacket	file:
+name	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^	private String name;$/;"	f	class:FieldInfoPacket	file:
+name	Server/Comm/Communicator.h	/^	string name;$/;"	m	class:dvs::Communicator
+name	Server/Device/Device.h	/^	string name;$/;"	m	class:dvs::Device
+name	Server/Device/Field/Field.h	/^	string name;$/;"	m	class:dvs::Field
+networkManager	JavaTestClient/src/com/dreamcrushed/DeviceUser/ReaderThread.java	/^	private NetworkManager networkManager;$/;"	f	class:ReaderThread	file:
+newComm	Server/CommandInterface.cpp	/^void newComm(vector<string>* args) {$/;"	f	namespace:dvs
+newPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/Packet.java	/^	public static Packet newPacket(String s) throws InvalidPacketException {$/;"	m	class:Packet
+newUser	Server/Server.h	/^	static User* newUser(CCommunicator* comm) {$/;"	f	class:dvs::Server
+nfields	ClientLib/DeviceStructs.h	/^	unsigned int nfields;$/;"	m	struct:__anon4
+nfields	ClientSocket/lib/DeviceStructs.h	/^	unsigned int nfields;$/;"	m	struct:__anon12
+o	CUserLib/Device/Field/FixedField.h	/^	unsigned int o;$/;"	m	class:dvs::FixedField
+o	Server/Device/Field/FixedField.h	/^	unsigned int o;$/;"	m	class:dvs::FixedField
+one	ClientLib/DeviceStructs.h	/^	unsigned int one;$/;"	m	struct:__anon7
+one	ClientSocket/lib/DeviceStructs.h	/^	unsigned int one;$/;"	m	struct:__anon15
+optString	ClientSocket/SocketTest.cpp	/^const char* optString = "p:d:u:c:h";$/;"	v
+optString	Server/Main.cpp	/^const char* optString = "p:d:u:h";$/;"	v
+optString	SocketSerialConnector/SocketSerialConnector.c	/^const char* optString = "p:d:n:s:d:h";$/;"	v
+output	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/CommandPacket.java	/^	private String output;$/;"	f	class:CommandPacket	file:
+outputStream	JavaTestClient/src/com/dreamcrushed/DeviceUser/WriterThread.java	/^	private OutputStream outputStream;$/;"	f	class:WriterThread	file:
+owner	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	protected Device owner;$/;"	f	class:Field
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/CommandPacket.java	/^	public String packetString() {$/;"	m	class:CommandPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	public String packetString() {$/;"	m	class:DeviceDefPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^	public String packetString() {$/;"	m	class:FieldInfoPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetDevicesPacket.java	/^	public String packetString() {$/;"	m	class:GetDevicesPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldPacket.java	/^	public String packetString() {$/;"	m	class:GetFieldPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/GetFieldsPacket.java	/^	public String packetString() {$/;"	m	class:GetFieldsPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginFailedPacket.java	/^	public String packetString() {$/;"	m	class:LoginFailedPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginPacket.java	/^	public String packetString() {$/;"	m	class:LoginPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/Packet.java	/^	public abstract String packetString();$/;"	m	class:Packet
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SendFieldPacket.java	/^	public String packetString() {$/;"	m	class:SendFieldPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SetFieldPacket.java	/^	public String packetString() {$/;"	m	class:SetFieldPacket
+packetString	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/UIDPacket.java	/^	public String packetString() {$/;"	m	class:UIDPacket
+packetType	CUserLib/CComm/PacketListener.h	/^	int packetType;$/;"	m	class:dvs::PacketListener
+packet_len	Devices/uart_spi_converter.c	/^volatile char packet_len;$/;"	v
+parsePacket	ClientLib/DeviceComm.c	/^void parsePacket(Device* device) {$/;"	f
+parsePacket	ClientSocket/lib/DeviceComm.c	/^void parsePacket(Device* device) {$/;"	f
+pass	CUserLib/ClientPackets/LoginPacket.h	/^	string pass;$/;"	m	class:dvs::LoginPacket
+pass	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginPacket.java	/^	private String pass;$/;"	f	class:LoginPacket	file:
+password	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	private String password;$/;"	f	class:NetworkManager	file:
+pbuffer	CUserLib/CComm/CCommunicator.h	/^	char pbuffer[BUF_LENGTH];$/;"	m	class:dvs::CCommunicator
+pbuffer	Server/CComm/CCommunicator.h	/^	char pbuffer[BUF_LENGTH];$/;"	m	class:dvs::CCommunicator
+pid	Server/DevicePackets/Packet.h	/^	unsigned char pid;$/;"	m	class:dvs::Packet
+print	Server/CommandInterface.cpp	/^int print(const char* format, ...) {$/;"	f	namespace:dvs
+printDevice	Server/CommandInterface.cpp	/^void printDevice(vector<string>* args) {$/;"	f	namespace:dvs
+printField	Server/CommandInterface.cpp	/^void printField(vector<string>* args) {$/;"	f	namespace:dvs
+printStream	JavaTestClient/src/com/dreamcrushed/DeviceUser/WriterThread.java	/^	private PrintStream printStream;$/;"	f	class:WriterThread	file:
+print_buffer	Server/CommandInterface.cpp	/^char* print_buffer;$/;"	m	namespace:dvs	file:
+print_index	Server/CommandInterface.cpp	/^int print_index;$/;"	m	namespace:dvs	file:
+printf	ClientLib/DeviceComm.c	32;"	d	file:
+printf	ClientLib/DeviceComm.h	29;"	d
+printf	ClientSocket/lib/DeviceComm.c	32;"	d	file:
+printf	ClientSocket/lib/DeviceComm.h	29;"	d
+quitFunc	Server/CommandInterface.cpp	/^void quitFunc(vector<string>* args) {$/;"	f	namespace:dvs
+r_back	Devices/device_light_1.c	/^volatile char r_back, state, t_index, t_len;$/;"	v
+r_buf	Devices/device_light_1.c	/^volatile char r_buf[MAX_LEN];$/;"	v
+r_front	Devices/device_light_1.c	/^volatile char r_front;$/;"	v
+r_len	Devices/device_light_1.c	/^volatile char r_len;$/;"	v
+rcommFunc	Server/CommandInterface.cpp	/^void rcommFunc(vector<string>* args) {$/;"	f	namespace:dvs
+readBytes	CUserLib/CComm/CCommunicator.cpp	/^int CCommunicator::readBytes(char* data, unsigned int length) {$/;"	f	class:dvs::CCommunicator
+readBytes	CUserLib/CComm/CSocketComm.cpp	/^int CSocketComm::readBytes(char* data, unsigned int length) {$/;"	f	class:dvs::CSocketComm
+readBytes	Server/CComm/CCommunicator.cpp	/^int CCommunicator::readBytes(char* data, unsigned int length) {$/;"	f	class:dvs::CCommunicator
+readBytes	Server/CComm/CSocketComm.cpp	/^int CSocketComm::readBytes(char* data, unsigned int length) {$/;"	f	class:dvs::CSocketComm
+readBytes	Server/Comm/Communicator.cpp	/^int Communicator::readBytes(unsigned char* data, unsigned int length) {$/;"	f	class:dvs::Communicator
+readBytes	Server/Comm/SocketComm.cpp	/^int SocketComm::readBytes(unsigned char* data, unsigned int length) {$/;"	f	class:dvs::SocketComm
+readListeners	Server/Server.h	/^	vector<Runnable*> readListeners;$/;"	m	class:dvs::Server
+readValue	ClientLib/DeviceComm.c	/^void readValue(unsigned char id, Device* device) {$/;"	f
+readValue	ClientSocket/lib/DeviceComm.c	/^void readValue(unsigned char id, Device* device) {$/;"	f
+reader	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	private ReaderThread reader;$/;"	f	class:NetworkManager	file:
+receive_char_serial	Devices/device_light_0.c	/^char receive_char_serial (void) {$/;"	f
+receive_char_serial	Devices/stairs_annoying.c	/^char receive_char_serial (void) {$/;"	f
+receive_char_serial	Devices/tv_pool.c	/^char receive_char_serial (void) {$/;"	f
+receive_char_serial	Devices/uart.c	/^char receive_char_serial (void) {$/;"	f
+receive_char_serial	Devices/uart_spi_converter.c	/^char receive_char_serial (void) {$/;"	f
+received	Devices/uart_spi_converter.c	/^volatile char received;$/;"	v
+received_char	Devices/uart_spi_converter.c	/^volatile char received_char[MAX_BUFF_LEN];$/;"	v
+received_len	Devices/uart_spi_converter.c	/^volatile char received_len;$/;"	v
+recvChar	ClientLib/DeviceComm.c	/^void recvChar(char c, Device* device) {$/;"	f
+recvChar	ClientSocket/lib/DeviceComm.c	/^void recvChar(char c, Device* device) {$/;"	f
+registerListener	CUserLib/CComm/CCommunicator.cpp	/^void CCommunicator::registerListener(CPacketTypes type, void* data, Listener listener) {$/;"	f	class:dvs::CCommunicator
+remDevice	CUserLib/Device/Device.h	/^	static void remDevice(int id) {$/;"	f	class:dvs::Device
+remDevice	CUserLib/Room.cpp	/^void Room::remDevice(Device* device) {$/;"	f	class:dvs::Room
+remDevice	Server/Device/Device.h	/^	static void remDevice(int id) {$/;"	f	class:dvs::Device
+remDevice	Server/Room.cpp	/^void Room::remDevice(Device* device) {$/;"	f	class:dvs::Room
+remListener	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public void remListener(ChangeListener listener) {$/;"	m	class:Device
+remListener	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	public void remListener(ChangeListener listener) {$/;"	m	class:Field
+remListener	Server/Server.cpp	/^void Server::remListener(int fd) {$/;"	f	class:dvs::Server
+remove	Server/Comm/Communicator.cpp	/^void Communicator::remove() {$/;"	f	class:dvs::Communicator
+remove	Server/Comm/SocketComm.cpp	/^void SocketComm::remove() {$/;"	f	class:dvs::SocketComm
+removePacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public void removePacket(Packet packet) {$/;"	m	class:NetworkManager
+removePacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/ReaderThread.java	/^	public void removePacket(Packet packet) {$/;"	m	class:ReaderThread
+room	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	private int room;$/;"	f	class:Device	file:
+room	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	private int room;$/;"	f	class:DeviceDefPacket	file:
+roomId	CUserLib/Device/Device.h	/^	int roomId;$/;"	m	class:dvs::Device
+roomId	ClientLib/DeviceStructs.h	/^	unsigned char roomId;$/;"	m	struct:__anon4
+roomId	ClientSocket/lib/DeviceStructs.h	/^	unsigned char roomId;$/;"	m	struct:__anon12
+roomId	Server/Device/Device.h	/^	int roomId;$/;"	m	class:dvs::Device
+rooms	Server/Server.cpp	/^vector<Room*> rooms;$/;"	m	namespace:dvs	file:
+run	CUserLib/CComm/CCommunicator.h	/^	void run() {$/;"	f	class:dvs::CCommHandler
+run	CUserLib/Runnable.h	/^	virtual void run() {$/;"	f	class:Runnable
+run	JavaTestClient/src/com/dreamcrushed/DeviceUser/ReaderThread.java	/^	public void run() {$/;"	m	class:ReaderThread
+run	JavaTestClient/src/com/dreamcrushed/DeviceUser/WriterThread.java	/^	public void run() {$/;"	m	class:WriterThread
+run	Server/CComm/CCommunicator.h	/^	void run() {$/;"	f	class:dvs::CCommHandler
+run	Server/Comm/Communicator.h	/^	void run() {$/;"	f	class:dvs::CommHandler
+run	Server/CommandInterface.cpp	/^void CommandInterface::run() {$/;"	f	class:dvs::CommandInterface
+run	Server/Main.cpp	/^	void run() {$/;"	f	class:CCreateHandler
+run	Server/Main.cpp	/^	void run() {$/;"	f	class:CreateHandler
+run	Server/Runnable.h	/^	virtual void run() {$/;"	f	class:Runnable
+run	Server/Server.cpp	/^void Server::run() {$/;"	f	class:dvs::Server
+selFunc	Server/CommandInterface.cpp	/^void selFunc(vector<string>* args) {$/;"	f	namespace:dvs
+selected	Server/CommandInterface.cpp	/^unsigned int selected = -1;$/;"	m	namespace:dvs	file:
+send	CUserLib/ClientPackets/CPacket.cpp	/^void CPacket::send() {$/;"	f	class:dvs::CPacket
+send	ClientLib/DeviceStructs.h	/^	SendRoutine send;$/;"	m	struct:__anon3
+send	ClientSocket/lib/DeviceStructs.h	/^	SendRoutine send;$/;"	m	struct:__anon11
+send	Server/ClientPackets/CPacket.cpp	/^void CPacket::send() {$/;"	f	class:dvs::CPacket
+send	Server/Device/Device.cpp	/^void Device::send(Packet* packet) {$/;"	f	class:dvs::Device
+send	Server/DevicePackets/Packet.cpp	/^void Packet::send() {$/;"	f	class:dvs::Packet
+send	Server/User/User.cpp	/^void User::send(CPacket* packet) {$/;"	f	class:dvs::User
+sendCName	ClientLib/DeviceComm.c	/^void sendCName(Device* device) {$/;"	f
+sendCName	ClientSocket/lib/DeviceComm.c	/^void sendCName(Device* device) {$/;"	f
+sendDevice	CUserLib/Main.cpp	/^void sendDevice(Device* device) {$/;"	f
+sendField	CUserLib/Main.cpp	/^void sendField(Field* field) {$/;"	f
+sendField	ClientLib/DeviceComm.c	/^void sendField(Device* device, FieldDef* field) {$/;"	f
+sendField	ClientSocket/lib/DeviceComm.c	/^void sendField(Device* device, FieldDef* field) {$/;"	f
+sendInitPacket	ClientLib/DeviceComm.c	/^void sendInitPacket(Device* device) {$/;"	f
+sendInitPacket	ClientSocket/lib/DeviceComm.c	/^void sendInitPacket(Device* device) {$/;"	f
+sendInitPackets	ClientLib/DeviceComm.c	/^void sendInitPackets(Device* device) {$/;"	f
+sendInitPackets	ClientSocket/lib/DeviceComm.c	/^void sendInitPackets(Device* device) {$/;"	f
+sendLoc	ClientLib/DeviceComm.c	/^void sendLoc(Device* device) {$/;"	f
+sendLoc	ClientSocket/lib/DeviceComm.c	/^void sendLoc(Device* device) {$/;"	f
+sendOnePacket	ClientLib/DeviceComm.c	/^void sendOnePacket(unsigned int id, Device* device) {$/;"	f
+sendOnePacket	ClientSocket/lib/DeviceComm.c	/^void sendOnePacket(unsigned int id, Device* device) {$/;"	f
+sendPacket	CUserLib/CComm/CCommunicator.cpp	/^void CCommunicator::sendPacket(CPacket* packet) {$/;"	f	class:dvs::CCommunicator
+sendPacket	CUserLib/Device/Field/Field.cpp	/^void Field::sendPacket() {$/;"	f	class:dvs::Field
+sendPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public void sendPacket(Packet packet) throws LoginException {$/;"	m	class:NetworkManager
+sendPacket	JavaTestClient/src/com/dreamcrushed/DeviceUser/WriterThread.java	/^	public void sendPacket(Packet packet) {$/;"	m	class:WriterThread
+sendPacket	Server/CComm/CCommunicator.cpp	/^void CCommunicator::sendPacket(CPacket* packet) {$/;"	f	class:dvs::CCommunicator
+sendPacket	Server/Comm/Communicator.cpp	/^void Communicator::sendPacket(Packet* packet) {$/;"	f	class:dvs::Communicator
+sendPacket	Server/Device/Field/Field.cpp	/^void Field::sendPacket() {$/;"	f	class:dvs::Field
+sendSerial	CUserLib/Main.cpp	/^void sendSerial(string str) {$/;"	f
+sendToServer	CUserLib/Device/Field/Field.cpp	/^void Field::sendToServer() {$/;"	f	class:dvs::Field
+sendValue	ClientLib/DeviceComm.c	/^void sendValue(unsigned char id, Device* device) {$/;"	f
+sendValue	ClientSocket/lib/DeviceComm.c	/^void sendValue(unsigned char id, Device* device) {$/;"	f
+send_char_serial	Devices/device_light_0.c	/^void send_char_serial (char data) {$/;"	f
+send_char_serial	Devices/device_light_1.c	/^void send_char_serial (char data) {$/;"	f
+send_char_serial	Devices/stairs_annoying.c	/^void send_char_serial (char data) {$/;"	f
+send_char_serial	Devices/tv_pool.c	/^void send_char_serial (char data) {$/;"	f
+send_char_serial	Devices/uart.c	/^void send_char_serial (char data) {$/;"	f
+send_char_serial	Devices/uart_spi_converter.c	/^void send_char_serial (char data) {$/;"	f
+send_string_serial	Devices/device_light_0.c	/^void send_string_serial(char* s) {$/;"	f
+send_string_serial	Devices/stairs_annoying.c	/^void send_string_serial(char* s) {$/;"	f
+send_string_serial	Devices/tv_pool.c	/^void send_string_serial(char* s) {$/;"	f
+send_string_serial	Devices/uart.c	/^void send_string_serial(char* s) {$/;"	f
+send_string_serial	Devices/uart_spi_converter.c	/^void send_string_serial(char* s) {$/;"	f
+sendch	ClientSocket/SocketTest.cpp	/^void sendch(char c) {$/;"	f
+serialVersionUID	JavaTestClient/src/com/dreamcrushed/DeviceUser/InvalidLoginException.java	/^	private static final long serialVersionUID = 1L;$/;"	f	class:InvalidLoginException	file:
+serialVersionUID	JavaTestClient/src/com/dreamcrushed/DeviceUser/InvalidPacketException.java	/^	private static final long serialVersionUID = 1L;$/;"	f	class:InvalidPacketException	file:
+serialVersionUID	JavaTestClient/src/com/dreamcrushed/DeviceUser/LoginException.java	/^	private static final long serialVersionUID = 1L;$/;"	f	class:LoginException	file:
+serial_init	Devices/device_light_0.c	/^void serial_init(void) {$/;"	f
+serial_init	Devices/device_light_1.c	/^void serial_init(void) {$/;"	f
+serial_init	Devices/stairs_annoying.c	/^void serial_init(void) {$/;"	f
+serial_init	Devices/tv_pool.c	/^void serial_init(void) {$/;"	f
+serial_init	Devices/uart.c	/^void serial_init(void) {$/;"	f
+serial_init	Devices/uart_spi_converter.c	/^void serial_init(void) {$/;"	f
+serial_tx_disable	Devices/device_light_0.c	/^void serial_tx_disable() {$/;"	f
+serial_tx_disable	Devices/stairs_annoying.c	/^void serial_tx_disable() {$/;"	f
+serial_tx_disable	Devices/tv_pool.c	/^void serial_tx_disable() {$/;"	f
+serial_tx_enable	Devices/device_light_0.c	/^void serial_tx_enable() {$/;"	f
+serial_tx_enable	Devices/stairs_annoying.c	/^void serial_tx_enable() {$/;"	f
+serial_tx_enable	Devices/tv_pool.c	/^void serial_tx_enable() {$/;"	f
+session	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	private String session;$/;"	f	class:NetworkManager	file:
+setBool	CUserLib/Device/Field/BooleanField.cpp	/^void BooleanField::setBool(bool value) {$/;"	f	class:dvs::BooleanField
+setBool	Server/Device/Field/BooleanField.cpp	/^void BooleanField::setBool(bool value) {$/;"	f	class:dvs::BooleanField
+setBoolVal	ClientLib/DeviceClient.c	/^void setBoolVal(unsigned int id, unsigned char value, Device* device) {$/;"	f
+setBoolVal	ClientSocket/lib/DeviceClient.c	/^void setBoolVal(unsigned int id, unsigned char value, Device* device) {$/;"	f
+setCName	CUserLib/Device/Device.cpp	/^void Device::setCName(string cname) {$/;"	f	class:dvs::Device
+setCName	Server/Device/Device.cpp	/^void Device::setCName(string cname) {$/;"	f	class:dvs::Device
+setChangeListener	ClientLib/DeviceClient.c	/^void setChangeListener(unsigned int id, FieldList listener, Device* device) {$/;"	f
+setChangeListener	ClientSocket/lib/DeviceClient.c	/^void setChangeListener(unsigned int id, FieldList listener, Device* device) {$/;"	f
+setComm	CUserLib/Device/Device.cpp	/^void Device::setComm(CCommunicator* comm) {$/;"	f	class:dvs::Device
+setComm	Server/Device/Device.cpp	/^void Device::setComm(Communicator* comm) {$/;"	f	class:dvs::Device
+setCurrentComm	Server/ClientPackets/CPacket.h	/^	static void setCurrentComm(CCommunicator* comm) {$/;"	f	class:dvs::CPacket
+setCurrentComm	Server/DevicePackets/Packet.h	/^	static void setCurrentComm(Communicator* comm) {$/;"	f	class:dvs::Packet
+setDevice	CUserLib/Device/Device.h	/^	static void setDevice(int id, string name, Device* device) {$/;"	f	class:dvs::Device
+setDevice	JavaTestClient/src/com/dreamcrushed/DeviceUser/DeviceManager.java	/^	public void setDevice(int id, Device device) {$/;"	m	class:DeviceManager
+setDevice	Server/Device/Device.h	/^	static void setDevice(int id, string name, Device* device) {$/;"	f	class:dvs::Device
+setDeviceCName	ClientLib/DeviceClient.c	/^void setDeviceCName(char* name, Device* device) {$/;"	f
+setDeviceCName	ClientSocket/lib/DeviceClient.c	/^void setDeviceCName(char* name, Device* device) {$/;"	f
+setDeviceLocation	ClientLib/DeviceClient.c	/^void setDeviceLocation(unsigned char room, unsigned int x, unsigned int y,$/;"	f
+setDeviceLocation	ClientSocket/lib/DeviceClient.c	/^void setDeviceLocation(unsigned char room, unsigned int x, unsigned int y,$/;"	f
+setField	CUserLib/Device/Device.cpp	/^void Device::setField(unsigned char id, Field* field) {$/;"	f	class:dvs::Device
+setField	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	public void setField(int id, String name, FieldType type, boolean writable,$/;"	m	class:Device
+setField	Server/CommandInterface.cpp	/^void setField(vector<string>* args) {$/;"	f	namespace:dvs
+setField	Server/Device/Device.cpp	/^void Device::setField(unsigned char id, Field* field) {$/;"	f	class:dvs::Device
+setFixedVal	ClientLib/DeviceClient.c	/^void setFixedVal(unsigned int id, unsigned int value,$/;"	f
+setFixedVal	ClientSocket/lib/DeviceClient.c	/^void setFixedVal(unsigned int id, unsigned int value,$/;"	f
+setIcon	CUserLib/Device/Device.cpp	/^void Device::setIcon(unsigned int icon) {$/;"	f	class:dvs::Device
+setIcon	Server/Device/Device.cpp	/^void Device::setIcon(unsigned int icon) {$/;"	f	class:dvs::Device
+setId	CUserLib/CComm/CCommunicator.cpp	/^void CCommunicator::setId(int id) {$/;"	f	class:dvs::CCommunicator
+setIntVal	ClientLib/DeviceClient.c	/^void setIntVal(unsigned int id, unsigned int value, Device* device) {$/;"	f
+setIntVal	ClientSocket/lib/DeviceClient.c	/^void setIntVal(unsigned int id, unsigned int value, Device* device) {$/;"	f
+setLoc	CUserLib/Device/Device.cpp	/^void Device::setLoc(float x, float y) {$/;"	f	class:dvs::Device
+setLoc	Server/Device/Device.cpp	/^void Device::setLoc(float x, float y) {$/;"	f	class:dvs::Device
+setMaxLength	CUserLib/Device/Device.h	/^	void setMaxLength(unsigned int length) {$/;"	f	class:dvs::Device
+setMaxLength	Server/Device/Device.h	/^	void setMaxLength(unsigned int length) {$/;"	f	class:dvs::Device
+setOne	CUserLib/Device/Field/FixedField.cpp	/^void FixedField::setOne(unsigned int newOne) {$/;"	f	class:dvs::FixedField
+setOne	Server/Device/Field/FixedField.cpp	/^void FixedField::setOne(unsigned int newOne) {$/;"	f	class:dvs::FixedField
+setOneVal	ClientLib/DeviceClient.c	/^void setOneVal(unsigned int id, unsigned int one, Device* device) {$/;"	f
+setOneVal	ClientSocket/lib/DeviceClient.c	/^void setOneVal(unsigned int id, unsigned int one, Device* device) {$/;"	f
+setPrompt	Server/CommandInterface.h	/^	static void setPrompt(char* prompt) {$/;"	f	class:dvs::CommandInterface
+setPromptI	Server/CommandInterface.cpp	/^void CommandInterface::setPromptI(char* prompt) {$/;"	f	class:dvs::CommandInterface
+setRealString	CUserLib/Device/Field/BooleanField.cpp	/^void BooleanField::setRealString(string val) {$/;"	f	class:dvs::BooleanField
+setRealString	CUserLib/Device/Field/Field.cpp	/^void Field::setRealString(string val) {$/;"	f	class:dvs::Field
+setRealString	CUserLib/Device/Field/FixedField.cpp	/^void FixedField::setRealString(string val) {$/;"	f	class:dvs::FixedField
+setRealString	CUserLib/Device/Field/FloatField.cpp	/^void FloatField::setRealString(string val) {$/;"	f	class:dvs::FloatField
+setRealString	CUserLib/Device/Field/IntegerField.cpp	/^void IntegerField::setRealString(string val) {$/;"	f	class:dvs::IntegerField
+setRealString	CUserLib/Device/Field/StringField.cpp	/^void StringField::setRealString(string val) {$/;"	f	class:dvs::StringField
+setRealString	Server/Device/Field/BooleanField.cpp	/^void BooleanField::setRealString(string val) {$/;"	f	class:dvs::BooleanField
+setRealString	Server/Device/Field/Field.cpp	/^void Field::setRealString(string val) {$/;"	f	class:dvs::Field
+setRealString	Server/Device/Field/FixedField.cpp	/^void FixedField::setRealString(string val) {$/;"	f	class:dvs::FixedField
+setRealString	Server/Device/Field/FloatField.cpp	/^void FloatField::setRealString(string val) {$/;"	f	class:dvs::FloatField
+setRealString	Server/Device/Field/IntegerField.cpp	/^void IntegerField::setRealString(string val) {$/;"	f	class:dvs::IntegerField
+setRealString	Server/Device/Field/StringField.cpp	/^void StringField::setRealString(string val) {$/;"	f	class:dvs::StringField
+setRoom	CUserLib/Device/Device.cpp	/^void Device::setRoom(unsigned int roomId) {$/;"	f	class:dvs::Device
+setRoom	Server/Device/Device.cpp	/^void Device::setRoom(unsigned int roomId) {$/;"	f	class:dvs::Device
+setString	CUserLib/Device/Field/BooleanField.cpp	/^void BooleanField::setString(unsigned char* value) {$/;"	f	class:dvs::BooleanField
+setString	CUserLib/Device/Field/Field.cpp	/^void Field::setString(unsigned char* value) {$/;"	f	class:dvs::Field
+setString	CUserLib/Device/Field/FixedField.cpp	/^void FixedField::setString(unsigned char* value) {$/;"	f	class:dvs::FixedField
+setString	CUserLib/Device/Field/FloatField.cpp	/^void FloatField::setString(unsigned char* value) {$/;"	f	class:dvs::FloatField
+setString	CUserLib/Device/Field/IntegerField.cpp	/^void IntegerField::setString(unsigned char* value) {$/;"	f	class:dvs::IntegerField
+setString	CUserLib/Device/Field/StringField.cpp	/^void StringField::setString(unsigned char* value) {$/;"	f	class:dvs::StringField
+setString	Server/Device/Field/BooleanField.cpp	/^void BooleanField::setString(unsigned char* value) {$/;"	f	class:dvs::BooleanField
+setString	Server/Device/Field/Field.cpp	/^void Field::setString(unsigned char* value) {$/;"	f	class:dvs::Field
+setString	Server/Device/Field/FixedField.cpp	/^void FixedField::setString(unsigned char* value) {$/;"	f	class:dvs::FixedField
+setString	Server/Device/Field/FloatField.cpp	/^void FloatField::setString(unsigned char* value) {$/;"	f	class:dvs::FloatField
+setString	Server/Device/Field/IntegerField.cpp	/^void IntegerField::setString(unsigned char* value) {$/;"	f	class:dvs::IntegerField
+setString	Server/Device/Field/StringField.cpp	/^void StringField::setString(unsigned char* value) {$/;"	f	class:dvs::StringField
+setStringVal	ClientLib/DeviceClient.c	/^void setStringVal(unsigned int id, char* value, Device* device) {$/;"	f
+setStringVal	ClientSocket/lib/DeviceClient.c	/^void setStringVal(unsigned int id, char* value, Device* device) {$/;"	f
+setUID	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public void setUID(int id) {$/;"	m	class:NetworkManager
+setUser	Server/Server.h	/^	static void setUser(unsigned int id, User* user) {$/;"	f	class:dvs::Server
+setVals	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	public void setVals(String name, FieldType type, boolean writable,$/;"	m	class:Field
+setValue	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	public void setValue(String value) {$/;"	m	class:Field
+shouldBreak	ClientLib/DeviceClient.c	/^unsigned int shouldBreak(Device* device) {$/;"	f
+shouldBreak	ClientLib/DeviceStructs.h	/^	unsigned char shouldBreak;$/;"	m	struct:__anon3
+shouldBreak	ClientSocket/lib/DeviceClient.c	/^unsigned int shouldBreak(Device* device) {$/;"	f
+shouldBreak	ClientSocket/lib/DeviceStructs.h	/^	unsigned char shouldBreak;$/;"	m	struct:__anon11
+size	Server/Comm/Communicator.h	/^	unsigned int size;$/;"	m	class:dvs::Communicator
+socket	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	private Socket socket;$/;"	f	class:NetworkManager	file:
+sockfd	ClientSocket/SocketTest.cpp	/^int sockfd;$/;"	v
+sockfd	Server/CComm/CSocketCreator.h	/^	int sockfd;$/;"	m	class:dvs::CSocketCreator
+sockfd	Server/Comm/SocketCreator.h	/^	int sockfd;$/;"	m	class:dvs::SocketCreator
+spi_master_init	Devices/uart_spi_converter.c	/^void spi_master_init(void) {$/;"	f
+spi_master_receive_char	Devices/uart_spi_converter.c	/^char spi_master_receive_char(char c) { 		\/\/data is junk to send$/;"	f
+spi_master_transmit_char	Devices/uart_spi_converter.c	/^void spi_master_transmit_char(char data) {$/;"	f
+spi_master_transmit_string	Devices/uart_spi_converter.c	/^void spi_master_transmit_string(char* s) {$/;"	f
+spi_slave_init	Devices/device_light_1.c	/^void spi_slave_init(void) {$/;"	f
+split	CUserLib/Util.h	/^	static vector<string>* split(string s, char tok) {$/;"	f	class:dvs::Util
+split	Server/Util.h	/^	static vector<string>* split(string s, char tok) {$/;"	f	class:dvs::Util
+start	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public void start() throws IOException {$/;"	m	class:NetworkManager
+startWatch	ClientLib/DeviceStructs.h	/^	char startWatch[4];$/;"	m	struct:__anon3
+startWatch	ClientSocket/lib/DeviceStructs.h	/^	char startWatch[4];$/;"	m	struct:__anon11
+state	ClientLib/DeviceStructs.h	/^	unsigned int state;$/;"	m	struct:__anon3
+state	ClientSocket/lib/DeviceStructs.h	/^	unsigned int state;$/;"	m	struct:__anon11
+state	Devices/device_light_1.c	/^volatile char r_back, state, t_index, t_len;$/;"	v
+stop	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	public void stop() {$/;"	m	class:NetworkManager
+streamData	CUserLib/ClientPackets/CCommandPacket.cpp	/^void CCommandPacket::streamData(stringstream& data) {$/;"	f	class:dvs::CCommandPacket
+streamData	CUserLib/ClientPackets/CGetFieldPacket.cpp	/^void CGetFieldPacket::streamData(stringstream& data) {$/;"	f	class:dvs::CGetFieldPacket
+streamData	CUserLib/ClientPackets/CPacket.cpp	/^void CPacket::streamData(stringstream& data) {$/;"	f	class:dvs::CPacket
+streamData	CUserLib/ClientPackets/CSetFieldPacket.cpp	/^void CSetFieldPacket::streamData(stringstream& data) {$/;"	f	class:dvs::CSetFieldPacket
+streamData	CUserLib/ClientPackets/GetDevicesPacket.cpp	/^void GetDevicesPacket::streamData(stringstream& data) {$/;"	f	class:dvs::GetDevicesPacket
+streamData	CUserLib/ClientPackets/GetFieldsPacket.cpp	/^void GetFieldsPacket::streamData(stringstream& data) {$/;"	f	class:dvs::GetFieldsPacket
+streamData	CUserLib/ClientPackets/LoginPacket.cpp	/^void LoginPacket::streamData(stringstream& data) {$/;"	f	class:dvs::LoginPacket
+streamData	CUserLib/ClientPackets/UIDPacket.cpp	/^void UIDPacket::streamData(stringstream& data) {$/;"	f	class:dvs::UIDPacket
+streamData	Server/ClientPackets/CCommandPacket.cpp	/^void CCommandPacket::streamData(stringstream& data) {$/;"	f	class:dvs::CCommandPacket
+streamData	Server/ClientPackets/CPacket.cpp	/^void CPacket::streamData(stringstream& data) {$/;"	f	class:dvs::CPacket
+streamData	Server/ClientPackets/DeviceDefPacket.cpp	/^void DeviceDefPacket::streamData(stringstream& data) {$/;"	f	class:dvs::DeviceDefPacket
+streamData	Server/ClientPackets/FieldInfoPacket.cpp	/^void FieldInfoPacket::streamData(stringstream& data) {$/;"	f	class:dvs::FieldInfoPacket
+streamData	Server/ClientPackets/LoginFailurePacket.cpp	/^void LoginFailurePacket::streamData(stringstream& data) {$/;"	f	class:dvs::LoginFailurePacket
+streamData	Server/ClientPackets/SendFieldPacket.cpp	/^void SendFieldPacket::streamData(stringstream& data) {$/;"	f	class:dvs::SendFieldPacket
+streamData	Server/ClientPackets/UIDPacket.cpp	/^void UIDPacket::streamData(stringstream& data) {$/;"	f	class:dvs::UIDPacket
+subscribed	ClientLib/DeviceStructs.h	/^	unsigned char subscribed;$/;"	m	struct:__anon2
+subscribed	ClientSocket/lib/DeviceStructs.h	/^	unsigned char subscribed;$/;"	m	struct:__anon10
+t_index	Devices/device_light_1.c	/^volatile char r_back, state, t_index, t_len;$/;"	v
+t_len	Devices/device_light_1.c	/^volatile char r_back, state, t_index, t_len;$/;"	v
+toBool	CUserLib/Util.h	/^	static bool toBool(string val) {$/;"	f	class:dvs::Util
+toString	CUserLib/ClientPackets/CPacket.cpp	/^string CPacket::toString() {$/;"	f	class:dvs::CPacket
+toString	Server/ClientPackets/CPacket.cpp	/^string CPacket::toString() {$/;"	f	class:dvs::CPacket
+toString	Server/Comm/Communicator.cpp	/^string Communicator::toString() {$/;"	f	class:dvs::Communicator
+transmit_flag	Devices/device_light_0.c	/^volatile char transmit_flag;$/;"	v
+transmit_flag	Devices/device_light_1.c	/^volatile char transmit_flag;$/;"	v
+transmit_flag	Devices/stairs_annoying.c	/^volatile char transmit_flag;$/;"	v
+transmit_flag	Devices/tv_pool.c	/^volatile char transmit_flag;$/;"	v
+true	ClientLib/DeviceStructs.h	29;"	d
+true	ClientSocket/lib/DeviceStructs.h	29;"	d
+type	CUserLib/Device/Field/Field.h	/^	FieldType type;$/;"	m	class:dvs::Field
+type	ClientLib/DeviceStructs.h	/^	FieldType type;$/;"	m	struct:__anon2
+type	ClientSocket/lib/DeviceStructs.h	/^	FieldType type;$/;"	m	struct:__anon10
+type	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	protected FieldType type;$/;"	f	class:Field
+type	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^	private FieldType type;$/;"	f	class:FieldInfoPacket	file:
+type	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	private int type;$/;"	f	class:PacketType	file:
+type	Server/Device/Field/Field.h	/^	FieldType type;$/;"	m	class:dvs::Field
+typeStrings	CUserLib/Device/Field/Field.cpp	/^string typeStrings[] = { "Boolean", "Integer", "Floating Point", "Fixed Point",$/;"	m	namespace:dvs	file:
+typeStrings	Server/Device/Field/Field.cpp	/^string typeStrings[] = { "Boolean", "Integer", "Floating Point", "Fixed Point",$/;"	m	namespace:dvs	file:
+types	JavaTestClient/src/com/dreamcrushed/DeviceUser/FieldType.java	/^	private static Map<Integer, FieldType> types = new HashMap<Integer, FieldType>();$/;"	f	class:FieldType	file:
+types	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/PacketType.java	/^	private static Map<Integer, PacketType> types = new HashMap<Integer, PacketType>();$/;"	f	class:PacketType	file:
+uid	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/UIDPacket.java	/^	private int uid;$/;"	f	class:UIDPacket	file:
+user	CUserLib/ClientPackets/LoginPacket.h	/^	string user;$/;"	m	class:dvs::LoginPacket
+user	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	private String user;$/;"	f	class:NetworkManager	file:
+user	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/LoginPacket.java	/^	private String user;$/;"	f	class:LoginPacket	file:
+user	Server/CComm/CCommunicator.h	/^	User* user;$/;"	m	class:dvs::CCommunicator
+user	Server/ClientPackets/CPacket.h	/^	User* user;$/;"	m	class:dvs::CPacket
+users	Server/Server.cpp	/^map<unsigned int, User*> users;$/;"	m	namespace:dvs	file:
+value	CUserLib/Device/Field/BooleanField.h	/^	bool value;$/;"	m	class:dvs::BooleanField
+value	CUserLib/Device/Field/FixedField.h	/^	unsigned int value;$/;"	m	class:dvs::FixedField
+value	CUserLib/Device/Field/FloatField.h	/^	float value;$/;"	m	class:dvs::FloatField
+value	CUserLib/Device/Field/IntegerField.h	/^	int value;$/;"	m	class:dvs::IntegerField
+value	CUserLib/Device/Field/StringField.h	/^	string value;$/;"	m	class:dvs::StringField
+value	ClientLib/DeviceStructs.h	/^	char* value;$/;"	m	struct:__anon8
+value	ClientLib/DeviceStructs.h	/^	unsigned char value;$/;"	m	struct:__anon5
+value	ClientLib/DeviceStructs.h	/^	unsigned int value;$/;"	m	struct:__anon6
+value	ClientLib/DeviceStructs.h	/^	unsigned int value;$/;"	m	struct:__anon7
+value	ClientSocket/lib/DeviceStructs.h	/^	char* value;$/;"	m	struct:__anon16
+value	ClientSocket/lib/DeviceStructs.h	/^	unsigned char value;$/;"	m	struct:__anon13
+value	ClientSocket/lib/DeviceStructs.h	/^	unsigned int value;$/;"	m	struct:__anon14
+value	ClientSocket/lib/DeviceStructs.h	/^	unsigned int value;$/;"	m	struct:__anon15
+value	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SendFieldPacket.java	/^	private String value;$/;"	f	class:SendFieldPacket	file:
+value	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/SetFieldPacket.java	/^	private String value;$/;"	f	class:SetFieldPacket	file:
+value	Server/Device/Field/BooleanField.h	/^	bool value;$/;"	m	class:dvs::BooleanField
+value	Server/Device/Field/FixedField.h	/^	unsigned int value;$/;"	m	class:dvs::FixedField
+value	Server/Device/Field/FloatField.h	/^	float value;$/;"	m	class:dvs::FloatField
+value	Server/Device/Field/IntegerField.h	/^	int value;$/;"	m	class:dvs::IntegerField
+value	Server/Device/Field/StringField.h	/^	string value;$/;"	m	class:dvs::StringField
+vol	CUserLib/Device/Field/Field.h	/^	bool vol;$/;"	m	class:dvs::Field
+vol	ClientLib/DeviceStructs.h	/^	unsigned char vol;$/;"	m	struct:__anon2
+vol	ClientSocket/lib/DeviceStructs.h	/^	unsigned char vol;$/;"	m	struct:__anon10
+vol	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	protected boolean vol;$/;"	f	class:Field
+vol	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^	private boolean vol;$/;"	f	class:FieldInfoPacket	file:
+vol	Server/Device/Field/Field.h	/^	bool vol;$/;"	m	class:dvs::Field
+writable	CUserLib/Device/Field/Field.h	/^	bool writable;$/;"	m	class:dvs::Field
+writable	ClientLib/DeviceStructs.h	/^	unsigned char writable;$/;"	m	struct:__anon2
+writable	ClientSocket/lib/DeviceStructs.h	/^	unsigned char writable;$/;"	m	struct:__anon10
+writable	JavaTestClient/src/com/dreamcrushed/DeviceUser/Field.java	/^	protected boolean writable;$/;"	f	class:Field
+writable	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/FieldInfoPacket.java	/^	private boolean writable;$/;"	f	class:FieldInfoPacket	file:
+writable	Server/Device/Field/Field.h	/^	bool writable;$/;"	m	class:dvs::Field
+writeBytes	CUserLib/CComm/CCommunicator.cpp	/^void CCommunicator::writeBytes(const char* data, unsigned int length) {$/;"	f	class:dvs::CCommunicator
+writeBytes	CUserLib/CComm/CSocketComm.cpp	/^void CSocketComm::writeBytes(const char* data, unsigned int length) {$/;"	f	class:dvs::CSocketComm
+writeBytes	Server/CComm/CCommunicator.cpp	/^void CCommunicator::writeBytes(const char* data, unsigned int length) {$/;"	f	class:dvs::CCommunicator
+writeBytes	Server/CComm/CSocketComm.cpp	/^void CSocketComm::writeBytes(const char* data, unsigned int length) {$/;"	f	class:dvs::CSocketComm
+writeBytes	Server/Comm/Communicator.cpp	/^void Communicator::writeBytes(unsigned char* data, unsigned int length) {$/;"	f	class:dvs::Communicator
+writeBytes	Server/Comm/SocketComm.cpp	/^void SocketComm::writeBytes(unsigned char* data, unsigned int length) {$/;"	f	class:dvs::SocketComm
+writer	JavaTestClient/src/com/dreamcrushed/DeviceUser/NetworkManager.java	/^	private WriterThread writer;$/;"	f	class:NetworkManager	file:
+x	CUserLib/Device/Device.h	/^	float x, y;$/;"	m	class:dvs::Device
+x	ClientLib/DeviceStructs.h	/^	unsigned int x;$/;"	m	struct:__anon4
+x	ClientSocket/lib/DeviceStructs.h	/^	unsigned int x;$/;"	m	struct:__anon12
+x	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	private float x;$/;"	f	class:Device	file:
+x	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	private float x;$/;"	f	class:DeviceDefPacket	file:
+x	Server/Device/Device.h	/^	float x, y;$/;"	m	class:dvs::Device
+y	CUserLib/Device/Device.h	/^	float x, y;$/;"	m	class:dvs::Device
+y	ClientLib/DeviceStructs.h	/^	unsigned int y;$/;"	m	struct:__anon4
+y	ClientSocket/lib/DeviceStructs.h	/^	unsigned int y;$/;"	m	struct:__anon12
+y	JavaTestClient/src/com/dreamcrushed/DeviceUser/Device.java	/^	private float y;$/;"	f	class:Device	file:
+y	JavaTestClient/src/com/dreamcrushed/DeviceUser/Packet/DeviceDefPacket.java	/^	private float y;$/;"	f	class:DeviceDefPacket	file:
+y	Server/Device/Device.h	/^	float x, y;$/;"	m	class:dvs::Device
+~BooleanField	CUserLib/Device/Field/BooleanField.cpp	/^BooleanField::~BooleanField() {$/;"	f	class:dvs::BooleanField
+~BooleanField	Server/Device/Field/BooleanField.cpp	/^BooleanField::~BooleanField() {$/;"	f	class:dvs::BooleanField
+~CCommHandler	CUserLib/CComm/CCommunicator.h	/^	~CCommHandler() {$/;"	f	class:dvs::CCommHandler
+~CCommHandler	Server/CComm/CCommunicator.h	/^	~CCommHandler() {$/;"	f	class:dvs::CCommHandler
+~CCommandPacket	CUserLib/ClientPackets/CCommandPacket.cpp	/^CCommandPacket::~CCommandPacket() {$/;"	f	class:dvs::CCommandPacket
+~CCommandPacket	Server/ClientPackets/CCommandPacket.cpp	/^CCommandPacket::~CCommandPacket() {$/;"	f	class:dvs::CCommandPacket
+~CCommunicator	CUserLib/CComm/CCommunicator.cpp	/^CCommunicator::~CCommunicator() {$/;"	f	class:dvs::CCommunicator
+~CCommunicator	Server/CComm/CCommunicator.cpp	/^CCommunicator::~CCommunicator() {$/;"	f	class:dvs::CCommunicator
+~CGetFieldPacket	CUserLib/ClientPackets/CGetFieldPacket.cpp	/^CGetFieldPacket::~CGetFieldPacket() {$/;"	f	class:dvs::CGetFieldPacket
+~CGetFieldPacket	Server/ClientPackets/CGetFieldPacket.cpp	/^CGetFieldPacket::~CGetFieldPacket() {$/;"	f	class:dvs::CGetFieldPacket
+~CPacket	CUserLib/ClientPackets/CPacket.cpp	/^CPacket::~CPacket() {$/;"	f	class:dvs::CPacket
+~CPacket	Server/ClientPackets/CPacket.cpp	/^CPacket::~CPacket() {$/;"	f	class:dvs::CPacket
+~CSetFieldPacket	CUserLib/ClientPackets/CSetFieldPacket.cpp	/^CSetFieldPacket::~CSetFieldPacket() {$/;"	f	class:dvs::CSetFieldPacket
+~CSetFieldPacket	Server/ClientPackets/CSetFieldPacket.cpp	/^CSetFieldPacket::~CSetFieldPacket() {$/;"	f	class:dvs::CSetFieldPacket
+~CSocketComm	CUserLib/CComm/CSocketComm.cpp	/^CSocketComm::~CSocketComm() {$/;"	f	class:dvs::CSocketComm
+~CSocketComm	Server/CComm/CSocketComm.cpp	/^CSocketComm::~CSocketComm() {$/;"	f	class:dvs::CSocketComm
+~CSocketCreator	Server/CComm/CSocketCreator.cpp	/^CSocketCreator::~CSocketCreator() {$/;"	f	class:dvs::CSocketCreator
+~CommHandler	Server/Comm/Communicator.h	/^	~CommHandler() {$/;"	f	class:dvs::CommHandler
+~CommandInterface	Server/CommandInterface.cpp	/^CommandInterface::~CommandInterface() {$/;"	f	class:dvs::CommandInterface
+~Communicator	Server/Comm/Communicator.cpp	/^Communicator::~Communicator() {$/;"	f	class:dvs::Communicator
+~Device	CUserLib/Device/Device.cpp	/^Device::~Device() {$/;"	f	class:dvs::Device
+~Device	Server/Device/Device.cpp	/^Device::~Device() {$/;"	f	class:dvs::Device
+~DeviceDefPacket	CUserLib/ClientPackets/DeviceDefPacket.cpp	/^DeviceDefPacket::~DeviceDefPacket() {$/;"	f	class:dvs::DeviceDefPacket
+~DeviceDefPacket	Server/ClientPackets/DeviceDefPacket.cpp	/^DeviceDefPacket::~DeviceDefPacket() {$/;"	f	class:dvs::DeviceDefPacket
+~Field	CUserLib/Device/Field/Field.cpp	/^Field::~Field() {$/;"	f	class:dvs::Field
+~Field	Server/Device/Field/Field.cpp	/^Field::~Field() {$/;"	f	class:dvs::Field
+~FieldInfoPacket	CUserLib/ClientPackets/FieldInfoPacket.cpp	/^FieldInfoPacket::~FieldInfoPacket() {$/;"	f	class:dvs::FieldInfoPacket
+~FieldInfoPacket	Server/ClientPackets/FieldInfoPacket.cpp	/^FieldInfoPacket::~FieldInfoPacket() {$/;"	f	class:dvs::FieldInfoPacket
+~FixedField	CUserLib/Device/Field/FixedField.cpp	/^FixedField::~FixedField() {$/;"	f	class:dvs::FixedField
+~FixedField	Server/Device/Field/FixedField.cpp	/^FixedField::~FixedField() {$/;"	f	class:dvs::FixedField
+~FloatField	CUserLib/Device/Field/FloatField.cpp	/^FloatField::~FloatField() {$/;"	f	class:dvs::FloatField
+~FloatField	Server/Device/Field/FloatField.cpp	/^FloatField::~FloatField() {$/;"	f	class:dvs::FloatField
+~GetDevicesPacket	CUserLib/ClientPackets/GetDevicesPacket.cpp	/^GetDevicesPacket::~GetDevicesPacket() {$/;"	f	class:dvs::GetDevicesPacket
+~GetDevicesPacket	Server/ClientPackets/GetDevicesPacket.cpp	/^GetDevicesPacket::~GetDevicesPacket() {$/;"	f	class:dvs::GetDevicesPacket
+~GetFieldsPacket	CUserLib/ClientPackets/GetFieldsPacket.cpp	/^GetFieldsPacket::~GetFieldsPacket() {$/;"	f	class:dvs::GetFieldsPacket
+~GetFieldsPacket	Server/ClientPackets/GetFieldsPacket.cpp	/^GetFieldsPacket::~GetFieldsPacket() {$/;"	f	class:dvs::GetFieldsPacket
+~IntegerField	CUserLib/Device/Field/IntegerField.cpp	/^IntegerField::~IntegerField() {$/;"	f	class:dvs::IntegerField
+~IntegerField	Server/Device/Field/IntegerField.cpp	/^IntegerField::~IntegerField() {$/;"	f	class:dvs::IntegerField
+~LoginFailurePacket	CUserLib/ClientPackets/LoginFailurePacket.cpp	/^LoginFailurePacket::~LoginFailurePacket() {$/;"	f	class:dvs::LoginFailurePacket
+~LoginFailurePacket	Server/ClientPackets/LoginFailurePacket.cpp	/^LoginFailurePacket::~LoginFailurePacket() {$/;"	f	class:dvs::LoginFailurePacket
+~LoginPacket	CUserLib/ClientPackets/LoginPacket.cpp	/^LoginPacket::~LoginPacket() {$/;"	f	class:dvs::LoginPacket
+~LoginPacket	Server/ClientPackets/LoginPacket.cpp	/^LoginPacket::~LoginPacket() {$/;"	f	class:dvs::LoginPacket
+~MaxLengthPacket	Server/DevicePackets/MaxLengthPacket.cpp	/^MaxLengthPacket::~MaxLengthPacket() {$/;"	f	class:dvs::MaxLengthPacket
+~Packet	Server/DevicePackets/Packet.cpp	/^Packet::~Packet() {$/;"	f	class:dvs::Packet
+~PacketListener	CUserLib/CComm/PacketListener.cpp	/^PacketListener::~PacketListener() {$/;"	f	class:dvs::PacketListener
+~Room	CUserLib/Room.cpp	/^Room::~Room() {$/;"	f	class:dvs::Room
+~Room	Server/Room.cpp	/^Room::~Room() {$/;"	f	class:dvs::Room
+~Runnable	CUserLib/Runnable.h	/^	virtual ~Runnable() {$/;"	f	class:Runnable
+~Runnable	Server/Runnable.h	/^	virtual ~Runnable() {$/;"	f	class:Runnable
+~SendFieldPacket	CUserLib/ClientPackets/SendFieldPacket.cpp	/^SendFieldPacket::~SendFieldPacket() {$/;"	f	class:dvs::SendFieldPacket
+~SendFieldPacket	Server/ClientPackets/SendFieldPacket.cpp	/^SendFieldPacket::~SendFieldPacket() {$/;"	f	class:dvs::SendFieldPacket
+~Server	Server/Server.cpp	/^Server::~Server() {$/;"	f	class:dvs::Server
+~SocketComm	Server/Comm/SocketComm.cpp	/^SocketComm::~SocketComm() {$/;"	f	class:dvs::SocketComm
+~SocketCreator	Server/Comm/SocketCreator.cpp	/^SocketCreator::~SocketCreator() {$/;"	f	class:dvs::SocketCreator
+~StringField	CUserLib/Device/Field/StringField.cpp	/^StringField::~StringField() {$/;"	f	class:dvs::StringField
+~StringField	Server/Device/Field/StringField.cpp	/^StringField::~StringField() {$/;"	f	class:dvs::StringField
+~UIDPacket	CUserLib/ClientPackets/UIDPacket.cpp	/^UIDPacket::~UIDPacket() {$/;"	f	class:dvs::UIDPacket
+~UIDPacket	Server/ClientPackets/UIDPacket.cpp	/^UIDPacket::~UIDPacket() {$/;"	f	class:dvs::UIDPacket
+~User	Server/User/User.cpp	/^User::~User() {$/;"	f	class:dvs::User

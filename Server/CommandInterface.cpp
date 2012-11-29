@@ -111,7 +111,7 @@ void commandHandleGlobal(char* line) {
 CommandInterface::CommandInterface(const char* prompt) {
 	instance = this;
 	rl_callback_handler_install(prompt, (rl_vcpfunc_t*) commandHandleGlobal);
-	server.addListener(0, this);
+    Server::getServer()->addListener(0, this);
 }
 
 CommandInterface::~CommandInterface() {
