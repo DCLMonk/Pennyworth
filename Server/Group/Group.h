@@ -19,17 +19,31 @@
 #ifndef __GROUP_H__
 #define __GROUP_H__
 
-#include <string>
 #include "Config.h"
+#include <string>
+#include <vector>
 
 namespace dvs {
 
+// Quick fix for some circular problem
+// needs to be fixed
+class Device;
+
 class Group {
 public:
-    Group(std::string name, Config config);
+    Group(std::string name, Config* config);
 
     ~Group();
+
+    std::vector<Device*> getDevices();
+
+    void addDevice(std::string);
+    void remDevice(std::string);
+
 private:
+    Config* config;
+    string name;
+    std::vector<std::string> devices;
 
 };
 

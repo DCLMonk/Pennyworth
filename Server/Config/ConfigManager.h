@@ -52,8 +52,13 @@ public:
      */
 	ConfigManager* getSubConfig(std::string subFolder);
 
-	Config getConfig(std::string configName);
-    vector<Config> getAllConfigs();
+    /**
+     * Alloc Notice: The return value of this function is
+     * allocated using new and should be de-alloced using
+     * delete when the caller is done with it.
+     */
+	Config* getConfig(std::string configName);
+    vector<Config*> getAllConfigs();
 
 private:
 	std::string baseFolder;

@@ -40,6 +40,7 @@ using namespace std;
 #include "EventManager.h"
 #include "ConfigManager.h"
 #include "RoomManager.h"
+#include "GroupManager.h"
 
 #include <string>
 
@@ -61,6 +62,7 @@ public:
     EventManager& getEventManager();
     ConfigManager& getConfigManager();
     RoomManager& getRoomManager();
+    GroupManager& getGroupManager();
 
 	void addListener(int fd, Runnable* readListener);
 	void remListener(int fd);
@@ -95,6 +97,7 @@ private:
     EventManager eventManager;
     ConfigManager configManager;
     RoomManager roomManager;
+    GroupManager groupManager;
 
 };
 

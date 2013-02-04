@@ -20,18 +20,33 @@
 #include <sstream>
 #include "Server.h"
 
+using namespace std;
+
 namespace dvs {
 
 GroupManager::GroupManager() {
 }
 
+GroupManager::~GroupManager() {
+    delete groupConfigs;
+    for (std::map<string,Group*>::iterator it=groups.begin(); it!=groups.end(); ++it) {
+        delete it->second;
+    }
+}
+
 void GroupManager::readConfigs() {
     groupConfigs = Server::getServer()->getConfigManager().getSubConfig("Groups");
+    vector<Config*> configs = groupConfigs->getAllConfigs();
+    for (unsigned int i = 0; i < configs.size(); i++) {
+        string name = configs[i]->getString("name");
+        groups[name] = new Group(name, configs[i]);
+    }
 }
 
 Group* GroupManager::getGroup(std::string ss) {
     if (groups.find(ss) == groups.end()) {
-        groups[ss] = new Group(ss, groupConfigs->getConfig(ss));
+        string cfg(".cfg");
+        groups[ss] = new Group(ss, groupConfigs->getConfig(ss + cfg));
     }
     return groups[ss];
 }

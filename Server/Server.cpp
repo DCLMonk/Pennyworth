@@ -37,6 +37,7 @@ Server* mainServer;
 Server::Server(std::string configLoc) : configManager(configLoc) {
     mainServer = this;
     roomManager.readConfigs();
+    groupManager.readConfigs();
 }
 
 Server::~Server() {
@@ -49,6 +50,10 @@ EventManager& Server::getEventManager() {
 
 ConfigManager& Server::getConfigManager() {
     return configManager;
+}
+
+GroupManager& Server::getGroupManager() {
+    return groupManager;
 }
 
 void Server::addListener(int fd, Runnable* listener) {

@@ -29,20 +29,21 @@ using namespace std;
 
 namespace dvs {
 
-Room::Room(int id, Config config) : config(config){
+Room::Room(int id, Config* config) {
 	this->id = id;
-    xl = config.getFloat("x_length", 1);
-    yl = config.getFloat("y_length", 1);
-    name = config.getString("name", "Room");
+    this->config = config;
+    xl = config->getFloat("x_length", 1);
+    yl = config->getFloat("y_length", 1);
+    name = config->getString("name", "Room");
 }
 
 Room::~Room() {
-
+    delete config;
 }
 
 void Room::setXL(float xl) {
     this->xl = xl;
-    config.setFloat("x_length", xl);
+    config->setFloat("x_length", xl);
 }
 
 float Room::getXL() {
@@ -51,7 +52,7 @@ float Room::getXL() {
 
 void Room::setYL(float yl) {
     this->yl = yl;
-    config.setFloat("y_length", yl);
+    config->setFloat("y_length", yl);
 }
 
 float Room::getYL() {
@@ -64,7 +65,7 @@ std::string Room::getName() {
 
 void Room::setName(std::string name) {
     this->name = name;
-    config.setString("name", name);
+    config->setString("name", name);
 }
 
 void Room::addDevice(Device* device) {

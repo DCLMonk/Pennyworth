@@ -29,6 +29,7 @@ class RoomManager {
 public:
 
     RoomManager();
+    ~RoomManager();
 
     void readConfigs();
 

@@ -36,7 +36,7 @@ class Device;
 
 class Room {
 public:
-	Room(int id, Config config);
+	Room(int id, Config* config);
 	virtual ~Room();
 
 	void addDevice(Device* device);
@@ -61,7 +61,7 @@ private:
     float yl;
     std::string name;
 	int id;
-    Config config;
+    Config* config;
 };
 
 } /* namespace dvs */

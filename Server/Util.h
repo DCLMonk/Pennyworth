@@ -60,6 +60,19 @@ public:
 			return v != 0;
 		}
 	}
+
+    static string concat(vector<string>* array, char delim) {
+        stringstream s;
+
+        for (unsigned int i = 0; i < array->size(); i++) {
+            s << (*array)[i];
+            if (i < array->size() - 1) {
+                s << delim;
+            }
+        }
+
+        return s.str();
+    }
 };
 
 } /* namespace dvs */

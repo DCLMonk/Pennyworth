@@ -48,15 +48,14 @@ ConfigManager* ConfigManager::getSubConfig(string subFolder) {
 	return new ConfigManager(newFolder);
 }
 
-Config ConfigManager::getConfig(string configName) {
+Config* ConfigManager::getConfig(string configName) {
 	string newFolder = baseFolder;
 	newFolder.append("/").append(configName);
-	Config ret = Config(newFolder);
-    return ret;
+	return new Config(newFolder);
 }
 
-vector<Config> ConfigManager::getAllConfigs() {
-    vector<Config> ret;
+vector<Config*> ConfigManager::getAllConfigs() {
+    vector<Config*> ret;
 
     DIR *dp;
     struct dirent *dirp;

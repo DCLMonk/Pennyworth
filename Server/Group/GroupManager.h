@@ -20,6 +20,7 @@
 #define __GROUPMANAGER_H__
 
 #include "Group.h"
+#include "Config.h"
 #include "ConfigManager.h"
 #include <string>
 
@@ -29,6 +30,7 @@ class GroupManager {
 public:
 
     GroupManager();
+    ~GroupManager();
 
     void readConfigs();
 
@@ -39,7 +41,6 @@ protected:
 private:
     ConfigManager* groupConfigs;
     std::map<std::string, Group*> groups; 
-
 };
 
 }

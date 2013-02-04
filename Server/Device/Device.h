@@ -55,6 +55,10 @@ public:
 		return devicesById[id];
 	}
 
+	static Device *getDevice(string name) {
+		return devicesByString[name];
+	}
+
 	static void remDevice(int id) {
 		devicesByString[devicesById[id]->getName()] = NULL;
 		devicesById[id] = NULL;

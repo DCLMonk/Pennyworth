@@ -25,8 +25,22 @@ namespace dvs {
 RoomManager::RoomManager() {
 }
 
+RoomManager::~RoomManager() {
+    for (unsigned int i = 0; i < rooms.size(); i++) {
+        delete rooms[i];
+    }
+    delete roomConfigs;
+}
+
 void RoomManager::readConfigs() {
     roomConfigs = Server::getServer()->getConfigManager().getSubConfig("Rooms");
+    vector<Config*> configs = roomConfigs->getAllConfigs();
+    for (unsigned int i = 0; i < configs.size(); i++) {
+        stringstream ss(stringstream::out);
+        ss << rooms.size();
+        ss << ".cfg";
+        rooms.push_back(new Room(rooms.size(), roomConfigs->getConfig(ss.str())));
+    }
 }
 
 Room* RoomManager::getRoom(unsigned int id) {
